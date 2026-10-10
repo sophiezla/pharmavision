@@ -1,0 +1,12 @@
+# Default augmentation recipe (PLAN 1.6). Normalization mean/std come from the model config.
+size: 224
+interpolation: bilinear
+train:
+  rrc_scale: [0.7, 1.0]       # RandomResizedCrop area range (aspect ratio 3/4-4/3, torchvision default)
+  rotation_degrees: 10
+  brightness: 0.1
+  contrast: 0.1
+  # No flips: printed text and logos are not mirror-symmetric.
+eval:
+  mode: crop                  # crop: resize short side, center crop | pad: resize long side, pad to square
+fill: [255, 255, 255]         # white, for rotation corners and padding
