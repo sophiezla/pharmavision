@@ -1,647 +1,647 @@
 image_id,clip_label,clip_conf,final_label,annotator,timestamp
-003f5d0050169b65,packaging,0.9150,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-00e72ba432c2b4e1,packaging,0.9550,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-01650d0229f7ecce,packaging,0.9219,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0248d0e1e8da24da,packaging,0.9901,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-02e5840f3e6f99f9,packaging,0.8969,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-039e68fd6ead7810,packaging,0.9943,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-03b813b7b36807d8,packaging,0.9254,,,
-04286c29648d03e3,packaging,0.9294,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0461d82bfbc43c54,packaging,0.9023,,,
-04622e33658d5e7e,packaging,0.9039,,,
-0462de0485b9c36d,packaging,0.9522,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0508bd36f26dc529,packaging,0.9220,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-05659957ddbd60fe,packaging,0.9289,,,
-06763e6078009ad0,packaging,0.9545,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-06c365761cf3cd8f,other,0.4361,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-075b06c1a1995787,packaging,0.9905,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-079be8513dba00b9,packaging,0.9517,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-07f5ba905534414f,packaging,0.9901,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0824ea2c5b332750,packaging,0.9639,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0872245184ab773e,packaging,0.8893,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-08cb283a4553255a,packaging,0.9810,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0929d43c20c31c49,packaging,0.9720,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-092b637ef5cec9db,packaging,0.7212,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-096f15451fb4c7a7,packaging,0.9850,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-09810c673c6fe88a,packaging,0.4125,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-09bb3233e8f61203,packaging,0.9371,,,
-09ceeec5ef2ceb25,packaging,0.9846,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0a29453673586e99,packaging,0.9129,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0a5bfa9d73b1bb99,packaging,0.9260,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0ad85291ed03ce70,packaging,0.8568,,,
-0bf6a6198fdc0749,packaging,0.6636,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c1be5430ea7b719,packaging,0.9467,,,
-0c2ab77d5f7e8676,packaging,0.9046,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c5a5d796e2a9c9a,packaging,0.8804,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c641a0ca3220d8c,packaging,0.9337,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c752bcf30437338,packaging,0.8722,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c7cc6302b8920b2,packaging,0.9806,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0c84b0f90652ebc1,packaging,0.9563,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0cde29d96f6987a6,packaging,0.9908,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0df07bb29f9c090d,packaging,0.9379,,,
-0ed87f9fbcb687f9,packaging,0.8043,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0ef10c5cbb0acadb,packaging,0.8063,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0f2fbb209aae1b22,packaging,0.9859,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0f6977844e178030,packaging,0.8408,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-0f94da28a1553bdc,packaging,0.9846,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1085b24f0c0837ea,packaging,0.8892,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-109d5b8a7037f43f,packaging,0.8258,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-111d31b35adb23cb,packaging,0.9366,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-117317e50897e5bd,packaging,0.9531,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-11c1292b395ab911,packaging,0.8565,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-123e22e72a70f388,other,0.6831,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-128af52359016dd8,packaging,0.9116,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-12e7dbcba8402083,packaging,0.9354,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-12fe9b195e0c54e1,packaging,0.9877,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-13070e6c6bdb121a,packaging,0.8727,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-143383c470712775,packaging,0.8582,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-14ddb938ae17c266,packaging,0.9720,,,
-1507efa429567568,packaging,0.9975,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-154cd3b015b4b08b,packaging,0.9000,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-16425d2bac3922fd,packaging,0.9141,,,
-169f416cb5d89d27,packaging,0.9088,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-17900709a0a00034,packaging,0.9070,,,
-186a1beb266265e7,packaging,0.7311,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-19baafbf8abb5229,packaging,0.9782,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1ad4e03b5c3395f4,packaging,0.9260,,,
-1b9d9732d8bdd872,packaging,0.7820,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1bb316f1cae62405,packaging,0.9523,,,
-1c17db0f34a75fe9,packaging,0.8743,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1dfd755445b201fc,packaging,0.8527,,,
-1e31fef127fbfc90,packaging,0.7898,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1e454359196591a0,packaging,0.9869,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1e6a7131ac588984,packaging,0.8127,,,
-1eae243b6abc9b62,packaging,0.9406,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1f293e3e71cfe2f2,packaging,0.9410,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1f5acf1720a31967,packaging,0.8996,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-1f675c5791ee12b9,packaging,0.6670,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-20019d9519978525,packaging,0.8579,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2008d7457b5af6e1,other,0.4302,,,
-200ea3433b1a1137,packaging,0.9356,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-20358eeb5c322a09,packaging,0.6419,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-207336126d1eb04d,packaging,0.9289,,,
-2094eb7810fcf67d,packaging,0.9202,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-20cc3e2694ce29f0,packaging,0.9888,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-20ea629098f25f56,packaging,0.9688,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2112d35491066595,packaging,0.6776,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-21cae39b472dd1a5,packaging,0.9226,,,
-21fa6e15c64e2365,other,0.5368,,,
-2201d305d9808906,other,0.5429,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2260d5e79d7d739b,packaging,0.8153,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-240c804a501ea9bc,packaging,0.9491,,,
-2462fd10f56ef70d,packaging,0.9630,,,
-253fa7e43bcc2793,packaging,0.9354,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-255afda61c3c55b5,packaging,0.6195,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-25626d3c97c211c0,packaging,0.9973,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-25a6955c61abb00c,packaging,0.8911,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-26a7a0018e3be618,packaging,0.9287,,,
-275066f1b4a37c5b,packaging,0.5261,,,
-275690e3a6fbf81e,packaging,0.9868,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-288dfc4dc224e598,packaging,0.8632,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-28a13a2deec3d31a,packaging,0.7248,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2910be3d410103a5,packaging,0.7832,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-291c805a0e58f1ac,packaging,0.9786,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-293be9116007d3db,packaging,0.8028,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-29ca4cc22d8aa756,packaging,0.5247,,,
-2a722f4bb5f0e738,packaging,0.9889,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2ac67ce8ce872dfa,packaging,0.9668,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2af8eb868c9628bf,packaging,0.9764,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2b0f0e6a64fb9a94,packaging,0.9182,,,
-2b12d8a33e5c8edb,packaging,0.8751,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2b6b0f124ee7158a,packaging,0.9413,,,
-2ba892cf47bf29ad,packaging,0.9470,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2c614ce90c4539a8,packaging,0.9900,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2cdd6fe2c4a35288,packaging,0.9281,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2d467f1e4bf43af5,packaging,0.9543,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2d6afc1e9efd96ea,packaging,0.9934,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2e1928e2267e0a9d,packaging,0.9578,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2e6a4eab6491bda0,packaging,0.9929,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2ebab87d72158ec1,packaging,0.9376,,,
-2ec1e79e1693fd4d,packaging,0.9735,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2ee521331ef989a5,packaging,0.9095,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2f944f3ca1f3d74b,packaging,0.8268,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-2f9dbc735ee2fa40,packaging,0.9686,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-309cdd959e3e6300,packaging,0.9764,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-30f7f25c925b2a4f,packaging,0.9446,,,
-3100f404e4d70e46,packaging,0.9934,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
-3300c5783960f424,packaging,0.8609,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3414280ead06350a,packaging,0.7978,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3422fe87e8556b55,packaging,0.9188,,,
-34a85994a52f7a73,packaging,0.8437,,,
-34b7461cfa238b00,packaging,0.9552,,,
-34e5e483d28a8dfb,packaging,0.8947,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-34e7bb26f4585f99,packaging,0.9644,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-354c8ea9b517348a,packaging,0.9870,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-35d714321cb4a745,packaging,0.8796,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-367c5e1fcd4f9d7c,packaging,0.7795,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-36926b01555d6808,packaging,0.9166,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-37a88653045893ef,packaging,0.9694,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-380d91af3492c319,packaging,0.9946,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-38a9b53ecf197236,packaging,0.7166,,,
-38fd850ec0457512,other,0.4566,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-39c58bcc293545c1,packaging,0.5360,,,
-39dab4d46c582057,packaging,0.7495,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3a94973f6b2a5a79,packaging,0.9107,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3abfc25f5182e805,packaging,0.9640,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3b33155adef10ac4,packaging,0.5063,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3b859de41654cba3,packaging,0.9734,,,
-3bdcbe36aa33ceda,packaging,0.6674,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3d8294bbc167aaa4,packaging,0.9018,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3d9ac8e2047cffe5,packaging,0.9353,,,
-3e0e80ba34179104,other,0.4987,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3e33347594c2e15a,other,0.5385,,,
-3e63f2e1c02a6d74,packaging,0.9842,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3e704e963f72f16d,packaging,0.8320,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3ed008a35df98307,packaging,0.6241,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-3fc64e4adc2fe22a,packaging,0.9798,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4067236b125a3991,packaging,0.9309,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-408d41147f6e7cb1,packaging,0.6928,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-40da2d23c2166686,packaging,0.5698,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-40f4decb88232a71,packaging,0.5042,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-412b047ccc049357,packaging,0.9286,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-416439a697c6e97e,packaging,0.9911,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-42a5fb7452506bb8,packaging,0.9592,,,
-42d1352f9487d512,packaging,0.8037,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-42d1675a6fbdf40c,packaging,0.9927,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-437dfcacc0d6ef9e,packaging,0.9400,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4413c67decf47aa3,packaging,0.8960,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4428892818ee990c,packaging,0.9924,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-447917968e51c9d8,packaging,0.9116,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-44c11d75e0715770,packaging,0.9902,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-44e229b191c1ba69,packaging,0.9301,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-454e8b44fdacaeaa,packaging,0.9912,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-458a005b3a3c01ed,packaging,0.9855,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-45b0a071da84fe73,packaging,0.8818,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-45c4c01e180c40a6,packaging,0.8537,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-45c618c6797d9bb9,packaging,0.8308,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-45d4a6f65ebb60a2,packaging,0.9871,,,
-461a75fe9e800764,packaging,0.8963,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-46ead78ffedad585,packaging,0.9049,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-479aec62f229d0cc,packaging,0.9574,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-48bbed7e752c4790,packaging,0.9891,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-49bf89bff15af3db,packaging,0.9815,,,
-4ab2fff587be75f1,packaging,0.9123,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4ac6d3482c9355e6,other,0.6150,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4af30edc0ade9945,packaging,0.9823,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4b8385fe1d909180,packaging,0.8737,,,
-4c04fa424b3fa923,packaging,0.9674,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4da45ad66726d6b7,packaging,0.9833,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4ddc729f6deee899,packaging,0.9858,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4f137754b51217c8,packaging,0.9910,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4f1a5d91504cbea6,packaging,0.9551,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4f7e23dce3f24cfc,packaging,0.8819,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4fa01bb9193ac3c2,packaging,0.8717,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-4fd643135a04ef71,packaging,0.8289,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-50202a07042b702b,packaging,0.8492,,,
-51b10c5b5c528765,packaging,0.8887,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-51cccb5f384d0ab3,packaging,0.9054,,,
-51dffa080d1523fa,packaging,0.9572,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-520b5705aef5548d,packaging,0.5304,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5249d40d1adbefe6,packaging,0.8264,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-52b0aeb0e7fe72b9,packaging,0.9877,,,
-53a5a00c123f30d1,packaging,0.8370,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-55128959006e793a,packaging,0.9709,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-56e6eccda5faac36,packaging,0.9822,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-575af65011e3a8b4,other,0.4438,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-579d22ab48721d3f,packaging,0.9682,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-57dc3842097b0010,packaging,0.9813,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5827ce423e3b3814,packaging,0.7859,,,
-587f588f44a56dc7,packaging,0.9916,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-58aaf0e4f491e950,packaging,0.9671,,,
-58dc369b1f859d7f,packaging,0.9354,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-58f81c1e778c8f90,packaging,0.8678,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5924d6d93dba3428,packaging,0.8505,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5935d406f8192e34,packaging,0.8544,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5a1a4cf2902c32eb,packaging,0.9394,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5a7bdb1747a94ad8,packaging,0.9728,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5aadee734c1d4652,packaging,0.9469,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5b02e8826a4286fa,packaging,0.9342,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5b152c37f232029b,packaging,0.9557,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5b153a6af53cb7f4,packaging,0.6891,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5b3cf7ff50ef16be,packaging,0.9730,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5c3844ec5b1def9a,packaging,0.9484,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5cbd8c5619693feb,packaging,0.8718,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5de9c1443fc5ca5e,packaging,0.7376,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5e3b7e28a3ea8b49,packaging,0.8741,,,
-5ee56709bb3d3c2e,packaging,0.9375,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5ee739f7cc0e31ef,packaging,0.5438,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-5f1b38d76a99c645,packaging,0.9882,,,
-60f4db66a776e653,packaging,0.8274,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-61a88103f8375bca,packaging,0.8532,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6217873df5df4ed3,packaging,0.9749,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-622407a0eab33008,packaging,0.6972,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6254fe5ef6e8324d,packaging,0.9609,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-627b3a443c7ce01c,packaging,0.9619,,,
-630aa6c0b469ce9e,packaging,0.9642,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-635c80b4c2a5c7a0,packaging,0.9143,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6391aab011b27cae,packaging,0.9495,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-63a895e76701f405,packaging,0.9970,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-644a9ab38ccff86c,blister,0.7820,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-646244d87279afa6,packaging,0.8703,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6480857b814ea62d,packaging,0.9614,,,
-64d731bfe17ffea5,packaging,0.7739,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-65416fd8f98248cf,packaging,0.9919,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-65b5ae9da122b021,packaging,0.8673,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-66076ae3c1e40e27,packaging,0.9684,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-677cabc87662998c,packaging,0.9749,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-679017e251ec25c0,packaging,0.8555,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-679713e52d21df73,packaging,0.9821,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6805e77bb71bcb85,packaging,0.6007,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6815163f20dc821d,packaging,0.7571,,,
-684a78aaaa20b52c,packaging,0.9406,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-68720e3b30bc432b,packaging,0.9884,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6884de1fa7d80474,packaging,0.9533,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-695a9ef78bcd393c,packaging,0.8441,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-698d12be0245d35d,packaging,0.9756,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-69e104986f3938ba,packaging,0.9427,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-69ec06430130688b,packaging,0.9676,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-69f1534eb9ccecc3,packaging,0.9110,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6b5c19bf525112f7,packaging,0.9171,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6b8137d2829d933e,packaging,0.7487,,,
-6b8a478acbbb7bb0,packaging,0.9626,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6bc519ae6fdacc6b,packaging,0.9978,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6c1c71b8c808110c,packaging,0.9749,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6c5800d58697436e,packaging,0.9899,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6c8cf8edcb10d83e,packaging,0.8884,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6cd88a6423d52feb,packaging,0.6266,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6cebcec5feffe0bb,packaging,0.8797,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6d357eec722840ce,packaging,0.5511,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6df13c6bcdfcebd2,packaging,0.9705,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6e009f337760b4be,packaging,0.8709,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6e1548ad04657340,packaging,0.6214,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6e62ca49bd549d45,packaging,0.9575,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6ea18164bed55234,packaging,0.9060,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6eff589a98b26530,packaging,0.8633,,,
-6f0d18bcf818c8cd,packaging,0.8772,,,
-6f5c9c17d6a3598e,other,0.7817,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6f8e8c327f3ea77c,packaging,0.9238,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-6ffa68ecdeb2d659,packaging,0.5708,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-702156e5b84e96de,packaging,0.9123,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-70e6943e9fd4c3d8,packaging,0.9857,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-70e8bbef87a2327d,packaging,0.9891,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-710b850c91a6137d,other,0.6722,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-71973ced3abb4cff,packaging,0.9901,,,
-7198b9275f25e6f3,packaging,0.8179,,,
-719f3a0d73638143,packaging,0.9932,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-720ac08dd9c0d056,packaging,0.9241,,,
-729216ecc7f7bce1,packaging,0.7909,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-72b346542b7987bf,packaging,0.6884,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-73e47911c9138484,packaging,0.7075,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-73fc436934df5df0,packaging,0.7956,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-740bc629a4d5ffd1,packaging,0.9573,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7451f08054e0f788,packaging,0.9702,,,
-746c939cfff5d769,packaging,0.9939,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-74818487ac4333a5,packaging,0.7296,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-749803ca8022d462,packaging,0.9816,,,
-74f305d35a3e1e1e,packaging,0.9306,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-74f527d33b374636,packaging,0.9953,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-75d4a02cfe32a814,packaging,0.9827,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-75e47d2e30b9e960,packaging,0.9128,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7611fcce8b5439c1,packaging,0.9887,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-77147fdc1a7cc46a,packaging,0.9759,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-77aae639708cf437,packaging,0.7800,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-78b202187cfb8139,packaging,0.9841,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-78cef03de7f67807,packaging,0.9120,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-79b66c48e968a1f2,packaging,0.9525,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7c05e652a76d05e4,packaging,0.9549,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7d158f03e5d532e5,packaging,0.8856,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7d171d0742cad3cb,packaging,0.8524,,,
-7d1fb0962cd6b17e,packaging,0.9414,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7d968afa5f38e4f8,packaging,0.8157,,,
-7daef7f065641a6e,packaging,0.9951,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7dd071c9a7ebdb9c,packaging,0.9625,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7dfa52e94409b143,packaging,0.9208,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7e25c0f591325a2c,packaging,0.9782,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7e390f587e28b109,packaging,0.9646,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-7e531c9553869d2b,packaging,0.9904,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-80232a5558b90831,packaging,0.7477,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8087ed55bc13ba5a,packaging,0.9816,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-80cace8503b487c2,packaging,0.9574,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-819f2c2602436653,packaging,0.8145,,,
-81aef4610594c25c,packaging,0.9633,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-81dbff3c1030e6d6,packaging,0.6678,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-825966e6a643c651,packaging,0.7038,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-825e83ee81d551f1,packaging,0.6822,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-82c992b9b60c10f2,packaging,0.9102,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-82cbdb44f6c9a4b4,packaging,0.8795,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-82d01fdd734f4771,packaging,0.8257,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-83209abb408c4f32,packaging,0.8714,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8371fdad12398e69,packaging,0.7593,,,
-83e887f6cab2775d,packaging,0.9241,,,
-84189fe11ec5ef94,packaging,0.7520,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-860f68a60d6f9fe0,packaging,0.9622,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8611e8f62e5fead1,packaging,0.9133,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-86263dda884204b4,packaging,0.9725,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-86a273856140bd7a,packaging,0.9839,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-86c767678dba0a16,packaging,0.8422,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-86c8913ec23ec421,packaging,0.9223,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8734f7f0a499316e,packaging,0.6310,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-87458b568aa417d2,packaging,0.9510,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-876cd00b34e1e7d9,packaging,0.9863,,,
-877f1bba99140485,packaging,0.9345,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-87e002d432d73cf2,packaging,0.9342,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-87e58a8922912429,packaging,0.5697,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-87ed2fef18721c02,packaging,0.9536,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-880b2158d7da4d10,packaging,0.8544,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8822fda7aa19d5d6,packaging,0.6923,,,
-886f3e48088ff402,packaging,0.9761,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-88b5e5c219fa1772,packaging,0.7710,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-88dadc982ff0e681,packaging,0.5409,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-88ec9de015f2e93f,packaging,0.9862,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-89567fc8c9448271,packaging,0.9587,,,
-896c3de897bbd541,packaging,0.7925,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-89a75ff5a2539faa,packaging,0.9707,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-89ae827347b8397a,packaging,0.7969,,,
-89d89e502812680e,packaging,0.9655,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-89f21e19019b55dd,packaging,0.9174,,,
-8a0eda4f42ab3c28,packaging,0.9815,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8b2f6cda14c99144,packaging,0.9791,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8bdda59c3649f2ec,packaging,0.5729,,,
-8e4264eee7a24193,packaging,0.9618,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8ec5bc64062c22a4,packaging,0.9881,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8ec891269f23a199,packaging,0.9494,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8f113517064fdc94,packaging,0.9702,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8f303a5f0ec1c7b9,packaging,0.9887,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8f8845e727e65881,other,0.5094,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8f90961b9ab810d3,packaging,0.9826,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8fdc4b3d4c7e4ab3,packaging,0.7382,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-8ff30d40f9d1b5c0,packaging,0.8962,,,
-907424a0638ecdb7,packaging,0.9017,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9088492f6570b1db,packaging,0.9795,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-915d350bc1c7b4b8,packaging,0.9486,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-915f48ddf5cfb6ff,packaging,0.9457,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-917b9a35916eaf41,packaging,0.9616,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-918f2c655f330c2e,packaging,0.5955,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-91ab1e70e2e76a42,packaging,0.9951,,,
-92264c96522f162a,packaging,0.8956,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9296a9af5b5fefe3,packaging,0.9857,,,
-931ca4fb33728f65,packaging,0.6152,,,
-931f207fb0c8ee60,packaging,0.9459,,,
-93532151f178e684,packaging,0.9786,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-94dbd87281824588,packaging,0.8969,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-94ffe261f4c619a6,packaging,0.9511,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-956563ef55801ca8,packaging,0.8990,,,
-956b9dae4bffe7a6,other,0.5445,,,
-958a5739a4dd98fa,other,0.6946,,,
-95ada61e9ff59ffd,packaging,0.8683,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-95f0954e1f12e66c,packaging,0.9575,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9603f2c5fef4b7fe,packaging,0.9155,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-975a83ff4dad2ff8,packaging,0.9874,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-979f9f2ac0eb805f,packaging,0.9751,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-97b7ae455cebc459,packaging,0.9883,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-97d81d321fff5060,packaging,0.9397,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9843cb5cbff3cd40,packaging,0.9772,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-98bf8dbb2458ac27,packaging,0.9859,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-98d45f5aff6ef4fb,packaging,0.7898,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-990ca861a6b1c10e,packaging,0.8875,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-993da4f85fdfc660,packaging,0.8304,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-99b9a44e2c9d1fab,packaging,0.6600,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9a0373855d63997d,packaging,0.9644,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9a1bcae2a342792a,packaging,0.9814,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9a297580ecb2b2f5,packaging,0.6776,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9ac3534d728b7341,packaging,0.8579,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9acdc817a25fde56,packaging,0.9887,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9bbb1dda3580a6ec,packaging,0.6913,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9bc8faeac01ab338,packaging,0.7217,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9d61c2e4e6a5edd2,packaging,0.9517,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9e1fd9217005e1fd,packaging,0.8814,,,
-9e2430f3b9073c74,packaging,0.9012,,,
-9e7b3f87c30b4211,packaging,0.8651,,,
-9ecaaf105eb128ca,packaging,0.9896,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9f0e1eb9227e234d,packaging,0.9635,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9f9a873f2393b56c,packaging,0.8620,,,
-9f9dae48182df43e,packaging,0.7908,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-9fbeecd300299f25,packaging,0.9098,,,
-9fec9ab6098fc457,packaging,0.9611,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a002c5116bee746e,packaging,0.9600,,,
-a085c44ea0cedd57,packaging,0.9930,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a1d68f095348f4dc,packaging,0.4873,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a1f9fea124fe1738,packaging,0.9889,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a30fadc8dc484a39,packaging,0.7699,,,
-a43377e0918d8238,packaging,0.9522,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a4b3e802d389b7d2,packaging,0.9756,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a4bdda97ddcc89de,packaging,0.8376,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a5376d1be0f5d601,packaging,0.9730,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a5623ed144ced74b,packaging,0.9812,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a576b7577672957a,packaging,0.9869,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a589be6f7e4d8922,packaging,0.9809,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a5fbc9d73b6ad62b,packaging,0.9508,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a68f5b1188b731ab,packaging,0.6348,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a6cde236093006a8,packaging,0.7664,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a6d787238db2bad2,packaging,0.6796,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a7e9a12a9096130d,packaging,0.9683,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a83ff85f73a8178a,packaging,0.8465,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a880996937bc887b,packaging,0.8863,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a894996c181b3b04,packaging,0.9433,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a8b53b1010b9500d,packaging,0.9872,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a8e1084ca768b5f0,packaging,0.4884,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a95159d3e5a59af5,other,0.3975,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a959bd418af66a57,packaging,0.8944,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a9a986852d0742a8,packaging,0.5250,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a9b7e15d94a60788,packaging,0.6641,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-a9e2dc38b069cf95,packaging,0.9103,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-aac69f12a5537fc3,packaging,0.9226,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-aae4f1894b6080fe,packaging,0.9574,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-aae5d92014221e6b,blister,0.6171,,,
-aaf5ccf86768e25b,packaging,0.9166,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ab114b491929ea11,packaging,0.6296,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ab44e4544f7cfc49,packaging,0.9463,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ac922f0ceb0388c2,packaging,0.9149,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ac92c51cde34710b,packaging,0.9800,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ace0f20a61139e50,packaging,0.8773,,,
-ad140a5e99e8e7a2,packaging,0.8624,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ad4512ac34766d9b,packaging,0.9336,,,
-ae108f22ccfc04d7,packaging,0.9171,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ae16a1dd4bc5609a,packaging,0.8544,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ae6716723a2fca29,packaging,0.9572,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ae75753d01d12309,packaging,0.7885,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-ae8f808c77296cdb,other,0.5744,,,
-af3b59ab2cdce880,other,0.3594,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b0119980e78b825d,packaging,0.5178,,,
-b03f44d71f0ba6ce,packaging,0.7725,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b10d3dfd1467a12b,packaging,0.9891,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b16d44a83b8f793a,packaging,0.9470,,,
-b17a520b9117164e,packaging,0.6796,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b1b4b398cbe4f270,packaging,0.5954,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b1e6f91292dbb619,packaging,0.8840,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b22584a1c60d7adb,packaging,0.9481,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
-b243926073a4e281,packaging,0.9785,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b334b7ebe90b004b,packaging,0.9230,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b3c5c062ab149a78,packaging,0.7706,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b3dc4d5bdad57e5d,packaging,0.9228,,,
-b3f839885c9d6b3d,packaging,0.7880,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b47eb71bdc988823,packaging,0.9795,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b5f66095835d4832,packaging,0.9697,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b6d106459a92134e,packaging,0.6690,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b6ddea410cc47909,other,0.4290,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b7518144e1f867d1,packaging,0.9787,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b7d2a48e1c7c1a21,packaging,0.8937,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b8779fa7b4968098,packaging,0.9314,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b883cf85e88490e2,packaging,0.9817,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b89cccceb72614df,packaging,0.9697,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b947c8fa96ae8d71,packaging,0.9566,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b977b8fb2f494184,packaging,0.9674,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-b9dff7a440029c7d,packaging,0.7327,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ba30bd89b83af135,packaging,0.7307,,,
-bb652373ef91a93e,packaging,0.8944,,,
-bba325f20c008aae,packaging,0.8700,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bc00744a50b0e0e8,packaging,0.9457,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bc48eefe8bafb677,packaging,0.7435,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bcd1b19fb9449707,packaging,0.9756,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bd138ef3d96f1abf,packaging,0.8945,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bd5020df1e298be0,blister,0.4895,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-be008ed9ad58c8fa,packaging,0.9677,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-bf0863a910d63592,packaging,0.9915,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c02b5cafbcbb37b6,packaging,0.9059,,,
-c037182127957d03,packaging,0.9654,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c0a62b68f9367d64,packaging,0.7520,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c0bb187962b9cc93,packaging,0.9692,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c12ec479a9ddfe52,packaging,0.9911,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c1400e32480ec1cc,packaging,0.9608,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c267c458df142fba,packaging,0.9579,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c2a3d980b64556b1,packaging,0.9789,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c2aed8fa7acb3c81,packaging,0.6280,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c422d16c1f9249f4,packaging,0.9083,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c42a225eaf9f7534,blister,0.4844,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c487a6df93f18f1e,packaging,0.7579,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c4a15643a2b727e8,packaging,0.8859,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c56bc88563bc0c15,other,0.3925,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c7086f8948c6526e,packaging,0.9935,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c8d1bc89639bcf61,packaging,0.9459,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c90635f079222a87,packaging,0.9717,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c93155d28b8d5711,packaging,0.9916,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-c982f8da2521447b,packaging,0.9853,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ca6d4703b72e590d,packaging,0.9399,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cab0209ef8ba5ad8,packaging,0.9870,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cb8b63df605290ef,packaging,0.8840,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cbde7c9808e8d82d,packaging,0.9144,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cc6093e5b9400497,packaging,0.9487,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ccb50b31a01830ea,packaging,0.9438,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cd14af91a5fdffc7,packaging,0.9241,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cde323a0ac7da26a,packaging,0.9530,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ce7df6fbb03c0233,packaging,0.9342,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cee1d35371e8187b,packaging,0.9261,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-cf14dfe5ed7a22ea,packaging,0.9806,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d026d4a488c9609f,packaging,0.9045,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d05fb0e375dfe36f,packaging,0.8906,,,
-d0f2189b7ad0f05b,packaging,0.9604,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d1c19db9fdf11893,packaging,0.9762,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d21ef9c3a1c174f6,packaging,0.9796,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d2c8846e388b077a,packaging,0.9825,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d35f3e744b2af84a,packaging,0.9817,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d3e1dc402de32447,packaging,0.7719,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d3f965ee7692c670,packaging,0.9919,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d4175d11c2ca4b1f,packaging,0.7947,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d44e5d3767592502,packaging,0.6971,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d45b1f22eb42d7c3,packaging,0.9039,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d4b2a815fd180711,packaging,0.8236,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d4b77e5237ef047a,packaging,0.9553,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d4b79f9a319cfff3,packaging,0.9434,,,
-d4cb19d90a0cf412,packaging,0.9135,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d4e55d5f3ba2abcc,packaging,0.9755,,,
-d5173ea68cf46397,packaging,0.8615,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d5ddbb35d5f39910,packaging,0.8993,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d5f422209edd244f,packaging,0.9861,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d60fbf28a113eae6,packaging,0.9840,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d677d14373ff635d,packaging,0.7148,,,
-d6d96de7df85d777,packaging,0.9078,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d71f1317f1fa45b9,packaging,0.9386,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d726bba7fcda16cf,packaging,0.9775,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d752490be2446bd8,packaging,0.8178,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d780ac805e33551a,blister,0.5336,,,
-d7c75ae38e555cec,packaging,0.9921,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d8a5f8bc8f47eac4,packaging,0.9684,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d8f471da16370722,packaging,0.9730,,,
-d91f329fa5d46559,packaging,0.9586,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-d96376e1a11c1a2f,packaging,0.7905,,,
-daf845b39c4ac877,packaging,0.9252,,,
-db4b066c3f9a2dcd,other,0.5575,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-dbc6e64b18e46fbe,packaging,0.9525,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-dcac71d41239983f,packaging,0.9369,,,
-dcfe52f4887e5f81,packaging,0.8868,,,
-dde822a18bd8ea6b,packaging,0.8775,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-de29f27c70692555,packaging,0.9390,,,
-df0afe4784344e8f,packaging,0.9644,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-df5ef297833d39a2,packaging,0.8636,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-df93b5ec07c62a69,packaging,0.9655,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-df97dfbcc6b5b9b8,packaging,0.8482,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-dfcb2dc3eb9d2a07,packaging,0.9951,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e0a31bac80e49ff3,packaging,0.9505,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e0ae9d97d4cdf516,packaging,0.9642,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e0ce468ef089da90,packaging,0.8958,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e0cec431f4f6f498,packaging,0.9411,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e0d041db3cc2d6a7,packaging,0.8018,,,
-e0f2c9bbd4cf7be9,packaging,0.9028,,,
-e0f90b6bf5c46caf,packaging,0.9925,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e1e52325324e5147,packaging,0.9388,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e22c338832c27362,packaging,0.9748,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e23e0aa184d3a98a,packaging,0.9664,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e26499ca92929a4e,packaging,0.9714,,,
-e290963444cba2bd,packaging,0.9885,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e356fea3bb10002e,packaging,0.8214,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e382a955d9cf9d78,packaging,0.8828,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e44749788bf7ecd8,packaging,0.9678,,,
-e6989a35d69d5dc9,packaging,0.9231,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e78b3bd00be54a13,packaging,0.9859,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e7d0e0a18fec519d,packaging,0.6931,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e818e6c8212ace8f,packaging,0.9196,,,
-e875e404392ecb7e,packaging,0.9938,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e8ac99a2ae942600,packaging,0.9797,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e8d85381cd7cf657,packaging,0.8233,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-e8fa1f708c85bd6e,packaging,0.9077,,,
-ea2533b209c8a11d,packaging,0.8736,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ea9398bf8989b651,packaging,0.9747,,,
-eaa448ba0977612f,packaging,0.4985,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ead4f7bf4acb9b11,packaging,0.7820,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-eae76b216e53b885,packaging,0.8196,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-eb51eaff99825106,other,0.8083,,,
-ec3147f125bab919,packaging,0.9926,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ecd3cc49a78bbb61,packaging,0.9709,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-eddbbb1996b5ce30,packaging,0.9951,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-eeca5665dd3f8648,packaging,0.4978,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ef028554982de308,packaging,0.8252,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ef53a6f16cdc18a5,packaging,0.9891,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ef971d75efca33cf,packaging,0.9630,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-eff39f6f4b762ecb,packaging,0.9724,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f0440c621e272bf6,packaging,0.9622,,,
-f0c74937ec4ea0c1,packaging,0.8967,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f14a8d741cbb1c25,packaging,0.9304,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f18b9760b2b88f48,packaging,0.9774,,,
-f1e98863e6d84a2f,packaging,0.7259,,,
-f27fbdb48b386bcd,packaging,0.8772,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f29675fbfbd46222,packaging,0.9617,,,
-f2dd679e903a1155,packaging,0.9894,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f2dd6ca5f7a70071,packaging,0.7774,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f2e6876ddf22e36b,packaging,0.9558,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f31665578f5bf7b4,packaging,0.7992,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f39227cb75f08389,packaging,0.9266,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f3b507fedeea5072,packaging,0.9118,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f522ff35f861bc05,packaging,0.9822,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f54e38cb60f2d41f,packaging,0.9597,,,
-f5f889dd41b373e4,packaging,0.8417,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f619cbddfc11367e,packaging,0.9572,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f6338979bc1b1e68,blister,0.3673,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f70a23eeaa661c62,packaging,0.9251,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f7310e6569d1aecf,packaging,0.8797,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f7d186678842024d,packaging,0.9807,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f82585b8c902ff7c,packaging,0.8710,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f832c44f59ff365b,packaging,0.8937,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f84a7e76cff91c2a,packaging,0.8271,,,
-f84e3d863a95f841,packaging,0.7959,,,
-f892c8393c4aaf56,packaging,0.7964,,,
-f9111b05249a0fac,packaging,0.7675,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f9ab954e3c8709d5,packaging,0.9807,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-f9eb808bd63bf748,packaging,0.4473,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fbe2d59b5843e23d,packaging,0.7118,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fbe833ad7220f304,packaging,0.9827,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fc13ac8abf96aec1,packaging,0.9341,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fc609d423691a04a,packaging,0.9402,,,
-fd0f0bb9af8748b9,packaging,0.9881,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fd8737e970b404ec,packaging,0.8349,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fdc9fbc764dab436,packaging,0.9403,,,
-fdf753d352a99bb3,packaging,0.7522,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fe17733423bc25c2,packaging,0.9339,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fe1bfe933ff6305e,packaging,0.9828,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-fee30300a761e7a6,packaging,0.8035,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ff06a0668e56dbdd,packaging,0.9317,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
-ff6376712a299cc6,packaging,0.9431,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+003f5d0050169b65,packaging,0.6684,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+00e72ba432c2b4e1,packaging,0.6038,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+01650d0229f7ecce,packaging,0.5040,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0248d0e1e8da24da,packaging,0.6882,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+02e5840f3e6f99f9,both,0.6044,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+039e68fd6ead7810,packaging,0.9155,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+03b813b7b36807d8,packaging,0.8369,packaging,Sophie Zhu,2026-10-10T15:33:41
+04286c29648d03e3,packaging,0.7625,blister,Sophie Zhu,2026-10-10T15:31:42
+0461d82bfbc43c54,packaging,0.7914,blister,Sophie Zhu,2026-10-10T15:31:46
+04622e33658d5e7e,packaging,0.8219,packaging,Sophie Zhu,2026-10-10T15:31:52
+0462de0485b9c36d,packaging,0.8787,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0508bd36f26dc529,packaging,0.8215,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+05659957ddbd60fe,both,0.7982,other,Sophie Zhu,2026-10-10T15:32:07
+06763e6078009ad0,packaging,0.8655,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+06c365761cf3cd8f,not_a_drug,0.3601,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+075b06c1a1995787,packaging,0.9569,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+079be8513dba00b9,packaging,0.7286,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+07f5ba905534414f,packaging,0.9181,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0824ea2c5b332750,packaging,0.6194,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0872245184ab773e,packaging,0.5563,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+08cb283a4553255a,packaging,0.8748,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0929d43c20c31c49,packaging,0.6561,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+092b637ef5cec9db,both,0.4506,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+096f15451fb4c7a7,packaging,0.8511,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+09810c673c6fe88a,packaging,0.3291,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+09bb3233e8f61203,packaging,0.7635,packaging,Sophie Zhu,2026-10-10T15:32:12
+09ceeec5ef2ceb25,both,0.5570,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0a29453673586e99,both,0.5383,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0a5bfa9d73b1bb99,packaging,0.7402,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0ad85291ed03ce70,packaging,0.5555,blister,Sophie Zhu,2026-10-10T15:32:18
+0bf6a6198fdc0749,packaging,0.6005,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c1be5430ea7b719,packaging,0.8783,blister,Sophie Zhu,2026-10-10T15:32:22
+0c2ab77d5f7e8676,packaging,0.8151,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c5a5d796e2a9c9a,packaging,0.6309,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c641a0ca3220d8c,packaging,0.5307,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c752bcf30437338,packaging,0.7354,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c7cc6302b8920b2,packaging,0.9679,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0c84b0f90652ebc1,packaging,0.7741,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0cde29d96f6987a6,packaging,0.8553,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0df07bb29f9c090d,packaging,0.8948,packaging,Sophie Zhu,2026-10-10T15:32:24
+0ed87f9fbcb687f9,packaging,0.5680,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0ef10c5cbb0acadb,packaging,0.6094,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0f2fbb209aae1b22,packaging,0.6043,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0f6977844e178030,packaging,0.6829,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+0f94da28a1553bdc,packaging,0.9264,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1085b24f0c0837ea,packaging,0.7455,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+109d5b8a7037f43f,packaging,0.4929,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+111d31b35adb23cb,packaging,0.8373,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+117317e50897e5bd,packaging,0.7040,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+11c1292b395ab911,both,0.6545,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+123e22e72a70f388,both,0.5320,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+128af52359016dd8,packaging,0.6317,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+12e7dbcba8402083,packaging,0.8165,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+12fe9b195e0c54e1,packaging,0.9499,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+13070e6c6bdb121a,packaging,0.7580,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+143383c470712775,packaging,0.7335,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+14ddb938ae17c266,packaging,0.6516,packaging,Sophie Zhu,2026-10-10T15:32:27
+1507efa429567568,packaging,0.9533,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+154cd3b015b4b08b,packaging,0.5844,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+16425d2bac3922fd,packaging,0.5735,blister,Sophie Zhu,2026-10-10T15:32:29
+169f416cb5d89d27,packaging,0.6290,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+17900709a0a00034,packaging,0.6617,packaging,Sophie Zhu,2026-10-10T15:32:35
+186a1beb266265e7,packaging,0.4603,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+19baafbf8abb5229,packaging,0.8942,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1ad4e03b5c3395f4,packaging,0.8411,packaging,Sophie Zhu,2026-10-10T15:32:36
+1b9d9732d8bdd872,packaging,0.7493,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1bb316f1cae62405,packaging,0.6359,packaging,Sophie Zhu,2026-10-10T15:32:37
+1c17db0f34a75fe9,packaging,0.7829,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1dfd755445b201fc,packaging,0.7347,packaging,Sophie Zhu,2026-10-10T15:32:39
+1e31fef127fbfc90,packaging,0.7302,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1e454359196591a0,packaging,0.9551,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1e6a7131ac588984,packaging,0.6534,blister,Sophie Zhu,2026-10-10T15:32:43
+1eae243b6abc9b62,packaging,0.4935,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1f293e3e71cfe2f2,packaging,0.6193,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1f5acf1720a31967,packaging,0.6437,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+1f675c5791ee12b9,packaging,0.4499,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+20019d9519978525,both,0.5040,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2008d7457b5af6e1,other,0.2482,blister,Sophie Zhu,2026-10-10T15:32:47
+200ea3433b1a1137,packaging,0.7291,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+20358eeb5c322a09,packaging,0.5261,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+207336126d1eb04d,packaging,0.7548,packaging,Sophie Zhu,2026-10-10T15:32:49
+2094eb7810fcf67d,packaging,0.6869,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+20cc3e2694ce29f0,packaging,0.9602,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+20ea629098f25f56,packaging,0.9116,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2112d35491066595,both,0.6558,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+21cae39b472dd1a5,packaging,0.7397,blister,Sophie Zhu,2026-10-10T15:32:52
+21fa6e15c64e2365,other,0.3466,packaging,Sophie Zhu,2026-10-10T15:33:46
+2201d305d9808906,not_a_drug,0.4553,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2260d5e79d7d739b,packaging,0.6926,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+240c804a501ea9bc,packaging,0.9138,packaging,Sophie Zhu,2026-10-10T15:33:47
+2462fd10f56ef70d,packaging,0.7953,packaging,Sophie Zhu,2026-10-10T15:33:48
+253fa7e43bcc2793,packaging,0.7897,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+255afda61c3c55b5,both,0.4027,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+25626d3c97c211c0,packaging,0.9343,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+25a6955c61abb00c,packaging,0.5337,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+26a7a0018e3be618,packaging,0.7798,packaging,Sophie Zhu,2026-10-10T15:33:50
+275066f1b4a37c5b,packaging,0.4308,packaging,Sophie Zhu,2026-10-10T15:33:51
+275690e3a6fbf81e,packaging,0.8277,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+288dfc4dc224e598,packaging,0.5000,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+28a13a2deec3d31a,packaging,0.4787,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2910be3d410103a5,packaging,0.6357,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+291c805a0e58f1ac,packaging,0.8540,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+293be9116007d3db,packaging,0.5536,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+29ca4cc22d8aa756,packaging,0.4166,other,Sophie Zhu,2026-10-10T15:33:54
+2a722f4bb5f0e738,packaging,0.9327,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2ac67ce8ce872dfa,packaging,0.7389,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2af8eb868c9628bf,packaging,0.9216,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2b0f0e6a64fb9a94,packaging,0.5889,packaging,Sophie Zhu,2026-10-10T15:34:01
+2b12d8a33e5c8edb,both,0.5367,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2b6b0f124ee7158a,packaging,0.6878,blister,Sophie Zhu,2026-10-10T15:34:05
+2ba892cf47bf29ad,packaging,0.7357,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2c614ce90c4539a8,packaging,0.9634,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2cdd6fe2c4a35288,packaging,0.8024,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2d467f1e4bf43af5,packaging,0.8986,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2d6afc1e9efd96ea,packaging,0.5771,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2e1928e2267e0a9d,packaging,0.7277,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2e6a4eab6491bda0,packaging,0.9350,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2ebab87d72158ec1,packaging,0.7287,packaging,Sophie Zhu,2026-10-10T15:34:07
+2ec1e79e1693fd4d,packaging,0.9456,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2ee521331ef989a5,packaging,0.7090,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2f944f3ca1f3d74b,packaging,0.7216,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+2f9dbc735ee2fa40,packaging,0.8086,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+309cdd959e3e6300,packaging,0.9259,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+30f7f25c925b2a4f,packaging,0.6012,packaging,Sophie Zhu,2026-10-10T15:34:08
+3100f404e4d70e46,packaging,0.9102,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:32
+3300c5783960f424,both,0.5289,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3414280ead06350a,packaging,0.5924,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3422fe87e8556b55,packaging,0.6700,packaging,Sophie Zhu,2026-10-10T15:33:22
+34a85994a52f7a73,packaging,0.7427,packaging,Sophie Zhu,2026-10-10T15:33:23
+34b7461cfa238b00,packaging,0.8561,packaging,Sophie Zhu,2026-10-10T15:33:25
+34e5e483d28a8dfb,packaging,0.8610,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+34e7bb26f4585f99,packaging,0.9299,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+354c8ea9b517348a,packaging,0.9524,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+35d714321cb4a745,packaging,0.7324,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+367c5e1fcd4f9d7c,both,0.5818,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+36926b01555d6808,packaging,0.5113,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+37a88653045893ef,packaging,0.9517,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+380d91af3492c319,packaging,0.7710,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+38a9b53ecf197236,both,0.4270,packaging,Sophie Zhu,2026-10-10T15:34:09
+38fd850ec0457512,other,0.3388,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+39c58bcc293545c1,packaging,0.3402,packaging,Sophie Zhu,2026-10-10T15:34:12
+39dab4d46c582057,both,0.4343,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3a94973f6b2a5a79,packaging,0.8790,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3abfc25f5182e805,packaging,0.7326,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3b33155adef10ac4,both,0.2981,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3b859de41654cba3,packaging,0.9453,packaging,Sophie Zhu,2026-10-10T15:34:13
+3bdcbe36aa33ceda,packaging,0.5833,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3d8294bbc167aaa4,packaging,0.6332,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3d9ac8e2047cffe5,both,0.5422,packaging,Sophie Zhu,2026-10-10T15:34:14
+3e0e80ba34179104,other,0.3247,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3e33347594c2e15a,other,0.4257,other,Sophie Zhu,2026-10-10T15:34:15
+3e63f2e1c02a6d74,packaging,0.8885,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3e704e963f72f16d,packaging,0.5159,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3ed008a35df98307,packaging,0.5122,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+3fc64e4adc2fe22a,packaging,0.7837,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4067236b125a3991,packaging,0.7152,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+408d41147f6e7cb1,both,0.8141,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+40da2d23c2166686,packaging,0.4555,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+40f4decb88232a71,packaging,0.4510,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+412b047ccc049357,packaging,0.7583,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+416439a697c6e97e,packaging,0.9775,packaging,Sophie Zhu,2026-10-10T15:50:51
+42a5fb7452506bb8,packaging,0.9331,blister,Sophie Zhu,2026-10-10T15:50:56
+42d1352f9487d512,both,0.4576,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+42d1675a6fbdf40c,packaging,0.8935,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+437dfcacc0d6ef9e,packaging,0.6280,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4413c67decf47aa3,packaging,0.4702,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4428892818ee990c,packaging,0.6469,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+447917968e51c9d8,packaging,0.8349,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+44c11d75e0715770,packaging,0.9042,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+44e229b191c1ba69,packaging,0.8557,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+454e8b44fdacaeaa,packaging,0.9345,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+458a005b3a3c01ed,packaging,0.9076,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+45b0a071da84fe73,packaging,0.6611,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+45c4c01e180c40a6,packaging,0.7458,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+45c618c6797d9bb9,packaging,0.6947,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+45d4a6f65ebb60a2,packaging,0.5531,both,Sophie Zhu,2026-10-10T15:50:59
+461a75fe9e800764,packaging,0.7328,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+46ead78ffedad585,packaging,0.6268,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+479aec62f229d0cc,packaging,0.5641,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+48bbed7e752c4790,packaging,0.9114,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+49bf89bff15af3db,packaging,0.9169,both,Sophie Zhu,2026-10-10T15:51:02
+4ab2fff587be75f1,both,0.5446,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4ac6d3482c9355e6,other,0.3845,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4af30edc0ade9945,packaging,0.8578,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4b8385fe1d909180,packaging,0.7916,blister,Sophie Zhu,2026-10-10T15:51:11
+4c04fa424b3fa923,packaging,0.9451,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4da45ad66726d6b7,packaging,0.8293,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4ddc729f6deee899,packaging,0.9027,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4f137754b51217c8,packaging,0.8036,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4f1a5d91504cbea6,packaging,0.8736,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4f7e23dce3f24cfc,both,0.7810,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4fa01bb9193ac3c2,packaging,0.7111,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+4fd643135a04ef71,packaging,0.5920,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+50202a07042b702b,packaging,0.7805,packaging,Sophie Zhu,2026-10-10T15:51:18
+51b10c5b5c528765,both,0.5923,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+51cccb5f384d0ab3,packaging,0.7547,both,Sophie Zhu,2026-10-10T15:51:24
+51dffa080d1523fa,packaging,0.5533,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+520b5705aef5548d,both,0.6572,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5249d40d1adbefe6,packaging,0.6729,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+52b0aeb0e7fe72b9,packaging,0.8326,both,Sophie Zhu,2026-10-10T15:51:26
+53a5a00c123f30d1,packaging,0.6644,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+55128959006e793a,packaging,0.7591,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+56e6eccda5faac36,packaging,0.8052,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+575af65011e3a8b4,not_a_drug,0.3349,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+579d22ab48721d3f,packaging,0.5621,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+57dc3842097b0010,packaging,0.9023,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5827ce423e3b3814,packaging,0.7011,blister,Sophie Zhu,2026-10-10T15:51:29
+587f588f44a56dc7,packaging,0.8281,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+58aaf0e4f491e950,packaging,0.9023,blister,Sophie Zhu,2026-10-10T15:51:31
+58dc369b1f859d7f,packaging,0.8698,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+58f81c1e778c8f90,packaging,0.6055,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5924d6d93dba3428,packaging,0.6336,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5935d406f8192e34,packaging,0.7565,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5a1a4cf2902c32eb,packaging,0.7176,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5a7bdb1747a94ad8,packaging,0.7219,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5aadee734c1d4652,packaging,0.6772,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5b02e8826a4286fa,packaging,0.7959,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5b152c37f232029b,packaging,0.7380,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5b153a6af53cb7f4,both,0.7446,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5b3cf7ff50ef16be,packaging,0.7231,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5c3844ec5b1def9a,packaging,0.7294,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5cbd8c5619693feb,both,0.7296,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5de9c1443fc5ca5e,packaging,0.5731,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5e3b7e28a3ea8b49,both,0.5794,both,Sophie Zhu,2026-10-10T15:51:33
+5ee56709bb3d3c2e,packaging,0.5871,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5ee739f7cc0e31ef,packaging,0.4426,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+5f1b38d76a99c645,packaging,0.7040,both,Sophie Zhu,2026-10-10T15:54:17
+60f4db66a776e653,packaging,0.5967,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+61a88103f8375bca,packaging,0.5480,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6217873df5df4ed3,packaging,0.7468,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+622407a0eab33008,packaging,0.5658,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6254fe5ef6e8324d,packaging,0.8400,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+627b3a443c7ce01c,packaging,0.7432,packaging,Sophie Zhu,2026-10-10T15:54:19
+630aa6c0b469ce9e,packaging,0.8120,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+635c80b4c2a5c7a0,packaging,0.6621,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6391aab011b27cae,both,0.5499,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+63a895e76701f405,packaging,0.9192,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+644a9ab38ccff86c,blister,0.6384,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+646244d87279afa6,packaging,0.5141,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6480857b814ea62d,packaging,0.6480,both,Sophie Zhu,2026-10-10T15:54:22
+64d731bfe17ffea5,packaging,0.6064,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+65416fd8f98248cf,packaging,0.8335,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+65b5ae9da122b021,packaging,0.8249,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+66076ae3c1e40e27,packaging,0.6906,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+677cabc87662998c,packaging,0.8470,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+679017e251ec25c0,packaging,0.8030,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+679713e52d21df73,packaging,0.9253,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6805e77bb71bcb85,packaging,0.5111,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6815163f20dc821d,packaging,0.6783,packaging,Sophie Zhu,2026-10-10T15:54:23
+684a78aaaa20b52c,packaging,0.5982,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+68720e3b30bc432b,both,0.7502,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6884de1fa7d80474,packaging,0.9291,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+695a9ef78bcd393c,packaging,0.7568,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+698d12be0245d35d,packaging,0.7716,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+69e104986f3938ba,packaging,0.9133,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+69ec06430130688b,packaging,0.8497,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+69f1534eb9ccecc3,packaging,0.8742,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6b5c19bf525112f7,packaging,0.7919,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6b8137d2829d933e,packaging,0.6738,blister,Sophie Zhu,2026-10-10T15:54:25
+6b8a478acbbb7bb0,packaging,0.7958,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6bc519ae6fdacc6b,packaging,0.9651,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6c1c71b8c808110c,packaging,0.8302,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6c5800d58697436e,packaging,0.9428,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6c8cf8edcb10d83e,packaging,0.6882,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6cd88a6423d52feb,packaging,0.5127,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6cebcec5feffe0bb,packaging,0.8259,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6d357eec722840ce,packaging,0.3670,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6df13c6bcdfcebd2,packaging,0.8555,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6e009f337760b4be,both,0.4550,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6e1548ad04657340,packaging,0.4258,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6e62ca49bd549d45,packaging,0.6299,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6ea18164bed55234,packaging,0.7599,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6eff589a98b26530,packaging,0.7809,packaging,Sophie Zhu,2026-10-10T15:54:27
+6f0d18bcf818c8cd,both,0.6140,both,Sophie Zhu,2026-10-10T15:54:32
+6f5c9c17d6a3598e,not_a_drug,0.5130,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6f8e8c327f3ea77c,packaging,0.7873,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+6ffa68ecdeb2d659,both,0.4342,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+702156e5b84e96de,both,0.7418,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+70e6943e9fd4c3d8,packaging,0.8504,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+70e8bbef87a2327d,packaging,0.8999,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+710b850c91a6137d,other,0.5926,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+71973ced3abb4cff,packaging,0.9452,packaging,Sophie Zhu,2026-10-10T15:54:33
+7198b9275f25e6f3,packaging,0.7169,packaging,Sophie Zhu,2026-10-10T15:54:36
+719f3a0d73638143,packaging,0.9313,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+720ac08dd9c0d056,packaging,0.7649,both,Sophie Zhu,2026-10-10T15:54:38
+729216ecc7f7bce1,both,0.9220,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+72b346542b7987bf,both,0.6318,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+73e47911c9138484,packaging,0.4721,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+73fc436934df5df0,packaging,0.6740,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+740bc629a4d5ffd1,both,0.5755,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7451f08054e0f788,packaging,0.9134,blister,Sophie Zhu,2026-10-10T15:54:41
+746c939cfff5d769,packaging,0.9613,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+74818487ac4333a5,packaging,0.5720,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+749803ca8022d462,packaging,0.8414,packaging,Sophie Zhu,2026-10-10T15:54:42
+74f305d35a3e1e1e,both,0.6075,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+74f527d33b374636,packaging,0.9739,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+75d4a02cfe32a814,packaging,0.9422,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+75e47d2e30b9e960,packaging,0.8654,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7611fcce8b5439c1,packaging,0.9374,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+77147fdc1a7cc46a,packaging,0.5485,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+77aae639708cf437,both,0.5169,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+78b202187cfb8139,packaging,0.9649,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+78cef03de7f67807,packaging,0.7053,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+79b66c48e968a1f2,packaging,0.6415,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7c05e652a76d05e4,packaging,0.6853,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7d158f03e5d532e5,packaging,0.5995,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7d171d0742cad3cb,both,0.5881,both,Sophie Zhu,2026-10-10T15:54:45
+7d1fb0962cd6b17e,both,0.5173,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7d968afa5f38e4f8,packaging,0.7835,blister,Sophie Zhu,2026-10-10T15:54:47
+7daef7f065641a6e,packaging,0.7979,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7dd071c9a7ebdb9c,packaging,0.8953,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7dfa52e94409b143,packaging,0.7063,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7e25c0f591325a2c,packaging,0.8089,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7e390f587e28b109,packaging,0.9460,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+7e531c9553869d2b,packaging,0.8616,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+80232a5558b90831,packaging,0.5613,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8087ed55bc13ba5a,packaging,0.6010,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+80cace8503b487c2,packaging,0.7473,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+819f2c2602436653,packaging,0.4730,blister,Sophie Zhu,2026-10-10T15:54:49
+81aef4610594c25c,packaging,0.8814,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+81dbff3c1030e6d6,both,0.4835,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+825966e6a643c651,packaging,0.6348,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+825e83ee81d551f1,packaging,0.4396,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+82c992b9b60c10f2,both,0.5261,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+82cbdb44f6c9a4b4,packaging,0.7188,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+82d01fdd734f4771,packaging,0.5467,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+83209abb408c4f32,packaging,0.5677,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8371fdad12398e69,packaging,0.6021,blister,Sophie Zhu,2026-10-10T15:54:54
+83e887f6cab2775d,packaging,0.8013,both,Sophie Zhu,2026-10-10T15:54:57
+84189fe11ec5ef94,both,0.4365,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+860f68a60d6f9fe0,packaging,0.8797,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8611e8f62e5fead1,both,0.6393,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+86263dda884204b4,packaging,0.8024,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+86a273856140bd7a,packaging,0.8617,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+86c767678dba0a16,packaging,0.6828,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+86c8913ec23ec421,packaging,0.8514,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8734f7f0a499316e,packaging,0.3627,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+87458b568aa417d2,packaging,0.6558,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+876cd00b34e1e7d9,packaging,0.7531,both,Sophie Zhu,2026-10-10T15:55:00
+877f1bba99140485,packaging,0.6474,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+87e002d432d73cf2,packaging,0.8713,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+87e58a8922912429,packaging,0.4222,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+87ed2fef18721c02,packaging,0.6434,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+880b2158d7da4d10,packaging,0.6977,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8822fda7aa19d5d6,packaging,0.5319,blister,Sophie Zhu,2026-10-10T15:55:06
+886f3e48088ff402,packaging,0.8111,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+88b5e5c219fa1772,packaging,0.6255,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+88dadc982ff0e681,packaging,0.4210,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+88ec9de015f2e93f,packaging,0.8560,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+89567fc8c9448271,packaging,0.8828,blister,Sophie Zhu,2026-10-10T15:55:08
+896c3de897bbd541,both,0.5558,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+89a75ff5a2539faa,packaging,0.8666,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+89ae827347b8397a,packaging,0.7277,blister,Sophie Zhu,2026-10-10T15:55:11
+89d89e502812680e,packaging,0.8963,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+89f21e19019b55dd,packaging,0.7881,packaging,Sophie Zhu,2026-10-10T15:55:14
+8a0eda4f42ab3c28,both,0.6269,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8b2f6cda14c99144,packaging,0.9000,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8bdda59c3649f2ec,both,0.6478,both,Sophie Zhu,2026-10-10T15:55:16
+8e4264eee7a24193,packaging,0.5478,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8ec5bc64062c22a4,packaging,0.9515,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8ec891269f23a199,packaging,0.8385,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8f113517064fdc94,packaging,0.8939,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8f303a5f0ec1c7b9,packaging,0.5953,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8f8845e727e65881,other,0.4773,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8f90961b9ab810d3,packaging,0.5580,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8fdc4b3d4c7e4ab3,both,0.4414,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+8ff30d40f9d1b5c0,packaging,0.6176,blister,Sophie Zhu,2026-10-10T15:56:53
+907424a0638ecdb7,packaging,0.7180,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9088492f6570b1db,packaging,0.6704,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+915d350bc1c7b4b8,packaging,0.9306,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+915f48ddf5cfb6ff,packaging,0.4938,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+917b9a35916eaf41,packaging,0.7721,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+918f2c655f330c2e,packaging,0.4434,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+91ab1e70e2e76a42,packaging,0.9137,blister,Sophie Zhu,2026-10-10T15:56:56
+92264c96522f162a,packaging,0.6146,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9296a9af5b5fefe3,packaging,0.8675,packaging,Sophie Zhu,2026-10-10T15:57:01
+931ca4fb33728f65,packaging,0.4196,packaging,Sophie Zhu,2026-10-10T15:57:03
+931f207fb0c8ee60,packaging,0.8942,blister,Sophie Zhu,2026-10-10T15:57:05
+93532151f178e684,packaging,0.8625,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+94dbd87281824588,packaging,0.8192,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+94ffe261f4c619a6,packaging,0.8602,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+956563ef55801ca8,packaging,0.6535,packaging,Sophie Zhu,2026-10-10T15:57:06
+956b9dae4bffe7a6,other,0.3790,packaging,Sophie Zhu,2026-10-10T15:57:10
+958a5739a4dd98fa,not_a_drug,0.4305,packaging,Sophie Zhu,2026-10-10T15:57:22
+95ada61e9ff59ffd,packaging,0.4925,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+95f0954e1f12e66c,packaging,0.7679,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9603f2c5fef4b7fe,packaging,0.5499,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+975a83ff4dad2ff8,packaging,0.8249,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+979f9f2ac0eb805f,packaging,0.9263,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+97b7ae455cebc459,packaging,0.9536,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+97d81d321fff5060,both,0.6111,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9843cb5cbff3cd40,packaging,0.6164,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+98bf8dbb2458ac27,packaging,0.9283,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+98d45f5aff6ef4fb,packaging,0.6616,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+990ca861a6b1c10e,packaging,0.6014,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+993da4f85fdfc660,packaging,0.6068,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+99b9a44e2c9d1fab,packaging,0.5063,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9a0373855d63997d,packaging,0.4973,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9a1bcae2a342792a,packaging,0.9037,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9a297580ecb2b2f5,both,0.5145,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9ac3534d728b7341,packaging,0.7591,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9acdc817a25fde56,packaging,0.7383,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9bbb1dda3580a6ec,packaging,0.4673,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9bc8faeac01ab338,packaging,0.4589,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9d61c2e4e6a5edd2,packaging,0.9085,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9e1fd9217005e1fd,packaging,0.8042,packaging,Sophie Zhu,2026-10-10T15:57:35
+9e2430f3b9073c74,packaging,0.6250,blister,Sophie Zhu,2026-10-10T15:57:37
+9e7b3f87c30b4211,both,0.6189,blister,Sophie Zhu,2026-10-10T15:57:41
+9ecaaf105eb128ca,packaging,0.9325,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9f0e1eb9227e234d,packaging,0.8977,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9f9a873f2393b56c,packaging,0.7925,both,Sophie Zhu,2026-10-10T15:57:44
+9f9dae48182df43e,both,0.5950,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+9fbeecd300299f25,packaging,0.7584,both,Sophie Zhu,2026-10-10T15:57:46
+9fec9ab6098fc457,both,0.7003,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a002c5116bee746e,both,0.5206,both,Sophie Zhu,2026-10-10T15:57:47
+a085c44ea0cedd57,packaging,0.7834,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a1d68f095348f4dc,both,0.6503,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a1f9fea124fe1738,packaging,0.8381,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a30fadc8dc484a39,both,0.5240,both,Sophie Zhu,2026-10-10T15:57:50
+a43377e0918d8238,packaging,0.8983,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a4b3e802d389b7d2,both,0.5765,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a4bdda97ddcc89de,packaging,0.7180,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a5376d1be0f5d601,packaging,0.8535,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a5623ed144ced74b,packaging,0.9663,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a576b7577672957a,packaging,0.8686,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a589be6f7e4d8922,packaging,0.9688,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a5fbc9d73b6ad62b,packaging,0.5520,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a68f5b1188b731ab,both,0.3035,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a6cde236093006a8,packaging,0.6382,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a6d787238db2bad2,packaging,0.6093,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a7e9a12a9096130d,packaging,0.6100,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a83ff85f73a8178a,packaging,0.7294,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a880996937bc887b,both,0.4558,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a894996c181b3b04,packaging,0.8514,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a8b53b1010b9500d,packaging,0.9461,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a8e1084ca768b5f0,both,0.6084,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a95159d3e5a59af5,not_a_drug,0.3798,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a959bd418af66a57,both,0.5480,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a9a986852d0742a8,packaging,0.3370,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a9b7e15d94a60788,packaging,0.5042,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+a9e2dc38b069cf95,packaging,0.5194,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+aac69f12a5537fc3,packaging,0.8862,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+aae4f1894b6080fe,packaging,0.7801,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+aae5d92014221e6b,blister,0.3886,blister,Sophie Zhu,2026-10-10T15:57:52
+aaf5ccf86768e25b,packaging,0.6964,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ab114b491929ea11,packaging,0.4796,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ab44e4544f7cfc49,packaging,0.6112,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ac922f0ceb0388c2,packaging,0.8904,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ac92c51cde34710b,packaging,0.9515,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ace0f20a61139e50,packaging,0.7279,packaging,Sophie Zhu,2026-10-10T15:57:55
+ad140a5e99e8e7a2,both,0.4634,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ad4512ac34766d9b,both,0.6080,both,Sophie Zhu,2026-10-10T15:57:58
+ae108f22ccfc04d7,both,0.5611,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ae16a1dd4bc5609a,packaging,0.6973,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ae6716723a2fca29,packaging,0.8647,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ae75753d01d12309,packaging,0.6507,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+ae8f808c77296cdb,other,0.4160,not_a_drug,Sophie Zhu,2026-10-10T15:58:00
+af3b59ab2cdce880,other,0.2396,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b0119980e78b825d,packaging,0.4162,packaging,Sophie Zhu,2026-10-10T15:58:04
+b03f44d71f0ba6ce,both,0.4529,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b10d3dfd1467a12b,packaging,0.9269,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b16d44a83b8f793a,packaging,0.7571,blister,Sophie Zhu,2026-10-10T15:58:05
+b17a520b9117164e,packaging,0.5515,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b1b4b398cbe4f270,packaging,0.5663,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b1e6f91292dbb619,packaging,0.7899,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b22584a1c60d7adb,packaging,0.6346,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:33
+b243926073a4e281,packaging,0.9279,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b334b7ebe90b004b,both,0.5416,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b3c5c062ab149a78,packaging,0.4175,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b3dc4d5bdad57e5d,packaging,0.6500,blister,Sophie Zhu,2026-10-10T15:58:08
+b3f839885c9d6b3d,both,0.7643,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b47eb71bdc988823,packaging,0.8070,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b5f66095835d4832,packaging,0.8523,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b6d106459a92134e,both,0.6859,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b6ddea410cc47909,not_a_drug,0.3348,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b7518144e1f867d1,packaging,0.8360,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b7d2a48e1c7c1a21,packaging,0.7431,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b8779fa7b4968098,packaging,0.7306,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b883cf85e88490e2,packaging,0.9499,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b89cccceb72614df,both,0.5075,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b947c8fa96ae8d71,packaging,0.6589,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b977b8fb2f494184,packaging,0.9271,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+b9dff7a440029c7d,both,0.7054,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ba30bd89b83af135,packaging,0.5884,packaging,Sophie Zhu,2026-10-10T15:58:09
+bb652373ef91a93e,packaging,0.8371,blister,Sophie Zhu,2026-10-10T15:58:12
+bba325f20c008aae,both,0.6276,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bc00744a50b0e0e8,packaging,0.6906,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bc48eefe8bafb677,packaging,0.5850,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bcd1b19fb9449707,packaging,0.8535,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bd138ef3d96f1abf,packaging,0.6716,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bd5020df1e298be0,not_a_drug,0.3350,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+be008ed9ad58c8fa,both,0.4968,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+bf0863a910d63592,packaging,0.9381,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c02b5cafbcbb37b6,packaging,0.6270,blister,Sophie Zhu,2026-10-10T15:58:14
+c037182127957d03,packaging,0.8679,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c0a62b68f9367d64,packaging,0.4343,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c0bb187962b9cc93,packaging,0.7275,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c12ec479a9ddfe52,packaging,0.9221,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c1400e32480ec1cc,both,0.5546,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c267c458df142fba,packaging,0.6606,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c2a3d980b64556b1,packaging,0.9232,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c2aed8fa7acb3c81,packaging,0.4377,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c422d16c1f9249f4,packaging,0.8366,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c42a225eaf9f7534,not_a_drug,0.4154,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c487a6df93f18f1e,both,0.4759,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c4a15643a2b727e8,packaging,0.7503,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c56bc88563bc0c15,other,0.2921,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c7086f8948c6526e,packaging,0.9581,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c8d1bc89639bcf61,packaging,0.7939,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c90635f079222a87,packaging,0.5188,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c93155d28b8d5711,packaging,0.8990,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+c982f8da2521447b,packaging,0.7419,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ca6d4703b72e590d,packaging,0.5718,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cab0209ef8ba5ad8,packaging,0.7855,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cb8b63df605290ef,packaging,0.6360,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cbde7c9808e8d82d,packaging,0.5121,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cc6093e5b9400497,packaging,0.8314,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ccb50b31a01830ea,packaging,0.6436,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cd14af91a5fdffc7,packaging,0.7045,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cde323a0ac7da26a,packaging,0.5646,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ce7df6fbb03c0233,both,0.5315,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cee1d35371e8187b,packaging,0.6689,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+cf14dfe5ed7a22ea,packaging,0.7348,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d026d4a488c9609f,packaging,0.5595,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d05fb0e375dfe36f,packaging,0.7864,packaging,Sophie Zhu,2026-10-10T15:58:16
+d0f2189b7ad0f05b,packaging,0.7907,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d1c19db9fdf11893,packaging,0.9013,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d21ef9c3a1c174f6,packaging,0.7605,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d2c8846e388b077a,packaging,0.8546,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d35f3e744b2af84a,packaging,0.9277,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d3e1dc402de32447,packaging,0.4495,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d3f965ee7692c670,packaging,0.8781,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d4175d11c2ca4b1f,packaging,0.7605,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d44e5d3767592502,packaging,0.5651,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d45b1f22eb42d7c3,both,0.5361,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d4b2a815fd180711,both,0.5838,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d4b77e5237ef047a,packaging,0.8409,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d4b79f9a319cfff3,packaging,0.8271,both,Sophie Zhu,2026-10-10T15:58:18
+d4cb19d90a0cf412,packaging,0.7850,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d4e55d5f3ba2abcc,packaging,0.7422,blister,Sophie Zhu,2026-10-10T15:58:20
+d5173ea68cf46397,packaging,0.5016,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d5ddbb35d5f39910,packaging,0.5461,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d5f422209edd244f,packaging,0.9255,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d60fbf28a113eae6,packaging,0.6681,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d677d14373ff635d,packaging,0.6238,blister,Sophie Zhu,2026-10-10T15:58:23
+d6d96de7df85d777,packaging,0.5975,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d71f1317f1fa45b9,packaging,0.7006,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d726bba7fcda16cf,packaging,0.8951,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d752490be2446bd8,packaging,0.7081,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d780ac805e33551a,blister,0.3596,blister,Sophie Zhu,2026-10-10T15:58:26
+d7c75ae38e555cec,packaging,0.9279,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d8a5f8bc8f47eac4,packaging,0.9118,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d8f471da16370722,packaging,0.8373,blister,Sophie Zhu,2026-10-10T15:58:30
+d91f329fa5d46559,both,0.6082,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+d96376e1a11c1a2f,packaging,0.6261,packaging,Sophie Zhu,2026-10-10T15:58:32
+daf845b39c4ac877,both,0.6207,both,Sophie Zhu,2026-10-10T15:58:34
+db4b066c3f9a2dcd,other,0.4329,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+dbc6e64b18e46fbe,both,0.6058,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+dcac71d41239983f,packaging,0.7034,packaging,Sophie Zhu,2026-10-10T15:58:35
+dcfe52f4887e5f81,packaging,0.7371,both,Sophie Zhu,2026-10-10T15:58:37
+dde822a18bd8ea6b,packaging,0.8389,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+de29f27c70692555,packaging,0.7921,blister,Sophie Zhu,2026-10-10T15:58:39
+df0afe4784344e8f,packaging,0.9338,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+df5ef297833d39a2,both,0.7749,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+df93b5ec07c62a69,packaging,0.8408,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+df97dfbcc6b5b9b8,packaging,0.5413,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+dfcb2dc3eb9d2a07,packaging,0.9821,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e0a31bac80e49ff3,both,0.5463,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e0ae9d97d4cdf516,packaging,0.6440,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e0ce468ef089da90,both,0.5423,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e0cec431f4f6f498,packaging,0.4925,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e0d041db3cc2d6a7,packaging,0.6423,packaging,Sophie Zhu,2026-10-10T15:58:42
+e0f2c9bbd4cf7be9,packaging,0.8504,blister,Sophie Zhu,2026-10-10T15:58:48
+e0f90b6bf5c46caf,packaging,0.8290,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e1e52325324e5147,packaging,0.7107,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e22c338832c27362,packaging,0.8650,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e23e0aa184d3a98a,packaging,0.7565,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e26499ca92929a4e,packaging,0.9350,blister,Sophie Zhu,2026-10-10T15:58:50
+e290963444cba2bd,packaging,0.8469,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e356fea3bb10002e,packaging,0.5364,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e382a955d9cf9d78,packaging,0.5600,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e44749788bf7ecd8,packaging,0.6747,both,Sophie Zhu,2026-10-10T15:58:55
+e6989a35d69d5dc9,packaging,0.7210,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e78b3bd00be54a13,both,0.5422,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e7d0e0a18fec519d,both,0.4785,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e818e6c8212ace8f,packaging,0.8866,packaging,Sophie Zhu,2026-10-10T15:58:57
+e875e404392ecb7e,packaging,0.6818,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e8ac99a2ae942600,packaging,0.8911,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e8d85381cd7cf657,packaging,0.7465,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+e8fa1f708c85bd6e,packaging,0.5750,blister,Sophie Zhu,2026-10-10T15:59:01
+ea2533b209c8a11d,packaging,0.7950,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ea9398bf8989b651,packaging,0.8711,packaging,Sophie Zhu,2026-10-10T15:59:06
+eaa448ba0977612f,packaging,0.3926,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ead4f7bf4acb9b11,packaging,0.5575,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+eae76b216e53b885,packaging,0.7015,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+eb51eaff99825106,other,0.6181,not_a_drug,Sophie Zhu,2026-10-10T15:59:09
+ec3147f125bab919,packaging,0.8905,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ecd3cc49a78bbb61,packaging,0.8108,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+eddbbb1996b5ce30,packaging,0.8887,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+eeca5665dd3f8648,packaging,0.3759,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ef028554982de308,both,0.7943,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ef53a6f16cdc18a5,packaging,0.9186,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ef971d75efca33cf,packaging,0.7218,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+eff39f6f4b762ecb,both,0.5285,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f0440c621e272bf6,packaging,0.9102,packaging,Sophie Zhu,2026-10-10T15:59:11
+f0c74937ec4ea0c1,both,0.4713,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f14a8d741cbb1c25,both,0.5681,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f18b9760b2b88f48,packaging,0.8243,blister,Sophie Zhu,2026-10-10T15:59:13
+f1e98863e6d84a2f,packaging,0.6555,both,Sophie Zhu,2026-10-10T16:00:02
+f27fbdb48b386bcd,packaging,0.6083,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f29675fbfbd46222,packaging,0.8434,blister,Sophie Zhu,2026-10-10T16:00:04
+f2dd679e903a1155,packaging,0.7300,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f2dd6ca5f7a70071,packaging,0.7082,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f2e6876ddf22e36b,packaging,0.6471,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f31665578f5bf7b4,both,0.4717,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f39227cb75f08389,packaging,0.5620,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f3b507fedeea5072,both,0.5841,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f522ff35f861bc05,packaging,0.8553,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f54e38cb60f2d41f,packaging,0.5605,both,Sophie Zhu,2026-10-10T16:00:07
+f5f889dd41b373e4,packaging,0.7905,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f619cbddfc11367e,packaging,0.6019,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f6338979bc1b1e68,blister,0.3008,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f70a23eeaa661c62,packaging,0.6259,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f7310e6569d1aecf,packaging,0.4969,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f7d186678842024d,packaging,0.9165,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f82585b8c902ff7c,both,0.7115,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f832c44f59ff365b,packaging,0.8046,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f84a7e76cff91c2a,packaging,0.7511,blister,Sophie Zhu,2026-10-10T16:00:10
+f84e3d863a95f841,packaging,0.6738,blister,Sophie Zhu,2026-10-10T16:00:12
+f892c8393c4aaf56,packaging,0.4898,blister,Sophie Zhu,2026-10-10T16:00:14
+f9111b05249a0fac,packaging,0.5702,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f9ab954e3c8709d5,packaging,0.8248,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+f9eb808bd63bf748,packaging,0.2688,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fbe2d59b5843e23d,packaging,0.5151,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fbe833ad7220f304,packaging,0.9400,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fc13ac8abf96aec1,packaging,0.7508,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fc609d423691a04a,packaging,0.7703,blister,Sophie Zhu,2026-10-10T16:00:16
+fd0f0bb9af8748b9,packaging,0.9136,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fd8737e970b404ec,packaging,0.6799,packaging,Sophie Zhu,2026-10-10T16:01:07
+fdc9fbc764dab436,packaging,0.7875,both,Sophie Zhu,2026-10-10T16:00:52
+fdf753d352a99bb3,packaging,0.4320,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fe17733423bc25c2,packaging,0.8861,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fe1bfe933ff6305e,packaging,0.9640,blister,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+fee30300a761e7a6,both,0.7196,other,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ff06a0668e56dbdd,packaging,0.9128,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34
+ff6376712a299cc6,packaging,0.8833,packaging,Sophie (imported from earlier manual_modality_tags.csv),2026-10-10T15:20:34

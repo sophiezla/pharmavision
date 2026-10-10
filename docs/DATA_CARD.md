@@ -74,7 +74,13 @@ licence, URL and, for Open Images, the author.
 
 ### Packaging type (development pool, human-reviewed)
 
-Pending: 0 of 646 images have a reviewed packaging type (PLAN 1.7).
+| Packaging type | Authentic | Counterfeit |
+|---|---|---|
+| blister | 148 | 120 |
+| packaging | 87 | 117 |
+| both | 25 | 0 |
+| not_a_drug | 1 | 1 |
+| other | 145 | 2 |
 <!-- END generated -->
 
 ## Known limitations
