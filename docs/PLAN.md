@@ -36,13 +36,13 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
 
 ## Phase 1 · Data pipeline and annotations
 
-- [ ] **1.1 Inventory.** Read-only scan of `data/raw/`; report counts per source, class, file format, size distribution, corrupt/unreadable files. Save `results/tables/raw_inventory.md`.
+- [x] **1.1 Inventory.** (5b6f9aa) Read-only scan of `data/raw/`; report counts per source, class, file format, size distribution, corrupt/unreadable files. Save `results/tables/raw_inventory.md`.
     - AC: inventory reported to Sophie before any processing.
-- [ ] **1.2 Normalization.** `data/normalize.py`: open each image, convert to RGB (alpha composited onto white), apply EXIF orientation, re-encode every image to PNG (lossless) in `data/processed/images/{image_id}.png`. `image_id` = first 16 hex chars of the SHA-256 of the original bytes.
+- [x] **1.2 Normalization.** (f876542) `data/normalize.py`: open each image, convert to RGB (alpha composited onto white), apply EXIF orientation, re-encode every image to PNG (lossless) in `data/processed/images/{image_id}.png`. `image_id` = first 16 hex chars of the SHA-256 of the original bytes.
     - AC: test that output mode is RGB for RGBA, L, P and CMYK inputs; processed count = readable raw count.
-- [ ] **1.3 Manifest.** `data/manifest.py` builds `data/processed/manifest_v1.csv` with columns `image_id, raw_path, source_dataset, label, width, height, sha256, phash, group_id, packaging_type, split, fold`.
+- [x] **1.3 Manifest.** (e110ce2) `data/manifest.py` builds `data/processed/manifest_v1.csv` with columns `image_id, raw_path, source_dataset, label, width, height, sha256, phash, group_id, packaging_type, split, fold`.
     - AC: schema validated by a test (`pandera` not required; a plain assertion function is fine).
-- [ ] **1.4 Near-duplicate grouping.** `data/dedup.py`: 64-bit pHash; union-find over pairs with Hamming distance ≤ threshold (default 8; configurable). Exact SHA-256 duplicates collapse to one manifest row. Save a contact sheet of the 50 closest cross-group pairs and the 50 farthest within-group pairs to `results/figures/dedup_check.png`.
+- [x] **1.4 Near-duplicate grouping.** (1b314b0, e2691dc; threshold 10 confirmed, ADR-006) `data/dedup.py`: 64-bit pHash; union-find over pairs with Hamming distance ≤ threshold (default 8; configurable). Exact SHA-256 duplicates collapse to one manifest row. Save a contact sheet of the 50 closest cross-group pairs and the 50 farthest within-group pairs to `results/figures/dedup_check.png`.
     - AC: Sophie confirms the threshold from the contact sheet (ask at the checkpoint); group counts reported.
 - [ ] **1.5 Splits.** `data/splits.py` + `scripts/make_splits.py` produce `splits/v1.json`: locked test (15% of groups, stratified), 5 outer folds over the rest via `StratifiedGroupKFold`, inner train/val/cal per fold (75/12.5/12.5).
     - AC: `tests/test_splits.py` and `tests/test_test_lock.py` pass; class balance table per partition saved to `results/tables/split_balance.md`.
