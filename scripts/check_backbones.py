@@ -166,6 +166,10 @@ def model_config(c: Checked) -> str:
         f"# {bb.display}. Exact name verified by scripts/check_backbones.py "
         "(see results/tables/backbones.md).",
         f"name: {bb.key}",
+        "builder: backbone",
+        "mode: full                # full | linear_probe | last_k (E2)",
+        "trainable_blocks: 2       # used by mode last_k",
+        "head_dropout: 0.0",
         f"source: {bb.source}",
     ]
     if bb.source == "timm":

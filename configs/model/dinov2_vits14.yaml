@@ -1,5 +1,9 @@
 # DINOv2 ViT-S/14. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
 name: dinov2_vits14
+builder: backbone
+mode: full                # full | linear_probe | last_k (E2)
+trainable_blocks: 2       # used by mode last_k
+head_dropout: 0.0
 source: timm
 timm_name: vit_small_patch14_dinov2.lvd142m
 pretrained: true
