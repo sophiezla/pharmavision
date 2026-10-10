@@ -25,9 +25,9 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
     - AC: `python -m pharmachecked.run experiment=noop` writes a run folder.
 - [x] **0.5 Backbone availability.** (9ff0906) Script `scripts/check_backbones.py` that calls `timm.list_models` / `open_clip.list_pretrained` and instantiates each planned backbone on CPU: ResNet-50, EfficientNetV2-S, ConvNeXt-Tiny, ViT-B/16, Swin-Tiny, DINOv2 ViT-S/14, DINOv2 ViT-B/14, CLIP ViT-B/16, MobileNetV3-Large, EfficientNet-Lite0. Write the verified exact names into `configs/model/*.yaml`.
     - AC: script prints all names resolved and parameter counts; output saved to `results/tables/backbones.md`.
-- [ ] **0.6 Docs skeleton.** Create `docs/EXPERIMENT_LOG.md`, `docs/DECISIONS.md` (with ADR-001), `docs/experiments/`, `docs/phase_reports/`.
+- [x] **0.6 Docs skeleton.** (acc286e) Create `docs/EXPERIMENT_LOG.md`, `docs/DECISIONS.md` (with ADR-001), `docs/experiments/`, `docs/phase_reports/`.
     - AC: files exist with templates from CLAUDE.md §11.
-- [ ] **0.7 Remote-run bundle.** `scripts/bench_machine.py` (per-backbone train/eval throughput → `results/tables/bench_<host>.md`), `scripts/pack_results.py` / `scripts/unpack_results.py` (zip run folders without checkpoints, with a SHA-256 manifest; unpack verifies before installing), `docs/RUNNING_ELSEWHERE.md` (clone → CUDA torch → data → job list → pack → bring back).
+- [x] **0.7 Remote-run bundle.** (ba872d1) `scripts/bench_machine.py` (per-backbone train/eval throughput → `results/tables/bench_<host>.md`), `scripts/pack_results.py` / `scripts/unpack_results.py` (zip run folders without checkpoints, with a SHA-256 manifest; unpack verifies before installing), `docs/RUNNING_ELSEWHERE.md` (clone → CUDA torch → data → job list → pack → bring back).
     - AC: `test_pack_results.py` round trip preserves hashes and excludes checkpoints; benchmark table for this machine committed.
 
 **CHECKPOINT 0.**
