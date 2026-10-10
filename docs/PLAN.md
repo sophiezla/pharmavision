@@ -44,9 +44,9 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
     - AC: schema validated by a test (`pandera` not required; a plain assertion function is fine).
 - [x] **1.4 Near-duplicate grouping.** (1b314b0, e2691dc; threshold 10 confirmed, ADR-006) `data/dedup.py`: 64-bit pHash; union-find over pairs with Hamming distance ≤ threshold (default 8; configurable). Exact SHA-256 duplicates collapse to one manifest row. Save a contact sheet of the 50 closest cross-group pairs and the 50 farthest within-group pairs to `results/figures/dedup_check.png`.
     - AC: Sophie confirms the threshold from the contact sheet (ask at the checkpoint); group counts reported.
-- [ ] **1.5 Splits.** `data/splits.py` + `scripts/make_splits.py` produce `splits/v1.json`: locked test (15% of groups, stratified), 5 outer folds over the rest via `StratifiedGroupKFold`, inner train/val/cal per fold (75/12.5/12.5).
+- [x] **1.5 Splits.** (3c385d2) `data/splits.py` + `scripts/make_splits.py` produce `splits/v1.json`: locked test (15% of groups, stratified), 5 outer folds over the rest via `StratifiedGroupKFold`, inner train/val/cal per fold (75/12.5/12.5).
     - AC: `tests/test_splits.py` and `tests/test_test_lock.py` pass; class balance table per partition saved to `results/tables/split_balance.md`.
-- [ ] **1.6 Datasets and transforms.** `data/datasets.py` (`ManifestDataset` that receives indices from a split object; can return raw image, label, metadata), `data/transforms.py` (default recipe: RandomResizedCrop scale 0.7–1.0, rotation ±10°, brightness/contrast jitter 0.1, no flips, ImageNet or backbone-specific normalization), eval transform (resize + center crop/pad).
+- [x] **1.6 Datasets and transforms.** (6520e2c) `data/datasets.py` (`ManifestDataset` that receives indices from a split object; can return raw image, label, metadata), `data/transforms.py` (default recipe: RandomResizedCrop scale 0.7–1.0, rotation ±10°, brightness/contrast jitter 0.1, no flips, ImageNet or backbone-specific normalization), eval transform (resize + center crop/pad).
     - AC: test that the dataset never yields an index from another partition.
 - [ ] **1.7 Packaging-type labels.** `data/annotation_app.py` (Gradio): CLIP zero-shot pre-labels each image as `box | blister | bottle | loose_pill | other` with prompts `"a photo of a medicine {type}"`; Sophie reviews in the app; writes `data/annotations/packaging_type.csv` (`image_id, clip_label, clip_conf, final_label, annotator, timestamp`).
     - AC: app launches; after Sophie annotates, every image has `final_label`; CLIP-vs-human agreement saved to `results/tables/packaging_label_agreement.md`.
@@ -56,7 +56,7 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
     - AC: manifests `data/ood/*/manifest.csv` with source and licence columns.
 - [ ] **1.10 Data card.** `docs/DATA_CARD.md`: sources + licences, counts per class / source / packaging type / partition, preprocessing steps, dedup threshold, known limitations.
     - AC: every number in it produced by a script and pasted from its output.
-- [ ] **1.11 Smoke test.** `make smoke`: tiny CNN, 1 epoch, 64 training images from fold 0, CPU; complete run folder.
+- [x] **1.11 Smoke test.** (bc9bd6a) `make smoke`: tiny CNN, 1 epoch, 64 training images from fold 0, CPU; complete run folder.
     - AC: passes locally and in CI in < 3 minutes.
 
 **CHECKPOINT 1.**
