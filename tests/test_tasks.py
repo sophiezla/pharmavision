@@ -37,6 +37,7 @@ def _run(tmp_path: Path, *overrides: str) -> Path:
     return run
 
 
+@pytest.mark.slow
 @pytest.mark.parametrize("model", ["handcrafted_lr", "handcrafted_xgb"])
 def test_handcrafted_task(tmp_path: Path, model: str) -> None:
     run = _run(tmp_path, f"model={model}", "task=handcrafted")
@@ -50,6 +51,7 @@ def test_handcrafted_task(tmp_path: Path, model: str) -> None:
     assert any((tmp_path / "scratch" / "features").rglob("*.npy"))
 
 
+@pytest.mark.slow
 def test_clip_zeroshot_task(tmp_path: Path) -> None:
     run = _run(tmp_path, "model=clip_vitb16", "task=clip_zeroshot", "model.pretrained=false")
     metrics = read_json(run / "metrics.json")
