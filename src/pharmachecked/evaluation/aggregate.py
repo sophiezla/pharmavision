@@ -176,6 +176,12 @@ def summarize(
             row[f"{source} {label}"] = _ci(ci)
         train_s = [r.metrics.get("train_seconds", float("nan")) for r in recs]
         row["train min/run"] = f"{np.nanmean(train_s) / 60:.1f}"
+        params = [r.metrics.get("n_params") for r in recs]
+        trainable = [r.metrics.get("n_trainable_params") for r in recs]
+        row["params (M)"] = params[0] / 1e6 if params[0] is not None else float("nan")
+        row["trainable params (M)"] = (
+            trainable[0] / 1e6 if trainable[0] is not None else float("nan")
+        )
         rows.append(row)
     return pd.DataFrame(rows), pooled_frames
 

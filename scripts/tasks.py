@@ -152,6 +152,13 @@ def aggregate(args: argparse.Namespace) -> None:
     run([sys.executable, "scripts/aggregate.py", "--exp", args.exp])
 
 
+def figures(args: argparse.Namespace) -> None:
+    """Build results/figures/{exp}_* from results/tables/ only."""
+    if not args.exp:
+        sys.exit("figures needs --exp (e.g. --exp e01)")
+    run([sys.executable, "scripts/make_figures.py", "--exp", args.exp])
+
+
 def not_yet(step: str) -> Callable[[argparse.Namespace], None]:
     """Build a task that exits with a pointer to the plan step that implements it."""
 
@@ -168,7 +175,7 @@ TASKS = {
     "test": test,
     "smoke": smoke,
     "aggregate": aggregate,
-    "figures": not_yet("2.4"),
+    "figures": figures,
 }
 
 
