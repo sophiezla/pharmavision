@@ -90,3 +90,26 @@ Template:
 - Evidence: the earlier tag file (hash above); `results/tables/packaging_label_agreement.md` once labelling is complete.
 - Consequences: the E4 router is 3-way with 3 expert heads. In the earlier tags, `other` is almost entirely authentic (144 vs 2), so packaging type is strongly associated with the class label. A router or packaging-conditioned model can partly learn the label through it, which E4 must report. E8 qualification (≥ 30 images per class per type) is decided from the final labels.
 - Amendment (2026-10-10, Sophie): two further types, `both` (blister and packaging in one image) and `not_a_drug` (image does not show a medicine), so the scheme is `blister | packaging | both | not_a_drug | other`. The template prompt cannot phrase these, so CLIP uses `a photo of a medicine blister pack together with its box` and `a photo of something that is not a medicine`. Imported `other` labels predate the new types and can be re-reviewed with `--review other`. The router's class set and the treatment of `not_a_drug` images are decided in the Phase 3 plan.
+
+## ADR-008 · E1 tier 7 (vision-language model) is skipped
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10, option c at CHECKPOINT 1)
+- Context: PLAN 2.6 tier 7 needed a model and API choice before implementation.
+- Options considered: (a) a Claude model through the Anthropic API; (b) an open-weight VLM on the GPU PC; (c) skip.
+- Decision: (c). E1 runs tiers 1–6.
+- Evidence: none (scope decision).
+- Consequences: no API key or response caching is needed; E1 tables have no VLM row.
+
+## ADR-009 · E4 router classes: blister, packaging, both, other
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10, CHECKPOINT 1)
+- Context: ADR-007 left the router class set open. `not_a_drug` has two images, and `both` and `other` are almost entirely authentic.
+- Options considered: all five types; merge `both`, `not_a_drug` and `other`; Sophie's choice below.
+- Decision: the router predicts four classes, `blister | packaging | both | other`. `not_a_drug` is not a router class: those images contribute no router loss (they still train the authenticity head and stay flagged for the E3 audit). The E4 model has four expert heads.
+- Evidence: `results/tables/data_card_counts.md` (packaging type by class).
+- Consequences: E4 must report how much of the router's benefit could come from the type-label association (ADR-007).
+
+## ADR-010 · GPU PC: RTX 5060 (8 GB)
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10)
+- Context: Phase 2 is the first phase that needs the GPU PC; the plan's E4 memory criterion assumed 16 GB.
+- Decision: full runs target an NVIDIA RTX 5060. It needs PyTorch CUDA 12.8+ builds (`cu128` index). Memory-dependent settings (batch size, E4's memory criterion) are sized for 8 GB, using gradient checkpointing or accumulation where needed and reporting it.
+- Evidence: `results/tables/bench_gpu-pc.md` once the benchmark has run there.
+- Consequences: batch sizes are configurable per model and are checked against the GPU PC's benchmark before each experiment.

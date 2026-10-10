@@ -25,8 +25,9 @@ a verified zip. This page is the complete procedure; every experiment page
    cd pharmavision
    git checkout <branch-or-tag>
    ```
-3. Install with a CUDA build of the pinned torch version. Pick the CUDA wheel index that
-   pytorch.org lists for this torch version and that your driver supports, for example:
+3. Install with a CUDA build of the pinned torch version. The GPU PC has an RTX 5060
+   (Blackwell), which needs a CUDA 12.8 or newer build, so use the `cu128` index (or a newer
+   CUDA index that pytorch.org lists for this torch version):
    ```bash
    python scripts/tasks.py setup --no-hooks --torch-index https://download.pytorch.org/whl/cu128
    ```
