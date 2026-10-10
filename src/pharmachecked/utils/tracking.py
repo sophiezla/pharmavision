@@ -18,6 +18,16 @@ log = get_logger(__name__)
 EXCLUDED_GROUPS = ("paths", "tracker")
 
 
+def disable_mlflow_network_extras() -> None:
+    """Turn off MLflow usage telemetry and console hints before mlflow is imported.
+
+    Telemetry sends usage events over the network and flushes them at exit, which can block a
+    run on a slow connection; nothing in this project needs it.
+    """
+    os.environ.setdefault("MLFLOW_DISABLE_TELEMETRY", "true")
+    os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "1")
+
+
 def flatten(data: Mapping[str, Any], prefix: str = "") -> dict[str, Any]:
     """Flatten nested mappings into dotted keys (lists are kept as values).
 
@@ -68,7 +78,7 @@ def track(cfg: DictConfig, run: RunDir, env: Mapping[str, Any]) -> Iterator[None
     if not cfg.tracker.enabled:
         yield
         return
-    os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "1")
+    disable_mlflow_network_extras()
     import mlflow
 
     Path(cfg.paths.mlruns_dir).mkdir(parents=True, exist_ok=True)

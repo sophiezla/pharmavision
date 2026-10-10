@@ -1,0 +1,10 @@
+# CLIP ViT-B/16. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
+name: clip_vitb16
+source: open_clip
+open_clip_arch: ViT-B-16
+open_clip_pretrained: openai
+pretrained: true
+img_size: 224
+embedding_dim: 512
+mean: [0.4815, 0.4578, 0.4082]
+std: [0.2686, 0.2613, 0.2758]

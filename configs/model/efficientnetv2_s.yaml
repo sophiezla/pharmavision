@@ -1,0 +1,9 @@
+# EfficientNetV2-S. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
+name: efficientnetv2_s
+source: timm
+timm_name: tf_efficientnetv2_s.in21k_ft_in1k
+pretrained: true
+img_size: 224
+embedding_dim: 1280
+mean: [0.5000, 0.5000, 0.5000]
+std: [0.5000, 0.5000, 0.5000]

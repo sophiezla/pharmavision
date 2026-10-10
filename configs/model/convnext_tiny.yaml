@@ -1,0 +1,9 @@
+# ConvNeXt-Tiny. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
+name: convnext_tiny
+source: timm
+timm_name: convnext_tiny.in12k_ft_in1k
+pretrained: true
+img_size: 224
+embedding_dim: 768
+mean: [0.4850, 0.4560, 0.4060]
+std: [0.2290, 0.2240, 0.2250]

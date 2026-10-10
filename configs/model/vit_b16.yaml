@@ -1,0 +1,9 @@
+# ViT-B/16. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
+name: vit_b16
+source: timm
+timm_name: vit_base_patch16_224.augreg2_in21k_ft_in1k
+pretrained: true
+img_size: 224
+embedding_dim: 768
+mean: [0.5000, 0.5000, 0.5000]
+std: [0.5000, 0.5000, 0.5000]
