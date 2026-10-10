@@ -23,5 +23,7 @@ jobs:
         run: python scripts/tasks.py lint
       - name: Test
         run: python scripts/tasks.py test
+      - name: Slow tests
+        run: python scripts/tasks.py test -m slow
       - name: Smoke run (toy data, < 3 min)
         run: python scripts/tasks.py smoke

@@ -1,0 +1,7 @@
+# E1 tier 1: colour histogram + HOG + uniform LBP -> standardized -> logistic regression.
+name: handcrafted_lr
+kind: sklearn
+classifier: logreg
+img_size: 224
+C: 1.0
+max_iter: 5000

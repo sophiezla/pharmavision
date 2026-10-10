@@ -27,14 +27,23 @@ def noop(cfg: DictConfig, run: RunDir) -> None:
     log.info("noop task: run folder %s", run.root)
 
 
-def train(cfg: DictConfig, run: RunDir) -> None:
-    """Train and evaluate one model on one fold (imported lazily: pulls in torch training)."""
-    from pharmachecked.training.task import run_training
+def _model_task(name: str) -> Callable[[DictConfig, RunDir], None]:
+    """Task that imports the model-task module lazily (it pulls in torch and data loading)."""
 
-    run_training(cfg, run)
+    def task(cfg: DictConfig, run: RunDir) -> None:
+        from pharmachecked.training.task import TASK_FUNCTIONS
+
+        TASK_FUNCTIONS[name](cfg, run)
+
+    return task
 
 
-TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {"noop": noop, "train": train}
+TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {
+    "noop": noop,
+    "train": _model_task("train"),
+    "handcrafted": _model_task("handcrafted"),
+    "clip_zeroshot": _model_task("clip_zeroshot"),
+}
 
 
 def execute(cfg: DictConfig) -> RunDir:
