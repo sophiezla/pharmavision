@@ -1,0 +1,6 @@
+# Near-duplicate grouping (PLAN 1.4). The threshold is confirmed by Sophie from
+# results/figures/dedup_check.png before splits are made.
+hash_size: 8            # 64-bit pHash
+phash_threshold: 8      # maximum Hamming distance that links two images into one group
+report_thresholds: [0, 2, 4, 6, 8, 10, 12, 14, 16]
+contact_sheet_pairs: 50
