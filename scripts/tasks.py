@@ -145,6 +145,13 @@ def smoke(_: argparse.Namespace) -> None:
         sys.exit(1)
 
 
+def aggregate(args: argparse.Namespace) -> None:
+    """Build results/tables/{exp}_summary and _pairwise from the experiment's run folders."""
+    if not args.exp:
+        sys.exit("aggregate needs --exp (e.g. --exp e01)")
+    run([sys.executable, "scripts/aggregate.py", "--exp", args.exp])
+
+
 def not_yet(step: str) -> Callable[[argparse.Namespace], None]:
     """Build a task that exits with a pointer to the plan step that implements it."""
 
@@ -160,7 +167,7 @@ TASKS = {
     "lint": lint,
     "test": test,
     "smoke": smoke,
-    "aggregate": not_yet("2.2"),
+    "aggregate": aggregate,
     "figures": not_yet("2.4"),
 }
 
