@@ -29,6 +29,9 @@ wandb/
 outputs/
 multirun/
 
+# Figures that show dataset images stay local (ADR-006)
+results/figures/local/
+
 # Disposable results and bundles
 results/scratch/*
 !results/scratch/.gitkeep

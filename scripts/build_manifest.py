@@ -7,7 +7,8 @@ Outputs:
     data/processed/manifest_v1_rawpaths.csv   every raw file behind each image id
     results/tables/dedup_summary.md           distance histogram, groups per threshold,
                                               development-vs-external near duplicates
-    results/figures/dedup_check.png           contact sheet for choosing the threshold
+    results/figures/local/dedup_check.png     contact sheet for choosing the threshold
+                                              (shows dataset images: git-ignored, ADR-006)
 
 Usage:
     python scripts/build_manifest.py [--workers 8]
@@ -220,9 +221,8 @@ def main() -> int:
         "",
     ]
     atomic_write_text(REPO_ROOT / "results" / "tables" / "dedup_summary.md", "\n".join(lines))
-    contact_sheet(
-        dev, t, int(dd.contact_sheet_pairs), REPO_ROOT / "results" / "figures" / "dedup_check.png"
-    )
+    sheet = REPO_ROOT / "results" / "figures" / "local" / "dedup_check.png"
+    contact_sheet(dev, t, int(dd.contact_sheet_pairs), sheet)
     log.info("wrote manifests, dedup_summary.md and dedup_check.png")
     return 0
 
