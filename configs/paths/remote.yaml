@@ -1,0 +1,15 @@
+# Paths on the GPU PC (docs/RUNNING_ELSEWHERE.md). Same layout as local.yaml; data and
+# checkpoints may be moved to another disk with the environment variables
+# PHARMACHECKED_DATA_DIR and PHARMACHECKED_CHECKPOINTS_DIR.
+root: ${pc_repo_root:}
+data_dir: ${oc.env:PHARMACHECKED_DATA_DIR,${.root}/data}
+raw_dir: ${.data_dir}/raw
+processed_dir: ${.data_dir}/processed
+annotations_dir: ${.root}/data/annotations
+splits_dir: ${.root}/splits
+results_dir: ${.root}/results
+runs_dir: ${.results_dir}/runs
+tables_dir: ${.results_dir}/tables
+figures_dir: ${.results_dir}/figures
+checkpoints_dir: ${oc.env:PHARMACHECKED_CHECKPOINTS_DIR,${.root}/checkpoints}
+mlruns_dir: ${.root}/mlruns

@@ -1,0 +1,7 @@
+# MLflow with a local SQLite backend (the default backend type of MLflow 3.x).
+# The run folder under results/runs is the source of truth; MLflow is for browsing
+# (`mlflow ui --backend-store-uri <tracking_uri>`).
+enabled: true
+tracking_uri: sqlite:///${paths.mlruns_dir}/mlflow.db
+artifact_location: ${paths.mlruns_dir}/artifacts
+experiment_name: ${exp}

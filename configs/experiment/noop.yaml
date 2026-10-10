@@ -1,0 +1,4 @@
+# @package _global_
+# Composes the config and writes a run folder; trains nothing. Used to test the entry point.
+exp: noop
+task: noop

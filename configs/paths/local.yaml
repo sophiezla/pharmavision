@@ -1,0 +1,13 @@
+# Paths on the development machine; everything lives inside the repository.
+root: ${pc_repo_root:}
+data_dir: ${.root}/data
+raw_dir: ${.data_dir}/raw
+processed_dir: ${.data_dir}/processed
+annotations_dir: ${.data_dir}/annotations
+splits_dir: ${.root}/splits
+results_dir: ${.root}/results
+runs_dir: ${.results_dir}/runs
+tables_dir: ${.results_dir}/tables
+figures_dir: ${.results_dir}/figures
+checkpoints_dir: ${.root}/checkpoints
+mlruns_dir: ${.root}/mlruns

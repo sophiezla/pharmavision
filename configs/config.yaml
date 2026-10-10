@@ -1,0 +1,22 @@
+# Root config. Every run is fully specified by this composition plus command-line overrides:
+#   python -m pharmachecked.run experiment=<name> [model=<name>] [fold=0 seed=0] [paths=remote]
+defaults:
+  - _self_
+  - paths: local
+  - tracker: mlflow
+  - model: none
+  - experiment: ???
+  - override hydra/job_logging: stdout
+
+exp: ???          # set by the experiment config
+task: ???         # entry in pharmachecked.run.TASKS; set by the experiment config
+variant: default
+fold: 0
+seed: 0
+
+hydra:
+  output_subdir: null           # the run folder, not Hydra, stores the resolved config
+  run:
+    dir: .
+  job:
+    chdir: false
