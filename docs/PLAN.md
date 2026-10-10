@@ -12,18 +12,18 @@ Before writing any code, ask Sophie: (a) where the raw data lives and how it is 
 
 Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development pool = Kaggle `kaggle_fake_real` only, Mendeley + Split E external; remote `sophiezla/pharmavision`; MLflow; Python 3.13; `scripts/tasks.py` stands in for `make` on Windows.
 
-- [ ] **0.1 Scaffold.** Create the directory tree in CLAUDE.md §3, `pyproject.toml` (package `pharmachecked`, `src/` layout), `.gitignore`, `README.md` stub, `Makefile`.
+- [x] **0.1 Scaffold.** (1830ade) Create the directory tree in CLAUDE.md §3, `pyproject.toml` (package `pharmachecked`, `src/` layout), `.gitignore`, `README.md` stub, `Makefile`.
     - Core deps: `torch`, `torchvision`, `timm`, `hydra-core`, `omegaconf`, `numpy`, `pandas`, `scikit-learn`, `scikit-image`, `xgboost`, `imagehash`, `Pillow`, `matplotlib`, `optuna`, `statsmodels`, `torchmetrics`, `open_clip_torch`, `peft`, `cleanlab`, `grad-cam`, `captum`, `onnx`, `onnxruntime`, `gradio`, and the chosen tracker.
     - Extras: `[dev]` = `pytest`, `pytest-cov`, `ruff`, `mypy`, `pre-commit`; `[anomaly]` = `anomalib`; `[synthesis]` = `diffusers`, `transformers`, `accelerate`, `easyocr`; `[adversarial]` = `torchattacks`.
     - Pin exact versions after the first successful install (`pip freeze` → constraints file).
     - AC: `make setup` succeeds from a clean clone.
-- [ ] **0.2 Quality tooling.** `.pre-commit-config.yaml` (ruff check, ruff format, end-of-file, trailing whitespace, check-added-large-files ≤ 1 MB). `.github/workflows/ci.yml` runs `make lint` and `make test`.
+- [x] **0.2 Quality tooling.** (45c6d15) `.pre-commit-config.yaml` (ruff check, ruff format, end-of-file, trailing whitespace, check-added-large-files ≤ 1 MB). `.github/workflows/ci.yml` runs `make lint` and `make test`.
     - AC: a deliberately bad commit is blocked locally; CI passes on a clean commit.
-- [ ] **0.3 Utilities.** `utils/seed.py`, `utils/logging.py`, `utils/env.py` (git hash, dirty flag, versions, GPU), `utils/run_dir.py` (creates run folder per CLAUDE.md §7), `utils/io.py`.
+- [x] **0.3 Utilities.** (d94038e; fix 9142d0e) `utils/seed.py`, `utils/logging.py`, `utils/env.py` (git hash, dirty flag, versions, GPU), `utils/run_dir.py` (creates run folder per CLAUDE.md §7), `utils/io.py`.
     - AC: unit tests for seed reproducibility (two runs → identical tensors) and run-folder contents.
-- [ ] **0.4 Hydra skeleton.** `configs/config.yaml`, `paths/local.yaml`, `paths/colab.yaml`, and the `pharmachecked.run` entry point that composes config, creates the run folder, saves `config.yaml` + `env.json`.
+- [x] **0.4 Hydra skeleton.** (8aa5628) `configs/config.yaml`, `paths/local.yaml`, `paths/colab.yaml`, and the `pharmachecked.run` entry point that composes config, creates the run folder, saves `config.yaml` + `env.json`.
     - AC: `python -m pharmachecked.run experiment=noop` writes a run folder.
-- [ ] **0.5 Backbone availability.** Script `scripts/check_backbones.py` that calls `timm.list_models` / `open_clip.list_pretrained` and instantiates each planned backbone on CPU: ResNet-50, EfficientNetV2-S, ConvNeXt-Tiny, ViT-B/16, Swin-Tiny, DINOv2 ViT-S/14, DINOv2 ViT-B/14, CLIP ViT-B/16, MobileNetV3-Large, EfficientNet-Lite0. Write the verified exact names into `configs/model/*.yaml`.
+- [x] **0.5 Backbone availability.** (9ff0906) Script `scripts/check_backbones.py` that calls `timm.list_models` / `open_clip.list_pretrained` and instantiates each planned backbone on CPU: ResNet-50, EfficientNetV2-S, ConvNeXt-Tiny, ViT-B/16, Swin-Tiny, DINOv2 ViT-S/14, DINOv2 ViT-B/14, CLIP ViT-B/16, MobileNetV3-Large, EfficientNet-Lite0. Write the verified exact names into `configs/model/*.yaml`.
     - AC: script prints all names resolved and parameter counts; output saved to `results/tables/backbones.md`.
 - [ ] **0.6 Docs skeleton.** Create `docs/EXPERIMENT_LOG.md`, `docs/DECISIONS.md` (with ADR-001), `docs/experiments/`, `docs/phase_reports/`.
     - AC: files exist with templates from CLAUDE.md §11.
