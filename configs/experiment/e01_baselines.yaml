@@ -1,0 +1,6 @@
+# @package _global_
+# E1 baseline ladder (PLAN 2.5-2.8; docs/experiments/E01.md). One run = one model, fold, seed;
+# the job list (jobs/e01*.txt) sets model=..., task=..., variant=..., model.mode=..., fold, seed.
+exp: e01
+task: train
+variant: ft

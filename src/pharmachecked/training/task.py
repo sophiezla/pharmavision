@@ -188,6 +188,9 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
             "epochs_run": result.epochs_run,
             "train_seconds": result.seconds,
             "n_train": len(train_ds),
+            "peak_gpu_memory_gb": torch.cuda.max_memory_allocated(device) / 1e9
+            if device.type == "cuda"
+            else None,
             "n_params": sum(p.numel() for p in model.parameters()),
             "n_trainable_params": sum(p.numel() for p in model.parameters() if p.requires_grad),
             "device": str(device),
