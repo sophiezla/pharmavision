@@ -1,0 +1,16 @@
+# OOD reference sets (PLAN 1.9), approved by Sophie 2026-10-10. Images stay local (git-ignored);
+# only data/ood/{far,near}/manifest.csv is committed.
+seed: 42
+download_dir: data/ood/_downloads
+sources:
+  dtd:
+    set: far
+    n: 250
+    licence: "DTD: made available to the computer vision community for research purposes (Cimpoi et al., 2014)"
+    url: https://www.robots.ox.ac.uk/~vgg/data/dtd/
+  grocery_store_packages:
+    set: near
+    n: 500
+    licence: "MIT License, Copyright (c) 2019 Marcus Klasson (Klasson et al., 2019)"
+    url: https://github.com/marcusklasson/GroceryStoreDataset
+# Scene images for the far set (Places365) are pending: its site now requires a signed access form.
