@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Data: raw and processed images are never committed (manifests are)
+data/raw/
+data/processed/*
+!data/processed/manifest_*.csv
+data/ood/**/*
+!data/ood/*/
+!data/ood/*/manifest.csv
+data/processed/synthetic/
+
+# Weights and tracker caches
+checkpoints/*
+!checkpoints/.gitkeep
+mlruns/
+mlartifacts/
+wandb/
+outputs/
+multirun/
+
+# Disposable results and bundles
+results/scratch/*
+!results/scratch/.gitkeep
+bundles/
+*.zip
+
+# Local-only files
+CLAUDE.md
+KICKOFF_PROMPT.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

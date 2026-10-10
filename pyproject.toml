@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharmachecked"
+version = "0.0.1"
+description = "Counterfeit medicine packaging detection: baselines, multi-branch model, reliability layer."
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "Sophie Zhu" }]
+# Versions are pinned in constraints/*.txt (pip freeze after the first successful install).
+dependencies = [
+    "torch",
+    "torchvision",
+    "timm",
+    "hydra-core",
+    "omegaconf",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "scikit-image",
+    "xgboost",
+    "imagehash",
+    "Pillow",
+    "matplotlib",
+    "optuna",
+    "statsmodels",
+    "torchmetrics",
+    "open_clip_torch",
+    "peft",
+    "cleanlab",
+    "grad-cam",
+    "captum",
+    "onnx",
+    "onnxruntime",
+    "gradio",
+    "mlflow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "mypy", "pre-commit"]
+anomaly = ["anomalib"]
+synthesis = ["diffusers", "transformers", "accelerate", "easyocr"]
+adversarial = ["torchattacks"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not slow'"
+markers = ["slow: long-running tests (network downloads, multi-epoch runs); run with -m slow"]
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
