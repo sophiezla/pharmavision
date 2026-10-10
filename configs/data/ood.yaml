@@ -8,9 +8,26 @@ sources:
     n: 250
     licence: "DTD: made available to the computer vision community for research purposes (Cimpoi et al., 2014)"
     url: https://www.robots.ox.ac.uk/~vgg/data/dtd/
+  openimages_scenes:
+    set: far
+    n: 250
+    licence: per image (column licence_url); only CC BY 2.0 images are sampled
+    url: https://storage.googleapis.com/openimages/web/download_v7.html
+    accepted_licence: https://creativecommons.org/licenses/by/2.0/
+    metadata: https://storage.googleapis.com/openimages/2018_04/validation/validation-images-with-rotation.csv
+    labels: https://storage.googleapis.com/openimages/v7/oidv7-val-annotations-human-imagelabels.csv
+    image_url: https://open-images-dataset.s3.amazonaws.com/validation/{image_id}.jpg
+    # Human-verified positive scene labels (validation split), spread evenly by round robin.
+    scene_labels: [Beach, Bedroom, Building, City, Field, Forest, Garden, Highway, House,
+                   Interior design, Kitchen, Lake, Landscape, Living room, Mountain,
+                   Office building, Park, Road, Room, Sea, Skyscraper, Street]
+    # Images verified to contain any of these are never sampled (keeps the far set far).
+    exclude_labels: [Bottle, Box, Drug, Medicine, Packaging and labeling, Pharmaceutical drug,
+                     Pill, Tablet]
   grocery_store_packages:
     set: near
     n: 500
     licence: "MIT License, Copyright (c) 2019 Marcus Klasson (Klasson et al., 2019)"
     url: https://github.com/marcusklasson/GroceryStoreDataset
-# Scene images for the far set (Places365) are pending: its site now requires a signed access form.
+# Places365 was replaced by Open Images V7 scenes (Sophie, 2026-10-10): Places365 now requires a
+# signed access form.

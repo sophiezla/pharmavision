@@ -10,7 +10,9 @@ import pandas as pd
 
 from pharmachecked.utils.io import atomic_write_text
 
-PACKAGING_TYPES = ("box", "blister", "bottle", "loose_pill", "other")
+# Sophie's earlier three-type scheme (ADR-007): blister packs, other packaging (cartons, boxes,
+# bottles, labels), and other images.
+PACKAGING_TYPES = ("blister", "packaging", "other")
 PACKAGING_COLUMNS = ("image_id", "clip_label", "clip_conf", "final_label", "annotator", "timestamp")
 CONCEPTS = (
     "text_error",

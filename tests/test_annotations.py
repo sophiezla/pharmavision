@@ -26,7 +26,7 @@ from pharmachecked.data.toy import ToyData
 
 
 def _prelabels(ids: list[str]) -> pd.DataFrame:
-    return pd.DataFrame({"image_id": ids, "clip_label": "box", "clip_conf": 0.5})
+    return pd.DataFrame({"image_id": ids, "clip_label": "packaging", "clip_conf": 0.5})
 
 
 def test_packaging_store_roundtrip(tmp_path: Path) -> None:
@@ -46,7 +46,7 @@ def test_packaging_store_validation(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
         store.set_label("a", "jar", "Sophie")
     with pytest.raises(ValueError):
-        store.set_label("a", "box", " ")
+        store.set_label("a", "packaging", " ")
     with pytest.raises(FileExistsError):
         PackagingStore.create(tmp_path / "p.csv", _prelabels(["a"]))
 
@@ -77,10 +77,8 @@ def test_navigation_skips_done_images() -> None:
 
 def test_prompts_follow_the_plan() -> None:
     assert prompts() == [
-        "a photo of a medicine box",
         "a photo of a medicine blister",
-        "a photo of a medicine bottle",
-        "a photo of a medicine loose pill",
+        "a photo of a medicine packaging",
         "a photo of a medicine other",
     ]
 
