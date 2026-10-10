@@ -17,6 +17,16 @@ number below comes from a script: the block between the markers is regenerated b
 
 Roles and labels are set in `configs/data/sources.yaml` (ADR-001, ADR-004).
 
+**OOD reference sets** (PLAN 1.9, `configs/data/ood.yaml`, counts in `results/tables/ood_sets.md`).
+Images are local only; manifests in `data/ood/{far,near}/manifest.csv` record source, class,
+licence, URL and, for Open Images, the author.
+
+| Set | Source | Licence / terms |
+|---|---|---|
+| far | DTD textures (Cimpoi et al., 2014) | "made available to the computer vision community for research purposes" |
+| far | Open Images V7 validation scene photos (human-verified scene labels; medicine and packaging labels excluded) | CC BY 2.0 per image, author recorded |
+| near | Grocery Store Dataset, packaged products (Klasson et al., 2019) | MIT License |
+
 ## Preprocessing
 
 1. **Inventory** (`results/tables/raw_inventory.md`): formats, modes, sizes, unreadable files,

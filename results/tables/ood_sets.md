@@ -6,4 +6,5 @@ Images are local only; identical files sampled twice are kept once.
 | Set | Source | Classes | Images | Smallest pHash distance to a development image |
 |---|---|---|---|---|
 | far | dtd | 47 | 249 | 14 |
+| far | openimages_scenes | 13 | 250 | 12 |
 | near | grocery_store_packages | 9 | 500 | 12 |
