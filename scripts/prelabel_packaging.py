@@ -26,18 +26,28 @@ def main() -> int:
     """Pre-label and write the store; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--batch-size", type=int, default=32, help="lower it when memory is short")
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="replace only the CLIP columns of an existing store (human labels are kept)",
+    )
     args = parser.parse_args()
     configure_logging()
     out = REPO_ROOT / "data" / "annotations" / "packaging_type.csv"
-    if out.exists():
-        log.error("%s exists; refusing to overwrite annotations", out)
+    if out.exists() and not args.refresh:
+        log.error("%s exists; refusing to overwrite annotations (use --refresh)", out)
         return 1
     manifest = read_manifest(REPO_ROOT / "data" / "processed" / "manifest_v1.csv")
     ids = sorted(manifest["image_id"])
     log.info("pre-labelling %d images with CLIP ViT-B/16 (OpenAI)", len(ids))
     labels = prelabel(ids, REPO_ROOT / "data" / "processed" / "images", batch_size=args.batch_size)
-    store = PackagingStore.create(out, labels)
-    log.info("wrote %s (%d rows)", out, len(store.ids()))
+    if out.exists():
+        store = PackagingStore(out)
+        store.refresh_clip(labels)
+        log.info("refreshed CLIP columns of %s; %d human labels kept", out, store.n_done())
+    else:
+        store = PackagingStore.create(out, labels)
+        log.info("wrote %s (%d rows)", out, len(store.ids()))
     return 0
 
 

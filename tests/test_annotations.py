@@ -79,8 +79,22 @@ def test_prompts_follow_the_plan() -> None:
     assert prompts() == [
         "a photo of a medicine blister",
         "a photo of a medicine packaging",
+        "a photo of a medicine blister pack together with its box",
+        "a photo of something that is not a medicine",
         "a photo of a medicine other",
     ]
+
+
+def test_refresh_clip_keeps_human_labels(tmp_path: Path) -> None:
+    store = PackagingStore.create(tmp_path / "p.csv", _prelabels(["a", "b"]))
+    store.set_label("a", "both", "Sophie")
+    fresh = pd.DataFrame({"image_id": ["a", "b"], "clip_label": "not_a_drug", "clip_conf": 0.9})
+    store.refresh_clip(fresh)
+    again = PackagingStore(tmp_path / "p.csv")
+    assert again.row("a")["final_label"] == "both"
+    assert again.row("b")["clip_label"] == "not_a_drug"
+    with pytest.raises(ValueError, match="cover"):
+        store.refresh_clip(fresh.iloc[:1])
 
 
 def test_apps_build(tmp_path: Path, toy: ToyData) -> None:

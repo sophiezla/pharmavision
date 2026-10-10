@@ -12,11 +12,16 @@ from PIL import Image
 from pharmachecked.data.annotations import PACKAGING_TYPES
 
 PROMPT = "a photo of a medicine {}"
+# Types the plan's template cannot phrase sensibly get their own prompt (ADR-007).
+SPECIAL_PROMPTS = {
+    "both": "a photo of a medicine blister pack together with its box",
+    "not_a_drug": "a photo of something that is not a medicine",
+}
 
 
 def prompts(types: Sequence[str] = PACKAGING_TYPES) -> list[str]:
-    """Prompt per packaging type (underscores read as spaces)."""
-    return [PROMPT.format(t.replace("_", " ")) for t in types]
+    """Prompt per packaging type: the PLAN 1.7 template, except for the special types."""
+    return [SPECIAL_PROMPTS.get(t, PROMPT.format(t.replace("_", " "))) for t in types]
 
 
 @torch.inference_mode()

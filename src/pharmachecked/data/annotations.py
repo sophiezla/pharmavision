@@ -10,9 +10,9 @@ import pandas as pd
 
 from pharmachecked.utils.io import atomic_write_text
 
-# Sophie's earlier three-type scheme (ADR-007): blister packs, other packaging (cartons, boxes,
-# bottles, labels), and other images.
-PACKAGING_TYPES = ("blister", "packaging", "other")
+# Packaging types (ADR-007, amended 2026-10-10): blister packs, other packaging (cartons, boxes,
+# bottles, labels), both in one image, images that do not show a medicine, and anything else.
+PACKAGING_TYPES = ("blister", "packaging", "both", "not_a_drug", "other")
 PACKAGING_COLUMNS = ("image_id", "clip_label", "clip_conf", "final_label", "annotator", "timestamp")
 CONCEPTS = (
     "text_error",
@@ -71,6 +71,18 @@ class PackagingStore:
     def row(self, image_id: str) -> dict[str, str]:
         """One row as a dict."""
         return self.df.loc[image_id].to_dict()
+
+    def refresh_clip(self, prelabels: pd.DataFrame) -> None:
+        """Replace the CLIP columns (after a scheme change); human labels are left untouched."""
+        bad = set(prelabels["clip_label"]) - set(PACKAGING_TYPES)
+        if bad:
+            raise ValueError(f"unknown packaging types {bad}")
+        if set(prelabels["image_id"]) != set(self.df.index):
+            raise ValueError("pre-labels must cover exactly the images in the store")
+        new = prelabels.set_index("image_id")
+        self.df["clip_label"] = new["clip_label"]
+        self.df["clip_conf"] = new["clip_conf"].map(lambda v: f"{float(v):.4f}")
+        _write(self.df.reset_index(drop=True), self.path)
 
     def set_label(self, image_id: str, label: str, annotator: str) -> None:
         """Record a final label and save immediately."""
