@@ -1,0 +1,27 @@
+# @package _global_
+# PLAN 1.11: tiny CNN, 1 epoch, up to 64 training images of fold 0, CPU; complete run folder.
+# dataset: real (data/processed + splits/v1.json) or toy (generated). `tasks.py smoke` picks real
+# when the processed data exist, toy otherwise (CI).
+defaults:
+  - override /model: cnn_small
+
+exp: smoke
+task: smoke
+variant: ${smoke.dataset}
+fold: 0
+seed: 0
+
+smoke:
+  dataset: toy
+  max_train_images: 64
+  max_external_per_source: 16   # keeps decoding of large external photos fast
+  img_size: 64
+  batch_size: 16
+  lr: 1.0e-3
+  epochs: 1
+  num_workers: 0
+
+paths:
+  runs_dir: ${paths.results_dir}/scratch/runs
+  checkpoints_dir: ${paths.results_dir}/scratch/checkpoints
+  toy_dir: ${paths.results_dir}/scratch/toy

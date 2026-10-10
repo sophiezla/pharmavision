@@ -115,6 +115,36 @@ def test(args: argparse.Namespace) -> None:
     run([sys.executable, "-m", "pytest", "-q", *args.pytest_args])
 
 
+SMOKE_LIMIT_SECONDS = 180
+
+
+def smoke(_: argparse.Namespace) -> None:
+    """PLAN 1.11: tiny CNN, 1 epoch, fold 0; real data if processed, else the toy set (CI).
+
+    Fails if the run folder is incomplete or the run takes longer than 3 minutes.
+    """
+    import time
+
+    real = (ROOT / "splits" / "v1.json").exists() and any(
+        (ROOT / "data" / "processed" / "images").glob("*.png")
+    )
+    dataset = "real" if real else "toy"
+    runs = ROOT / "results" / "scratch" / "runs"
+    before = set(runs.glob("smoke_*")) if runs.exists() else set()
+    start = time.perf_counter()
+    run([sys.executable, "-m", "pharmachecked.run", "experiment=smoke", f"smoke.dataset={dataset}"])
+    elapsed = time.perf_counter() - start
+    from pharmachecked.utils.run_dir import missing_files
+
+    (new,) = set(runs.glob("smoke_*")) - before
+    missing = missing_files(new)
+    sys.stdout.write(
+        f"smoke ({dataset}): {new.name}, {elapsed:.0f} s, missing: {missing or 'none'}\n"
+    )
+    if missing or elapsed > SMOKE_LIMIT_SECONDS:
+        sys.exit(1)
+
+
 def not_yet(step: str) -> Callable[[argparse.Namespace], None]:
     """Build a task that exits with a pointer to the plan step that implements it."""
 
@@ -129,7 +159,7 @@ TASKS = {
     "freeze": freeze,
     "lint": lint,
     "test": test,
-    "smoke": not_yet("1.11"),
+    "smoke": smoke,
     "aggregate": not_yet("2.2"),
     "figures": not_yet("2.4"),
 }

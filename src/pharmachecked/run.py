@@ -27,7 +27,14 @@ def noop(cfg: DictConfig, run: RunDir) -> None:
     log.info("noop task: run folder %s", run.root)
 
 
-TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {"noop": noop}
+def smoke(cfg: DictConfig, run: RunDir) -> None:
+    """PLAN 1.11 smoke run (imported lazily: it pulls in torch data loading)."""
+    from pharmachecked.training.smoke import run_smoke
+
+    run_smoke(cfg, run)
+
+
+TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {"noop": noop, "smoke": smoke}
 
 
 def execute(cfg: DictConfig) -> RunDir:

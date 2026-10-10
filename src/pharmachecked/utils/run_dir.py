@@ -26,6 +26,7 @@ COMPLETE_FILES = (
     "train_log.csv",
     "metrics.json",
     "oof_predictions.csv",
+    "external_predictions.csv",
     "checkpoint_path.txt",
 )
 

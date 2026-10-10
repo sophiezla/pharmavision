@@ -1,0 +1,11 @@
+# Small from-scratch CNN (E1 tier 2). Trained from random initialization.
+name: cnn_small
+source: local
+builder: cnn_small
+pretrained: false
+img_size: 224
+channels: [32, 64, 128]
+dropout: 0.0
+embedding_dim: 128
+mean: [0.4850, 0.4560, 0.4060]
+std: [0.2290, 0.2240, 0.2250]

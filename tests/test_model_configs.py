@@ -8,7 +8,9 @@ from pharmachecked.config import CONFIG_DIR
 from pharmachecked.utils.io import read_yaml
 
 BACKBONE_CONFIGS = sorted(
-    p for p in (CONFIG_DIR / "model").glob("*.yaml") if read_yaml(p).get("source") is not None
+    p
+    for p in (CONFIG_DIR / "model").glob("*.yaml")
+    if read_yaml(p).get("source") in ("timm", "open_clip")
 )
 PLANNED = {
     "resnet50",
