@@ -10,6 +10,7 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import sys
 
 from pharmachecked.config import REPO_ROOT
@@ -23,6 +24,9 @@ log = get_logger("prelabel_packaging")
 
 def main() -> int:
     """Pre-label and write the store; returns a process exit code."""
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--batch-size", type=int, default=32, help="lower it when memory is short")
+    args = parser.parse_args()
     configure_logging()
     out = REPO_ROOT / "data" / "annotations" / "packaging_type.csv"
     if out.exists():
@@ -31,7 +35,7 @@ def main() -> int:
     manifest = read_manifest(REPO_ROOT / "data" / "processed" / "manifest_v1.csv")
     ids = sorted(manifest["image_id"])
     log.info("pre-labelling %d images with CLIP ViT-B/16 (OpenAI)", len(ids))
-    labels = prelabel(ids, REPO_ROOT / "data" / "processed" / "images")
+    labels = prelabel(ids, REPO_ROOT / "data" / "processed" / "images", batch_size=args.batch_size)
     store = PackagingStore.create(out, labels)
     log.info("wrote %s (%d rows)", out, len(store.ids()))
     return 0
