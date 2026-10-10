@@ -20,12 +20,14 @@ sources:
   split_e_harvested:
     role: external
     label: 1
+    portable: false  # never copied off Sophie's machines (most images are permission-restricted)
     membership: data/annotations/split_e_membership.csv
     membership_key: image_stem
     include_column: in_split_e
   split_e_regulatory:
     role: external
     label: 1
+    portable: false
     membership: data/annotations/split_e_membership.csv
     membership_key: image_stem
     include_column: in_split_e

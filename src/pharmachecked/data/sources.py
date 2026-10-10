@@ -33,6 +33,7 @@ class SourceSpec:
     membership: Path | None = None
     membership_key: str = "image_stem"
     include_column: str = "include"
+    portable: bool = True  # may be copied into data bundles for the GPU PC
 
     @classmethod
     def from_config(cls, name: str, cfg: dict[str, Any], repo_root: Path) -> SourceSpec:
@@ -59,6 +60,7 @@ class SourceSpec:
             membership=repo_root / membership if membership else None,
             membership_key=cfg.get("membership_key", "image_stem"),
             include_column=cfg.get("include_column", "include"),
+            portable=bool(cfg.get("portable", True)),
         )
 
     def label_for(self, relative: Path) -> int | None:
