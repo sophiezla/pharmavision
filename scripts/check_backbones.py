@@ -36,9 +36,18 @@ class Backbone:
     note: str = ""
 
 
-# Pretrained tags are timm's defaults for each architecture; CLIP uses OpenAI weights (ADR-003).
+# Pretrained-weight rule (ADR-003): for supervised backbones, the timm checkpoint with the largest
+# supervised pretraining (in12k/in21k/in22k) fine-tuned on ImageNet-1k, else the timm default
+# in1k tag; self-/language-supervised web-scale weights only for the foundation tier (DINOv2,
+# CLIP with the OpenAI weights, the standard zero-shot reference).
 BACKBONES = (
-    Backbone("resnet50", "ResNet-50", "timm", "resnet50.a1_in1k"),
+    Backbone(
+        "resnet50",
+        "ResNet-50",
+        "timm",
+        "resnet50.a1_in1k",
+        "no supervised larger-pretraining checkpoint in timm",
+    ),
     Backbone(
         "efficientnetv2_s",
         "EfficientNetV2-S",
@@ -48,7 +57,7 @@ BACKBONES = (
     ),
     Backbone("convnext_tiny", "ConvNeXt-Tiny", "timm", "convnext_tiny.in12k_ft_in1k"),
     Backbone("vit_b16", "ViT-B/16", "timm", "vit_base_patch16_224.augreg2_in21k_ft_in1k"),
-    Backbone("swin_tiny", "Swin-Tiny", "timm", "swin_tiny_patch4_window7_224.ms_in1k"),
+    Backbone("swin_tiny", "Swin-Tiny", "timm", "swin_tiny_patch4_window7_224.ms_in22k_ft_in1k"),
     Backbone(
         "dinov2_vits14",
         "DINOv2 ViT-S/14",
@@ -70,8 +79,20 @@ BACKBONES = (
         "ViT-B-16:openai",
         "timm equivalent of the image tower: vit_base_patch16_clip_224.openai",
     ),
-    Backbone("mobilenetv3_large", "MobileNetV3-Large", "timm", "mobilenetv3_large_100.ra_in1k"),
-    Backbone("efficientnet_lite0", "EfficientNet-Lite0", "timm", "efficientnet_lite0.ra_in1k"),
+    Backbone(
+        "mobilenetv3_large",
+        "MobileNetV3-Large",
+        "timm",
+        "mobilenetv3_large_100.miil_in21k_ft_in1k",
+        "MIIL weights expect mean 0 / std 1 input normalization",
+    ),
+    Backbone(
+        "efficientnet_lite0",
+        "EfficientNet-Lite0",
+        "timm",
+        "efficientnet_lite0.ra_in1k",
+        "no larger-pretraining checkpoint in timm",
+    ),
 )
 
 

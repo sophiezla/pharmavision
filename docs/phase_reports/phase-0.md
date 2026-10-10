@@ -89,3 +89,10 @@ Order: 1.1 inventory (read-only; reported to you before any processing) → 1.2 
 Needs your time: reviewing packaging-type labels (1.7), 300 concept annotations (1.8, can continue into later phases) and the dedup threshold (1.4).
 
 GPU-hour estimate: 0. Everything in Phase 1 runs on the laptop CPU. The heaviest step is CLIP zero-shot pre-labelling at the CLIP eval rate in the table above, which is minutes for the development pool.
+
+## Checkpoint outcome (2026-10-10)
+
+1. Pretrained weights: Sophie asked for the most defensible, strongest option; ADR-003 accepted as a rule (largest supervised pretraining fine-tuned on ImageNet-1k; foundation tier as published). Swin-T and MobileNetV3-L tags changed; `results/tables/backbones.md` and `configs/model/` regenerated.
+2. Merge `phase-0-setup` into `main`: approved.
+3. Licence: none for now.
+4. `roboflow`, `balanced_authentic`, `synthetic_counterfeit`: stay excluded (default).

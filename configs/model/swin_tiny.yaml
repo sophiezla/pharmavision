@@ -1,7 +1,7 @@
 # Swin-Tiny. Exact name verified by scripts/check_backbones.py (see results/tables/backbones.md).
 name: swin_tiny
 source: timm
-timm_name: swin_tiny_patch4_window7_224.ms_in1k
+timm_name: swin_tiny_patch4_window7_224.ms_in22k_ft_in1k
 pretrained: true
 img_size: 224
 embedding_dim: 768

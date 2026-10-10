@@ -43,10 +43,17 @@ Template:
 - Evidence: none yet (protocol decision).
 - Consequences: `tests/test_splits.py` must assert that test membership is identical across split versions. `tests/test_test_lock.py` checks model-facing code paths, not preprocessing.
 
-## ADR-003 · Pretrained weights: timm default tags; CLIP uses OpenAI weights
-- Date: 2026-10-09 · Status: Proposed (awaiting Sophie at CHECKPOINT 0)
+## ADR-003 · Pretrained weights: largest supervised pretraining fine-tuned on ImageNet-1k; foundation tier as published
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10: "most scientifically defensible and likely to produce strong results")
 - Context: PLAN 0.5 names architectures, not weights. Several architectures have more than one pretrained tag in timm 1.0.30.
-- Options considered: timm's default tag per architecture; ImageNet-1k-only weights everywhere (more uniform, usually weaker); larger-pretraining tags (in21k/in22k) where available.
-- Decision: the default timm tag for each architecture; for CLIP ViT-B/16, open_clip `ViT-B-16` with `openai` weights (the standard zero-shot reference). DINOv2 runs at 224 px with interpolated position embeddings, and EfficientNetV2-S (pretrained at 300 px) runs at 224 px, as the protocol fixes 224 px for E1.
+- Options considered:
+    - (a) timm's default tag per architecture: convenient, but follows no stated rule (Swin-T's default is in1k-only while ViT-B's is in21k).
+    - (b) ImageNet-1k-only weights everywhere: uniform for the CNN/ViT tiers, but weaker transfer, and uniformity is impossible anyway because the foundation tier is defined by its own pretraining.
+    - (c) A stated rule that prefers larger supervised pretraining.
+- Decision: rule (c).
+    - Supervised backbones (tiers 3–4 and the E16 students) use the timm checkpoint with the largest supervised pretraining (in12k/in21k/in22k) that was then fine-tuned on ImageNet-1k. If none exists in timm, they fall back to timm's default in1k tag. Larger supervised pretraining is the standard recipe for transfer to small downstream datasets (Kolesnikov et al., 2020, BiT; Steiner et al., 2022, "How to train your ViT").
+    - Self-supervised or language-supervised web-scale weights are reserved for the foundation tier (tier 5), where the pretraining is the object of study: DINOv2 LVD-142M, and CLIP ViT-B/16 with the OpenAI weights, the standard zero-shot reference (Radford et al., 2021).
+    - Resulting tags: ResNet-50 `a1_in1k` (no supervised larger-pretraining tag), EfficientNetV2-S `in21k_ft_in1k`, ConvNeXt-T `in12k_ft_in1k`, ViT-B/16 `augreg2_in21k_ft_in1k`, Swin-T `ms_in22k_ft_in1k` (changed from the proposed `ms_in1k`), MobileNetV3-L `miil_in21k_ft_in1k` (changed from `ra_in1k`; expects mean 0 / std 1 normalization, recorded in its config), EfficientNet-Lite0 `ra_in1k` (no larger tag).
+    - DINOv2 runs at 224 px with interpolated position embeddings, and EfficientNetV2-S (pretrained at 300 px) runs at 224 px, because the protocol fixes 224 px for E1.
 - Evidence: `results/tables/backbones.md`.
-- Consequences: pretraining data differs across the ladder (in1k, in12k, in21k, LVD-142M, WIT-400M), which E1 must state when comparing tiers.
+- Consequences: pretraining data differ across the ladder (in1k, in12k, in21k/22k, LVD-142M, WIT-400M). E1 reports each model's pretraining source and must not attribute tier differences to architecture alone. ResNet-50 is the one supervised backbone without larger pretraining, which E1 states. Normalization statistics come from each model config, never hard-coded.

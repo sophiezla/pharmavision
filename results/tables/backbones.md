@@ -7,13 +7,13 @@ Parameters count the feature extractor only (for CLIP, the image tower).
 
 | Key | Backbone | Library | Exact name | Params (M) | Embedding dim | Pretrained input | Output shape | Note |
 |---|---|---|---|---|---|---|---|---|
-| resnet50 | ResNet-50 | timm | `resnet50.a1_in1k` | 23.51 | 2048 | 224x224 | [1, 2048] |  |
+| resnet50 | ResNet-50 | timm | `resnet50.a1_in1k` | 23.51 | 2048 | 224x224 | [1, 2048] | no supervised larger-pretraining checkpoint in timm |
 | efficientnetv2_s | EfficientNetV2-S | timm | `tf_efficientnetv2_s.in21k_ft_in1k` | 20.18 | 1280 | 300x300 | [1, 1280] | pretrained at 300 px; run at 224 under the protocol |
 | convnext_tiny | ConvNeXt-Tiny | timm | `convnext_tiny.in12k_ft_in1k` | 27.82 | 768 | 224x224 | [1, 768] |  |
 | vit_b16 | ViT-B/16 | timm | `vit_base_patch16_224.augreg2_in21k_ft_in1k` | 85.80 | 768 | 224x224 | [1, 768] |  |
-| swin_tiny | Swin-Tiny | timm | `swin_tiny_patch4_window7_224.ms_in1k` | 27.52 | 768 | 224x224 | [1, 768] |  |
+| swin_tiny | Swin-Tiny | timm | `swin_tiny_patch4_window7_224.ms_in22k_ft_in1k` | 27.52 | 768 | 224x224 | [1, 768] |  |
 | dinov2_vits14 | DINOv2 ViT-S/14 | timm | `vit_small_patch14_dinov2.lvd142m` | 21.63 | 384 | 518x518 | [1, 384] | native 518 px; position embeddings interpolated to 224 |
 | dinov2_vitb14 | DINOv2 ViT-B/14 | timm | `vit_base_patch14_dinov2.lvd142m` | 85.72 | 768 | 518x518 | [1, 768] | native 518 px; position embeddings interpolated to 224 |
 | clip_vitb16 | CLIP ViT-B/16 | open_clip | `ViT-B-16:openai` | 86.19 | 512 | 224x224 | [1, 512] | timm equivalent of the image tower: vit_base_patch16_clip_224.openai |
-| mobilenetv3_large | MobileNetV3-Large | timm | `mobilenetv3_large_100.ra_in1k` | 4.20 | 1280 | 224x224 | [1, 1280] |  |
-| efficientnet_lite0 | EfficientNet-Lite0 | timm | `efficientnet_lite0.ra_in1k` | 3.37 | 1280 | 224x224 | [1, 1280] |  |
+| mobilenetv3_large | MobileNetV3-Large | timm | `mobilenetv3_large_100.miil_in21k_ft_in1k` | 4.20 | 1280 | 224x224 | [1, 1280] | MIIL weights expect mean 0 / std 1 input normalization |
+| efficientnet_lite0 | EfficientNet-Lite0 | timm | `efficientnet_lite0.ra_in1k` | 3.37 | 1280 | 224x224 | [1, 1280] | no larger-pretraining checkpoint in timm |
