@@ -13,3 +13,4 @@ tables_dir: ${.results_dir}/tables
 figures_dir: ${.results_dir}/figures
 checkpoints_dir: ${oc.env:PHARMACHECKED_CHECKPOINTS_DIR,${.root}/checkpoints}
 mlruns_dir: ${.root}/mlruns
+toy_dir: ${.results_dir}/scratch/toy

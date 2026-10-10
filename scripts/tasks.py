@@ -132,7 +132,7 @@ def smoke(_: argparse.Namespace) -> None:
     runs = ROOT / "results" / "scratch" / "runs"
     before = set(runs.glob("smoke_*")) if runs.exists() else set()
     start = time.perf_counter()
-    run([sys.executable, "-m", "pharmachecked.run", "experiment=smoke", f"smoke.dataset={dataset}"])
+    run([sys.executable, "-m", "pharmachecked.run", "experiment=smoke", f"data.dataset={dataset}"])
     elapsed = time.perf_counter() - start
     from pharmachecked.utils.run_dir import missing_files
 

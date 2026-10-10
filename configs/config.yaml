@@ -5,6 +5,7 @@ defaults:
   - paths: local
   - tracker: mlflow
   - model: none
+  - train: default
   - experiment: ???
   - override hydra/job_logging: stdout
 
@@ -13,6 +14,14 @@ task: ???         # entry in pharmachecked.run.TASKS; set by the experiment conf
 variant: default
 fold: 0
 seed: 0
+device: null      # null = cuda when available, else cpu
+
+data:
+  dataset: real             # real | toy (generated, for tests and CI)
+  split_version: 1
+  img_size: null            # null = the model config's img_size
+  max_train_images: null    # cap on training images (smoke runs only)
+  max_external_per_source: null
 
 hydra:
   output_subdir: null           # the run folder, not Hydra, stores the resolved config

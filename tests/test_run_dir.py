@@ -78,3 +78,17 @@ def test_existing_run_dir_is_not_overwritten(tmp_path: Path) -> None:
 
 def test_missing_files_lists_everything_for_empty_folder(tmp_path: Path) -> None:
     assert missing_files(tmp_path) == list(COMPLETE_FILES)
+
+
+def test_find_resumable_only_matches_identical_incomplete_runs(tmp_path: Path) -> None:
+    from pharmachecked.utils.run_dir import find_resumable
+
+    cfg = {"lr": 0.1, "model": {"name": "m"}}
+    run = create_run_dir(tmp_path, cfg, CLEAN_ENV, "e01", "m", "v", 2, 1, NOW)
+    found = find_resumable(tmp_path, cfg, "e01", "m", "v", 2, 1)
+    assert found is not None and found.root == run.root
+    assert find_resumable(tmp_path, {**cfg, "lr": 0.2}, "e01", "m", "v", 2, 1) is None
+    assert find_resumable(tmp_path, cfg, "e01", "m", "v", 3, 1) is None
+    for name in COMPLETE_FILES:
+        run.file(name).touch()
+    assert find_resumable(tmp_path, cfg, "e01", "m", "v", 2, 1) is None  # finished runs are final

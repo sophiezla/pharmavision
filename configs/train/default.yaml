@@ -1,0 +1,15 @@
+# Default training recipe (PLAN 2.1). Learning rates and weight decay are starting values; the
+# best model of each E1 tier is tuned by Optuna (PLAN 2.7) and the result frozen in its config.
+lr: 3.0e-4                # head learning rate
+backbone_lr_mult: 0.1     # backbone lr = lr * mult (full fine-tuning)
+weight_decay: 0.05
+warmup_epochs: 1          # linear warm-up, then cosine decay to 0 at max_epochs
+max_epochs: 30
+patience: 7               # early stopping on validation AUROC
+grad_clip: 1.0
+batch_size: 32
+eval_batch_size: 64
+num_workers: 0            # raised on the GPU PC by its job list
+amp: true                 # bf16 autocast on CUDA; ignored on CPU
+threshold_rule: youden    # decision threshold chosen on val
+resume: true              # continue an interrupted run with the same config

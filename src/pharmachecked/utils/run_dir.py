@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 
 from pharmachecked.utils.io import write_json, write_yaml
 
@@ -166,6 +166,37 @@ def create_run_dir(
     write_yaml(root / "config.yaml", cfg)
     write_json(root / "env.json", env)
     return RunDir(root=root, run_id=run_id)
+
+
+def find_resumable(
+    runs_root: Path,
+    cfg: DictConfig | dict[str, Any],
+    exp: str,
+    model: str,
+    variant: str,
+    fold: int,
+    seed: int,
+) -> RunDir | None:
+    """Return the newest incomplete run folder with these fields and an identical config.
+
+    "Identical" means the saved ``config.yaml`` equals this config's resolved YAML, so a run is
+    only ever continued with exactly the settings it started with.
+    """
+    if not runs_root.is_dir():
+        return None
+    prefix = f"{slug(exp)}_{slug(model)}_{slug(variant)}_f{fold}_s{seed}_"
+    conf = cfg if isinstance(cfg, DictConfig) else OmegaConf.create(cfg)
+    wanted = OmegaConf.to_yaml(conf, resolve=True)
+    for folder in sorted(runs_root.glob(prefix + "*"), reverse=True):
+        saved = folder / "config.yaml"
+        if (
+            folder.is_dir()
+            and saved.is_file()
+            and missing_files(folder)
+            and saved.read_text(encoding="utf-8") == wanted
+        ):
+            return RunDir(root=folder, run_id=folder.name)
+    return None
 
 
 def missing_files(run: Path, required: tuple[str, ...] = COMPLETE_FILES) -> list[str]:

@@ -15,7 +15,7 @@ from omegaconf import DictConfig
 from pharmachecked.config import CONFIG_DIR, REPO_ROOT
 from pharmachecked.utils.env import capture_env
 from pharmachecked.utils.logging import configure_logging, get_logger
-from pharmachecked.utils.run_dir import RunDir, create_run_dir
+from pharmachecked.utils.run_dir import RunDir, create_run_dir, find_resumable
 from pharmachecked.utils.seed import seed_everything
 from pharmachecked.utils.tracking import track
 
@@ -27,14 +27,14 @@ def noop(cfg: DictConfig, run: RunDir) -> None:
     log.info("noop task: run folder %s", run.root)
 
 
-def smoke(cfg: DictConfig, run: RunDir) -> None:
-    """PLAN 1.11 smoke run (imported lazily: it pulls in torch data loading)."""
-    from pharmachecked.training.smoke import run_smoke
+def train(cfg: DictConfig, run: RunDir) -> None:
+    """Train and evaluate one model on one fold (imported lazily: pulls in torch training)."""
+    from pharmachecked.training.task import run_training
 
-    run_smoke(cfg, run)
+    run_training(cfg, run)
 
 
-TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {"noop": noop, "smoke": smoke}
+TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {"noop": noop, "train": train}
 
 
 def execute(cfg: DictConfig) -> RunDir:
@@ -52,16 +52,21 @@ def execute(cfg: DictConfig) -> RunDir:
     if cfg.task not in TASKS:
         raise KeyError(f"unknown task {cfg.task!r}; registered: {sorted(TASKS)}")
     env = capture_env(REPO_ROOT)
-    run = create_run_dir(
-        Path(cfg.paths.runs_dir),
-        cfg,
-        env,
-        exp=cfg.exp,
-        model=cfg.model.name,
-        variant=cfg.variant,
-        fold=cfg.fold,
-        seed=cfg.seed,
-    )
+    fields = {
+        "exp": cfg.exp,
+        "model": cfg.model.name,
+        "variant": cfg.variant,
+        "fold": cfg.fold,
+        "seed": cfg.seed,
+    }
+    resumable = None
+    if cfg.get("train") is not None and cfg.train.get("resume"):
+        resumable = find_resumable(Path(cfg.paths.runs_dir), cfg, **fields)
+    if resumable is not None:
+        run = resumable
+        log.info("resuming interrupted run %s", run.run_id)
+    else:
+        run = create_run_dir(Path(cfg.paths.runs_dir), cfg, env, **fields)
     log.info("run %s (git %s, dirty=%s)", run.run_id, env["git_commit"], env["git_dirty"])
     seed_everything(cfg.seed)
     with track(cfg, run, env):
