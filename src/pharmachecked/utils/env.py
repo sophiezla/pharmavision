@@ -33,6 +33,10 @@ TRACKED_PACKAGES = (
 )
 
 
+# Untracked paths that do not make the tree dirty (run outputs written before they are committed).
+UNTRACKED_OK_PREFIXES = ("results/",)
+
+
 def _git(args: list[str], cwd: Path) -> str | None:
     """Run a git command and return stripped stdout, or None if git or the repo is unavailable."""
     try:
@@ -47,8 +51,9 @@ def _git(args: list[str], cwd: Path) -> str | None:
 def git_info(repo: Path) -> dict[str, Any]:
     """Return the commit hash and dirty flag of the repository containing ``repo``.
 
-    A tree is dirty when tracked files have uncommitted changes; untracked files (for example
-    new run folders) do not count.
+    A tree is dirty when tracked files have uncommitted changes or when there are untracked,
+    non-ignored files outside ``results/`` (new source files change behaviour; new run folders
+    under ``results/`` do not).
 
     Args:
         repo: Any path inside the repository.
@@ -59,8 +64,13 @@ def git_info(repo: Path) -> dict[str, Any]:
     commit = _git(["rev-parse", "HEAD"], repo)
     if commit is None:
         return {"git_commit": None, "git_dirty": None}
-    status = _git(["status", "--porcelain", "--untracked-files=no"], repo)
-    return {"git_commit": commit, "git_dirty": bool(status)}
+    status = _git(["status", "--porcelain", "--untracked-files=normal"], repo) or ""
+    relevant = [
+        line
+        for line in status.splitlines()
+        if not (line.startswith("?? ") and line[3:].strip('"').startswith(UNTRACKED_OK_PREFIXES))
+    ]
+    return {"git_commit": commit, "git_dirty": bool(relevant)}
 
 
 def package_versions(names: tuple[str, ...] = TRACKED_PACKAGES) -> dict[str, str | None]:

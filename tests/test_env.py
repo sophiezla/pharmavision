@@ -32,8 +32,24 @@ def test_clean_repo(repo: Path) -> None:
     assert info["git_dirty"] is False
 
 
-def test_untracked_file_is_not_dirty(repo: Path) -> None:
-    (repo / "new_run_folder.txt").write_text("x\n")
+def test_untracked_run_folder_is_not_dirty(repo: Path) -> None:
+    run = repo / "results" / "runs" / "e01_m_v_f0_s0_20261009-000000"
+    run.mkdir(parents=True)
+    (run / "metrics.json").write_text("{}\n")
+    assert git_info(repo)["git_dirty"] is False
+
+
+def test_untracked_source_file_is_dirty(repo: Path) -> None:
+    (repo / "new_module.py").write_text("x = 1\n")
+    assert git_info(repo)["git_dirty"] is True
+
+
+def test_ignored_file_is_not_dirty(repo: Path) -> None:
+    (repo / ".gitignore").write_text("checkpoints/\n")
+    _git(repo, "add", ".gitignore")
+    _git(repo, "commit", "-q", "-m", "ignore")
+    (repo / "checkpoints").mkdir()
+    (repo / "checkpoints" / "w.pt").write_text("w\n")
     assert git_info(repo)["git_dirty"] is False
 
 
