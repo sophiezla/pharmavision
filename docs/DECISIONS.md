@@ -57,3 +57,11 @@ Template:
     - DINOv2 runs at 224 px with interpolated position embeddings, and EfficientNetV2-S (pretrained at 300 px) runs at 224 px, because the protocol fixes 224 px for E1.
 - Evidence: `results/tables/backbones.md`.
 - Consequences: pretraining data differ across the ladder (in1k, in12k, in21k/22k, LVD-142M, WIT-400M). E1 reports each model's pretraining source and must not attribute tier differences to architecture alone. ResNet-50 is the one supervised backbone without larger pretraining, which E1 states. Normalization statistics come from each model config, never hard-coded.
+
+## ADR-004 · Split E membership carried over; duplicate Mendeley folder excluded
+- Date: 2026-10-10 · Status: Accepted (engineering decision within ADR-001; reported at the 1.1 pause)
+- Context: the 1.1 inventory shows `mendeley_iphone11pro` and `mendeley_split_d` hold byte-identical files. The two Split E folders contain every screened candidate, not only the images retained in Split E.
+- Options considered: keep both Mendeley folders (double-counts one set); keep one.
+- Decision: `mendeley_iphone11pro` becomes `excluded`; `mendeley_split_d` stays external. Split E membership comes from `data/annotations/split_e_membership.csv`, derived from the earlier project's `split_e_stats.csv` (columns `in_split_e`, `exclusion_code`, source label and organization). Only rows with `in_split_e = true` are used, all labelled falsified in the source records.
+- Evidence: `results/tables/raw_inventory.md` (cross-source duplicate table; unique images per source).
+- Consequences: external sets are `mendeley_split_c` and `mendeley_split_d` (authentic) and the two Split E folders (counterfeit, membership-filtered).

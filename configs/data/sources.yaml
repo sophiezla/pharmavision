@@ -1,0 +1,39 @@
+# Raw data sources under data/raw/ and their role (ADR-001). Label 1 = counterfeit, 0 = authentic.
+#   role: development  -> development pool + locked test set
+#   role: external     -> external evaluation only (never trained on)
+#   role: excluded     -> inventoried, never used until Sophie assigns it
+# Labels come either from class folders (folder_labels, matched case-insensitively against any
+# path component) or from a constant (label) for single-class sets. A membership file restricts a
+# source to the rows whose `include_column` is true.
+sources:
+  kaggle_fake_real:
+    role: development
+    folder_labels: {fake: 1, real: 0}
+  mendeley_split_c:
+    role: external
+    label: 0
+  mendeley_split_d:
+    role: external
+    label: 0
+  mendeley_iphone11pro:
+    role: excluded  # byte-identical to mendeley_split_d (raw_inventory.md, cross-source table)
+  split_e_harvested:
+    role: external
+    label: 1
+    membership: data/annotations/split_e_membership.csv
+    membership_key: image_stem
+    include_column: in_split_e
+  split_e_regulatory:
+    role: external
+    label: 1
+    membership: data/annotations/split_e_membership.csv
+    membership_key: image_stem
+    include_column: in_split_e
+  roboflow:
+    role: excluded
+  balanced_authentic:
+    role: excluded
+  synthetic_counterfeit:
+    role: excluded
+
+image_extensions: [".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tif", ".tiff", ".gif"]
