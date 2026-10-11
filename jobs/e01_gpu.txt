@@ -1,0 +1,186 @@
+# E1 full protocol on the GPU PC (zero-shot: seed 0 only, it is deterministic)
+experiment=e01_baselines model=cnn_small variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=cnn_small variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=resnet50 variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=efficientnetv2_s variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=convnext_tiny variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=vit_b16 variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=swin_tiny variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vits14 variant=lp model.mode=linear_probe fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=dinov2_vitb14 variant=lp model.mode=linear_probe fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=ft fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=0 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=0 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=1 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=1 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=2 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=2 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=3 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=3 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=4 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=4 seed=1 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 variant=lp model.mode=linear_probe fold=4 seed=2 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot fold=0 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot fold=1 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot fold=2 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot fold=3 seed=0 paths=remote train.num_workers=4
+experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot fold=4 seed=0 paths=remote train.num_workers=4
