@@ -1,7 +1,9 @@
-"""GPU-kit run (2_RUN.bat): benchmark once, run the kit's job list, pack the results.
+"""GPU-kit run (2_RUN.bat): benchmark once, run the kit's work, pack the results.
 
-Keeps Windows awake while running, skips finished runs, resumes interrupted ones, and always
-packs whatever is finished into ``RESULTS_<name>_<timestamp>.zip`` in the kit folder.
+The kit's work is either a job list (``KIT.json: job_file``) or a pipeline command
+(``KIT.json: entry``, e.g. the Phase 2 pipeline). Keeps Windows awake while running, skips
+finished runs, resumes interrupted ones, and always packs whatever is finished into
+``RESULTS_<name>_<timestamp>.zip`` in the kit folder.
 
 Usage (done by 2_RUN.bat):
     python scripts/kit_run.py --kit <kit folder>
@@ -26,6 +28,7 @@ from pharmachecked.utils.logging import configure_logging, get_logger
 
 log = get_logger("kit_run")
 ES_CONTINUOUS, ES_SYSTEM_REQUIRED = 0x80000000, 0x00000001
+RESULTS = REPO_ROOT / "results"
 
 
 def keep_awake(on: bool) -> None:
@@ -41,6 +44,60 @@ def banner(text: str) -> None:
     sys.stdout.flush()
 
 
+def benchmark() -> None:
+    """Measure the GPU once; output goes to a log that travels back with the results."""
+    bench_log = RESULTS / "job_logs" / "bench_gpu-pc.log"
+    bench_log.parent.mkdir(parents=True, exist_ok=True)
+    banner("Measuring the GPU speed (a few minutes)...")
+    with bench_log.open("w", encoding="utf-8") as handle:
+        result = subprocess.run(
+            [sys.executable, "scripts/bench_machine.py", "--name", "gpu-pc"],
+            cwd=REPO_ROOT,
+            check=False,
+            stdout=handle,
+            stderr=subprocess.STDOUT,
+        )
+    if result.returncode != 0:  # not fatal: estimates use fold-0 runs (CLAUDE.md §12)
+        log.warning("GPU benchmark failed (exit %d); see %s", result.returncode, bench_log)
+
+
+def do_work(kit: dict) -> bool:
+    """Run the kit's job list or pipeline; True when everything finished."""
+    if "entry" in kit:
+        banner(f"Running {' '.join(kit['entry'])}.\nYou can leave this window open.")
+        result = subprocess.run([sys.executable, *kit["entry"]], cwd=REPO_ROOT, check=False)
+        return result.returncode == 0
+    jobs = read_jobs(REPO_ROOT / kit["job_file"])
+    banner(f"Running {len(jobs)} jobs from {kit['job_file']}.\nYou can leave this window open.")
+    log_file = RESULTS / "job_logs" / f"{Path(kit['job_file']).stem}.log"
+    return all(o.status != "failed" for o in run_jobs(jobs, log_file))
+
+
+def pack_results(kit: dict, kit_dir: Path) -> Path:
+    """Pack run folders, benchmark tables, logs, pipeline decisions and Optuna studies."""
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    runs = sorted(p for p in (RESULTS / "runs").glob("*") if p.is_dir())
+    tables = sorted((RESULTS / "tables").glob("bench_*.md"))
+    logs = {f"{kit['name']}_{stamp}_{p.name}": p for p in (RESULTS / "job_logs").glob("*.log")}
+    setup = RESULTS / "kit_setup.json"
+    if setup.exists():
+        logs[f"{kit['name']}_{stamp}_kit_setup.json"] = setup
+    extra = {
+        top: sorted(p for p in (RESULTS / top).glob("*") if p.is_file())
+        for top in ("pipeline", "optuna")
+    }
+    out = kit_dir / f"RESULTS_{kit['name']}_{stamp}.zip"
+    pack(
+        runs,
+        tables,
+        out,
+        created_by=f"gpu-kit {kit['name']} {kit['commit']}",
+        log_files=logs,
+        extra_files=extra,
+    )
+    return out
+
+
 def main() -> int:
     """Run the kit; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -53,50 +110,20 @@ def main() -> int:
         return 1
     keep_awake(True)
     try:
-        bench = REPO_ROOT / "results" / "tables" / "bench_gpu-pc.md"
-        if kit.get("bench", True) and not bench.exists():
-            banner("Measuring the GPU speed (a few minutes)...")
-            bench_log = REPO_ROOT / "results" / "job_logs" / "bench_gpu-pc.log"
-            bench_log.parent.mkdir(parents=True, exist_ok=True)
-            with bench_log.open("w", encoding="utf-8") as handle:
-                result = subprocess.run(
-                    [sys.executable, "scripts/bench_machine.py", "--name", "gpu-pc"],
-                    cwd=REPO_ROOT,
-                    check=False,
-                    stdout=handle,
-                    stderr=subprocess.STDOUT,
-                )
-            if result.returncode != 0:  # not fatal: estimates use fold-0 runs (CLAUDE.md §12)
-                log.warning("GPU benchmark failed (exit %d); see %s", result.returncode, bench_log)
-        jobs = read_jobs(REPO_ROOT / kit["job_file"])
-        banner(f"Running {len(jobs)} jobs from {kit['job_file']}.\nYou can leave this window open.")
-        log_file = REPO_ROOT / "results" / "job_logs" / f"{Path(kit['job_file']).stem}.log"
-        outcomes = run_jobs(jobs, log_file)
+        if kit.get("bench", True) and not (RESULTS / "tables" / "bench_gpu-pc.md").exists():
+            benchmark()
+        finished = do_work(kit)
     finally:
         keep_awake(False)
-
-    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    runs = sorted(p for p in (REPO_ROOT / "results" / "runs").glob("*") if p.is_dir())
-    tables = sorted((REPO_ROOT / "results" / "tables").glob("bench_*.md"))
-    logs = {
-        f"{kit['name']}_{stamp}_{p.name}": p
-        for p in (REPO_ROOT / "results" / "job_logs").glob("*.log")
-    }
-    setup = REPO_ROOT / "results" / "kit_setup.json"
-    if setup.exists():
-        logs[f"{kit['name']}_{stamp}_kit_setup.json"] = setup
-    out = args.kit / f"RESULTS_{kit['name']}_{stamp}.zip"
-    pack(runs, tables, out, created_by=f"gpu-kit {kit['name']} {kit['commit']}", log_files=logs)
-    failed = sum(o.status == "failed" for o in outcomes)
-    done = sum(o.status in ("done", "skipped") for o in outcomes)
-    if failed:
+    out = pack_results(kit, args.kit)
+    if not finished:
         banner(
-            f"{done} of {len(outcomes)} jobs finished, {failed} failed.\n"
+            "Not everything finished.\n"
             f"Results so far: {out.name}\n"
-            "Double-click 2_RUN.bat again to retry the failed ones, or bring the zip back."
+            "Double-click 2_RUN.bat again to continue, or bring the zip back."
         )
         return 1
-    banner(f"ALL {len(outcomes)} JOBS FINISHED.\nCopy this file back to the laptop:\n{out.name}")
+    banner(f"ALL WORK FINISHED.\nCopy this file back to the laptop:\n{out.name}")
     return 0
 
 

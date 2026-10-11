@@ -130,3 +130,20 @@ def test_pack_rejects_non_run_folder(tmp_path: Path) -> None:
     folder.mkdir()
     with pytest.raises(BundleError, match="not a run folder"):
         pack([folder], [], tmp_path / "b.zip")
+
+
+def test_pipeline_state_is_replaced_but_runs_are_not(
+    tmp_path: Path, source: tuple[list[Path], list[Path]]
+) -> None:
+    runs, tables = source
+    state = tmp_path / "decisions.json"
+    state.write_text('{"stage": 1}')
+    first = pack(runs, tables, tmp_path / "a.zip", extra_files={"pipeline": [state]}).path
+    results = tmp_path / "results"
+    unpack(first, results)
+    state.write_text('{"stage": 2}')
+    second = pack(runs, tables, tmp_path / "b.zip", extra_files={"pipeline": [state]}).path
+    unpack(second, results)
+    assert (results / "pipeline" / "decisions.json").read_text() == '{"stage": 2}'
+    with pytest.raises(BundleError):
+        pack(runs, tables, tmp_path / "c.zip", extra_files={"runs": [state]})

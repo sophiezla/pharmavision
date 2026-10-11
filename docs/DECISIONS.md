@@ -129,3 +129,11 @@ Template:
 - Decision: (b), `train.selection: auroc_then_loss`. An epoch is an improvement if its val AUROC is higher, or equal within 1e-12 with a strictly lower val loss (BCE). Early-stopping patience (7) counts epochs without an improvement under this rule. Only the fold's val split is used; external data never influence selection.
 - Evidence: `results/tables/e01_timing.md`; per-epoch val AUROC in the timing run folders (moved to `results/timing/e01/`).
 - Consequences: the 13 timing runs used the old rule. They are kept as timing evidence in `results/timing/e01/` and are not E1 results; the full E1 batch re-runs fold 0 / seed 0. Estimated E1 GPU time rises from 13.5 h to at most 25.7 h (every trained run at 30 epochs). The aggregator refuses duplicate runs for one arm/fold/seed.
+
+## ADR-013 · One GPU kit per phase; decisions inside a phase are pre-registered and automatic
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10: "go ahead with this plan")
+- Context: each GPU round trip needs Sophie to carry kits and results between machines. Most experiments depend on earlier results, so per-experiment kits would need many trips.
+- Options considered: one kit per experiment, with a decision on the laptop between kits; one kit per phase, with every intra-phase decision written as a rule before the kit runs.
+- Decision: one kit per phase where dependencies allow. Decision rules (which arms advance, tuning objectives and search spaces, which backbones go to the next experiment) are written in the experiment pages before the kit is built and applied by the pipeline on the GPU PC. Each decision is recorded in `results/pipeline/`. Rankings use development-pool OOF predictions only: pooled AUROC, exact ties broken by pooled log-loss. External sets never drive a decision (ADR-005). The phase checkpoint becomes a review of the returned results. Steps that need Sophie (label audit, concept labels, synthetic-image quality review) sit between kits.
+- Evidence: `docs/experiments/E01.md` (decision rules), `docs/experiments/E02.md`.
+- Consequences: Phase 2 runs as one kit (`scripts/phase2_pipeline.py`: E1 → decisions → Optuna → tuned re-runs → E2), dry-run on the laptop with a self-test profile before handover. Tuned settings come back as JSON and are frozen into configs on the laptop with an ADR.

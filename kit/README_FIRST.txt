@@ -14,4 +14,4 @@ What to do
 If the computer restarts or the window is closed, just double-click 2_RUN.bat again:
 finished work is kept and it continues where it stopped.
 
-What 2_RUN.bat runs: __JOBS__ jobs from __JOBFILE__ (about __ESTIMATE__).
+What 2_RUN.bat runs: __WORK__ (__ESTIMATE__).

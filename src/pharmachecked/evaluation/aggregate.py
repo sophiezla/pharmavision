@@ -30,6 +30,7 @@ from pharmachecked.evaluation.metrics import (
     auroc,
     brier,
     expected_calibration_error,
+    log_loss,
     sensitivity_at_specificity,
 )
 from pharmachecked.evaluation.stats import bootstrap_ci, delong_test, holm
@@ -51,6 +52,7 @@ POOLED_METRICS = {
     "sens_at_95_spec": sensitivity_at_specificity,
     "ece": expected_calibration_error,
     "brier": brier,
+    "log_loss": log_loss,
 }
 
 

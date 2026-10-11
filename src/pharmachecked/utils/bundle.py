@@ -21,7 +21,10 @@ log = get_logger(__name__)
 
 MANIFEST = "MANIFEST.json"
 WEIGHT_SUFFIXES = frozenset({".pt", ".pth", ".ckpt", ".safetensors", ".bin", ".onnx", ".h5"})
-TOP_LEVEL = ("runs", "tables", "job_logs")
+TOP_LEVEL = ("runs", "tables", "job_logs", "pipeline", "optuna")
+# Files under these folders are state that grows while a kit runs (decisions, Optuna studies);
+# a newer bundle may replace them. Everything else is write-once.
+MUTABLE_TOP_LEVEL = ("pipeline", "optuna")
 
 
 class BundleError(RuntimeError):
@@ -48,6 +51,7 @@ def pack(
     out: Path,
     created_by: str = "",
     log_files: dict[str, Path] | None = None,
+    extra_files: dict[str, list[Path]] | None = None,
 ) -> PackResult:
     """Write run folders and table files into a bundle zip with a hash manifest.
 
@@ -57,6 +61,7 @@ def pack(
         out: Destination zip; must not exist.
         created_by: Free text stored in the manifest (e.g. host name).
         log_files: ``{file name: path}`` of job logs placed under ``job_logs/``.
+        extra_files: ``{top-level folder: files}`` for ``pipeline/`` and ``optuna/``.
 
     Returns:
         A :class:`PackResult`.
@@ -83,6 +88,11 @@ def pack(
         entries[f"tables/{table.name}"] = table
     for name, path in (log_files or {}).items():
         entries[f"job_logs/{name}"] = path
+    for top, files in (extra_files or {}).items():
+        if top not in MUTABLE_TOP_LEVEL:
+            raise BundleError(f"unexpected extra folder {top!r}")
+        for path in files:
+            entries[f"{top}/{path.name}"] = path
     manifest = {
         "created_by": created_by,
         "files": {
@@ -151,7 +161,8 @@ def unpack(bundle: Path, results_dir: Path) -> list[str]:
     """Verify a bundle, then install its run folders and tables under ``results_dir``.
 
     Existing files are left alone when byte-identical; a differing existing file aborts
-    the whole unpack before anything is written.
+    the whole unpack before anything is written, except under ``pipeline/`` and ``optuna/``
+    (growing state), where the bundle's newer copy replaces it.
 
     Args:
         bundle: Zip written by :func:`pack`.
@@ -164,17 +175,20 @@ def unpack(bundle: Path, results_dir: Path) -> list[str]:
         BundleError: If verification fails or a file would be overwritten with other content.
     """
     files = verify(bundle)
-    conflicts = []
+    conflicts, replace = [], set()
     for name, meta in files.items():
         target = results_dir / _safe_name(name)
         if target.exists() and sha256_file(target) != meta["sha256"]:
-            conflicts.append(name)
+            if PurePosixPath(name).parts[0] in MUTABLE_TOP_LEVEL:
+                replace.add(name)
+            else:
+                conflicts.append(name)
     if conflicts:
         raise BundleError(f"would overwrite different existing files: {conflicts}")
     with zipfile.ZipFile(bundle) as zf:
         for name in files:
             target = results_dir / _safe_name(name)
-            if target.exists():
+            if target.exists() and name not in replace:
                 continue
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(zf.read(name))

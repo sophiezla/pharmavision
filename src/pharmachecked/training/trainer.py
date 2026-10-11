@@ -10,6 +10,7 @@ from __future__ import annotations
 import csv
 import random
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -44,6 +45,7 @@ class FitResult:
 
     best_epoch: int
     best_val_auroc: float
+    best_val_loss: float
     epochs_run: int
     seconds: float
     history: list[dict[str, float]] = field(default_factory=list)
@@ -139,6 +141,7 @@ def fit(
     ckpt_dir: Path,
     log_path: Path,
     seed: int,
+    on_epoch: Callable[[int, float, float], None] | None = None,
 ) -> FitResult:
     """Train with early stopping on validation AUROC and restore the best weights.
 
@@ -152,6 +155,8 @@ def fit(
         ckpt_dir: Folder for ``best.pt`` and the temporary ``resume.pt``.
         log_path: ``train_log.csv`` of the run (rewritten after every epoch).
         seed: Run seed (shuffling and augmentation).
+        on_epoch: Optional hook ``(epoch, val_auroc, val_loss)`` called after each epoch's
+            bookkeeping (e.g. Optuna reporting); an exception raised there stops training.
 
     Returns:
         A :class:`FitResult`; the model holds the best weights afterwards.
@@ -258,7 +263,9 @@ def fit(
             val_auroc,
             " (best)" if improved else "",
         )
+        if on_epoch is not None:
+            on_epoch(epoch, val_auroc, val_loss)
 
     model.load_state_dict(torch.load(best_path, map_location=device, weights_only=True))
     resume_path.unlink(missing_ok=True)  # temporary resume state of this run only
-    return FitResult(best_epoch, best_auroc, len(history), elapsed, history)
+    return FitResult(best_epoch, best_auroc, best_loss, len(history), elapsed, history)

@@ -101,7 +101,14 @@ def crlf(text: str) -> bytes:
 def main() -> int:
     """Build the kit zip; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--jobs", type=Path, required=True)
+    work = parser.add_mutually_exclusive_group(required=True)
+    work.add_argument("--jobs", type=Path, help="a committed job list to run")
+    work.add_argument(
+        "--entry", help='a pipeline command, e.g. "scripts/phase2_pipeline.py --profile full"'
+    )
+    parser.add_argument(
+        "--runs", type=int, default=0, help="expected runs (disk estimate; --entry)"
+    )
     parser.add_argument("--name", required=True)
     parser.add_argument("--estimate", default="see the experiment page")
     parser.add_argument(
@@ -118,12 +125,23 @@ def main() -> int:
     commit = subprocess.run(
         ["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, check=True, capture_output=True, text=True
     ).stdout.strip()
-    job_rel = args.jobs.resolve().relative_to(REPO_ROOT).as_posix()
     files = source_snapshot(commit)
-    if job_rel not in files:
-        log.error("%s is not committed", job_rel)
-        return 1
-    n_jobs = len(read_jobs(args.jobs))
+    if args.jobs is not None:
+        job_rel = args.jobs.resolve().relative_to(REPO_ROOT).as_posix()
+        if job_rel not in files:
+            log.error("%s is not committed", job_rel)
+            return 1
+        n_jobs = len(read_jobs(args.jobs))
+        work_text = f"{n_jobs} jobs from {job_rel}"
+        work_json: dict[str, object] = {"job_file": job_rel}
+    else:
+        entry = args.entry.split()
+        if entry[0] not in files:
+            log.error("%s is not committed", entry[0])
+            return 1
+        n_jobs = args.runs
+        work_text = f"the pipeline {args.entry}"
+        work_json = {"entry": entry}
 
     processed = REPO_ROOT / "data" / "processed"
     dev = read_manifest(processed / "manifest_v1.csv").to_dict("records")
@@ -140,8 +158,7 @@ def main() -> int:
         "__NAME__": args.name,
         "__COMMIT__": commit[:7],
         "__DISK__": str(disk_gb),
-        "__JOBS__": str(n_jobs),
-        "__JOBFILE__": job_rel,
+        "__WORK__": work_text,
         "__ESTIMATE__": args.estimate,
     }.items():
         readme = readme.replace(key, value)
@@ -151,7 +168,7 @@ def main() -> int:
     kit_json = {
         "name": args.name,
         "commit": commit,
-        "job_file": job_rel,
+        **work_json,
         "allow_cpu": bool(args.selftest),
         "bench": not args.selftest,
     }
@@ -172,13 +189,12 @@ def main() -> int:
         zf.writestr("2_RUN.bat", crlf((KIT_SRC / "2_RUN.bat").read_text(encoding="utf-8")))
         zf.writestr("README_FIRST.txt", crlf(readme))
     log.info(
-        "wrote %s: %d source files, %d images (%.2f GB), %d jobs from %s",
+        "wrote %s: %d source files, %d images (%.2f GB), runs %s",
         out.relative_to(REPO_ROOT),
         len(files),
         len(ids),
         image_bytes / 1e9,
-        n_jobs,
-        job_rel,
+        work_text,
     )
     return 0
 

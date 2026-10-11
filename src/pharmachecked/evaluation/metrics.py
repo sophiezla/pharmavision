@@ -79,6 +79,13 @@ def expected_calibration_error(y_true: ArrayLike, prob: ArrayLike, n_bins: int =
     return float(ece)
 
 
+def log_loss(y_true: ArrayLike, prob: ArrayLike, eps: float = 1e-7) -> float:
+    """Mean binary cross-entropy of the counterfeit probability (clipped to [eps, 1 - eps])."""
+    y, p = _arrays(y_true, prob)
+    p = np.clip(p, eps, 1.0 - eps)
+    return float(-np.mean(y * np.log(p) + (1 - y) * np.log(1 - p)))
+
+
 def brier(y_true: ArrayLike, prob: ArrayLike) -> float:
     """Mean squared error of the counterfeit probability."""
     y, p = _arrays(y_true, prob)

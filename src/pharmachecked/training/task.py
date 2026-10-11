@@ -178,20 +178,38 @@ def _write_single_row_log(run: RunDir, row: dict[str, float]) -> None:
         writer.writerow(row)
 
 
-def run_training(cfg: DictConfig, run: RunDir) -> None:
-    """Train ``cfg.model`` on fold ``cfg.fold`` with seed ``cfg.seed`` and write all artifacts."""
-    _check_threshold_rule(cfg)
+@dataclass
+class FoldData:
+    """Datasets of one fold for a torch model."""
+
+    train: ManifestDataset
+    val: ManifestDataset
+    heldout: ManifestDataset
+    external: ManifestDataset
+
+
+def fold_datasets(cfg: DictConfig) -> FoldData:
+    """Train (augmented) and evaluation datasets of fold ``cfg.fold`` for ``cfg.model``."""
     manifest, external, splits, images = load_data(cfg)
     parts = partitions(cfg, splits, external)
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
     size = int(cfg.data.get("img_size") or cfg.model.img_size)
     mean, std = list(cfg.model.mean), list(cfg.model.std)
-    train_ds = ManifestDataset(
-        manifest, parts.train, images, build_train_transform(tcfg, mean, std, size=size), True
+    return FoldData(
+        train=ManifestDataset(
+            manifest, parts.train, images, build_train_transform(tcfg, mean, std, size=size), True
+        ),
+        val=eval_dataset(cfg, tcfg, manifest, parts.val, images, mean, std, size),
+        heldout=eval_dataset(cfg, tcfg, manifest, parts.heldout, images, mean, std, size),
+        external=eval_dataset(cfg, tcfg, external, parts.external, images, mean, std, size),
     )
-    val_ds = eval_dataset(cfg, tcfg, manifest, parts.val, images, mean, std, size)
-    held_ds = eval_dataset(cfg, tcfg, manifest, parts.heldout, images, mean, std, size)
-    ext_ds = eval_dataset(cfg, tcfg, external, parts.external, images, mean, std, size)
+
+
+def run_training(cfg: DictConfig, run: RunDir) -> None:
+    """Train ``cfg.model`` on fold ``cfg.fold`` with seed ``cfg.seed`` and write all artifacts."""
+    _check_threshold_rule(cfg)
+    data = fold_datasets(cfg)
+    train_ds, val_ds, held_ds, ext_ds = data.train, data.val, data.heldout, data.external
     device = device_for(cfg)
     model = build_model(cfg.model)
     ckpt_dir = Path(cfg.paths.checkpoints_dir) / run.run_id
