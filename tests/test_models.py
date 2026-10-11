@@ -71,3 +71,24 @@ def test_duplicate_registration_rejected() -> None:
     registered()  # ensure built-ins are imported
     with pytest.raises(KeyError):
         register("cnn_small")(lambda cfg: torch.nn.Identity())
+
+
+@pytest.mark.slow
+@pytest.mark.parametrize(
+    "name", sorted(n for n, c in MODEL_CONFIGS.items() if c.get("lora_targets"))
+)
+def test_lora_trains_only_adapters_and_head(name: str) -> None:
+    cfg = OmegaConf.merge(_random_weights(name), {"mode": "lora", "lora_rank": 4})
+    model = build_model(cfg)
+    trainable = [n for n, p in model.named_parameters() if p.requires_grad]
+    assert trainable and all("lora_" in n or n.startswith("head.") for n in trainable)
+    assert any("lora_" in n for n in trainable)
+    model.train()
+    batchnorms = [
+        m for m in model.backbone.modules() if isinstance(m, torch.nn.modules.batchnorm._BatchNorm)
+    ]
+    assert all(not m.training for m in batchnorms)
+    size = int(cfg.img_size)
+    out = model(torch.randn(2, 3, size, size))
+    out["logits"].sum().backward()
+    assert out["logits"].shape == (2,)

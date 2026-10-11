@@ -159,6 +159,23 @@ def check_open_clip(bb: Backbone) -> Checked:
     )
 
 
+# LoRA target modules per backbone (E2; verified with peft 0.21.2): attention qkv projections
+# where the architecture has them (PLAN 2.10); CLIP's fused attention; for attention-free CNNs,
+# the pointwise layers (ConvNeXt MLP, ResNet 1x1 convs, EfficientNet pointwise convs).
+LORA_TARGETS = {
+    "vit_b16": ["qkv"],
+    "swin_tiny": ["qkv"],
+    "dinov2_vits14": ["qkv"],
+    "dinov2_vitb14": ["qkv"],
+    "clip_vitb16": ["attn"],
+    "convnext_tiny": ["fc1", "fc2"],
+    "resnet50": ["conv1", "conv3"],
+    "efficientnetv2_s": ["conv_pw", "conv_pwl"],
+    "mobilenetv3_large": ["conv_pw", "conv_pwl"],
+    "efficientnet_lite0": ["conv_pw", "conv_pwl"],
+}
+
+
 def model_config(c: Checked) -> str:
     """Return the YAML text of ``configs/model/<key>.yaml`` for a checked backbone."""
     bb = c.backbone
@@ -167,8 +184,10 @@ def model_config(c: Checked) -> str:
         "(see results/tables/backbones.md).",
         f"name: {bb.key}",
         "builder: backbone",
-        "mode: full                # full | linear_probe | last_k (E2)",
+        "mode: full                # full | linear_probe | last_k | lora (E2)",
         "trainable_blocks: 2       # used by mode last_k",
+        f"lora_targets: [{', '.join(LORA_TARGETS[bb.key])}]  # used by mode lora",
+        "lora_rank: 8",
         "head_dropout: 0.0",
         f"source: {bb.source}",
     ]

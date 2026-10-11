@@ -3,7 +3,9 @@
 Modes:
     full          all parameters train (backbone at ``train.backbone_lr_mult`` x lr);
     linear_probe  backbone frozen and kept in eval mode; only the head trains;
-    last_k        only the last ``trainable_blocks`` blocks and the final norm train (E2).
+    last_k        only the last ``trainable_blocks`` blocks and the final norm train (E2);
+    lora          backbone frozen; LoRA adapters (Hu et al., 2022; via ``peft``) of rank
+                  ``lora_rank`` on the config's ``lora_targets`` train with the head (E2).
 """
 
 from __future__ import annotations
@@ -15,7 +17,15 @@ from torch import nn
 
 from pharmachecked.models.registry import register
 
-MODES = ("full", "linear_probe", "last_k")
+MODES = ("full", "linear_probe", "last_k", "lora")
+
+
+def add_lora(backbone: nn.Module, targets: list[str], rank: int) -> nn.Module:
+    """Wrap ``backbone`` with LoRA adapters (alpha = 2 x rank, no dropout); base weights frozen."""
+    from peft import LoraConfig, get_peft_model
+
+    config = LoraConfig(r=rank, lora_alpha=2 * rank, lora_dropout=0.0, target_modules=targets)
+    return get_peft_model(backbone, config)
 
 
 def make_backbone(cfg: Any) -> tuple[nn.Module, int]:
@@ -68,10 +78,16 @@ class BackboneClassifier(nn.Module):
         mode: str = "full",
         head_dropout: float = 0.0,
         trainable_blocks: int = 2,
+        lora_targets: list[str] | None = None,
+        lora_rank: int = 8,
     ) -> None:
         super().__init__()
         if mode not in MODES:
             raise ValueError(f"mode must be one of {MODES}")
+        if mode == "lora":
+            if not lora_targets:
+                raise ValueError("mode lora needs lora_targets in the model config")
+            backbone = add_lora(backbone, list(lora_targets), lora_rank)
         self.backbone = backbone
         self.mode = mode
         self.dropout = nn.Dropout(head_dropout)
@@ -88,10 +104,18 @@ class BackboneClassifier(nn.Module):
                     layer.requires_grad_(True)
 
     def train(self, mode: bool = True) -> BackboneClassifier:
-        """Keep a frozen backbone in eval mode (no BN statistics updates, no dropout)."""
+        """Keep frozen parts in eval mode.
+
+        Linear probe: the whole backbone (no BN statistics updates, no dropout). LoRA: the
+        batch-norm layers, so only the adapters (and the head) change during training.
+        """
         super().train(mode)
         if self.mode == "linear_probe":
             self.backbone.eval()
+        elif self.mode == "lora":
+            for module in self.backbone.modules():
+                if isinstance(module, nn.modules.batchnorm._BatchNorm):
+                    module.eval()
         return self
 
     def forward(self, x: torch.Tensor) -> dict[str, torch.Tensor]:
@@ -110,4 +134,6 @@ def build(cfg: Any) -> BackboneClassifier:
         mode=str(cfg.get("mode", "full")),
         head_dropout=float(cfg.get("head_dropout", 0.0)),
         trainable_blocks=int(cfg.get("trainable_blocks", 2)),
+        lora_targets=list(cfg.get("lora_targets") or []),
+        lora_rank=int(cfg.get("lora_rank", 8)),
     )
