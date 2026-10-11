@@ -103,7 +103,11 @@ def main() -> int:
     iters = args.iters or (20 if on_gpu else 3)
     warmup = 3 if on_gpu else 1
     configs = sorted(
-        (p for p in (CONFIG_DIR / "model").glob("*.yaml") if read_yaml(p).get("source")),
+        (
+            p
+            for p in (CONFIG_DIR / "model").glob("*.yaml")
+            if read_yaml(p).get("source") in ("timm", "open_clip")  # pretrained backbones only
+        ),
         key=lambda p: p.stem,
     )
     if on_gpu:

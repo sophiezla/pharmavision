@@ -67,7 +67,7 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
 
 ### Shared infrastructure (build before E1)
 
-- [x] **2.1 Trainer.** (d25fe25) `training/trainer.py`: plain PyTorch loop (no Lightning) with AdamW, cosine schedule + 1-epoch linear warmup, mixed precision, gradient clipping 1.0, early stopping on val AUROC (patience 7, max 30 epochs), best-checkpoint restore, resume support, per-epoch logging to `train_log.csv`. Separate learning rate for backbone vs head (`train.backbone_lr_mult`).
+- [x] **2.1 Trainer.** (d25fe25) `training/trainer.py`: plain PyTorch loop (no Lightning) with AdamW, cosine schedule + 1-epoch linear warmup, mixed precision, gradient clipping 1.0, early stopping on val AUROC with ties broken by val loss (patience 7, max 30 epochs; ADR-012), best-checkpoint restore, resume support, per-epoch logging to `train_log.csv`. Separate learning rate for backbone vs head (`train.backbone_lr_mult`).
 - [x] **2.2 Evaluation.** (979a09d, 832107f) `evaluation/metrics.py` (all metrics in CLAUDE.md §5), `evaluation/stats.py` (bootstrap CI, fast DeLong, McNemar exact, Holm), `evaluation/aggregate.py` (combines runs → per-config mean ± std and pooled OOF metrics with CIs; writes CSV + Markdown).
     - AC: `test_metrics.py` and `test_stats.py` pass.
 - [x] **2.3 Model registry.** (d385ffb, 1197e58; LoRA added with E2) `models/registry.py`, `models/backbones.py` (timm/open_clip wrappers returning `{"logits","embedding"}`), `models/heads.py`, `models/cnn_small.py` (the original 3-conv CNN, rebuilt), `models/handcrafted.py` (color histogram 3×32 bins + HOG + uniform LBP histogram → standardized → logistic regression / XGBoost; scalers fitted on train only).

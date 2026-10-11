@@ -56,11 +56,18 @@ def main() -> int:
         bench = REPO_ROOT / "results" / "tables" / "bench_gpu-pc.md"
         if kit.get("bench", True) and not bench.exists():
             banner("Measuring the GPU speed (a few minutes)...")
-            subprocess.run(
-                [sys.executable, "scripts/bench_machine.py", "--name", "gpu-pc"],
-                cwd=REPO_ROOT,
-                check=False,
-            )
+            bench_log = REPO_ROOT / "results" / "job_logs" / "bench_gpu-pc.log"
+            bench_log.parent.mkdir(parents=True, exist_ok=True)
+            with bench_log.open("w", encoding="utf-8") as handle:
+                result = subprocess.run(
+                    [sys.executable, "scripts/bench_machine.py", "--name", "gpu-pc"],
+                    cwd=REPO_ROOT,
+                    check=False,
+                    stdout=handle,
+                    stderr=subprocess.STDOUT,
+                )
+            if result.returncode != 0:  # not fatal: estimates use fold-0 runs (CLAUDE.md §12)
+                log.warning("GPU benchmark failed (exit %d); see %s", result.returncode, bench_log)
         jobs = read_jobs(REPO_ROOT / kit["job_file"])
         banner(f"Running {len(jobs)} jobs from {kit['job_file']}.\nYou can leave this window open.")
         log_file = REPO_ROOT / "results" / "job_logs" / f"{Path(kit['job_file']).stem}.log"

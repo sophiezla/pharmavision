@@ -119,3 +119,12 @@ def test_summary_and_pairwise(runs: Path) -> None:
     assert list(pairwise["config"]) == ["weak/default"]
     assert pairwise["holm_p"].iloc[0] < 0.05
     assert "| config |" in to_markdown(pairwise)
+
+
+def test_duplicate_runs_for_one_arm_are_refused(runs: Path) -> None:
+    import shutil
+
+    original = next(runs.glob("e99_strong_default_f0_s0_*"))
+    shutil.copytree(original, runs / "e99_strong_default_f0_s0_20261011-000000")  # newer copy
+    with pytest.raises(ValueError, match="several complete runs"):
+        collect_runs(runs, "e99")

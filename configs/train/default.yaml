@@ -6,6 +6,7 @@ weight_decay: 0.05
 warmup_epochs: 1          # linear warm-up, then cosine decay to 0 at max_epochs
 max_epochs: 30
 patience: 7               # early stopping on validation AUROC
+selection: auroc_then_loss  # best epoch: highest val AUROC, ties -> lower val loss (ADR-012)
 grad_clip: 1.0
 batch_size: 32
 eval_batch_size: 64

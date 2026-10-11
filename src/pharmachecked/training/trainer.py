@@ -84,6 +84,28 @@ def predict(
     return pd.DataFrame(rows, columns=list(PRED_COLUMNS))
 
 
+SELECTION_RULES = ("auroc", "auroc_then_loss")
+TIE_TOLERANCE = 1e-12
+
+
+def is_improvement(
+    auroc_value: float, loss: float, best_auroc: float, best_loss: float, rule: str
+) -> bool:
+    """Whether an epoch beats the best so far under the model-selection rule.
+
+    ``auroc``: strictly higher validation AUROC. ``auroc_then_loss`` (ADR-012): higher AUROC,
+    or equal AUROC (within floating-point tolerance) and strictly lower validation loss, so
+    selection stays defined when validation AUROC saturates at 1.0. Early-stopping patience
+    counts epochs without an improvement under the same rule.
+    """
+    if rule not in SELECTION_RULES:
+        raise ValueError(f"unknown selection rule {rule!r}")
+    if auroc_value > best_auroc + TIE_TOLERANCE:
+        return True
+    tied = abs(auroc_value - best_auroc) <= TIE_TOLERANCE
+    return rule == "auroc_then_loss" and tied and loss < best_loss
+
+
 def _rng_state() -> dict[str, Any]:
     return {
         "python": random.getstate(),
@@ -150,7 +172,10 @@ def fit(
     opt, sched = build_optimizer(model, cfg, len(loader))
     loss_fn = nn.BCEWithLogitsLoss()
     history: list[dict[str, float]] = []
-    start_epoch, best_auroc, best_epoch, elapsed = 0, -1.0, -1, 0.0
+    # -inf so the first epoch is always saved, even if its val AUROC is undefined (scored -1).
+    start_epoch, best_auroc, best_epoch, elapsed = 0, float("-inf"), -1, 0.0
+    best_loss = float("inf")
+    rule = cfg.get("selection", "auroc")
 
     if cfg.resume and resume_path.exists():
         state = torch.load(resume_path, map_location=device, weights_only=False)
@@ -161,6 +186,7 @@ def fit(
         _set_rng_state(state["rng"])
         start_epoch, history = state["epoch"] + 1, state["history"]
         best_auroc, best_epoch, elapsed = state["best_auroc"], state["best_epoch"], state["seconds"]
+        best_loss = state.get("best_loss", float("inf"))
         log.info("resumed at epoch %d (best val AUROC %.4f)", start_epoch, best_auroc)
 
     for epoch in range(start_epoch, cfg.max_epochs):
@@ -192,9 +218,9 @@ def fit(
         )
         elapsed += time.perf_counter() - t0
         score = -1.0 if np.isnan(val_auroc) else val_auroc
-        improved = score > best_auroc
+        improved = is_improvement(score, val_loss, best_auroc, best_loss, rule)
         if improved:
-            best_auroc, best_epoch = score, epoch
+            best_auroc, best_loss, best_epoch = score, val_loss, epoch
             torch.save(model.state_dict(), best_path)
         history.append(
             {
@@ -218,6 +244,7 @@ def fit(
                 "epoch": epoch,
                 "history": history,
                 "best_auroc": best_auroc,
+                "best_loss": best_loss,
                 "best_epoch": best_epoch,
                 "seconds": elapsed,
             },

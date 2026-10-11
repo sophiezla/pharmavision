@@ -67,9 +67,8 @@ def test_best_weights_restored_and_resume_state_removed(toy: ToyData, tmp_path: 
     for name, tensor in model.state_dict().items():
         assert torch.equal(tensor, best[name])
     assert not (tmp_path / "ckpt" / "resume.pt").exists()
-    assert result.best_epoch == max(
-        range(result.epochs_run), key=lambda e: result.history[e]["val_auroc"]
-    )
+    aurocs = [h["val_auroc"] for h in result.history]
+    assert aurocs[result.best_epoch] == max(aurocs)  # ties resolved by val loss (ADR-012)
 
 
 def test_resume_after_interruption_matches_uninterrupted(
@@ -133,3 +132,29 @@ def test_warmup_cosine_schedule() -> None:
     assert warmup_cosine(10, 10, 100) == pytest.approx(1.0)
     assert warmup_cosine(55, 10, 100) == pytest.approx(0.5)
     assert warmup_cosine(100, 10, 100) == pytest.approx(0.0, abs=1e-12)
+
+
+def test_selection_rule_breaks_auroc_ties_with_loss() -> None:
+    from pharmachecked.training.trainer import is_improvement
+
+    # Higher AUROC always wins, whatever the loss.
+    assert is_improvement(0.99, 0.9, 0.98, 0.1, "auroc_then_loss")
+    # At the ceiling, a lower loss wins only under the tie-break rule.
+    assert is_improvement(1.0, 0.05, 1.0, 0.2, "auroc_then_loss")
+    assert not is_improvement(1.0, 0.05, 1.0, 0.2, "auroc")
+    assert not is_improvement(1.0, 0.3, 1.0, 0.2, "auroc_then_loss")
+    # Lower AUROC never wins, even with a lower loss.
+    assert not is_improvement(0.97, 0.01, 0.98, 0.5, "auroc_then_loss")
+    with pytest.raises(ValueError):
+        is_improvement(1.0, 0.1, 1.0, 0.2, "loss")
+
+
+def test_tie_break_trains_past_a_saturated_first_epoch(toy: ToyData, tmp_path: Path) -> None:
+    cfg = OmegaConf.merge(TRAIN_CFG, {"max_epochs": 6, "patience": 2})
+    _, result = _fit(toy, tmp_path, cfg)
+    aurocs = [h["val_auroc"] for h in result.history]
+    losses = [h["val_loss"] for h in result.history]
+    best = result.best_epoch
+    assert aurocs[best] == max(aurocs)
+    tied = [e for e, a in enumerate(aurocs) if abs(a - max(aurocs)) <= 1e-12]
+    assert losses[best] == min(losses[e] for e in tied[: tied.index(best) + 1])

@@ -89,6 +89,10 @@ def collect_runs(runs_dir: Path, exp: str) -> list[RunRecord]:
                 float(metrics["heldout"]["threshold"]),
             )
         )
+    keys = [(r.model, r.variant, r.fold, r.seed) for r in records]
+    duplicates = sorted({k for k in keys if keys.count(k) > 1})
+    if duplicates:
+        raise ValueError(f"several complete runs for the same arm/fold/seed: {duplicates}")
     return records
 
 
