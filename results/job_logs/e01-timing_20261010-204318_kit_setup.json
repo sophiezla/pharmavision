@@ -1,0 +1,10 @@
+{
+  "commit": "ba6a80d090b56369a4b3dc82f2653a42d6e7c2a8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5060",
+  "gpu_memory_gb": 8.546484224,
+  "python": "3.13.16",
+  "snapshot_modified": false,
+  "torch": "2.14.1+cu130",
+  "torch_cuda": "13.0"
+}
