@@ -1,6 +1,7 @@
 """Datasets never yield images from another partition or the locked test set; transforms behave."""
 
 import json
+from pathlib import Path
 
 import pytest
 import torch
@@ -108,3 +109,25 @@ def test_train_transform_never_flips() -> None:
 def test_eval_mode_validated() -> None:
     with pytest.raises(ValueError):
         build_eval_transform(OmegaConf.merge(TCFG, {"eval": {"mode": "zoom"}}), MEAN, STD)
+
+
+def test_geometry_cache_gives_identical_tensors(toy: ToyData, tmp_path: Path) -> None:
+    from pharmachecked.data.transforms import build_eval_geometry, build_tensorize
+
+    manifest = read_manifest(toy.manifest)
+    splits = load_dev_splits(toy.splits)
+    ids = list(splits.ids(0, "val"))
+    plain = ManifestDataset(manifest, ids, toy.images_dir, build_eval_transform(TCFG, MEAN, STD))
+    cache = tmp_path / "cache"
+    cached = ManifestDataset(
+        manifest,
+        ids,
+        toy.images_dir,
+        build_tensorize(MEAN, STD),
+        geometry_cache=(build_eval_geometry(TCFG), cache),
+    )
+    for k in range(len(ids)):
+        first = cached[k]["image"]  # computes and stores
+        assert torch.equal(first, plain[k]["image"])
+        assert torch.equal(cached[k]["image"], first)  # served from the cache
+    assert len(list(cache.glob("*.npy"))) == len(ids)

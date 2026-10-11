@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+import os
 from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pandas as pd
 from PIL import Image
 from torch.utils.data import Dataset
@@ -32,8 +34,14 @@ class ManifestDataset(Dataset[dict[str, Any]]):
         images_dir: Path,
         transform: Callable[[Image.Image], Any] | None = None,
         return_meta: bool = False,
+        geometry_cache: tuple[Callable[[Image.Image], Image.Image], Path] | None = None,
     ) -> None:
         """Select ``image_ids`` from ``manifest``.
+
+        Args:
+            geometry_cache: Optional ``(geometry, folder)``: a deterministic PIL-to-PIL
+                transform applied before ``transform`` whose uint8 output is cached per image in
+                ``folder`` (used for evaluation, where the geometry never changes).
 
         Raises:
             KeyError: If an id is not in the manifest.
@@ -55,6 +63,9 @@ class ManifestDataset(Dataset[dict[str, Any]]):
         self.images_dir = images_dir
         self.transform = transform
         self.return_meta = return_meta
+        self.geometry_cache = geometry_cache
+        if geometry_cache is not None:
+            geometry_cache[1].mkdir(parents=True, exist_ok=True)
 
     @classmethod
     def from_split(
@@ -88,10 +99,24 @@ class ManifestDataset(Dataset[dict[str, Any]]):
     def __len__(self) -> int:
         return len(self.image_ids)
 
-    def __getitem__(self, index: int) -> dict[str, Any]:
-        image_id = self.image_ids[index]
+    def _load(self, image_id: str) -> Image.Image:
+        if self.geometry_cache is not None:
+            geometry, folder = self.geometry_cache
+            cached = folder / f"{image_id}.npy"
+            if cached.exists():
+                return Image.fromarray(np.load(cached))
         with Image.open(self.images_dir / f"{image_id}.png") as im:
             image = im.convert("RGB")
+        if self.geometry_cache is not None:
+            image = geometry(image)
+            tmp = cached.with_suffix(f".{os.getpid()}.tmp.npy")
+            np.save(tmp, np.asarray(image))
+            os.replace(tmp, cached)  # atomic: safe with several DataLoader workers
+        return image
+
+    def __getitem__(self, index: int) -> dict[str, Any]:
+        image_id = self.image_ids[index]
+        image = self._load(image_id)
         item: dict[str, Any] = {
             "image": self.transform(image) if self.transform else image,
             "label": self.labels[index],

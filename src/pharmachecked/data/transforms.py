@@ -78,17 +78,31 @@ def build_eval_transform(
     Raises:
         ValueError: On an unknown eval mode.
     """
+    return v2.Compose([build_eval_geometry(cfg, size), build_tensorize(mean, std)])
+
+
+def build_eval_geometry(cfg: Any, size: int | None = None) -> v2.Compose:
+    """The PIL-to-PIL part of the evaluation transform (deterministic; safe to cache).
+
+    Raises:
+        ValueError: On an unknown eval mode.
+    """
     side = int(size or cfg.size)
     if cfg.eval.mode == "crop":
-        geometry: list[Any] = [
+        steps: list[Any] = [
             v2.Resize(side, interpolation=cfg.interpolation),
             v2.CenterCrop(side),
         ]
     elif cfg.eval.mode == "pad":
-        geometry = [
+        steps = [
             PadToSquare(cfg.fill),
             v2.Resize((side, side), interpolation=cfg.interpolation),
         ]
     else:
         raise ValueError(f"unknown eval mode {cfg.eval.mode!r}")
-    return v2.Compose([*geometry, *_to_tensor(mean, std)])
+    return v2.Compose(steps)
+
+
+def build_tensorize(mean: Sequence[float], std: Sequence[float]) -> v2.Compose:
+    """PIL (or uint8 array) to a normalized float tensor."""
+    return v2.Compose(_to_tensor(mean, std))

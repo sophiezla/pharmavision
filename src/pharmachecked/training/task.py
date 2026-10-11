@@ -30,7 +30,11 @@ from pharmachecked.data.datasets import ManifestDataset
 from pharmachecked.data.manifest import read_manifest
 from pharmachecked.data.splits import DevSplits, load_dev_splits
 from pharmachecked.data.toy import make_toy_dataset
-from pharmachecked.data.transforms import build_eval_transform, build_train_transform
+from pharmachecked.data.transforms import (
+    build_eval_geometry,
+    build_tensorize,
+    build_train_transform,
+)
 from pharmachecked.evaluation.metrics import binary_metrics, single_class_metric, youden_threshold
 from pharmachecked.models.registry import build_model
 from pharmachecked.training.trainer import PRED_COLUMNS, fit, predict
@@ -89,6 +93,33 @@ def partitions(cfg: DictConfig, splits: DevSplits, external: pd.DataFrame) -> Pa
         val=list(splits.ids(cfg.fold, "val")),
         heldout=list(splits.ids(cfg.fold, "heldout")),
         external=list(ext["image_id"]),
+    )
+
+
+def eval_dataset(
+    cfg: DictConfig,
+    tcfg: DictConfig,
+    table: pd.DataFrame,
+    ids: list[str],
+    images: Path,
+    mean: list[float],
+    std: list[float],
+    size: int,
+) -> ManifestDataset:
+    """Evaluation dataset whose deterministic geometry output is cached per image on disk.
+
+    The cache key is the eval mode and size; normalization (model-specific) is applied after
+    loading, so every model sharing a size reuses the cache. Results are identical to the
+    uncached transform.
+    """
+    folder = Path(cfg.paths.results_dir) / "scratch" / "eval_cache" / f"{tcfg.eval.mode}_{size}"
+    return ManifestDataset(
+        table,
+        ids,
+        images,
+        build_tensorize(mean, std),
+        return_meta=True,
+        geometry_cache=(build_eval_geometry(tcfg, size), folder),
     )
 
 
@@ -153,14 +184,12 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
     size = int(cfg.data.get("img_size") or cfg.model.img_size)
     mean, std = list(cfg.model.mean), list(cfg.model.std)
-    eval_tf = build_eval_transform(tcfg, mean, std, size=size)
-
-    def dataset(ids: list[str], tf: Any, table: pd.DataFrame = manifest) -> ManifestDataset:
-        return ManifestDataset(table, ids, images, tf, return_meta=True)
-
-    train_ds = dataset(parts.train, build_train_transform(tcfg, mean, std, size=size))
-    val_ds, held_ds = dataset(parts.val, eval_tf), dataset(parts.heldout, eval_tf)
-    ext_ds = dataset(parts.external, eval_tf, external)
+    train_ds = ManifestDataset(
+        manifest, parts.train, images, build_train_transform(tcfg, mean, std, size=size), True
+    )
+    val_ds = eval_dataset(cfg, tcfg, manifest, parts.val, images, mean, std, size)
+    held_ds = eval_dataset(cfg, tcfg, manifest, parts.heldout, images, mean, std, size)
+    ext_ds = eval_dataset(cfg, tcfg, external, parts.external, images, mean, std, size)
     device = device_for(cfg)
     model = build_model(cfg.model)
     ckpt_dir = Path(cfg.paths.checkpoints_dir) / run.run_id
@@ -299,14 +328,12 @@ def run_clip_zeroshot(cfg: DictConfig, run: RunDir) -> None:
     manifest, external, splits, images = load_data(cfg)
     parts = partitions(cfg, splits, external)
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
-    eval_tf = build_eval_transform(
-        tcfg, list(cfg.model.mean), list(cfg.model.std), size=int(cfg.model.img_size)
-    )
+    mean, std, size = list(cfg.model.mean), list(cfg.model.std), int(cfg.model.img_size)
     device = device_for(cfg)
     model = build_zeroshot(cfg.model).to(device)
 
     def scored(table: pd.DataFrame, ids: list[str]) -> pd.DataFrame:
-        ds = ManifestDataset(table, ids, images, eval_tf, return_meta=True)
+        ds = eval_dataset(cfg, tcfg, table, ids, images, mean, std, size)
         return predict(model, ds, device, cfg.train, cfg.seed)
 
     val, held, ext = (

@@ -21,7 +21,7 @@ log = get_logger(__name__)
 
 MANIFEST = "MANIFEST.json"
 WEIGHT_SUFFIXES = frozenset({".pt", ".pth", ".ckpt", ".safetensors", ".bin", ".onnx", ".h5"})
-TOP_LEVEL = ("runs", "tables")
+TOP_LEVEL = ("runs", "tables", "job_logs")
 
 
 class BundleError(RuntimeError):
@@ -43,7 +43,11 @@ def _is_weight(path: Path) -> bool:
 
 
 def pack(
-    run_dirs: list[Path], table_files: list[Path], out: Path, created_by: str = ""
+    run_dirs: list[Path],
+    table_files: list[Path],
+    out: Path,
+    created_by: str = "",
+    log_files: dict[str, Path] | None = None,
 ) -> PackResult:
     """Write run folders and table files into a bundle zip with a hash manifest.
 
@@ -52,6 +56,7 @@ def pack(
         table_files: Extra files placed under ``tables/`` (e.g. benchmark tables).
         out: Destination zip; must not exist.
         created_by: Free text stored in the manifest (e.g. host name).
+        log_files: ``{file name: path}`` of job logs placed under ``job_logs/``.
 
     Returns:
         A :class:`PackResult`.
@@ -76,6 +81,8 @@ def pack(
             entries[arcname] = file
     for table in table_files:
         entries[f"tables/{table.name}"] = table
+    for name, path in (log_files or {}).items():
+        entries[f"job_logs/{name}"] = path
     manifest = {
         "created_by": created_by,
         "files": {

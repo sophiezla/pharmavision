@@ -58,12 +58,16 @@ def git_info(repo: Path) -> dict[str, Any]:
     Args:
         repo: Any path inside the repository.
 
+    Outside a git repository (a GPU kit), the commit and file hashes come from ``SNAPSHOT.json``
+    at the repository root; the tree is dirty when any snapshot file is missing or modified.
+
     Returns:
-        ``{"git_commit": str | None, "git_dirty": bool | None}``; None when not a git repo.
+        ``{"git_commit": str | None, "git_dirty": bool | None}``; None when neither git nor a
+        snapshot is available.
     """
     commit = _git(["rev-parse", "HEAD"], repo)
     if commit is None:
-        return {"git_commit": None, "git_dirty": None}
+        return snapshot_info(repo)
     status = _git(["status", "--porcelain", "--untracked-files=normal"], repo) or ""
     relevant = [
         line
@@ -71,6 +75,24 @@ def git_info(repo: Path) -> dict[str, Any]:
         if not (line.startswith("?? ") and line[3:].strip('"').startswith(UNTRACKED_OK_PREFIXES))
     ]
     return {"git_commit": commit, "git_dirty": bool(relevant)}
+
+
+SNAPSHOT_FILE = "SNAPSHOT.json"
+
+
+def snapshot_info(repo: Path) -> dict[str, Any]:
+    """Commit and dirty flag of a source snapshot (``SNAPSHOT.json``: commit + file SHA-256s)."""
+    from pharmachecked.utils.io import read_json, sha256_file
+
+    root = next((p for p in (repo, *repo.parents) if (p / SNAPSHOT_FILE).is_file()), None)
+    if root is None:
+        return {"git_commit": None, "git_dirty": None}
+    snapshot = read_json(root / SNAPSHOT_FILE)
+    dirty = any(
+        not (root / rel).is_file() or sha256_file(root / rel) != digest
+        for rel, digest in snapshot["files"].items()
+    )
+    return {"git_commit": snapshot["commit"], "git_dirty": dirty}
 
 
 def package_versions(names: tuple[str, ...] = TRACKED_PACKAGES) -> dict[str, str | None]:
