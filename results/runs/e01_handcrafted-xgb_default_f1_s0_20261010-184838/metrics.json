@@ -1,0 +1,42 @@
+{
+  "external": {
+    "mendeley_split_c": {
+      "n": 150,
+      "specificity": 0.11333333333333333
+    },
+    "mendeley_split_d": {
+      "n": 149,
+      "specificity": 0.006711409395973154
+    },
+    "split_e_harvested": {
+      "n": 121,
+      "recall": 0.9008264462809917
+    },
+    "split_e_regulatory": {
+      "n": 29,
+      "recall": 1.0
+    }
+  },
+  "heldout": {
+    "accuracy": 0.8818181818181818,
+    "auprc": 0.963085720960851,
+    "auroc": 0.9763167196889361,
+    "balanced_accuracy": 0.9008483563096501,
+    "brier": 0.06750325830021589,
+    "ece": 0.07345826422176532,
+    "macro_f1": 0.8789264245195156,
+    "sens_at_95_spec": 0.8536585365853658,
+    "sensitivity": 0.975609756097561,
+    "specificity": 0.8260869565217391,
+    "threshold": 0.16616566479206085
+  },
+  "n": {
+    "external": 449,
+    "heldout": 110,
+    "val": 55
+  },
+  "n_features": 6190,
+  "n_train": 331,
+  "threshold_rule": "youden",
+  "train_seconds": 11.712615200027358
+}

@@ -1,0 +1,52 @@
+exp: e01
+task: handcrafted
+variant: default
+fold: 0
+seed: 2
+device: null
+data:
+  dataset: real
+  split_version: 1
+  img_size: null
+  max_train_images: null
+  max_external_per_source: null
+paths:
+  root: C:/Documents/Projects/pharmavision-v2
+  data_dir: C:/Documents/Projects/pharmavision-v2/data
+  raw_dir: C:/Documents/Projects/pharmavision-v2/data/raw
+  processed_dir: C:/Documents/Projects/pharmavision-v2/data/processed
+  annotations_dir: C:/Documents/Projects/pharmavision-v2/data/annotations
+  splits_dir: C:/Documents/Projects/pharmavision-v2/splits
+  results_dir: C:/Documents/Projects/pharmavision-v2/results
+  runs_dir: C:/Documents/Projects/pharmavision-v2/results/runs
+  tables_dir: C:/Documents/Projects/pharmavision-v2/results/tables
+  figures_dir: C:/Documents/Projects/pharmavision-v2/results/figures
+  checkpoints_dir: C:/Documents/Projects/pharmavision-v2/checkpoints
+  mlruns_dir: C:/Documents/Projects/pharmavision-v2/mlruns
+  toy_dir: C:/Documents/Projects/pharmavision-v2/results/scratch/toy
+tracker:
+  enabled: true
+  tracking_uri: sqlite:///C:/Documents/Projects/pharmavision-v2/mlruns/mlflow.db
+  artifact_location: C:/Documents/Projects/pharmavision-v2/mlruns/artifacts
+  experiment_name: e01
+model:
+  name: handcrafted_lr
+  kind: sklearn
+  classifier: logreg
+  img_size: 224
+  C: 1.0
+  max_iter: 5000
+train:
+  lr: 0.0003
+  backbone_lr_mult: 0.1
+  weight_decay: 0.05
+  warmup_epochs: 1
+  max_epochs: 30
+  patience: 7
+  grad_clip: 1.0
+  batch_size: 32
+  eval_batch_size: 64
+  num_workers: 0
+  amp: true
+  threshold_rule: youden
+  resume: true

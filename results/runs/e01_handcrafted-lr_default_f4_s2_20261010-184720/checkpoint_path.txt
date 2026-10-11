@@ -1,0 +1,1 @@
+checkpoints/e01_handcrafted-lr_default_f4_s2_20261010-184720/model.joblib

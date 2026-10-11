@@ -1,0 +1,1 @@
+checkpoints/e01_handcrafted-xgb_default_f1_s0_20261010-184838/model.joblib
