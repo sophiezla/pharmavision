@@ -166,7 +166,9 @@ def write_outputs(
             **extra,
         },
     )
-    run.file("checkpoint_path.txt").write_text(_path_text(checkpoint) + "\n", encoding="utf-8")
+    run.file("checkpoint_path.txt").write_text(
+        _path_text(checkpoint) + "\n", encoding="utf-8", newline="\n"
+    )
 
 
 def _write_single_row_log(run: RunDir, row: dict[str, float]) -> None:
