@@ -1,0 +1,2 @@
+# Laptop dry run of the GPU kit (toy data, CPU, one tiny run).
+experiment=e01_baselines model=cnn_small variant=selftest data.dataset=toy data.img_size=64 data.max_train_images=32 data.max_external_per_source=8 train.max_epochs=1 train.batch_size=8 device=cpu paths=remote fold=0 seed=0

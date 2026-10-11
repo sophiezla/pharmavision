@@ -113,3 +113,11 @@ Template:
 - Decision: full runs target an NVIDIA RTX 5060. It needs PyTorch CUDA 12.8+ builds (`cu128` index). Memory-dependent settings (batch size, E4's memory criterion) are sized for 8 GB, using gradient checkpointing or accumulation where needed and reporting it.
 - Evidence: `results/tables/bench_gpu-pc.md` once the benchmark has run there.
 - Consequences: batch sizes are configurable per model and are checked against the GPU PC's benchmark before each experiment.
+
+## ADR-011 · GPU runs travel as a no-command kit
+- Date: 2026-10-10 · Status: Accepted (Sophie, 2026-10-10: unzip plus two double-clicks; uv, Split E in the private kit and Windows approved)
+- Context: Sophie asked that nothing sent to the GPU PC require AI, commands or steps beyond unzipping and two clicks.
+- Options considered: manual setup with git and pip (the earlier RUNNING_ELSEWHERE procedure); a self-contained kit.
+- Decision: `scripts/make_gpu_kit.py` builds `PRIVATE_gpu_kit_<name>_<commit>.zip`. It contains a `git archive` snapshot with `SNAPSHOT.json` (commit + file hashes, so runs record provenance without git), the development images except the locked test set, all external images including Split E (private, Sophie's machines only), uv (hash-verified) and two batch files. `1_SETUP.bat` installs Python 3.13 and the pinned packages (PyTorch cu130: the only CUDA build of torch 2.14.1 for Windows/Python 3.13, and the RTX 5060 needs CUDA >= 12.8) and checks the GPU. `2_RUN.bat` benchmarks, runs the job list with skip/resume, keeps Windows awake and writes a RESULTS zip.
+- Evidence: laptop dry run of a self-test kit (CPU, toy data) before the first real kit.
+- Consequences: deterministic evaluation geometry is cached per image to avoid re-decoding large external photos in every run. Results return through `unpack_results.py` with hash verification.

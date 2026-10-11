@@ -4,3 +4,4 @@
 *.pdf binary
 *.zip binary
 *.onnx binary
+*.bat text eol=crlf
