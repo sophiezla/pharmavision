@@ -1,0 +1,24 @@
+# E4 multi-branch model (PLAN 3.5; ADR-015 global branch, ADR-017 448 px / 2x2 tiles).
+# Ablation arms override the flags below (docs/experiments/E04.md).
+name: multibranch
+builder: multibranch
+img_size: 448             # tile_grid * 224
+tile_grid: 2
+use_local: true
+use_frequency: true
+use_router: true
+fusion: gated             # gated | concat
+routing: soft             # soft | hard
+shared_local_backbone: true
+embedding_dim: 256        # fused embedding
+mean: [0.5000, 0.5000, 0.5000]   # the backbone's normalization
+std: [0.5000, 0.5000, 0.5000]
+backbone:                 # EfficientNetV2-S with LoRA rank 8 (ADR-015)
+  source: timm
+  timm_name: tf_efficientnetv2_s.in21k_ft_in1k
+  pretrained: true
+  img_size: 224
+  embedding_dim: 1280
+  mode: lora
+  lora_targets: [conv_pw, conv_pwl]
+  lora_rank: 8
