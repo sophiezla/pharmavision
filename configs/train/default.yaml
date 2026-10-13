@@ -23,3 +23,4 @@ mix_alpha: 1.0
 supcon_epochs: 0          # > 0: SupCon pretraining (temp 0.1, 128-d projection), then a linear head
 supcon_temperature: 0.1
 router_weight: 0.3        # auxiliary packaging-type loss (E4 multi-branch models only)
+grad_checkpointing: false # trade compute for memory (timm backbones; E4 896 px ablation)

@@ -217,6 +217,13 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
     device = device_for(cfg)
     model = build_model(cfg.model)
     ckpt_dir = Path(cfg.paths.checkpoints_dir) / run.run_id
+    if cfg.train.get("grad_checkpointing"):
+        enabled = [
+            m.set_grad_checkpointing(True) or type(m).__name__
+            for m in model.modules()
+            if hasattr(m, "set_grad_checkpointing")
+        ]
+        log.info("gradient checkpointing enabled on %s", enabled or "nothing (unsupported)")
     if int(cfg.train.get("supcon_epochs", 0)) > 0:  # E5 SupCon arm: pretrain, then linear head
         from pharmachecked.training.supcon import freeze_encoder, pretrain
 

@@ -1,0 +1,5 @@
+# @package _global_
+# E4 multi-branch model and ablations (PLAN 3.4-3.7; docs/experiments/E04.md).
+exp: e04
+task: train
+variant: full
