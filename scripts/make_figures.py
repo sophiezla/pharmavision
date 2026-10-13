@@ -46,33 +46,44 @@ def parse_ci(text: str) -> tuple[float, float, float]:
     return float(match[1]), float(match[2]), float(match[3])
 
 
+def _arm_label(model: str, variant: str) -> str:
+    return model + ("" if variant in ("default", "ft") else f" ({variant})")
+
+
 def e01_auroc_vs_params(tables: Path, out: Path) -> list[Path]:
-    """Pooled AUROC (95% CI) against parameter count (log x), coloured by tier, direct-labelled."""
+    """(a) Pooled AUROC vs parameter count (log x) by tier; (b) every arm ranked, with 95% CI.
+
+    Panel (a) labels only points standing apart from the cluster near AUROC 1.0; panel (b)
+    names every arm, so no label overlaps. Zero-shot CLIP (no trained parameters) appears in (b).
+    """
     df = pd.read_csv(tables / "e01_summary.csv")
-    df = df[df["params (M)"].notna()].copy()
     df["model"] = df["config"].str.split("/").str[0]
     df["variant"] = df["config"].str.split("/").str[1]
-    df["tier"] = df["model"].map(TIERS).fillna("other")
+    df["tier"] = df["model"].map(TIERS).fillna("1 handcrafted")
+    df.loc[df["variant"] == "zeroshot", "tier"] = "6 zero-shot"
     est = df["auroc (pooled)"].map(parse_ci)
     df["auroc"], df["low"], df["high"] = zip(*est, strict=True)
+    tiers = sorted(df["tier"].unique())
+    colour = {t: color_for(k) for k, t in enumerate(tiers)}
     apply_style()
-    fig, ax = plt.subplots(figsize=(6.4, 4.2))
-    for k, (tier, part) in enumerate(sorted(df.groupby("tier"))):
+    fig, (ax, forest) = plt.subplots(
+        1, 2, figsize=(11.5, 5.2), gridspec_kw={"width_ratios": [1.0, 1.1]}
+    )
+
+    sized = df[df["params (M)"].notna()]
+    for tier, part in sized.groupby("tier"):
         ax.errorbar(
             part["params (M)"],
             part["auroc"],
             yerr=[part["auroc"] - part["low"], part["high"] - part["auroc"]],
             fmt="o",
-            color=color_for(k),
-            ecolor=color_for(k),
+            color=colour[tier],
             elinewidth=1,
-            capsize=0,
             label=f"tier {tier}",
         )
-        for _, row in part.iterrows():
-            label = row["model"] + ("" if row["variant"] == "default" else f" ({row['variant']})")
+        for _, row in part[part["auroc"] < 0.99].iterrows():  # the cluster is named in (b)
             ax.annotate(
-                label,
+                _arm_label(row["model"], row["variant"]),
                 (row["params (M)"], row["auroc"]),
                 xytext=(5, 3),
                 textcoords="offset points",
@@ -83,16 +94,86 @@ def e01_auroc_vs_params(tables: Path, out: Path) -> list[Path]:
     ax.xaxis.set_major_locator(FixedLocator([1, 3, 10, 30, 100, 300]))
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
     ax.xaxis.set_minor_formatter(NullFormatter())
-    low_x, high_x = df["params (M)"].min(), df["params (M)"].max()
-    ax.set_xlim(low_x / 1.5, high_x * 1.5)
-    ax.set_xlabel("Trainable + frozen parameters (millions, log scale)")
+    ax.set_xlim(sized["params (M)"].min() / 1.5, sized["params (M)"].max() * 1.5)
+    ax.set_xlabel("Parameters (millions, log scale)")
     ax.set_ylabel("Pooled OOF AUROC (95% CI)")
-    ax.set_title("E1: AUROC vs model size")
-    ax.legend(loc="lower right")
+    ax.set_title("(a) AUROC vs model size")
+
+    ranked = df.sort_values("auroc").reset_index(drop=True)
+    for y, row in ranked.iterrows():
+        forest.errorbar(
+            row["auroc"],
+            y,
+            xerr=[[row["auroc"] - row["low"]], [row["high"] - row["auroc"]]],
+            fmt="o",
+            color=colour[row["tier"]],
+            elinewidth=1,
+            markersize=5,
+        )
+    forest.set_yticks(range(len(ranked)))
+    forest.set_yticklabels(
+        [_arm_label(m, v) for m, v in zip(ranked["model"], ranked["variant"], strict=True)]
+    )
+    forest.tick_params(axis="y", labelsize=7, colors=INK_SECONDARY)
+    forest.grid(axis="y", visible=False)
+    forest.set_xlabel("Pooled OOF AUROC (95% CI)")
+    forest.set_title("(b) All arms, ranked")
+    handles = [
+        plt.Line2D([], [], marker="o", linestyle="", color=colour[t], label=f"tier {t}")
+        for t in tiers
+    ]
+    forest.legend(handles=handles, loc="upper left")  # the left of the axis is empty
+    fig.suptitle("E1: baseline ladder (development pool, out-of-fold)", fontsize=11, weight="bold")
+    fig.tight_layout()
     return save_figure(fig, out, "e01_auroc_vs_params")
 
 
-FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {"e01": [e01_auroc_vs_params]}
+E2_STRATEGIES = ("lp", "lora8", "lora16", "last2", "ft")  # few -> many trainable parameters
+
+
+def e02_auroc_by_strategy(tables: Path, out: Path) -> list[Path]:
+    """Pooled AUROC and log-loss (95% CI) per adaptation strategy, one colour per backbone."""
+    df = pd.read_csv(tables / "e02_summary.csv")
+    df["model"] = df["config"].str.split("/").str[0]
+    df["variant"] = df["config"].str.split("/").str[1]
+    apply_style()
+    fig, axes = plt.subplots(1, 2, figsize=(9.6, 3.8))
+    panels = (("auroc (pooled)", "Pooled OOF AUROC"), ("log_loss (pooled)", "Pooled OOF log-loss"))
+    xs = {s: k for k, s in enumerate(E2_STRATEGIES)}
+    for ax, (column, ylabel) in zip(axes, panels, strict=True):
+        for k, (model, part) in enumerate(sorted(df.groupby("model"))):
+            part = part[part["variant"].isin(xs)].sort_values("variant", key=lambda v: v.map(xs))
+            est, low, high = zip(*part[column].map(parse_ci), strict=True)
+            x = [xs[v] + (k - 0.5) * 0.18 for v in part["variant"]]  # side by side per strategy
+            ax.errorbar(
+                x,
+                est,
+                yerr=[
+                    [e - lo for e, lo in zip(est, low, strict=True)],
+                    [h - e for e, h in zip(est, high, strict=True)],
+                ],
+                fmt="o",
+                color=color_for(k),
+                elinewidth=1,
+                label=model,
+            )
+        ax.set_xticks(range(len(E2_STRATEGIES)))
+        ax.set_xticklabels(
+            ["linear\nprobe", "LoRA r8", "LoRA r16", "last 2\nblocks", "full\nfine-tune"]
+        )
+        ax.set_ylabel(f"{ylabel} (95% CI)")
+        ax.grid(axis="x", visible=False)
+    axes[0].set_title("E2: AUROC by strategy")
+    axes[1].set_title("E2: log-loss by strategy")
+    axes[1].legend(loc="upper right")
+    fig.tight_layout()
+    return save_figure(fig, out, "e02_auroc_by_strategy")
+
+
+FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
+    "e01": [e01_auroc_vs_params],
+    "e02": [e02_auroc_by_strategy],
+}
 
 
 def main() -> int:
