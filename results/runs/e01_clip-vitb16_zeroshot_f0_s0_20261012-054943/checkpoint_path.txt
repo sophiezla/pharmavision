@@ -1,0 +1,1 @@
+checkpoints/e01_clip-vitb16_zeroshot_f0_s0_20261012-054943/zeroshot_model.yaml

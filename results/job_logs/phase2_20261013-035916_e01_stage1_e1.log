@@ -1,0 +1,370 @@
+2026-10-11 10:37:02 [1/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 10:42:37 [1/185] done in 5.6 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 10:42:37 [2/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 10:48:53 [2/185] done in 6.3 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 10:48:53 [3/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 10:55:36 [3/185] done in 6.7 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 10:55:36 [4/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 11:01:42 [4/185] done in 6.1 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 11:01:42 [5/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 11:04:32 [5/185] done in 2.8 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 11:04:32 [6/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 11:11:04 [6/185] done in 6.5 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 11:11:04 [7/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 11:18:32 [7/185] done in 7.5 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 11:18:32 [8/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 11:23:13 [8/185] done in 4.7 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 11:23:13 [9/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 11:30:41 [9/185] done in 7.5 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 11:30:41 [10/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 11:38:10 [10/185] done in 7.5 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 11:38:10 [11/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 11:42:50 [11/185] done in 4.7 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 11:42:50 [12/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 11:47:04 [12/185] done in 4.2 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 11:47:04 [13/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 11:54:04 [13/185] done in 7.0 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 11:54:04 [14/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 12:00:09 [14/185] done in 6.1 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 12:00:09 [15/185] start experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 12:03:54 [15/185] done in 3.7 min experiment=e01_baselines model=cnn_small task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 12:03:54 [16/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 12:11:48 [16/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 12:11:48 [17/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 12:19:41 [17/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 12:19:41 [18/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 12:27:34 [18/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 12:27:34 [19/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 12:35:27 [19/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 12:35:27 [20/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 12:43:21 [20/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 12:43:21 [21/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 12:51:14 [21/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 12:51:14 [22/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 12:59:08 [22/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 12:59:08 [23/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 13:07:02 [23/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 13:07:02 [24/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 13:14:56 [24/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 13:14:56 [25/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 13:22:50 [25/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 13:22:50 [26/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 13:30:44 [26/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 13:30:44 [27/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 13:38:38 [27/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 13:38:38 [28/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 13:43:36 [28/185] done in 5.0 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 13:43:36 [29/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 13:51:31 [29/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 13:51:31 [30/185] start experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 13:59:25 [30/185] done in 7.9 min experiment=e01_baselines model=resnet50 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 13:59:25 [31/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 14:07:31 [31/185] done in 8.1 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 14:07:31 [32/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 14:15:42 [32/185] done in 8.2 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 14:15:42 [33/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 14:23:37 [33/185] done in 7.9 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 14:23:37 [34/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 14:31:51 [34/185] done in 8.2 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 14:31:52 [35/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 14:38:44 [35/185] done in 6.9 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 14:38:44 [36/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 14:47:20 [36/185] done in 8.6 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 14:47:20 [37/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 14:50:44 [37/185] done in 3.4 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 14:50:44 [38/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 14:57:08 [38/185] done in 6.4 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 14:57:08 [39/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 15:01:47 [39/185] done in 4.6 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 15:01:47 [40/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 15:09:57 [40/185] done in 8.2 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 15:09:57 [41/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 15:18:06 [41/185] done in 8.2 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 15:18:07 [42/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 15:26:11 [42/185] done in 8.1 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 15:26:12 [43/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 15:34:17 [43/185] done in 8.1 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 15:34:17 [44/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 15:39:40 [44/185] done in 5.4 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 15:39:40 [45/185] start experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 15:47:49 [45/185] done in 8.1 min experiment=e01_baselines model=efficientnetv2_s task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 15:47:49 [46/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 15:53:22 [46/185] done in 5.6 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 15:53:22 [47/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 16:01:25 [47/185] done in 8.0 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 16:01:25 [48/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 16:05:13 [48/185] done in 3.8 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 16:05:13 [49/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 16:13:13 [49/185] done in 8.0 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 16:13:13 [50/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 16:21:12 [50/185] done in 8.0 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 16:21:13 [51/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 16:25:31 [51/185] done in 4.3 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 16:25:31 [52/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 16:29:04 [52/185] done in 3.5 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 16:29:04 [53/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 16:32:07 [53/185] done in 3.1 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 16:32:07 [54/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 16:36:26 [54/185] done in 4.3 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 16:36:26 [55/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 16:40:13 [55/185] done in 3.8 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 16:40:13 [56/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 16:43:16 [56/185] done in 3.1 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 16:43:16 [57/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 16:46:20 [57/185] done in 3.1 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 16:46:20 [58/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 16:52:03 [58/185] done in 5.7 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 16:52:03 [59/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 16:57:37 [59/185] done in 5.6 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 16:57:37 [60/185] start experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 17:02:41 [60/185] done in 5.1 min experiment=e01_baselines model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 17:02:41 [61/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 17:08:43 [61/185] done in 6.0 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 17:08:43 [62/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 17:12:46 [62/185] done in 4.1 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 17:12:46 [63/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 17:16:51 [63/185] done in 4.1 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 17:16:51 [64/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 17:23:03 [64/185] done in 6.2 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 17:23:03 [65/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 17:31:34 [65/185] done in 8.5 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 17:31:34 [66/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 17:36:19 [66/185] done in 4.8 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 17:36:19 [67/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 17:38:57 [67/185] done in 2.6 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 17:38:57 [68/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 17:42:06 [68/185] done in 3.1 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 17:42:06 [69/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 17:45:00 [69/185] done in 2.9 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 17:45:00 [70/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 17:51:24 [70/185] done in 6.4 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 17:51:25 [71/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 17:54:53 [71/185] done in 3.5 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 17:54:53 [72/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 17:59:12 [72/185] done in 4.3 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 17:59:12 [73/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 18:04:18 [73/185] done in 5.1 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 18:04:18 [74/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 18:09:54 [74/185] done in 5.6 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 18:09:54 [75/185] start experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 18:13:07 [75/185] done in 3.2 min experiment=e01_baselines model=vit_b16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 18:13:07 [76/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 18:19:28 [76/185] done in 6.4 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 18:19:28 [77/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 18:26:19 [77/185] done in 6.8 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 18:26:19 [78/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 18:32:40 [78/185] done in 6.4 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 18:32:40 [79/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 18:39:00 [79/185] done in 6.3 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 18:39:00 [80/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 18:45:20 [80/185] done in 6.3 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 18:45:20 [81/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 18:49:39 [81/185] done in 4.3 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 18:49:39 [82/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 18:53:26 [82/185] done in 3.8 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 18:53:26 [83/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 18:57:51 [83/185] done in 4.4 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 18:57:51 [84/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 19:01:08 [84/185] done in 3.3 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 19:01:08 [85/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 19:09:58 [85/185] done in 8.8 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 19:09:58 [86/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 19:17:26 [86/185] done in 7.5 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 19:17:26 [87/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 19:22:28 [87/185] done in 5.0 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 19:22:28 [88/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 19:30:09 [88/185] done in 7.7 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 19:30:09 [89/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 19:38:22 [89/185] done in 8.2 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 19:38:22 [90/185] start experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 19:44:46 [90/185] done in 6.4 min experiment=e01_baselines model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 19:44:46 [91/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 19:49:50 [91/185] done in 5.1 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 19:49:50 [92/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 19:53:36 [92/185] done in 3.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 19:53:36 [93/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 19:58:07 [93/185] done in 4.5 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 19:58:07 [94/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 20:05:53 [94/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 20:05:53 [95/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 20:10:09 [95/185] done in 4.3 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 20:10:09 [96/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 20:13:27 [96/185] done in 3.3 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 20:13:27 [97/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 20:16:59 [97/185] done in 3.5 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 20:16:59 [98/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 20:22:32 [98/185] done in 5.6 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 20:22:33 [99/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 20:27:00 [99/185] done in 4.5 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 20:27:00 [100/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 20:34:27 [100/185] done in 7.4 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 20:34:27 [101/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 20:39:21 [101/185] done in 4.9 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 20:39:21 [102/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 20:46:09 [102/185] done in 6.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 20:46:09 [103/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 20:51:25 [103/185] done in 5.3 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 20:51:25 [104/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 20:59:14 [104/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 20:59:14 [105/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 21:05:17 [105/185] done in 6.0 min experiment=e01_baselines model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 21:05:17 [106/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 21:13:06 [106/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 21:13:06 [107/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 21:20:55 [107/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 21:20:55 [108/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 21:28:44 [108/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 21:28:44 [109/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 21:36:32 [109/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 21:36:32 [110/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 21:44:20 [110/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 21:44:20 [111/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 21:52:14 [111/185] done in 7.9 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 21:52:14 [112/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 22:00:05 [112/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 22:00:05 [113/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 22:07:08 [113/185] done in 7.1 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 22:07:08 [114/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 22:14:56 [114/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 22:14:56 [115/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 22:22:45 [115/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 22:22:45 [116/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 22:30:33 [116/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 22:30:33 [117/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 22:38:07 [117/185] done in 7.6 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 22:38:07 [118/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 22:45:55 [118/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 22:45:55 [119/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 22:53:43 [119/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-11 22:53:43 [120/185] start experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 23:01:32 [120/185] done in 7.8 min experiment=e01_baselines model=dinov2_vits14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-11 23:01:32 [121/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 23:06:14 [121/185] done in 4.7 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-11 23:06:15 [122/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 23:09:34 [122/185] done in 3.3 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-11 23:09:34 [123/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 23:13:27 [123/185] done in 3.9 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-11 23:13:27 [124/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 23:18:27 [124/185] done in 5.0 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-11 23:18:27 [125/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 23:26:20 [125/185] done in 7.9 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-11 23:26:20 [126/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 23:31:38 [126/185] done in 5.3 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-11 23:31:38 [127/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 23:35:15 [127/185] done in 3.6 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-11 23:35:15 [128/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 23:38:17 [128/185] done in 3.0 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-11 23:38:17 [129/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 23:42:43 [129/185] done in 4.4 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-11 23:42:43 [130/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 23:46:02 [130/185] done in 3.3 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-11 23:46:02 [131/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 23:51:18 [131/185] done in 5.3 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-11 23:51:18 [132/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 23:54:54 [132/185] done in 3.6 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-11 23:54:54 [133/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 23:59:37 [133/185] done in 4.7 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-11 23:59:37 [134/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 00:04:37 [134/185] done in 5.0 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 00:04:37 [135/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 00:13:31 [135/185] done in 8.9 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 00:13:31 [136/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 00:21:39 [136/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 00:21:39 [137/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 00:29:48 [137/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 00:29:48 [138/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 00:37:57 [138/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 00:37:57 [139/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 00:46:05 [139/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 00:46:05 [140/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 00:54:14 [140/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 00:54:14 [141/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 01:02:23 [141/185] done in 8.2 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 01:02:23 [142/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 01:10:31 [142/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 01:10:31 [143/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 01:17:38 [143/185] done in 7.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 01:17:38 [144/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 01:25:46 [144/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 01:25:46 [145/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 01:33:55 [145/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 01:33:55 [146/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 01:42:03 [146/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 01:42:03 [147/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 01:50:12 [147/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 01:50:12 [148/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 01:58:22 [148/185] done in 8.2 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 01:58:22 [149/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 02:06:30 [149/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 02:06:30 [150/185] start experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 02:14:39 [150/185] done in 8.1 min experiment=e01_baselines model=dinov2_vitb14 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 02:14:39 [151/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 02:18:49 [151/185] done in 4.2 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 02:18:49 [152/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 02:27:32 [152/185] done in 8.7 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 02:27:32 [153/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 02:36:17 [153/185] done in 8.8 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 02:36:17 [154/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 02:45:01 [154/185] done in 8.7 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 02:45:01 [155/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 02:53:44 [155/185] done in 8.7 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 02:53:44 [156/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 02:58:41 [156/185] done in 5.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 02:58:41 [157/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 03:02:15 [157/185] done in 3.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 03:02:15 [158/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 03:05:49 [158/185] done in 3.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 03:05:49 [159/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 03:09:04 [159/185] done in 3.3 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 03:09:04 [160/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 03:17:42 [160/185] done in 8.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 03:17:42 [161/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 03:22:00 [161/185] done in 4.3 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 03:22:00 [162/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 03:26:35 [162/185] done in 4.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 03:26:35 [163/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 03:35:14 [163/185] done in 8.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 03:35:14 [164/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 03:41:24 [164/185] done in 6.2 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 03:41:24 [165/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 03:50:02 [165/185] done in 8.6 min experiment=e01_baselines model=clip_vitb16 task=train variant=ft paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 03:50:02 [166/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 03:58:01 [166/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 03:58:01 [167/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 04:05:59 [167/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=1
+2026-10-12 04:06:00 [168/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 04:13:58 [168/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=0 seed=2
+2026-10-12 04:13:58 [169/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 04:21:56 [169/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 04:21:56 [170/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 04:29:55 [170/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=1
+2026-10-12 04:29:55 [171/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 04:37:53 [171/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=1 seed=2
+2026-10-12 04:37:53 [172/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 04:45:51 [172/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 04:45:51 [173/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 04:53:50 [173/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=1
+2026-10-12 04:53:50 [174/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 05:01:49 [174/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=2 seed=2
+2026-10-12 05:01:49 [175/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 05:09:48 [175/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 05:09:48 [176/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 05:17:47 [176/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=1
+2026-10-12 05:17:47 [177/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 05:25:46 [177/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=3 seed=2
+2026-10-12 05:25:46 [178/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 05:33:45 [178/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 05:33:45 [179/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 05:41:44 [179/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=1
+2026-10-12 05:41:44 [180/185] start experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 05:49:41 [180/185] done in 8.0 min experiment=e01_baselines model=clip_vitb16 task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e01 fold=4 seed=2
+2026-10-12 05:49:41 [181/185] start experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 05:50:16 [181/185] done in 0.6 min experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=0 seed=0
+2026-10-12 05:50:16 [182/185] start experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 05:50:50 [182/185] done in 0.6 min experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=1 seed=0
+2026-10-12 05:50:50 [183/185] start experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 05:51:24 [183/185] done in 0.6 min experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=2 seed=0
+2026-10-12 05:51:24 [184/185] start experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 05:51:58 [184/185] done in 0.6 min experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=3 seed=0
+2026-10-12 05:51:59 [185/185] start experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=4 seed=0
+2026-10-12 05:52:33 [185/185] done in 0.6 min experiment=e01_baselines model=clip_vitb16 task=clip_zeroshot variant=zeroshot paths=remote train.num_workers=4 exp=e01 fold=4 seed=0

@@ -1,0 +1,1 @@
+checkpoints/e01_dinov2-vitb14_lp_f1_s0_20261012-003759/best.pt

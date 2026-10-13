@@ -1,0 +1,15 @@
+{
+  "best_trial": 22,
+  "kind": "ft",
+  "n_complete": 14,
+  "n_failed": 0,
+  "n_pruned": 16,
+  "objective": "fold-0 val log-loss at the ADR-012-selected epoch (minimize)",
+  "params": {
+    "train.backbone_lr_mult": 0.011018372376248461,
+    "train.lr": 0.0009640066293141126,
+    "train.weight_decay": 0.009332061341004706
+  },
+  "study": "e01_dinov2-vits14_ft",
+  "value": 1.6450412658741698e-05
+}

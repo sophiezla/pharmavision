@@ -1,0 +1,15 @@
+{
+  "best_trial": 9,
+  "kind": "ft",
+  "n_complete": 12,
+  "n_failed": 0,
+  "n_pruned": 18,
+  "objective": "fold-0 val log-loss at the ADR-012-selected epoch (minimize)",
+  "params": {
+    "train.backbone_lr_mult": 0.06750312521595925,
+    "train.lr": 0.0007750644796341915,
+    "train.weight_decay": 0.006524239440019404
+  },
+  "study": "e01_convnext-tiny_ft",
+  "value": 1.5252902812790126e-05
+}

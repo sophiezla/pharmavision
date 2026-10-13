@@ -1,0 +1,41 @@
+{
+  "device": "cuda",
+  "external": {
+    "mendeley_split_c": {
+      "n": 150,
+      "specificity": 0.78
+    },
+    "mendeley_split_d": {
+      "n": 149,
+      "specificity": 0.825503355704698
+    },
+    "split_e_harvested": {
+      "n": 121,
+      "recall": 0.39669421487603307
+    },
+    "split_e_regulatory": {
+      "n": 29,
+      "recall": 0.6206896551724138
+    }
+  },
+  "heldout": {
+    "accuracy": 0.5727272727272728,
+    "auprc": 0.5109208572260476,
+    "auroc": 0.6676785714285715,
+    "balanced_accuracy": 0.6214285714285714,
+    "brier": 0.30830438781132385,
+    "ece": 0.2680211779746142,
+    "macro_f1": 0.5726919580130589,
+    "sens_at_95_spec": 0.1,
+    "sensitivity": 0.8,
+    "specificity": 0.44285714285714284,
+    "threshold": 0.6513549089431763
+  },
+  "n": {
+    "external": 449,
+    "heldout": 110,
+    "val": 55
+  },
+  "threshold_rule": "youden",
+  "train_seconds": 0.0
+}

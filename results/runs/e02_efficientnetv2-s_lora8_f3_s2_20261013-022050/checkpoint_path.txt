@@ -1,0 +1,1 @@
+checkpoints/e02_efficientnetv2-s_lora8_f3_s2_20261013-022050/best.pt

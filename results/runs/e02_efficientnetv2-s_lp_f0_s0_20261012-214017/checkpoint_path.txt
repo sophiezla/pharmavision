@@ -1,0 +1,1 @@
+checkpoints/e02_efficientnetv2-s_lp_f0_s0_20261012-214017/best.pt

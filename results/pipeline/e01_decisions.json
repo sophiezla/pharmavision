@@ -1,0 +1,14 @@
+{
+  "e2_backbones": [
+    "convnext-tiny",
+    "efficientnetv2-s"
+  ],
+  "rule": "pooled OOF AUROC (seed-averaged), exact ties -> lower pooled OOF log-loss; development pool only (ADR-005, ADR-013)",
+  "tier_best": {
+    "1": "handcrafted-xgb/default",
+    "2": "cnn-small/ft",
+    "3": "convnext-tiny/ft",
+    "4": "swin-tiny/ft",
+    "5": "dinov2-vits14/ft"
+  }
+}

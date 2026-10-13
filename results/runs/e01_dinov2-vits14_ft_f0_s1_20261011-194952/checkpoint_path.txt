@@ -1,0 +1,1 @@
+checkpoints/e01_dinov2-vits14_ft_f0_s1_20261011-194952/best.pt

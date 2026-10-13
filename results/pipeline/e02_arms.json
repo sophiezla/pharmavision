@@ -1,0 +1,17 @@
+{
+  "arms": [
+    "convnext-tiny/lp",
+    "convnext-tiny/last2",
+    "convnext-tiny/lora8",
+    "convnext-tiny/lora16",
+    "efficientnetv2-s/lp",
+    "efficientnetv2-s/last2",
+    "efficientnetv2-s/lora8",
+    "efficientnetv2-s/lora16"
+  ],
+  "backbones": [
+    "convnext-tiny",
+    "efficientnetv2-s"
+  ],
+  "from_e1": "full fine-tuning (and linear probe where E1 ran it)"
+}

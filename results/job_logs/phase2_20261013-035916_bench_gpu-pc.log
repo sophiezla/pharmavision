@@ -1,0 +1,11 @@
+2026-10-11 10:35:55 INFO bench_machine: clip_vitb16 (vit_base_patch16_clip_224): train 207.94 img/s, eval 743.24 img/s
+2026-10-11 10:36:05 INFO bench_machine: convnext_tiny (convnext_tiny): train 424.41 img/s, eval 1314.22 img/s
+2026-10-11 10:36:12 INFO bench_machine: dinov2_vitb14 (vit_base_patch14_dinov2): train 151.17 img/s, eval 529.78 img/s
+2026-10-11 10:36:14 INFO bench_machine: dinov2_vits14 (vit_small_patch14_dinov2): train 438.78 img/s, eval 1626.31 img/s
+2026-10-11 10:36:22 INFO bench_machine: efficientnet_lite0 (efficientnet_lite0): train 647.23 img/s, eval 2543.37 img/s
+2026-10-11 10:36:33 INFO bench_machine: efficientnetv2_s (tf_efficientnetv2_s): train 311.14 img/s, eval 1140.52 img/s
+2026-10-11 10:36:43 INFO bench_machine: mobilenetv3_large (mobilenetv3_large_100): train 934.27 img/s, eval 3726.16 img/s
+2026-10-11 10:36:48 INFO bench_machine: resnet50 (resnet50): train 407.49 img/s, eval 1284.07 img/s
+2026-10-11 10:36:52 INFO bench_machine: swin_tiny (swin_tiny_patch4_window7_224): train 340.67 img/s, eval 971.72 img/s
+2026-10-11 10:36:57 INFO bench_machine: vit_b16 (vit_base_patch16_224): train 208.52 img/s, eval 743.87 img/s
+2026-10-11 10:36:57 INFO bench_machine: wrote C:\Users\Home\Desktop\PRIVATE_gpu_kit_phase2_053e606\pharmavision\results\tables\bench_gpu-pc.md

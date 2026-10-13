@@ -1,0 +1,1 @@
+checkpoints/e01_swin-tiny_ft_f2_s1_20261011-185328/best.pt

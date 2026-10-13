@@ -1,0 +1,15 @@
+{
+  "best_trial": 2,
+  "kind": "ft",
+  "n_complete": 12,
+  "n_failed": 0,
+  "n_pruned": 18,
+  "objective": "fold-0 val log-loss at the ADR-012-selected epoch (minimize)",
+  "params": {
+    "train.backbone_lr_mult": 0.8459126528049372,
+    "train.lr": 7.50195444362012e-05,
+    "train.weight_decay": 0.12612548678037216
+  },
+  "study": "e01_swin-tiny_ft",
+  "value": 1.8204800653620623e-05
+}

@@ -1,0 +1,1 @@
+checkpoints/e01_convnext-tiny_ft-tuned_f3_s2_20261012-130829/best.pt

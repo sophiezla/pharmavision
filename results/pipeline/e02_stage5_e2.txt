@@ -1,0 +1,120 @@
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=convnext_tiny task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lp model.mode=linear_probe paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=last2 model.mode=last_k model.trainable_blocks=2 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora8 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=0 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=1 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=2 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=3 seed=2
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=0
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=1
+experiment=e02_adaptation model=efficientnetv2_s task=train variant=lora16 model.mode=lora model.lora_rank=16 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 exp=e02 fold=4 seed=2

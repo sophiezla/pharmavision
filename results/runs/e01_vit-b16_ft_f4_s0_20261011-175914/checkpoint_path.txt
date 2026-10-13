@@ -1,0 +1,1 @@
+checkpoints/e01_vit-b16_ft_f4_s0_20261011-175914/best.pt

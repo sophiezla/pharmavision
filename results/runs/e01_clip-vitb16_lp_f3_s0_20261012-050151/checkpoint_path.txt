@@ -1,0 +1,1 @@
+checkpoints/e01_clip-vitb16_lp_f3_s0_20261012-050151/best.pt

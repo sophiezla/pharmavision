@@ -1,0 +1,1 @@
+checkpoints/e02_convnext-tiny_lora8_f2_s1_20261012-194843/best.pt

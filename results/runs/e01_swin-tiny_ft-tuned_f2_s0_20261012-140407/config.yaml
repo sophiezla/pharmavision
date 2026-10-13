@@ -1,0 +1,68 @@
+exp: e01
+task: train
+variant: ft-tuned
+fold: 2
+seed: 0
+device: null
+data:
+  dataset: real
+  split_version: 1
+  img_size: null
+  max_train_images: null
+  max_external_per_source: null
+paths:
+  root: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision
+  data_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/data
+  raw_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/data/raw
+  processed_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/data/processed
+  annotations_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/data/annotations
+  splits_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/splits
+  results_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/results
+  runs_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/results/runs
+  tables_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/results/tables
+  figures_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/results/figures
+  checkpoints_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/checkpoints
+  mlruns_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/mlruns
+  toy_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/results/scratch/toy
+tracker:
+  enabled: true
+  tracking_uri: sqlite:///C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/mlruns/mlflow.db
+  artifact_location: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase2_053e606/pharmavision/mlruns/artifacts
+  experiment_name: e01
+model:
+  name: swin_tiny
+  builder: backbone
+  mode: full
+  trainable_blocks: 2
+  lora_targets:
+  - qkv
+  lora_rank: 8
+  head_dropout: 0.0
+  source: timm
+  timm_name: swin_tiny_patch4_window7_224.ms_in22k_ft_in1k
+  pretrained: true
+  img_size: 224
+  embedding_dim: 768
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+train:
+  lr: 7.50195444362012e-05
+  backbone_lr_mult: 0.8459126528049372
+  weight_decay: 0.12612548678037216
+  warmup_epochs: 1
+  max_epochs: 30
+  patience: 7
+  selection: auroc_then_loss
+  grad_clip: 1.0
+  batch_size: 32
+  eval_batch_size: 64
+  num_workers: 4
+  amp: true
+  threshold_rule: youden
+  resume: true

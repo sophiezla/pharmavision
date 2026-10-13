@@ -1,0 +1,17 @@
+{
+  "best_trial": 24,
+  "kind": "xgboost",
+  "n_complete": 30,
+  "n_failed": 0,
+  "n_pruned": 0,
+  "objective": "fold-0 val log-loss at the ADR-012-selected epoch (minimize)",
+  "params": {
+    "model.colsample_bytree": 0.8703904745905373,
+    "model.learning_rate": 0.09663857850763453,
+    "model.max_depth": 6,
+    "model.n_estimators": 542,
+    "model.subsample": 0.919579733191633
+  },
+  "study": "e01_handcrafted-xgb_default",
+  "value": 0.06107274923452217
+}

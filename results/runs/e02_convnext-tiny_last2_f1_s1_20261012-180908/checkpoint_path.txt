@@ -1,0 +1,1 @@
+checkpoints/e02_convnext-tiny_last2_f1_s1_20261012-180908/best.pt

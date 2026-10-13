@@ -1,0 +1,14 @@
+{
+  "best_trial": 20,
+  "kind": "scratch",
+  "n_complete": 8,
+  "n_failed": 0,
+  "n_pruned": 22,
+  "objective": "fold-0 val log-loss at the ADR-012-selected epoch (minimize)",
+  "params": {
+    "train.lr": 0.007819484106167155,
+    "train.weight_decay": 0.004449889428832156
+  },
+  "study": "e01_cnn-small_ft",
+  "value": 0.25499966740608215
+}
