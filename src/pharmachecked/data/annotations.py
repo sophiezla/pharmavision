@@ -102,6 +102,57 @@ class PackagingStore:
         return int((self.df["final_label"] != "").sum())
 
 
+AUDIT_COLUMNS = (
+    "image_id",
+    "original_label",
+    "flagged_by",
+    "model_prob",
+    "decision",
+    "new_label",
+    "reason",
+    "annotator",
+    "timestamp",
+)
+AUDIT_DECISIONS = ("keep", "relabel", "remove")
+
+
+class AuditStore:
+    """``label_audit.csv`` (PLAN 2.13): keep / relabel / remove decision per flagged image."""
+
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self.df = _read(path, AUDIT_COLUMNS).set_index("image_id", drop=False)
+
+    def ids(self) -> list[str]:
+        """All flagged image ids, sorted."""
+        return list(self.df.index)
+
+    def row(self, image_id: str) -> dict[str, str]:
+        """One row as a dict."""
+        return self.df.loc[image_id].to_dict()
+
+    def set_decision(self, image_id: str, decision: str, reason: str, annotator: str) -> None:
+        """Record a decision; a relabel flips the binary label. Saves immediately."""
+        if decision not in AUDIT_DECISIONS:
+            raise ValueError(f"decision must be one of {AUDIT_DECISIONS}")
+        if not reason.strip() or not annotator.strip():
+            raise ValueError("reason and annotator name required")
+        original = int(self.df.loc[image_id, "original_label"])
+        new_label = str(1 - original) if decision == "relabel" else ""
+        self.df.loc[image_id, ["decision", "new_label", "reason", "annotator", "timestamp"]] = [
+            decision,
+            new_label,
+            reason.strip(),
+            annotator.strip(),
+            _now(),
+        ]
+        _write(self.df.reset_index(drop=True), self.path)
+
+    def n_done(self) -> int:
+        """Number of images with a decision."""
+        return int((self.df["decision"] != "").sum())
+
+
 class ConceptStore:
     """``concepts.csv``: seven concept labels (present/absent/unsure) per subset image."""
 

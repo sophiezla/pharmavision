@@ -1,11 +1,13 @@
-"""Local Gradio app for packaging-type review (PLAN 1.7) and concept labelling (PLAN 1.8).
+"""Local Gradio app: packaging types (PLAN 1.7), concepts (PLAN 1.8), label audit (PLAN 2.13).
 
-The app never shows an image's authentic/counterfeit label, so annotations stay label-blind.
-It binds to 127.0.0.1 only (no public share link) and saves after every click.
+Packaging and concept modes never show an image's authentic/counterfeit label, so those
+annotations stay label-blind. The audit mode must show it: it reviews the label itself. The
+app binds to 127.0.0.1 only (no public share link) and saves after every click.
 
 Usage:
     python -m pharmachecked.data.annotation_app --mode packaging
     python -m pharmachecked.data.annotation_app --mode concepts
+    python -m pharmachecked.data.annotation_app --mode audit
 """
 
 from __future__ import annotations
@@ -21,12 +23,16 @@ from PIL import Image
 
 from pharmachecked.config import REPO_ROOT
 from pharmachecked.data.annotations import (
+    AUDIT_DECISIONS,
     CONCEPT_VALUES,
     CONCEPTS,
     PACKAGING_TYPES,
+    AuditStore,
     ConceptStore,
     PackagingStore,
 )
+
+LABEL_NAMES = {"0": "authentic", "1": "counterfeit"}
 
 ANNOTATIONS = REPO_ROOT / "data" / "annotations"
 IMAGES = REPO_ROOT / "data" / "processed" / "images"
@@ -179,10 +185,55 @@ def build_concept_app(store: ConceptStore, images_dir: Path = IMAGES) -> gr.Bloc
     return app
 
 
+def build_audit_app(store: AuditStore, images_dir: Path = IMAGES) -> gr.Blocks:
+    """Label audit: the image, its current label and why it was flagged; keep/relabel/remove."""
+    ids = store.ids()
+
+    def done(image_id: str) -> bool:
+        return store.row(image_id)["decision"] != ""
+
+    def view(index: int) -> tuple[Any, ...]:
+        row = store.row(ids[index])
+        decided = f"decided **{row['decision']}**" if row["decision"] else "no decision yet"
+        info = (
+            f"Image {index + 1} / {len(ids)} · {store.n_done()} done · `{ids[index]}`  \n"
+            f"Current label: **{LABEL_NAMES[row['original_label']]}** · flagged by "
+            f"{row['flagged_by']} · model counterfeit probability {row['model_prob'] or 'n/a'} · "
+            f"{decided}"
+        )
+        return index, _image(ids[index], images_dir), info, row["decision"] or None, row["reason"]
+
+    def save(index: int, decision: str | None, reason: str, annotator: str) -> tuple[Any, ...]:
+        if decision is None or not reason.strip() or not annotator.strip():
+            raise gr.Error("Choose a decision, give a short reason and enter your name.")
+        store.set_decision(ids[index], decision, reason, annotator)
+        return view(step(ids, index, +1, done, False))
+
+    with gr.Blocks(title="Label audit") as app:
+        gr.Markdown(
+            "## Label audit\nKeep the label, relabel (switch authentic/counterfeit), or remove "
+            "the image from the development pool."
+        )
+        index = gr.State(first_todo(ids, done))
+        annotator = gr.Textbox(label="Annotator")
+        info = gr.Markdown()
+        image = gr.Image(type="pil", format="png", height=520, interactive=False, show_label=False)
+        decision = gr.Radio(list(AUDIT_DECISIONS), label="Decision")
+        reason = gr.Textbox(label="Reason (short)")
+        with gr.Row():
+            prev_btn = gr.Button("◀ Previous")
+            save_btn = gr.Button("Save and next ▶", variant="primary")
+        outputs = [index, image, info, decision, reason]
+        app.load(view, inputs=index, outputs=outputs)
+        save_btn.click(save, inputs=[index, decision, reason, annotator], outputs=outputs)
+        prev_btn.click(lambda k: view(step(ids, k, -1, done, False)), inputs=index, outputs=outputs)
+    return app
+
+
 def main(argv: list[str] | None = None) -> int:
     """Launch the app locally; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--mode", choices=("packaging", "concepts"), required=True)
+    parser.add_argument("--mode", choices=("packaging", "concepts", "audit"), required=True)
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument(
         "--review",
@@ -197,6 +248,12 @@ def main(argv: list[str] | None = None) -> int:
             sys.stderr.write("run scripts/prelabel_packaging.py first\n")
             return 1
         app = build_packaging_app(PackagingStore(path), only_label=args.review)
+    elif args.mode == "audit":
+        path = ANNOTATIONS / "label_audit.csv"
+        if not path.exists():
+            sys.stderr.write("run scripts/label_audit.py first\n")
+            return 1
+        app = build_audit_app(AuditStore(path))
     else:
         path = ANNOTATIONS / "concepts.csv"
         if not path.exists():

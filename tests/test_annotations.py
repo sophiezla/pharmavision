@@ -126,3 +126,21 @@ def test_concept_subset_is_stratified_and_deterministic() -> None:
     assert len(a) == 300
     share = sum(labels[ids.index(i)] for i in a) / 300
     assert abs(share - 0.375) < 0.01
+
+
+def test_audit_store_and_app(tmp_path: Path, toy: ToyData) -> None:
+    from pharmachecked.data.annotation_app import build_audit_app
+    from pharmachecked.data.annotations import AUDIT_COLUMNS, AuditStore
+
+    ids = sorted(read_manifest(toy.manifest)["image_id"])[:2]
+    pd.DataFrame(
+        [{c: "" for c in AUDIT_COLUMNS} | {"image_id": i, "original_label": "1"} for i in ids]
+    ).to_csv(tmp_path / "audit.csv", index=False)
+    store = AuditStore(tmp_path / "audit.csv")
+    store.set_decision(ids[0], "relabel", "authentic packaging", "Sophie")
+    again = AuditStore(tmp_path / "audit.csv")
+    assert again.row(ids[0])["new_label"] == "0"
+    assert again.n_done() == 1
+    with pytest.raises(ValueError):
+        store.set_decision(ids[1], "remove", " ", "Sophie")
+    assert build_audit_app(store, toy.images_dir).title == "Label audit"

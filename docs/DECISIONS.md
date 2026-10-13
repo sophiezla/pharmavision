@@ -137,3 +137,11 @@ Template:
 - Decision: one kit per phase where dependencies allow. Decision rules (which arms advance, tuning objectives and search spaces, which backbones go to the next experiment) are written in the experiment pages before the kit is built and applied by the pipeline on the GPU PC. Each decision is recorded in `results/pipeline/`. Rankings use development-pool OOF predictions only: pooled AUROC, exact ties broken by pooled log-loss. External sets never drive a decision (ADR-005). The phase checkpoint becomes a review of the returned results. Steps that need Sophie (label audit, concept labels, synthetic-image quality review) sit between kits.
 - Evidence: `docs/experiments/E01.md` (decision rules), `docs/experiments/E02.md`.
 - Consequences: Phase 2 runs as one kit (`scripts/phase2_pipeline.py`: E1 → decisions → Optuna → tuned re-runs → E2), dry-run on the laptop with a self-test profile before handover. Tuned settings come back as JSON and are frozen into configs on the laptop with an ADR.
+
+## ADR-014 · E2 backbones: ConvNeXt-T and EfficientNetV2-S (pre-registered rule)
+- Date: 2026-10-13 · Status: Accepted (applied automatically under ADR-013)
+- Context: PLAN 2.8 requires an ADR naming the two best E1 backbones for E2.
+- Options considered: none at decision time; the rule was fixed in E01.md before the runs.
+- Decision: `convnext-tiny` and `efficientnetv2-s`, the two best distinct pretrained backbones (default-settings arms) by pooled OOF AUROC with exact ties broken by pooled OOF log-loss, development pool only.
+- Evidence: `results/pipeline/e01_decisions.json`, `results/pipeline/e01_ranking.csv`, `results/tables/e01_summary.md`.
+- Consequences: E2 ran on these two backbones in the same kit (`results/tables/e02_summary.md`). Pairwise tests (`results/tables/e01_pairwise.md`) show most pretrained arms are statistically indistinguishable from the best, so the rule picked among near-equals; the external sets played no part.

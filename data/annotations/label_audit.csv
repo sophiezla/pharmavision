@@ -1,0 +1,3 @@
+image_id,original_label,flagged_by,model_prob,decision,new_label,reason,annotator,timestamp
+ae8f808c77296cdb,0,not_a_drug,0.1046,,,,,
+eb51eaff99825106,1,not_a_drug,1.0000,,,,,
