@@ -197,7 +197,11 @@ def fold_datasets(cfg: DictConfig) -> FoldData:
     mean, std = list(cfg.model.mean), list(cfg.model.std)
     return FoldData(
         train=ManifestDataset(
-            manifest, parts.train, images, build_train_transform(tcfg, mean, std, size=size), True
+            manifest,
+            parts.train,
+            images,
+            build_train_transform(tcfg, mean, std, size=size, augment=cfg.get("augment")),
+            True,
         ),
         val=eval_dataset(cfg, tcfg, manifest, parts.val, images, mean, std, size),
         heldout=eval_dataset(cfg, tcfg, manifest, parts.heldout, images, mean, std, size),
@@ -213,6 +217,11 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
     device = device_for(cfg)
     model = build_model(cfg.model)
     ckpt_dir = Path(cfg.paths.checkpoints_dir) / run.run_id
+    if int(cfg.train.get("supcon_epochs", 0)) > 0:  # E5 SupCon arm: pretrain, then linear head
+        from pharmachecked.training.supcon import freeze_encoder, pretrain
+
+        pretrain(model, train_ds, cfg.train, device, ckpt_dir / "supcon.pt", cfg.seed)
+        freeze_encoder(model)
     log.info(
         "%s on %s: train %d, val %d, held-out %d, external %d",
         cfg.model.name,

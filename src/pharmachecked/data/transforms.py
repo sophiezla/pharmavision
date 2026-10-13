@@ -34,31 +34,46 @@ def _to_tensor(mean: Sequence[float], std: Sequence[float]) -> list[Any]:
 
 
 def build_train_transform(
-    cfg: Any, mean: Sequence[float], std: Sequence[float], size: int | None = None
+    cfg: Any,
+    mean: Sequence[float],
+    std: Sequence[float],
+    size: int | None = None,
+    augment: Any = None,
 ) -> v2.Compose:
     """Default recipe: RandomResizedCrop, small rotation, brightness/contrast jitter; no flips.
+
+    The E5 recipe arms (PLAN 3.2) switch on one change each through ``augment``:
+    ``hflip`` (p = 0.5), ``color_strong`` (brightness/contrast/saturation 0.4, hue 0.1, replacing
+    the default jitter) and ``randaugment`` (2 ops, magnitude 9; Cubuk et al., 2020).
 
     Args:
         cfg: The ``data/transforms.yaml`` config.
         mean: Per-channel normalization mean (from the model config).
         std: Per-channel normalization std (from the model config).
         size: Output side; defaults to ``cfg.size``.
+        augment: The root config's ``augment`` block (all off when None).
 
     Returns:
         A transform mapping a PIL RGB image to a normalized float tensor (3, size, size).
     """
     side = int(size or cfg.size)
     fill = tuple(int(v) for v in cfg.fill)
-    return v2.Compose(
-        [
-            v2.RandomResizedCrop(
-                side, scale=tuple(cfg.train.rrc_scale), interpolation=cfg.interpolation
-            ),
-            v2.RandomRotation(cfg.train.rotation_degrees, interpolation="bilinear", fill=fill),
-            v2.ColorJitter(brightness=cfg.train.brightness, contrast=cfg.train.contrast),
-            *_to_tensor(mean, std),
-        ]
-    )
+    aug = augment or {}
+    steps: list[Any] = [
+        v2.RandomResizedCrop(
+            side, scale=tuple(cfg.train.rrc_scale), interpolation=cfg.interpolation
+        ),
+        v2.RandomRotation(cfg.train.rotation_degrees, interpolation="bilinear", fill=fill),
+    ]
+    if aug.get("hflip"):
+        steps.append(v2.RandomHorizontalFlip(0.5))
+    if aug.get("color_strong"):
+        steps.append(v2.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.4, hue=0.1))
+    else:
+        steps.append(v2.ColorJitter(brightness=cfg.train.brightness, contrast=cfg.train.contrast))
+    if aug.get("randaugment"):
+        steps.append(v2.RandAugment(num_ops=2, magnitude=9))
+    return v2.Compose([*steps, *_to_tensor(mean, std)])
 
 
 def build_eval_transform(

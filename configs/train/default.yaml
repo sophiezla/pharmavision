@@ -14,3 +14,12 @@ num_workers: 0            # raised on the GPU PC by its job list
 amp: true                 # bf16 autocast on CUDA; ignored on CPU
 threshold_rule: youden    # decision threshold chosen on val
 resume: true              # continue an interrupted run with the same config
+# E5 recipe switches (PLAN 3.2); defaults = the default recipe.
+loss: bce                 # bce | focal (gamma focal_gamma, class-balanced alpha)
+focal_gamma: 2.0
+label_smoothing: 0.0
+mix: none                 # none | mixup | cutmix (batch-level, alpha mix_alpha)
+mix_alpha: 1.0
+supcon_epochs: 0          # > 0: SupCon pretraining (temp 0.1, 128-d projection), then a linear head
+supcon_temperature: 0.1
+router_weight: 0.3        # auxiliary packaging-type loss (E4 multi-branch models only)

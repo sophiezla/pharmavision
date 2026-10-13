@@ -22,6 +22,8 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
 from pharmachecked.evaluation.metrics import auroc
+from pharmachecked.models.router import router_targets
+from pharmachecked.training.losses import build_loss, mix_batch
 from pharmachecked.training.optim import build_optimizer
 from pharmachecked.utils.logging import get_logger
 from pharmachecked.utils.seed import make_generator, worker_init_fn
@@ -175,7 +177,10 @@ def fit(
         pin_memory=device.type == "cuda",
     )
     opt, sched = build_optimizer(model, cfg, len(loader))
-    loss_fn = nn.BCEWithLogitsLoss()
+    loss_fn = nn.BCEWithLogitsLoss()  # validation loss: always plain BCE (ADR-012 selection)
+    train_loss = build_loss(cfg, getattr(train_ds, "labels", ()))
+    mix_mode, mix_alpha = str(cfg.get("mix", "none")), float(cfg.get("mix_alpha", 1.0))
+    router_weight = float(cfg.get("router_weight", 0.3))
     history: list[dict[str, float]] = []
     # -inf so the first epoch is always saved, even if its val AUROC is undefined (scored -1).
     start_epoch, best_auroc, best_epoch, elapsed = 0, float("-inf"), -1, 0.0
@@ -203,10 +208,18 @@ def fit(
         for batch in loader:
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True).float()
+            images, targets = mix_batch(images, labels, mix_mode, mix_alpha)
             opt.zero_grad(set_to_none=True)
             with _autocast(device, cfg.amp):
-                logits = model(images)["logits"]
-            loss = loss_fn(logits.float(), labels)
+                out = model(images)
+            loss = train_loss(out["logits"].float(), targets)
+            if "router_logits" in out and mix_mode == "none":
+                # Auxiliary packaging-type loss (PLAN 3.5); not_a_drug images are ignored (ADR-009).
+                router_target = router_targets(batch["packaging_type"]).to(device)
+                if (router_target >= 0).any():
+                    loss = loss + router_weight * nn.functional.cross_entropy(
+                        out["router_logits"].float(), router_target, ignore_index=-1
+                    )
             loss.backward()
             if cfg.grad_clip:
                 nn.utils.clip_grad_norm_(model.parameters(), cfg.grad_clip)

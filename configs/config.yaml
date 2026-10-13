@@ -23,6 +23,11 @@ data:
   max_train_images: null    # cap on training images (smoke runs only)
   max_external_per_source: null
 
+augment:                    # E5 recipe switches (PLAN 3.2); all off = default recipe
+  hflip: false
+  color_strong: false
+  randaugment: false
+
 hydra:
   output_subdir: null           # the run folder, not Hydra, stores the resolved config
   run:
