@@ -145,3 +145,29 @@ Template:
 - Decision: `convnext-tiny` and `efficientnetv2-s`, the two best distinct pretrained backbones (default-settings arms) by pooled OOF AUROC with exact ties broken by pooled OOF log-loss, development pool only.
 - Evidence: `results/pipeline/e01_decisions.json`, `results/pipeline/e01_ranking.csv`, `results/tables/e01_summary.md`.
 - Consequences: E2 ran on these two backbones in the same kit (`results/tables/e02_summary.md`). Pairwise tests (`results/tables/e01_pairwise.md`) show most pretrained arms are statistically indistinguishable from the best, so the rule picked among near-equals; the external sets played no part.
+
+## ADR-015 · E4 global branch: EfficientNetV2-S with LoRA rank 8
+- Date: 2026-10-13 · Status: Accepted (Sophie, 2026-10-13)
+- Context: PLAN 2.11 requires an ADR choosing the global-branch backbone and adaptation strategy for E4.
+- Options considered: every E2 arm (`results/tables/e02_summary.md`). All except efficientnetv2-s/lp are statistically indistinguishable in the development pool (`results/tables/e02_pairwise.md`).
+- Decision: `efficientnetv2_s` with `model.mode=lora`, `model.lora_rank=8` (pointwise-conv targets, ADR/E02.md), backbone LR multiplier 1.0, default training recipe. It is the top arm under the same pre-registered rule used in Phase 2 (pooled OOF AUROC, exact ties → pooled OOF log-loss; development pool only) and trains 0.65 M parameters.
+- Evidence: `results/tables/e02_summary.md`, `results/tables/e02_pairwise.md`, `results/figures/e02_auroc_by_strategy.png`.
+- Consequences: E5 (training recipe) runs on this global-only model; E4's global branch uses it.
+
+## ADR-016 · Tuned settings recorded, defaults kept downstream
+- Date: 2026-10-13 · Status: Accepted (Sophie, 2026-10-13)
+- Context: PLAN 2.7 says to freeze the Optuna-chosen settings in the model configs. The tuned re-runs did not improve on the default settings beyond the confidence intervals (`results/tables/e01_summary.md`; cnn-small/ft-tuned is lower), and the E4 global branch (ADR-015) is an untuned E2 arm.
+- Options considered: freeze tuned settings into the configs (changing later experiments); record them and keep the default recipe.
+- Decision: record and keep defaults. The model configs are unchanged; tuned settings stay in the study files below and in the `*-tuned` run configs.
+
+| Study | Best settings | Fold-0 val log-loss | Trials complete / pruned / failed |
+|---|---|---|---|
+| `e01_cnn-small_ft` | train.lr=0.007819, train.weight_decay=0.00445 | 0.255 | 8 / 22 / 0 |
+| `e01_convnext-tiny_ft` | train.backbone_lr_mult=0.0675, train.lr=0.0007751, train.weight_decay=0.006524 | 1.53e-05 | 12 / 18 / 0 |
+| `e01_dinov2-vits14_ft` | train.backbone_lr_mult=0.01102, train.lr=0.000964, train.weight_decay=0.009332 | 1.65e-05 | 14 / 16 / 0 |
+| `e01_handcrafted-xgb_default` | model.colsample_bytree=0.8704, model.learning_rate=0.09664, model.max_depth=6, model.n_estimators=542, model.subsample=0.9196 | 0.0611 | 30 / 0 / 0 |
+| `e01_swin-tiny_ft` | train.backbone_lr_mult=0.8459, train.lr=7.502e-05, train.weight_decay=0.1261 | 1.82e-05 | 12 / 18 / 0 |
+
+- Observation: for the three fine-tuning studies the best fold-0 val log-loss is of order 1e-5, with many trials near zero (swin-tiny: 8 of 12 completed trials below 1e-3, `results/optuna/e01_swin-tiny_ft_trials.csv`). The objective saturated as AUROC had, so the chosen trial among near-zero losses carries little information. This supports keeping the defaults.
+- Evidence: `results/optuna/e01_*_best.json`, `results/optuna/e01_*_trials.csv`, `results/tables/e01_summary.md`.
+- Consequences: later phases use `configs/train/default.yaml`.

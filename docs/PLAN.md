@@ -76,8 +76,8 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
 
 ### E1 · Baseline ladder
 
-- [ ] **2.5** Write `docs/experiments/E01.md`.
-- [ ] **2.6** Run tiers under the full protocol at 224 px with the default recipe:
+- [x] **2.5** (02e1cae) Write `docs/experiments/E01.md`.
+- [x] **2.6** (0a7cdbb) Run tiers under the full protocol at 224 px with the default recipe:
     1. handcrafted + logistic regression; handcrafted + XGBoost
     2. original CNN (trained from scratch)
     3. ResNet-50, EfficientNetV2-S, ConvNeXt-Tiny (full fine-tuning, backbone LR × 0.1)
@@ -85,20 +85,20 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
     5. DINOv2 ViT-S/14, DINOv2 ViT-B/14, CLIP ViT-B/16 (linear probe AND full fine-tuning)
     6. zero-shot CLIP ViT-B/16 with prompt ensemble (`"a photo of authentic medicine packaging"` vs `"a photo of counterfeit medicine packaging"`, plus 4 paraphrases each, averaged); evaluated on the same held-out folds (no training)
     7. ~~one vision–language model, zero-shot~~ — skipped (Sophie, 2026-10-10; ADR-008).
-- [ ] **2.7** Optuna (≤ 30 trials, fold 0 inner val) for LR, weight decay, and backbone LR multiplier for the best model of each tier; freeze settings.
-- [ ] **2.8** Aggregate → `results/tables/e01_summary.{csv,md}`; figure `e01_auroc_vs_params` (log x-axis); paired DeLong of every model vs the best, Holm-corrected → `e01_pairwise.md`.
+- [x] **2.7** (0a7cdbb; ADR-016) Optuna (≤ 30 trials, fold 0 inner val) for LR, weight decay, and backbone LR multiplier for the best model of each tier; freeze settings.
+- [x] **2.8** (1714be0; ADR-014) Aggregate → `results/tables/e01_summary.{csv,md}`; figure `e01_auroc_vs_params` (log x-axis); paired DeLong of every model vs the best, Holm-corrected → `e01_pairwise.md`.
     - AC: all tiers complete; EXPERIMENT_LOG entry; ADR naming the two best backbones.
 
 ### E2 · Adaptation strategy
 
-- [ ] **2.9** Write `docs/experiments/E02.md`.
-- [ ] **2.10** For the best two E1 backbones: linear probe; last-2-blocks fine-tuning; full fine-tuning (backbone LR × 0.1); LoRA rank 8 and 16 on attention `qkv` projections via `peft` (verify target module names on the actual timm model).
-- [ ] **2.11** Aggregate → `e02_summary`; figure `e02_auroc_by_strategy`; table includes trainable params and wall-clock per run.
+- [x] **2.9** (053e606) Write `docs/experiments/E02.md`.
+- [x] **2.10** (0a7cdbb) For the best two E1 backbones: linear probe; last-2-blocks fine-tuning; full fine-tuning (backbone LR × 0.1); LoRA rank 8 and 16 on attention `qkv` projections via `peft` (verify target module names on the actual timm model).
+- [x] **2.11** (1714be0; ADR-015) Aggregate → `e02_summary`; figure `e02_auroc_by_strategy`; table includes trainable params and wall-clock per run.
     - AC: ADR choosing the global-branch backbone + strategy for E4.
 
 ### E3 · Label audit
 
-- [ ] **2.12** Run `cleanlab.filter.find_label_issues` on pooled OOF probabilities of the E1-best model (average over seeds). Export flagged images to a review sheet in the annotation app.
+- [x] **2.12** (4a682bf) Run `cleanlab.filter.find_label_issues` on pooled OOF probabilities of the E1-best model (average over seeds). Export flagged images to a review sheet in the annotation app.
 - [ ] **2.13** Sophie reviews; decisions saved to `data/annotations/label_audit.csv` (`image_id, original_label, decision {keep|relabel|remove}, new_label, reason`).
 - [ ] **2.14** If any relabel/remove: create `manifest_v2.csv` and `splits/v2.json`; retrain E1-best on v2; table before vs after. Locked-test membership is copied unchanged from v1 (ADR-002); only the development pool is re-folded (same seeds and procedure). Test images are not audited.
     - AC: ADR recording the data version used from now on.
