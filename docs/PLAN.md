@@ -123,12 +123,12 @@ E5 runs first on the global-only model (cheap); its winning recipe is then used 
 - [ ] **3.4** Write `docs/experiments/E04.md`.
 - [ ] **3.5 Components** (each with unit tests):
     - `models/mil.py`: gated-attention MIL pooling (Ilse et al., 2018), input `(B, N, D)` → bag embedding `(B, D')` + attention `(B, N)` summing to 1.
-    - `models/frequency.py`: grayscale 512 px center crop → `log(1 + |FFT|)` centered magnitude + 8×8 block-DCT coefficient-energy map (resized to the same grid), stacked as 2 channels → 4-block CNN (32-64-128-256, BN, ReLU, max-pool) → global average pool → 256-d.
+    - `models/frequency.py`: grayscale model input (448 px, ADR-017; originally a 512 px center crop) → `log(1 + |FFT|)` centered magnitude + 8×8 block-DCT coefficient-energy map (resized to the same grid), stacked as 2 channels → 4-block CNN (32-64-128-256, BN, ReLU, max-pool) → global average pool → 256-d.
     - `models/router.py`: linear layer on the global embedding → 4-way packaging-type logits over `blister | packaging | both | other`; `not_a_drug` images get no router loss (ADR-009); auxiliary cross-entropy weight 0.3.
     - `models/fusion.py`: gated fusion — project each branch to 256-d, gate = softmax(MLP([e_g; e_l; e_f])) over 3 branches, fused = Σ gate_i · e_i; also `concat` mode for the ablation.
-    - `models/multibranch.py`: input 896 px padded square; global branch = 224 px resize → backbone; local branch = 4×4 grid of 224 px tiles → the same backbone (shared weights, configurable) → MIL; expert heads = 4 linear heads (one per router class), output logits = Σ_k router_prob_k · head_k(fused) (soft) or argmax head (hard). Returns `logits, embedding, gate_weights, router_probs, mil_attention`.
+    - `models/multibranch.py`: input 448 px (ADR-017; originally 896 px); global branch = 224 px resize → backbone; local branch = 2×2 grid of 224 px tiles (originally 4×4) → the same backbone (shared weights, configurable) → MIL; expert heads = 4 linear heads (one per router class), output logits = Σ_k router_prob_k · head_k(fused) (soft) or argmax head (hard). Returns `logits, embedding, gate_weights, router_probs, mil_attention`.
     - AC: forward pass on GPU with batch 8 fits in the GPU PC's 8 GB (RTX 5060, ADR-010) with mixed precision (report peak memory); if not, enable gradient checkpointing on the backbone and/or gradient accumulation, and report.
-- [ ] **3.6 Arms** (full protocol, E5 recipe): full; − local; − frequency; − router (single head); concat fusion; separate local backbone; 2×2 tiles at 448 px; hard routing; global-only (reference = E2 winner).
+- [ ] **3.6 Arms** (full protocol, E5 recipe): full; − local; − frequency; − router (single head); concat fusion; separate local backbone; 4×4 tiles at 896 px (ablation; ADR-017 swapped it with the main 2×2/448 design); hard routing; global-only (reference = E2 winner).
 - [ ] **3.7** Aggregate → `e04_ablation` (ΔAUROC vs full, CI, Holm-corrected DeLong); figure `e04_gate_weights_by_packaging` (mean gate weight per branch per packaging type from OOF outputs).
     - AC: ADR defining the final model; components that did not improve are dropped and reported.
 

@@ -171,3 +171,11 @@ Template:
 - Observation: for the three fine-tuning studies the best fold-0 val log-loss is of order 1e-5, with many trials near zero (swin-tiny: 8 of 12 completed trials below 1e-3, `results/optuna/e01_swin-tiny_ft_trials.csv`). The objective saturated as AUROC had, so the chosen trial among near-zero losses carries little information. This supports keeping the defaults.
 - Evidence: `results/optuna/e01_*_best.json`, `results/optuna/e01_*_trials.csv`, `results/tables/e01_summary.md`.
 - Consequences: later phases use `configs/train/default.yaml`.
+
+## ADR-017 · E4 design: 448 px with 2x2 tiles as the main model; frequency branch kept
+- Date: 2026-10-13 · Status: Accepted (Sophie, 2026-10-13)
+- Context: PLAN 3.5 specifies an 896 px padded-square input with a 4x4 grid of 224 px tiles. Authentic development images are at most 312 px wide and counterfeit ones about 450 px (`results/tables/data_card_counts.md`), so 896 px tiles would be upsampled about 3x for one class and 2x for the other, a class-dependent interpolation cue. The frequency branch (FFT + 8x8 block-DCT) will see JPEG block artifacts present only in authentic images (ADR-005).
+- Options considered: tiling (a) 896/4x4 main, 448/2x2 ablation (plan); (b) 448/2x2 main, 896/4x4 ablation. Frequency branch: keep; drop; keep with JPEG re-compression augmentation.
+- Decision: (b) 448 px padded square with 2x2 tiles of 224 px is the main E4 model; 896 px / 4x4 is the ablation arm. The frequency branch is kept as planned, computed on the 448 px grayscale input (the planned 512 px centre crop exceeds the input); the ''- frequency'' ablation and the external block show whether it relies on the compression cue.
+- Evidence: `results/tables/data_card_counts.md`, `results/tables/raw_inventory.md`.
+- Consequences: about 5 backbone passes per image instead of 17; PLAN 3.5/3.6 updated.
