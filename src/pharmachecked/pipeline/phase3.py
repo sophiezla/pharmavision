@@ -37,7 +37,7 @@ E5_COMPONENTS: dict[str, tuple[str, ...]] = {
     "cutmix": ("train.mix=cutmix", "train.mix_alpha=1.0"),
     "focal": ("train.loss=focal", "train.focal_gamma=2.0"),
     "smoothing": ("train.label_smoothing=0.1",),
-    "supcon": ("train.supcon_epochs=20",),
+    "supcon": (),  # + train.supcon_epochs=<profile.supcon_epochs> (20 in the full protocol)
 }
 # Components that cannot be combined: the larger AUROC gain wins (pre-registered).
 EXCLUSIVE = ({"mixup", "cutmix"}, {"focal", "smoothing"})
@@ -49,13 +49,14 @@ E4_ARMS: dict[str, tuple[str, ...]] = {
     "no-router": ("model.use_router=false",),
     "concat": ("model.fusion=concat",),
     "separate-local": ("model.shared_local_backbone=false",),
+    "hard-routing": ("model.routing=hard",),
+    # Last: about 17 backbone passes per image, so it is the slowest arm by far.
     "tiles4-896": (
         "model.tile_grid=4",
         "model.img_size=896",
         "data.img_size=896",
         "train.grad_checkpointing=true",
     ),
-    "hard-routing": ("model.routing=hard",),
 }
 E4_BASE = (
     "model=multibranch",
@@ -77,6 +78,7 @@ class Profile:
     extra: tuple[str, ...]
     e4_arms: tuple[str, ...]
     n_boot: int
+    supcon_epochs: int
 
 
 PROFILES = {
@@ -88,6 +90,7 @@ PROFILES = {
         ("paths=remote", "train.num_workers=4"),
         tuple(E4_ARMS),
         2000,
+        20,
     ),
     "selftest": Profile(
         "selftest",
@@ -101,15 +104,23 @@ PROFILES = {
             "data.max_external_per_source=4",
             "train.max_epochs=1",
             "train.batch_size=4",
-            "train.supcon_epochs=1",
             "device=cpu",
             "++model.pretrained=false",
             "++model.backbone.pretrained=false",
         ),
         ("full", "no-frequency"),
         200,
+        1,
     ),
 }
+
+
+def component_overrides(p: Profile) -> dict[str, tuple[str, ...]]:
+    """E5 component overrides with the profile's SupCon length filled in."""
+    return {
+        name: (f"train.supcon_epochs={p.supcon_epochs}",) if name == "supcon" else o
+        for name, o in E5_COMPONENTS.items()
+    }
 
 
 def _lines(
@@ -146,7 +157,7 @@ def improvement(
     return ci.estimate, ci.low, ci.high, test.p_value
 
 
-def decide_recipe(exp: str, n_boot: int) -> dict:
+def decide_recipe(exp: str, n_boot: int, components: dict[str, tuple[str, ...]]) -> dict:
     """Pre-registered E5 rule: keep components that improve pooled AUROC over the default."""
     records = collect_runs(REPO_ROOT / "results" / "runs", exp)
     pooled = {
@@ -173,7 +184,7 @@ def decide_recipe(exp: str, n_boot: int) -> dict:
         if len(clash) > 1:
             best = max(clash, key=lambda r: r["auroc_gain"])
             kept = [k for k in kept if k not in group or k == best["component"]]
-    overrides = [o for k in kept for o in E5_COMPONENTS[k]]
+    overrides = [o for k in kept for o in components[k]]
     return {
         "rule": "component improves if Holm-corrected DeLong p < 0.05 and its paired bootstrap "
         "AUROC-gain CI excludes 0 (CLAUDE.md section 5); exclusive pairs keep the larger gain",
@@ -206,14 +217,13 @@ def run(profile_name: str, split_version: int = 1, e3_retrain: bool = False) -> 
 
     # Stage 1: E5 recipe arms on the global-only model (ADR-015).
     e5_arms = [Arm("efficientnetv2_s", "default", overrides=GLOBAL[1:])]
-    e5_arms += [
-        Arm("efficientnetv2_s", n, overrides=GLOBAL[1:] + o) for n, o in E5_COMPONENTS.items()
-    ]
+    components = component_overrides(p)
+    e5_arms += [Arm("efficientnetv2_s", n, overrides=GLOBAL[1:] + o) for n, o in components.items()]
     if not _run(f"{e05}_stage1_e5", _lines(e5_arms, "e05_recipe", e05, p, data)):
         return 1
 
     # Stage 2: recipe decision (+ verification run of a combination).
-    decision = decide_recipe(e05, p.n_boot)
+    decision = decide_recipe(e05, p.n_boot, components)
     write_json(PIPELINE_DIR / f"{e05}_decisions.json", decision)
     recipe = tuple(decision["recipe_overrides"])
     log.info("E5 recipe: %s", decision["kept"] or "default")
