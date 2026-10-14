@@ -152,6 +152,27 @@ class AuditStore:
         """Number of images with a decision."""
         return int((self.df["decision"] != "").sum())
 
+    def apply(self, manifest: pd.DataFrame) -> pd.DataFrame:
+        """Next manifest version (PLAN 2.14): removed rows dropped, relabelled rows flipped.
+
+        Split and fold columns are cleared; ``scripts/make_splits.py`` fills them for the new
+        version. Refuses an incomplete audit or one naming images not in the manifest.
+        """
+        if self.n_done() < len(self.df):
+            raise ValueError(f"audit incomplete: {self.n_done()} of {len(self.df)} decided")
+        missing = sorted(set(self.df.index) - set(manifest["image_id"]))
+        if missing:
+            raise ValueError(f"audited images not in the manifest: {missing}")
+        out = manifest.copy()
+        relabel = self.df.loc[self.df["decision"] == "relabel"]
+        for image_id, new_label in zip(relabel["image_id"], relabel["new_label"], strict=True):
+            out.loc[out["image_id"] == image_id, "label"] = int(new_label)
+        removed = set(self.df.loc[self.df["decision"] == "remove", "image_id"])
+        out = out.loc[~out["image_id"].isin(removed)].reset_index(drop=True)
+        out["split"] = ""
+        out["fold"] = pd.array([pd.NA] * len(out), dtype="Int64")
+        return out
+
 
 class ConceptStore:
     """``concepts.csv``: seven concept labels (present/absent/unsure) per subset image."""

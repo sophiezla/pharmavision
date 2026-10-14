@@ -100,7 +100,7 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
 
 - [x] **2.12** (4a682bf) Run `cleanlab.filter.find_label_issues` on pooled OOF probabilities of the E1-best model (average over seeds). Export flagged images to a review sheet in the annotation app.
 - [x] **2.13** (both removed, 2026-10-13) Sophie reviews; decisions saved to `data/annotations/label_audit.csv` (`image_id, original_label, decision {keep|relabel|remove}, new_label, reason`).
-- [ ] **2.14** If any relabel/remove: create `manifest_v2.csv` and `splits/v2.json`; retrain E1-best on v2; table before vs after. Locked-test membership is copied unchanged from v1 (ADR-002); only the development pool is re-folded (same seeds and procedure). Test images are not audited.
+- [x] **2.14** (data v2 built 2026-10-13; retrain = stage 0 of the Phase 3 kit) If any relabel/remove: create `manifest_v2.csv` and `splits/v2.json`; retrain E1-best on v2; table before vs after. Locked-test membership is copied unchanged from v1 (ADR-002); only the development pool is re-folded (same seeds and procedure). Test images are not audited.
     - AC: ADR recording the data version used from now on.
 
 **CHECKPOINT 2.** Tag `v0.1-baselines`.

@@ -73,7 +73,9 @@ def main() -> int:
     parser.add_argument("--manifest", type=Path, default=None)
     args = parser.parse_args()
     configure_logging()
-    manifest_path = args.manifest or REPO_ROOT / "data" / "processed" / "manifest_v1.csv"
+    manifest_path = (
+        args.manifest or REPO_ROOT / "data" / "processed" / "manifest_v1.csv"
+    ).resolve()
     out = REPO_ROOT / "splits" / f"v{args.version}.json"
     manifest = read_manifest(manifest_path)
     previous = None

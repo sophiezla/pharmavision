@@ -144,3 +144,12 @@ def test_audit_store_and_app(tmp_path: Path, toy: ToyData) -> None:
     with pytest.raises(ValueError):
         store.set_decision(ids[1], "remove", " ", "Sophie")
     assert build_audit_app(store, toy.images_dir).title == "Label audit"
+
+    manifest = read_manifest(toy.manifest)
+    with pytest.raises(ValueError, match="incomplete"):
+        store.apply(manifest)
+    store.set_decision(ids[1], "remove", "screenshot", "Sophie")
+    v2 = store.apply(manifest)
+    assert len(v2) == len(manifest) - 1 and ids[1] not in set(v2["image_id"])
+    assert int(v2.set_index("image_id").loc[ids[0], "label"]) == 0  # relabelled 1 -> 0
+    assert (v2["split"] == "").all() and v2["fold"].isna().all()
