@@ -82,6 +82,7 @@ def pretrain(
         num_workers=cfg.num_workers,
         worker_init_fn=worker_init_fn,
         generator=make_generator(seed),
+        persistent_workers=cfg.num_workers > 0,  # ADR-018
     )
     epochs = int(cfg.supcon_epochs)
     total = epochs * len(loader)

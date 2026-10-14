@@ -61,12 +61,21 @@ def _autocast(device: torch.device, enabled: bool) -> Any:
 
 @torch.inference_mode()
 def predict(
-    model: nn.Module, ds: Dataset[dict[str, Any]], device: torch.device, cfg: Any, seed: int
+    model: nn.Module,
+    ds: Dataset[dict[str, Any]],
+    device: torch.device,
+    cfg: Any,
+    seed: int,
+    loader: DataLoader | None = None,
 ) -> pd.DataFrame:
-    """Per-image predictions (columns ``PRED_COLUMNS``); the dataset must return metadata."""
+    """Per-image predictions (columns ``PRED_COLUMNS``); the dataset must return metadata.
+
+    Without ``loader``, a one-off pass loads in the main process: on Windows, starting worker
+    processes costs several seconds every time (ADR-018). fit() passes a persistent loader.
+    """
     model.eval()
     rows = []
-    loader = DataLoader(ds, batch_size=cfg.eval_batch_size, num_workers=cfg.num_workers)
+    loader = loader or DataLoader(ds, batch_size=cfg.eval_batch_size, num_workers=0)
     for batch in loader:
         with _autocast(device, cfg.amp):
             logits = model(batch["image"].to(device, non_blocking=True))["logits"].float()
@@ -175,6 +184,15 @@ def fit(
         worker_init_fn=worker_init_fn,
         generator=make_generator(seed),
         pin_memory=device.type == "cuda",
+        # Workers live for the whole run instead of restarting every epoch (ADR-018).
+        persistent_workers=cfg.num_workers > 0,
+    )
+    val_workers = min(2, int(cfg.num_workers))
+    val_loader = DataLoader(
+        val_ds,
+        batch_size=cfg.eval_batch_size,
+        num_workers=val_workers,
+        persistent_workers=val_workers > 0,
     )
     opt, sched = build_optimizer(model, cfg, len(loader))
     loss_fn = nn.BCEWithLogitsLoss()  # validation loss: always plain BCE (ADR-012 selection)
@@ -226,7 +244,7 @@ def fit(
             opt.step()
             sched.step()
             losses.append(loss.item())
-        val = predict(model, val_ds, device, cfg, seed)
+        val = predict(model, val_ds, device, cfg, seed, val_loader)
         val_auroc = auroc(val["y_true"], val["prob"])
         val_loss = float(
             loss_fn(

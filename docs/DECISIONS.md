@@ -179,3 +179,12 @@ Template:
 - Decision: (b) 448 px padded square with 2x2 tiles of 224 px is the main E4 model; 896 px / 4x4 is the ablation arm. The frequency branch is kept as planned, computed on the 448 px grayscale input (the planned 512 px centre crop exceeds the input); the ''- frequency'' ablation and the external block show whether it relies on the compression cue.
 - Evidence: `results/tables/data_card_counts.md`, `results/tables/raw_inventory.md`.
 - Consequences: about 5 backbone passes per image instead of 17; PLAN 3.5/3.6 updated.
+
+## ADR-018 · Data-loader worker processes persist for a whole run
+- Date: 2026-10-13 · Status: Accepted (Sophie asked for a faster Phase 3 kit, 2026-10-13)
+- Context: Phase 2 runs on the GPU PC took about 15 s per epoch for EfficientNetV2-S, while the GPU benchmark (`results/tables/bench_gpu-pc.md`, 311 train and 1,140 eval img/s) puts the compute at about 1.1 s. On Windows every DataLoader worker is a new Python process that re-imports torch; the trainer created new workers twice per epoch (training and validation). Measured on the laptop, fold 0 of v2 (329 images): 4 restarted workers 22-25 s per pass, no workers 2.4-3.8 s, 4 persistent workers 1.3-1.4 s after the first pass.
+- Decision: training workers persist for the whole run (`persistent_workers`), the validation loader is built once per run (at most 2 persistent workers), and one-off prediction passes (held-out, calibration, external sets) load in the main process. The SupCon loader persists its workers as well. Models, data, recipes and decision rules are unchanged.
+- Consequences:
+    - Phase 3 is several times faster. The kit estimate drops from 3-4 days to roughly 12-24 hours.
+    - With workers, the augmentation random stream differs from Phase 2's (a different draw of the same distributions); runs stay reproducible from scratch for a given seed. Comparisons inside E5 and E4 all use the new loader (E5 re-runs its `default` arm); the E3 before/after table compares runs that differ in both data version and augmentation draw, which is noted there.
+    - A run resumed after an interruption with workers is no longer bit-identical to an uninterrupted one in its augmentation draws (exact resume still holds with `num_workers: 0`, which the tests use).
