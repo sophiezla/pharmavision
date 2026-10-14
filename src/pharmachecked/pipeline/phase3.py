@@ -157,6 +157,25 @@ def improvement(
     return ci.estimate, ci.low, ci.high, test.p_value
 
 
+def select_components(rows: list[dict]) -> list[str]:
+    """Apply the E5 rule to per-component rows (``component, auroc_gain, ci_low, delong_p``).
+
+    Adds ``holm_p`` and ``improves`` to each row; returns the kept components in row order,
+    keeping only the larger AUROC gain within each exclusive pair.
+    """
+    reject, corrected = holm([r["delong_p"] for r in rows])
+    for row, rej, cp in zip(rows, reject, corrected, strict=True):
+        row["holm_p"] = cp
+        row["improves"] = bool(rej and row["ci_low"] > 0 and row["auroc_gain"] > 0)
+    kept = [r["component"] for r in rows if r["improves"]]
+    for group in EXCLUSIVE:
+        clash = [r for r in rows if r["component"] in group and r["component"] in kept]
+        if len(clash) > 1:
+            best = max(clash, key=lambda r: r["auroc_gain"])
+            kept = [k for k in kept if k not in group or k == best["component"]]
+    return kept
+
+
 def decide_recipe(exp: str, n_boot: int, components: dict[str, tuple[str, ...]]) -> dict:
     """Pre-registered E5 rule: keep components that improve pooled AUROC over the default."""
     records = collect_runs(REPO_ROOT / "results" / "runs", exp)
@@ -174,16 +193,7 @@ def decide_recipe(exp: str, n_boot: int, components: dict[str, tuple[str, ...]])
         rows.append(
             {"component": name, "auroc_gain": gain, "ci_low": low, "ci_high": high, "delong_p": p}
         )
-    reject, corrected = holm([r["delong_p"] for r in rows])
-    for row, rej, cp in zip(rows, reject, corrected, strict=True):
-        row["holm_p"] = cp
-        row["improves"] = bool(rej and row["ci_low"] > 0 and row["auroc_gain"] > 0)
-    kept = [r["component"] for r in rows if r["improves"]]
-    for group in EXCLUSIVE:
-        clash = [r for r in rows if r["component"] in group and r["component"] in kept]
-        if len(clash) > 1:
-            best = max(clash, key=lambda r: r["auroc_gain"])
-            kept = [k for k in kept if k not in group or k == best["component"]]
+    kept = select_components(rows)
     overrides = [o for k in kept for o in components[k]]
     return {
         "rule": "component improves if Holm-corrected DeLong p < 0.05 and its paired bootstrap "
