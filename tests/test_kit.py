@@ -3,6 +3,9 @@
 import importlib.util
 import json
 from pathlib import Path
+from types import ModuleType
+
+import pytest
 
 from pharmachecked.config import REPO_ROOT
 from pharmachecked.utils.env import SNAPSHOT_FILE, snapshot_info
@@ -53,3 +56,29 @@ def test_batch_files_get_crlf_and_torch_index_placeholder() -> None:
     converted = kit.crlf(setup)
     assert b"\r\n" in converted
     assert b"\n" not in converted.replace(b"\r\n", b"")
+
+
+def _load_script(name: str) -> ModuleType:
+    module_spec = importlib.util.spec_from_file_location(name, REPO_ROOT / "scripts" / f"{name}.py")
+    assert module_spec is not None and module_spec.loader is not None
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+    return module
+
+
+def test_results_already_in_the_snapshot_are_not_packed_again(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    kit_run = _load_script("kit_run")
+    old_log = tmp_path / "results" / "job_logs" / "phase2_e01.log"
+    old_log.parent.mkdir(parents=True)
+    old_log.write_bytes(b"done\n")
+    rel = old_log.relative_to(tmp_path).as_posix()
+    (tmp_path / SNAPSHOT_FILE).write_bytes(kit.snapshot_json("abc123", {rel: b"done\n"}))
+    new_log = old_log.with_name("phase3_e05.log")
+    new_log.write_bytes(b"new\n")
+    monkeypatch.setattr(kit_run, "REPO_ROOT", tmp_path)
+    unchanged = kit_run.snapshot_unchanged()
+    assert unchanged(old_log) and not unchanged(new_log)
+    old_log.write_bytes(b"appended\n")  # a log that grew on the GPU PC is packed
+    assert not unchanged(old_log)

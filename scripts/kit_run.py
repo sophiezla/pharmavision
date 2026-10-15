@@ -16,14 +16,15 @@ import ctypes
 import os
 import subprocess
 import sys
+from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
 
 from pharmachecked.config import REPO_ROOT
 from pharmachecked.jobs import read_jobs, run_jobs
 from pharmachecked.utils.bundle import pack
-from pharmachecked.utils.env import git_info
-from pharmachecked.utils.io import read_json
+from pharmachecked.utils.env import SNAPSHOT_FILE, git_info
+from pharmachecked.utils.io import read_json, sha256_file
 from pharmachecked.utils.logging import configure_logging, get_logger
 
 log = get_logger("kit_run")
@@ -73,17 +74,44 @@ def do_work(kit: dict) -> bool:
     return all(o.status != "failed" for o in run_jobs(jobs, log_file))
 
 
+def snapshot_unchanged() -> Callable[[Path], bool]:
+    """Predicate: is this file in the kit's source snapshot, byte-identical?
+
+    Results committed before the kit was built travel inside its snapshot; packing them again
+    only duplicates them (and renames job logs). Without a snapshot nothing is skipped.
+    """
+    root = next((p for p in (REPO_ROOT, *REPO_ROOT.parents) if (p / SNAPSHOT_FILE).is_file()), None)
+    files = read_json(root / SNAPSHOT_FILE)["files"] if root is not None else {}
+
+    def unchanged(path: Path) -> bool:
+        if root is None:
+            return False
+        digest = files.get(path.resolve().relative_to(root.resolve()).as_posix())
+        return digest is not None and sha256_file(path) == digest
+
+    return unchanged
+
+
 def pack_results(kit: dict, kit_dir: Path) -> Path:
-    """Pack run folders, benchmark tables, logs, pipeline decisions and Optuna studies."""
+    """Pack new run folders, benchmark tables, logs, pipeline decisions and Optuna studies."""
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    runs = sorted(p for p in (RESULTS / "runs").glob("*") if p.is_dir())
-    tables = sorted((RESULTS / "tables").glob("bench_*.md"))
-    logs = {f"{kit['name']}_{stamp}_{p.name}": p for p in (RESULTS / "job_logs").glob("*.log")}
+    old = snapshot_unchanged()
+    runs = sorted(
+        p
+        for p in (RESULTS / "runs").glob("*")
+        if p.is_dir() and not all(old(f) for f in p.rglob("*") if f.is_file())
+    )
+    tables = sorted(p for p in (RESULTS / "tables").glob("bench_*.md") if not old(p))
+    logs = {
+        f"{kit['name']}_{stamp}_{p.name}": p
+        for p in (RESULTS / "job_logs").glob("*.log")
+        if not old(p)
+    }
     setup = RESULTS / "kit_setup.json"
     if setup.exists():
         logs[f"{kit['name']}_{stamp}_kit_setup.json"] = setup
     extra = {
-        top: sorted(p for p in (RESULTS / top).glob("*") if p.is_file())
+        top: sorted(p for p in (RESULTS / top).glob("*") if p.is_file() and not old(p))
         for top in ("pipeline", "optuna")
     }
     out = kit_dir / f"RESULTS_{kit['name']}_{stamp}.zip"
