@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_colorjitter_f1_s1_20261013-193803/best.pt

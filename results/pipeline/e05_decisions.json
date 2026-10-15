@@ -1,0 +1,80 @@
+{
+  "components": [
+    {
+      "auroc_gain": 0.00012813576696379947,
+      "ci_high": 0.0008115265241036562,
+      "ci_low": -0.0003559326860104184,
+      "component": "hflip",
+      "delong_p": 0.6563673506401035,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": -0.0008542384464250707,
+      "ci_high": 2.8474614880868998e-05,
+      "ci_low": -0.0024915288020729287,
+      "component": "colorjitter",
+      "delong_p": 0.21671147121289536,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": -9.966115208293047e-05,
+      "ci_high": 0.00039864460833161086,
+      "ci_low": -0.000612560152624022,
+      "component": "randaugment",
+      "delong_p": 0.6582797851886936,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": 1.4237307440434499e-05,
+      "ci_high": 0.0005410176827358448,
+      "ci_low": -0.00044135653065280334,
+      "component": "mixup",
+      "delong_p": 0.9515832135054726,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": 0.00019932230416586094,
+      "ci_high": 0.0006691534496995333,
+      "ci_low": -2.8474614880868998e-05,
+      "component": "cutmix",
+      "delong_p": 0.238564544229665,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": 0.00024203422648716444,
+      "ci_high": 0.0010250861357099545,
+      "ci_low": -0.0002705088413679224,
+      "component": "focal",
+      "delong_p": 0.48344062139207045,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": -0.00015661038184466847,
+      "ci_high": 0.00012813576696368845,
+      "ci_low": -0.0005410176827356256,
+      "component": "smoothing",
+      "delong_p": 0.2747178266245275,
+      "holm_p": 1.0,
+      "improves": false
+    },
+    {
+      "auroc_gain": -0.0033742418633787574,
+      "ci_high": -0.0005406617500498387,
+      "ci_low": -0.007645434095503889,
+      "component": "supcon",
+      "delong_p": 0.07075843252101584,
+      "holm_p": 0.5660674601681267,
+      "improves": false
+    }
+  ],
+  "kept": [],
+  "needs_verification_run": false,
+  "recipe_overrides": [],
+  "rule": "component improves if Holm-corrected DeLong p < 0.05 and its paired bootstrap AUROC-gain CI excludes 0 (CLAUDE.md section 5); exclusive pairs keep the larger gain"
+}

@@ -1,0 +1,90 @@
+exp: e04
+task: train
+variant: full
+fold: 2
+seed: 2
+device: null
+data:
+  dataset: real
+  split_version: 2
+  img_size: 448
+  max_train_images: null
+  max_external_per_source: null
+augment:
+  hflip: false
+  color_strong: false
+  randaugment: false
+paths:
+  root: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision
+  data_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/data
+  raw_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/data/raw
+  processed_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/data/processed
+  annotations_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/data/annotations
+  splits_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/splits
+  results_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/results
+  runs_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/results/runs
+  tables_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/results/tables
+  figures_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/results/figures
+  checkpoints_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/checkpoints
+  mlruns_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/mlruns
+  toy_dir: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/results/scratch/toy
+tracker:
+  enabled: true
+  tracking_uri: sqlite:///C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/mlruns/mlflow.db
+  artifact_location: C:/Users/Home/Desktop/PRIVATE_gpu_kit_phase3_0d31953/pharmavision/mlruns/artifacts
+  experiment_name: e04
+model:
+  name: multibranch
+  builder: multibranch
+  img_size: 448
+  tile_grid: 2
+  use_local: true
+  use_frequency: true
+  use_router: true
+  fusion: gated
+  routing: soft
+  shared_local_backbone: true
+  embedding_dim: 256
+  mean:
+  - 0.5
+  - 0.5
+  - 0.5
+  std:
+  - 0.5
+  - 0.5
+  - 0.5
+  backbone:
+    source: timm
+    timm_name: tf_efficientnetv2_s.in21k_ft_in1k
+    pretrained: true
+    img_size: 224
+    embedding_dim: 1280
+    mode: lora
+    lora_targets:
+    - conv_pw
+    - conv_pwl
+    lora_rank: 8
+train:
+  lr: 0.0003
+  backbone_lr_mult: 1.0
+  weight_decay: 0.05
+  warmup_epochs: 1
+  max_epochs: 30
+  patience: 7
+  selection: auroc_then_loss
+  grad_clip: 1.0
+  batch_size: 8
+  eval_batch_size: 16
+  num_workers: 4
+  amp: true
+  threshold_rule: youden
+  resume: true
+  loss: bce
+  focal_gamma: 2.0
+  label_smoothing: 0.0
+  mix: none
+  mix_alpha: 1.0
+  supcon_epochs: 0
+  supcon_temperature: 0.1
+  router_weight: 0.3
+  grad_checkpointing: false

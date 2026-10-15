@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_hflip_f1_s2_20261013-192302/best.pt

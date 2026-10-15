@@ -1,0 +1,48 @@
+{
+  "best_epoch": 3,
+  "device": "cuda",
+  "epochs_run": 11,
+  "external": {
+    "mendeley_split_c": {
+      "n": 150,
+      "specificity": 0.92
+    },
+    "mendeley_split_d": {
+      "n": 149,
+      "specificity": 0.8993288590604027
+    },
+    "split_e_harvested": {
+      "n": 121,
+      "recall": 0.38016528925619836
+    },
+    "split_e_regulatory": {
+      "n": 29,
+      "recall": 0.5862068965517241
+    }
+  },
+  "heldout": {
+    "accuracy": 0.963302752293578,
+    "auprc": 0.9949534161490684,
+    "auroc": 0.9967391304347826,
+    "balanced_accuracy": 0.9605072463768116,
+    "brier": 0.02903277375082166,
+    "ece": 0.06337664577546064,
+    "macro_f1": 0.9605072463768116,
+    "sens_at_95_spec": 0.975,
+    "sensitivity": 0.95,
+    "specificity": 0.9710144927536232,
+    "threshold": 0.6909762620925903
+  },
+  "n": {
+    "external": 449,
+    "heldout": 109,
+    "val": 55
+  },
+  "n_params": 20830289,
+  "n_train": 330,
+  "n_trainable_params": 652801,
+  "peak_gpu_memory_gb": 2.961203712,
+  "threshold_rule": "youden",
+  "train_seconds": 32.42918460001238,
+  "val_auroc_best": 1.0
+}

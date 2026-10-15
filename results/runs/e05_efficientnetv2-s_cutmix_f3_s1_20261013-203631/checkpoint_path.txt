@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_cutmix_f3_s1_20261013-203631/best.pt

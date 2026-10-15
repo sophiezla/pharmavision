@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_smoothing_f1_s0_20261013-210354/best.pt

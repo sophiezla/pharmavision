@@ -1,0 +1,14 @@
+{
+  "arms": [
+    "full",
+    "no-local",
+    "no-frequency",
+    "no-router",
+    "concat",
+    "separate-local",
+    "hard-routing",
+    "tiles4-896"
+  ],
+  "global_reference": "e05: default",
+  "recipe": []
+}

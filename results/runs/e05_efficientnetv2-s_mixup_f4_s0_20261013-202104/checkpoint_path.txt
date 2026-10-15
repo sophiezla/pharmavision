@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_mixup_f4_s0_20261013-202104/best.pt

@@ -1,0 +1,1 @@
+checkpoints/e05_efficientnetv2-s_randaugment_f2_s0_20261013-195724/best.pt
