@@ -188,6 +188,9 @@ def summarize(
         row["trainable params (M)"] = (
             trainable[0] / 1e6 if trainable[0] is not None else float("nan")
         )
+        peak = [r.metrics.get("peak_gpu_memory_gb") for r in recs]
+        peak = [p for p in peak if p is not None]
+        row["peak GPU GB (max)"] = f"{max(peak):.2f}" if peak else "nan"
         rows.append(row)
     return pd.DataFrame(rows), pooled_frames
 
