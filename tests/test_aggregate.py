@@ -11,6 +11,7 @@ from pharmachecked.evaluation.aggregate import (
     collect_runs,
     external_correctness,
     pairwise_vs_best,
+    pairwise_vs_reference,
     pooled_oof,
     summarize,
     to_markdown,
@@ -119,6 +120,16 @@ def test_summary_and_pairwise(runs: Path) -> None:
     assert list(pairwise["config"]) == ["weak/default"]
     assert pairwise["holm_p"].iloc[0] < 0.05
     assert "| config |" in to_markdown(pairwise)
+
+    vs = pairwise_vs_reference(pooled, "strong/default", n_boot=200)
+    assert list(vs["config"]) == ["weak/default"]
+    assert bool(vs["worse"].iloc[0]) and not bool(vs["improves"].iloc[0])
+    assert {"auroc_diff", "ece_diff", "log_loss_diff", "images"} <= set(vs.columns)
+    assert vs["auroc_diff"].iloc[0].startswith("-")  # configuration minus reference
+    flipped = pairwise_vs_reference(pooled, "weak/default", n_boot=200)
+    assert bool(flipped["improves"].iloc[0])
+    with pytest.raises(KeyError):
+        pairwise_vs_reference(pooled, "missing/default")
 
 
 def test_duplicate_runs_for_one_arm_are_refused(runs: Path) -> None:

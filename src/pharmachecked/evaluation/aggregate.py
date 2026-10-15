@@ -219,6 +219,43 @@ def pairwise_vs_best(pooled: dict[str, pd.DataFrame], n_boot: int = 2000) -> pd.
     return out
 
 
+def pairwise_vs_reference(
+    pooled: dict[str, pd.DataFrame], reference: str, n_boot: int = 2000
+) -> pd.DataFrame:
+    """Each configuration minus a fixed reference (E5: ``default``; E4: ``full``).
+
+    Paired over the images both have: DeLong p (Holm-corrected over the comparisons) and
+    bootstrap CIs of the AUROC, ECE and log-loss differences (configuration minus reference).
+    ``improves`` = Holm p < 0.05, AUROC CI above 0; ``worse`` = Holm p < 0.05, CI below 0.
+    """
+    if reference not in pooled:
+        raise KeyError(f"reference {reference!r} not among {sorted(pooled)}")
+    metrics = {"auroc": auroc, "ece": expected_calibration_error, "log_loss": log_loss}
+    rows, intervals = [], []
+    for config, df in pooled.items():
+        if config == reference:
+            continue
+        merged = pooled[reference].merge(df, on="image_id", suffixes=("_ref", ""))
+        y = merged["y_true"]
+        a, b = merged["prob"].to_numpy(), merged["prob_ref"].to_numpy()
+        test = delong_test(y, a, b)
+        row: dict[str, object] = {"config": config, "reference": reference, "images": len(merged)}
+        for name, fn in metrics.items():
+            ci = bootstrap_ci(y, (a, b), lambda yy, p, q, f=fn: f(yy, p) - f(yy, q), n_boot=n_boot)
+            row[f"{name}_diff"] = _ci(ci)
+            if name == "auroc":
+                intervals.append(ci)
+        row["delong_p"] = test.p_value
+        rows.append(row)
+    out = pd.DataFrame(rows)
+    if len(out):
+        reject, corrected = holm(out["delong_p"].tolist())
+        out["holm_p"] = corrected
+        out["improves"] = [bool(r and ci.low > 0) for r, ci in zip(reject, intervals, strict=True)]
+        out["worse"] = [bool(r and ci.high < 0) for r, ci in zip(reject, intervals, strict=True)]
+    return out
+
+
 def to_markdown(df: pd.DataFrame) -> str:
     """Markdown table without a pandas tabulate dependency."""
     cols = list(df.columns)

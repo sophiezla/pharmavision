@@ -13,6 +13,7 @@ from pharmachecked.config import REPO_ROOT
 from pharmachecked.evaluation.aggregate import (
     collect_runs,
     pairwise_vs_best,
+    pairwise_vs_reference,
     summarize,
     to_markdown,
 )
@@ -33,6 +34,11 @@ def main() -> int:
         default=[],
         metavar="EXP:MODEL/VARIANT",
         help="also include one arm of another experiment (e.g. e01:convnext-tiny/ft for E2)",
+    )
+    parser.add_argument(
+        "--reference",
+        metavar="MODEL/VARIANT",
+        help="also compare every configuration with this one (writes <exp>_vs_reference.md)",
     )
     args = parser.parse_args()
     configure_logging()
@@ -72,6 +78,17 @@ def main() -> int:
         "configuration) with a paired bootstrap CI. 'Improvement' requires Holm p < 0.05 and a "
         "CI excluding 0.\n\n" + to_markdown(pairwise),
     )
+    if args.reference:
+        vs = pairwise_vs_reference(pooled, args.reference, args.n_boot)
+        atomic_write_text(
+            tables / f"{args.exp}_vs_reference.md",
+            f"# {args.exp}: each configuration vs `{args.reference}`\n\nPaired over the images "
+            "both configurations have (pooled seed-averaged OOF predictions). Differences are "
+            "configuration minus reference with paired bootstrap CIs "
+            f"({args.n_boot} resamples); DeLong p Holm-corrected over the comparisons. "
+            "'improves' / 'worse' = Holm p < 0.05 and an AUROC-difference CI above / below 0 "
+            "(CLAUDE.md section 5). Lower ECE and log-loss are better.\n\n" + to_markdown(vs),
+        )
     log.info("wrote %s_summary.{csv,md} and %s_pairwise.md", args.exp, args.exp)
     return 0
 
