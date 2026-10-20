@@ -17,6 +17,82 @@ retyped. Template:
 
 ---
 
+## 2026-10-20 · E9 · Robustness to image corruptions (Phase 4 kit)
+- Commit: Phase 4 GPU kit `PRIVATE_gpu_kit_phase4_d0d2288.zip` (RTX 5060), results `RESULTS_phase4_20261020-125833.zip`; tables committed with this entry.
+- Command(s): pipeline `run_e9` (after stage 3); `python scripts/phase4_tables.py --exp e09`; `python scripts/make_figures.py --exp e09`
+- Hypothesis: AUROC falls with severity; blur and JPEG hurt most (E09.md).
+- Runs: no training; the 75 fold models (`p4ref_*` and `e05_efficientnetv2-s_default_*`) each wrote `corruption_predictions.csv` (45 conditions + clean); 0 failures (`results/pipeline/e09_status.json`).
+- Result (from `results/tables/e09_mean_corruption_auroc.md`):
+
+| config | mean corruption AUROC | worst condition AUROC | conditions | clean AUROC |
+|---|---|---|---|---|
+| convnext-tiny/ft | 0.9983 | 0.9831 | 45 | 0.9996 |
+| dinov2-vits14/ft | 0.9953 | 0.961 | 45 | 0.9975 |
+| efficientnetv2-s/default | 0.9984 | 0.9814 | 45 | 0.9993 |
+| handcrafted-xgb/default | 0.9451 | 0.8142 | 45 | 0.9768 |
+| swin-tiny/ft | 0.9988 | 0.992 | 45 | 0.9995 |
+
+- Interpretation: the deep models lose at most 0.04 AUROC in any condition; the handcrafted model falls below 0.85 under Gaussian noise (severity 5) and perspective warp (severity 5). Blur and JPEG do not hurt most. The final model's quality limit is severity 5 for every corruption (`e09_quality_limits.md`), so the 0.85 threshold (ADR-023) does not discriminate at the tested severities.
+- Issues / anomalies: none in the runs. The severity grid did not reach a failure point for any deep model.
+- Next: report at CHECKPOINT 4; a stronger severity grid would be a protocol change (Sophie's call).
+
+## 2026-10-20 · E8 · Open set, leave one packaging type out (Phase 4 kit + PatchCore rerun)
+- Commit: Phase 4 GPU kit (d0d2288); PatchCore fix 9ca2980; tables committed with this entry.
+- Command(s): pipeline stage 3; after the fix, on the laptop CPU: `python -m pharmachecked.run experiment=e08_open_set model=patchcore task=one_class variant=oc-no-<T> paths=local data.split_version=2 exp=e08 data.heldout_type=<T> fold=0 seed=0` for T = blister, packaging; `python scripts/phase4_tables.py --exp e08`; `python scripts/make_figures.py --exp e08`
+- Hypothesis: supervised models lose AUROC on the unseen type (E08.md).
+- Runs: 34 under `results/runs/e08_*`; stage wall time 2026-10-20 12:02 to 12:30 on the GPU.
+- Result (from `results/tables/e08_open_set.md`):
+
+| held-out type | method | runs | unseen AUROC | seen AUROC (5-fold OOF) | unseen AUPRC | unseen sens@95%spec | images |
+|---|---|---|---|---|---|---|---|
+| blister | convnext-tiny/ft | 3 | 1.000 [0.999, 1.000] | 1.000 [0.999, 1.000] | 1.000 | 1.000 | 229 |
+| blister | dinov2-vits14/ft | 3 | 0.918 [0.882, 0.948] | 1.000 [1.000, 1.000] | 0.914 | 0.629 | 229 |
+| blister | efficientnetv2-s/default | 3 | 0.954 [0.927, 0.976] | 1.000 [1.000, 1.000] | 0.943 | 0.638 | 229 |
+| blister | handcrafted-xgb/default | 3 | 0.970 [0.948, 0.987] | 0.987 [0.977, 0.995] | 0.961 | 0.829 | 229 |
+| blister | patchcore/oc | 1 | 0.907 [0.867, 0.942] | - | 0.874 | 0.648 | 229 |
+| blister | prototype-dinov2/oc | 1 | 0.944 [0.915, 0.970] | - | 0.943 | 0.733 | 229 |
+| blister | swin-tiny/ft | 3 | 0.994 [0.986, 0.998] | 1.000 [1.000, 1.000] | 0.992 | 0.943 | 229 |
+| packaging | convnext-tiny/ft | 3 | 0.996 [0.990, 0.999] | 0.999 [0.998, 1.000] | 0.997 | 0.969 | 175 |
+| packaging | dinov2-vits14/ft | 3 | 0.975 [0.956, 0.991] | 0.993 [0.978, 1.000] | 0.980 | 0.773 | 175 |
+| packaging | efficientnetv2-s/default | 3 | 0.995 [0.988, 0.999] | 0.998 [0.993, 1.000] | 0.996 | 0.959 | 175 |
+| packaging | handcrafted-xgb/default | 3 | 0.879 [0.825, 0.927] | 0.964 [0.937, 0.985] | 0.880 | 0.412 | 175 |
+| packaging | patchcore/oc | 1 | 0.940 [0.903, 0.971] | - | 0.944 | 0.784 | 175 |
+| packaging | prototype-dinov2/oc | 1 | 0.970 [0.943, 0.990] | - | 0.972 | 0.784 | 175 |
+| packaging | swin-tiny/ft | 3 | 0.996 [0.990, 0.999] | 0.998 [0.994, 1.000] | 0.997 | 0.959 | 175 |
+
+- Interpretation: unseen < seen for 9 of 10 supervised pairs; large losses for DINOv2 and EfficientNetV2-S on blisters and the handcrafted model on packaging; ConvNeXt and Swin lose ≤ 0.006. The prototype verifier beats PatchCore on both types.
+- Issues / anomalies: both kit PatchCore runs had AUROC 0.500 [0.500, 0.500]: `prob = 1 - exp(-score)` was exactly 1.0 for every image (logit clipped at 16.118). Fixed in 9ca2980 (`score / (1 + score)`, regression test) and rerun on CPU (fp32, same config); the kit runs and one rerun that was marked `_dirty` (docs edited while it started) are in `results/scratch/superseded/`. The prototype runs were not affected (cosine distance / 2 does not saturate).
+- Next: none for Phase 4.
+
+## 2026-10-20 · E7 · Cross-dataset transfer, Kaggle -> external (Phase 4 kit)
+- Commit: Phase 4 GPU kit (d0d2288); tables committed with this entry.
+- Command(s): pipeline stage 2; `python scripts/phase4_tables.py --exp e07`
+- Hypothesis: cross-source AUROC well below in-source for every model (E07.md, ADR-022).
+- Runs: 15 under `results/runs/e07_*` (5 models × seeds 0–2), trained on the whole development pool; 0 failures; stage wall time 2026-10-20 11:50 to 12:02.
+- Result (from `results/tables/e07_transfer.md`):
+
+| config | runs | in-source AUROC (5-fold OOF) | cross-source AUROC | drop (in - cross) | external specificity (Mendeley) | external recall (Split E) | external images |
+|---|---|---|---|---|---|---|---|
+| convnext-tiny/ft | 3 | 1.000 [0.999, 1.000] | 0.626 [0.573, 0.678] | 0.373 [0.321, 0.427] | 0.577 | 0.558 | 449 |
+| dinov2-vits14/ft | 3 | 0.998 [0.993, 1.000] | 0.847 [0.809, 0.883] | 0.151 [0.114, 0.190] | 0.953 | 0.269 | 449 |
+| efficientnetv2-s/default | 3 | 0.999 [0.998, 1.000] | 0.860 [0.826, 0.891] | 0.139 [0.108, 0.172] | 0.835 | 0.600 | 449 |
+| handcrafted-xgb/default | 3 | 0.976 [0.964, 0.986] | 0.605 [0.549, 0.663] | 0.371 [0.314, 0.433] | 0.476 | 0.660 | 449 |
+| swin-tiny/ft | 3 | 1.000 [0.998, 1.000] | 0.538 [0.478, 0.597] | 0.461 [0.401, 0.521] | 0.821 | 0.211 | 449 |
+
+- Interpretation: every model drops, and every drop CI excludes 0. The final model (0.860) and DINOv2 (0.847) transfer best; Swin, joint-best in-source, is lowest cross-source (0.538, CI includes 0.5). The cross-source AUROC also separates two acquisition sources (ADR-005).
+- Issues / anomalies: none.
+- Next: none for Phase 4.
+
+## 2026-10-20 · E6 · Data efficiency (Phase 4 kit)
+- Commit: Phase 4 GPU kit (d0d2288); tables committed with this entry.
+- Command(s): pipeline stages 0–1; `python scripts/aggregate.py --exp e06 --include p4ref:handcrafted-xgb/default --include p4ref:convnext-tiny/ft --include p4ref:swin-tiny/ft --include p4ref:dinov2-vits14/ft --include e05:efficientnetv2-s/default`; `python scripts/make_figures.py --exp e06`
+- Hypothesis: pretrained models stay near the ceiling at small fractions; the handcrafted model degrades earlier (E06.md).
+- Runs: 60 `p4ref_*` (the 100% arm of the four retrained comparison models, ADR-021) + 225 `e06_*` (5 models × 3 fractions × 15); 0 failures. Stage 0 2026-10-20 08:28 to 09:14, stage 1 to 11:50.
+- Result: full table in `results/tables/e06_summary.md`; pooled AUROC by fraction in `docs/experiments/E06.md` (copied from `e06_summary.csv`).
+- Interpretation: ConvNeXt and Swin stay ≥ 0.998 at 10%; EfficientNetV2-S (0.987) and DINOv2 (0.972) lose a little at 10%; the handcrafted model falls from 0.976 to 0.895. Pooled ECE rises sharply at 10% (up to 0.158).
+- Issues / anomalies: for some arms the pooled ECE point estimate lies just outside its bootstrap CI (e.g. `convnext-tiny/ft-frac25` 0.016 [0.017, 0.030]); bootstrap resamples with duplicated images bias binned ECE upwards. The same aggregator was used in earlier phases.
+- Next: none for Phase 4.
+
 ## 2026-10-19 · E4 · Gate weights of the `full` model (PLAN 3.7)
 - Commit: 0ec1fe3 (scripts); results committed with this entry.
 - Command(s): `python scripts/predict_branch_outputs.py --exp e04 --model multibranch --variant full --paths local --checkpoint-root C:/Projects --device cpu`; `python scripts/gate_table.py --exp e04 --model multibranch --variant full`; `python scripts/make_figures.py --exp e04`

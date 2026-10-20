@@ -1,0 +1,10 @@
+corruption,max_severity,threshold
+brightness,5,0.85
+contrast,5,0.85
+gaussian_blur,5,0.85
+gaussian_noise,5,0.85
+glare,5,0.85
+jpeg,5,0.85
+motion_blur,5,0.85
+perspective,5,0.85
+rotation,5,0.85
