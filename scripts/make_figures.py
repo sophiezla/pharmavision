@@ -197,10 +197,118 @@ def e04_gate_weights_by_packaging(tables: Path, out: Path) -> list[Path]:
     return save_figure(fig, out, "e04_gate_weights_by_packaging")
 
 
+FRAC = re.compile(r"-frac(\d+)$")
+
+
+def e06_learning_curves(tables: Path, out: Path) -> list[Path]:
+    """Pooled AUROC vs training fraction (log x), line + 95% CI band per model."""
+    df = pd.read_csv(tables / "e06_summary.csv")
+    df["model"] = df["config"].str.split("/").str[0]
+    variant = df["config"].str.split("/").str[1]
+    df["fraction"] = [int(m[1]) if (m := FRAC.search(v)) else 100 for v in variant]
+    est, low, high = zip(*df["auroc (pooled)"].map(parse_ci), strict=True)
+    df["est"], df["low"], df["high"] = est, low, high
+    apply_style()
+    fig, ax = plt.subplots(figsize=(6.4, 4.0))
+    for k, (model, part) in enumerate(sorted(df.groupby("model"))):
+        part = part.sort_values("fraction")
+        ax.plot(part["fraction"], part["est"], marker="o", color=color_for(k), label=model)
+        ax.fill_between(part["fraction"], part["low"], part["high"], color=color_for(k), alpha=0.18)
+    ax.set_xscale("log")
+    ax.xaxis.set_major_locator(FixedLocator([10, 25, 50, 100]))
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}%"))
+    ax.xaxis.set_minor_formatter(NullFormatter())
+    ax.set_xlabel("Share of each outer training portion (log scale)")
+    ax.set_ylabel("Pooled OOF AUROC (95% CI)")
+    ax.set_title("E6: data efficiency")
+    ax.legend(loc="lower right")
+    fig.tight_layout()
+    return save_figure(fig, out, "e06_learning_curves")
+
+
+def e08_seen_vs_unseen(tables: Path, out: Path) -> list[Path]:
+    """Seen vs unseen AUROC (95% CI) per method, one panel per held-out packaging type."""
+    df = pd.read_csv(tables / "e08_open_set.csv")
+    types = list(dict.fromkeys(df["held-out type"]))
+    apply_style()
+    fig, axes = plt.subplots(1, len(types), figsize=(5.2 * len(types), 3.8), squeeze=False)
+    for ax, t in zip(axes[0], types, strict=True):
+        part = df[df["held-out type"] == t].reset_index(drop=True)
+        for col, (label, offset, k) in {
+            "seen AUROC (5-fold OOF)": ("seen", -0.15, 0),
+            "unseen AUROC": ("unseen", 0.15, 1),
+        }.items():
+            for i, text in enumerate(part[col]):
+                if text == "-" or pd.isna(text):
+                    continue
+                e, lo, hi = parse_ci(text)
+                ax.errorbar(
+                    i + offset,
+                    e,
+                    yerr=[[e - lo], [hi - e]],
+                    fmt="o",
+                    color=color_for(k),
+                    elinewidth=1,
+                    label=label,
+                )
+        ax.set_xticks(range(len(part)))
+        ax.set_xticklabels(part["method"], rotation=30, ha="right")
+        ax.set_title(f"held-out type: {t}")
+        ax.set_ylabel("AUROC (95% CI)")
+        ax.grid(axis="x", visible=False)
+        handles, labels = ax.get_legend_handles_labels()
+        unique = dict(zip(labels, handles, strict=True))
+        ax.legend(unique.values(), unique.keys(), loc="lower left")
+    fig.suptitle("E8: seen vs unseen packaging type")
+    fig.tight_layout()
+    return save_figure(fig, out, "e08_seen_vs_unseen")
+
+
+def e09_severity_curves(tables: Path, out: Path) -> list[Path]:
+    """AUROC vs severity (0 = clean) per model, one panel per corruption."""
+    df = pd.read_csv(tables / "e09_severity.csv")
+    clean = df[df["corruption"] == "clean"].set_index("config")["auroc"]
+    names = sorted(set(df["corruption"]) - {"clean"})
+    apply_style()
+    ncol = 3
+    nrow = -(-len(names) // ncol)
+    fig, axes = plt.subplots(nrow, ncol, figsize=(10.5, 3.0 * nrow), sharey=True, squeeze=False)
+    configs = sorted(df["config"].unique())
+    for ax, name in zip(axes.flat, names, strict=False):
+        part = df[df["corruption"] == name]
+        for k, config in enumerate(configs):
+            sub = part[part["config"] == config].sort_values("severity")
+            ax.plot(
+                [0, *sub["severity"]],
+                [clean[config], *sub["auroc"]],
+                marker="o",
+                markersize=3,
+                color=color_for(k),
+                label=config,
+            )
+        ax.axhline(0.85, color=INK_SECONDARY, linestyle="--", linewidth=0.8)
+        ax.set_title(name.replace("_", " "))
+        ax.set_xticks(range(6))
+        ax.grid(axis="x", visible=False)
+    for ax in axes.flat[len(names) :]:
+        ax.set_visible(False)
+    for ax in axes[:, 0]:
+        ax.set_ylabel("Pooled AUROC")
+    for ax in axes[-1, :]:
+        ax.set_xlabel("Severity (0 = clean)")
+    axes.flat[0].legend(loc="lower left", fontsize=7)
+    fig.suptitle("E9: AUROC under corruption (dashed: 0.85 quality limit, ADR-023)")
+    fig.tight_layout()
+    return save_figure(fig, out, "e09_severity_curves")
+
+
 FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
     "e01": [e01_auroc_vs_params],
     "e02": [e02_auroc_by_strategy],
     "e04": [e04_gate_weights_by_packaging],
+    "e06": [e06_learning_curves],
+    "e08": [e08_seen_vs_unseen],
+    "e09": [e09_severity_curves],
 }
 
 

@@ -63,3 +63,48 @@ def test_e04_gate_figure_from_table(tmp_path: Path) -> None:
     paths = make_figures.e04_gate_weights_by_packaging(tmp_path, tmp_path / "figs")
     assert [p.suffix for p in paths] == [".png", ".pdf"]
     assert paths[0].stat().st_size < 1_000_000
+
+
+def test_phase4_figures_from_tables(tmp_path: Path) -> None:
+    pd.DataFrame(
+        {
+            "config": [
+                "convnext-tiny/ft",
+                "convnext-tiny/ft-frac10",
+                "convnext-tiny/ft-frac50",
+                "handcrafted-xgb/default",
+                "handcrafted-xgb/default-frac10",
+            ],
+            "auroc (pooled)": [
+                "0.99 [0.98, 1.00]",
+                "0.95 [0.92, 0.97]",
+                "0.98 [0.96, 0.99]",
+                "0.97 [0.96, 0.98]",
+                "0.90 [0.87, 0.93]",
+            ],
+        }
+    ).to_csv(tmp_path / "e06_summary.csv", index=False)
+    pd.DataFrame(
+        {
+            "held-out type": ["blister", "blister", "packaging"],
+            "method": ["convnext-tiny/ft", "patchcore/oc", "convnext-tiny/ft"],
+            "unseen AUROC": ["0.90 [0.85, 0.94]", "0.70 [0.62, 0.77]", "0.88 [0.82, 0.93]"],
+            "seen AUROC (5-fold OOF)": ["0.99 [0.98, 1.00]", "-", "0.99 [0.97, 1.00]"],
+        }
+    ).to_csv(tmp_path / "e08_open_set.csv", index=False)
+    rows = [{"config": c, "corruption": "clean", "severity": 0, "auroc": 0.99} for c in "ab"]
+    rows += [
+        {"config": c, "corruption": n, "severity": s, "auroc": 0.99 - 0.03 * s}
+        for c in "ab"
+        for n in ("jpeg", "glare")
+        for s in range(1, 6)
+    ]
+    pd.DataFrame(rows).to_csv(tmp_path / "e09_severity.csv", index=False)
+    for make in (
+        make_figures.e06_learning_curves,
+        make_figures.e08_seen_vs_unseen,
+        make_figures.e09_severity_curves,
+    ):
+        paths = make(tmp_path, tmp_path / "figs")
+        assert [p.suffix for p in paths] == [".png", ".pdf"]
+        assert paths[0].stat().st_size < 1_000_000
