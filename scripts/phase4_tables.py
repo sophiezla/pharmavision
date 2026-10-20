@@ -68,8 +68,9 @@ def main() -> int:
             "E7: cross-dataset transfer, Kaggle -> pooled external sets (ADR-022)",
             "In-source: seed-averaged within-source 5-fold OOF predictions. Cross-source: models "
             "trained on the whole development pool, seed-averaged probabilities on Mendeley "
-            "split_c + split_d (authentic) and Split E (counterfeit); specificity and recall at "
-            f"the val-selected threshold, averaged over runs. Drop CI resamples the two image "
+            "split_c + split_d (authentic) and Split E (counterfeit); specificity on the "
+            "authentic and recall on the counterfeit images at the val-selected threshold, "
+            f"averaged over runs. Drop CI resamples the two image "
             f"sets independently. {boot}. The cross-source AUROC also separates acquisition "
             "sources (ADR-005).",
             table,

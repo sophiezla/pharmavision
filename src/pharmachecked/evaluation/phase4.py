@@ -18,8 +18,6 @@ from pharmachecked.evaluation.metrics import auprc, auroc, sensitivity_at_specif
 from pharmachecked.evaluation.robustness import CLEAN, quality_limits
 from pharmachecked.evaluation.stats import Interval, _resample_indices, bootstrap_ci
 
-MENDELEY, SPLIT_E = "mendeley", "split_e"  # external source prefixes (ADR-005)
-
 
 def _ci_text(i: Interval) -> str:
     return f"{i.estimate:.3f} [{i.low:.3f}, {i.high:.3f}]"
@@ -66,9 +64,11 @@ def e07_table(transfer: list[RunRecord], reference: list[RunRecord], n_boot: int
         ins, ext = pooled_oof(refs[config]), pooled_external(recs)
         yi, pi = ins["y_true"].to_numpy(), ins["prob"].to_numpy()
         ye, pe = ext["y_true"].to_numpy(), ext["prob"].to_numpy()
+        # Mendeley is all authentic and Split E all counterfeit (ADR-005), so specificity and
+        # recall are read off by label: fraction of runs deciding correctly, mean over images.
         correct = external_correctness(recs)
-        mendeley = correct[correct["source_dataset"].str.startswith(MENDELEY)]["correct"]
-        split_e = correct[correct["source_dataset"].str.startswith(SPLIT_E)]["correct"]
+        specificity = correct.loc[correct["y_true"] == 0, "correct"]
+        recall = correct.loc[correct["y_true"] == 1, "correct"]
         rows.append(
             {
                 "config": config,
@@ -76,8 +76,8 @@ def e07_table(transfer: list[RunRecord], reference: list[RunRecord], n_boot: int
                 "in-source AUROC (5-fold OOF)": _ci_text(bootstrap_ci(yi, (pi,), auroc, n_boot)),
                 "cross-source AUROC": _ci_text(bootstrap_ci(ye, (pe,), auroc, n_boot)),
                 "drop (in - cross)": _ci_text(difference_ci(yi, pi, ye, pe, n_boot)),
-                "Mendeley specificity": f"{mendeley.mean():.3f}",
-                "Split E recall": f"{split_e.mean():.3f}",
+                "external specificity (Mendeley)": f"{specificity.mean():.3f}",
+                "external recall (Split E)": f"{recall.mean():.3f}",
                 "external images": len(ext),
             }
         )
