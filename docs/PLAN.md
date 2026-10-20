@@ -143,24 +143,25 @@ All experiments use the five comparison models.
 ### E6 · Data efficiency
 
 - [x] **4.1** (1056633; ADR-021) `docs/experiments/E06.md`. Subsample each outer training portion to 10/25/50/100% (grouped, stratified; 3 draws per fraction, seed = draw index); val/cal/held-out unchanged.
-- [x] **4.2** (results commit) Aggregate; figure `e06_learning_curves` (log-x, mean line + 95% CI band per model).
+- [x] **4.2** (5ede591, 8f334f7) Aggregate; figure `e06_learning_curves` (log-x, mean line + 95% CI band per model).
 
 ### E7 · Cross-dataset transfer
 
 - [x] **4.3** (1056633; one direction only, ADR-022) `docs/experiments/E07.md`. Train on all development images of source A (inner train/val/cal split by group), test on all development images of source B; then reverse. 3 seeds. Reference = within-source 5-fold results.
-- [x] **4.4** (results commit) Table `e07_transfer`: in-source AUROC, cross-source AUROC, drop, CI.
+- [x] **4.4** (d0d2288, 8f334f7) Table `e07_transfer`: in-source AUROC, cross-source AUROC, drop, CI.
 
 ### E8 · Open-set (leave-one-packaging-type-out)
 
 - [x] **4.5** (1056633; blister and packaging qualify) `docs/experiments/E08.md`. For each packaging type with ≥ 30 images in both classes (report which qualify), train on the other types and test on the held-out type. 3 seeds.
 - [x] **4.6** (870d432, 9ca2980) Methods: five comparison models; PatchCore via `anomalib` (backbone `wide_resnet50_2`, fitted on authentic training images only; verify API for the installed version); prototype verifier (`models/prototype.py`: L2-normalized DINOv2 embeddings, score = mean cosine distance to k=5 nearest authentic training embeddings).
-- [x] **4.7** (results commit) Table `e08_open_set` (type × method); figure `e08_seen_vs_unseen`.
+- [x] **4.7** (8f334f7) Table `e08_open_set` (type × method); figure `e08_seen_vs_unseen`.
 
 ### E9 · Robustness
 
 - [x] **4.8** (b2ebb15; applied at model-input resolution, E09.md) `data/corruptions.py`: Gaussian blur, motion blur, Gaussian noise, JPEG compression, brightness, contrast, rotation, perspective warp, synthetic glare (additive elliptical highlight); 5 severity levels each, parameters listed in `configs/eval/corruptions.yaml`. Unit test: severity 0 = identity; severity monotonic in a simple image statistic.
 - [x] **4.9** (5e44e2f; Phase 4 kit) Evaluate the trained fold models (no retraining) on corrupted held-out folds; seeds fixed for corruption randomness.
-- [x] **4.10** (results commit; limit 0.85 per ADR-023) Figure `e09_severity_curves` (one panel per corruption); table `e09_mean_corruption_auroc`; table `e09_quality_limits` = highest severity per corruption at which the final model's AUROC ≥ 0.85 (threshold configurable; confirm with Sophie).
+- [x] **4.10** (8f334f7; limit 0.85 per ADR-023) Figure `e09_severity_curves` (one panel per corruption); table `e09_mean_corruption_auroc`; table `e09_quality_limits` = highest severity per corruption at which the final model's AUROC ≥ 0.85 (threshold configurable; confirm with Sophie).
+- [ ] **4.11** (ADR-024; deferred to the next GPU kit) E9 extension: severities 6–8 on the same 75 fold models; extend `e09_severity`, `e09_quality_limits` and the figure.
 
 **CHECKPOINT 4.**
 

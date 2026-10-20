@@ -226,3 +226,25 @@ Template:
 - Context: PLAN 4.10 defines `e09_quality_limits` as the highest severity per corruption at which the final model's AUROC stays at or above a threshold, to be confirmed by Sophie.
 - Decision: 0.85, the plan's value, configurable in `configs/eval/corruptions.yaml`.
 - Consequences: the app (PLAN 8.6) rejects photos whose estimated corruption exceeds these limits.
+
+## ADR-024 · E9 extension: severities 6–8, run in a later combined kit
+- Date: 2026-10-20 · Status: Accepted (Sophie, CHECKPOINT 4); not yet run
+- Context: at the pre-registered severities 1–5 no deep model fell below AUROC 0.96 and the final model's quality limit was severity 5 for every corruption (`e09_quality_limits.md`), so the 0.85 threshold (ADR-023) did not find a failure point. Sophie chose to extend the grid, run together with later experiments in one GPU kit rather than as a separate job.
+- Options considered: (a) accept the 1–5 results as they are; (b) extend the grid with stronger severities (chosen).
+- Decision: add severities 6, 7, 8 per corruption, fixed now (before any run), continuing each progression towards an almost destroyed image:
+
+  | corruption | 6 | 7 | 8 |
+  |---|---|---|---|
+  | gaussian_blur (sigma, px) | 4 | 6 | 8 |
+  | motion_blur (kernel length, px) | 17 | 25 | 35 |
+  | gaussian_noise (sd) | 0.18 | 0.25 | 0.35 |
+  | jpeg (quality) | 5 | 3 | 1 |
+  | brightness (factor) | 0.2 | 0.12 | 0.06 |
+  | contrast (factor) | 0.2 | 0.12 | 0.06 |
+  | rotation (degrees) | 45 | 60 | 90 |
+  | perspective (corner shift) | 0.35 | 0.4 | 0.45 |
+  | glare (peak intensity) | 0.9 | 1.0 | 1.2 |
+
+  Same fold models (the 75 of E9), same per-image seeding, no retraining. Severities 1–5 are not re-run; their results stand. Quality limits are recomputed over 1–8 with the same 0.85 rule.
+- Evidence: `results/tables/e09_quality_limits.md`, `e09_mean_corruption_auroc.md`, `docs/phase_reports/phase-4.md`.
+- Consequences: the extension runs in the next GPU kit (planned: the Phase 5 prediction-only kit), estimated about 0.5 h. Results are reported as an extension of E9 (PLAN 4.11), separate from the pre-registered 1–5 grid. `configs/eval/corruptions.yaml` gains the values when the kit is built.
