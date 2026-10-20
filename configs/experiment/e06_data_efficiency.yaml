@@ -1,0 +1,8 @@
+# @package _global_
+# E6 data efficiency (PLAN 4.1-4.2; docs/experiments/E06.md). The job sets model, variant
+# (e.g. ft-frac25) and data.train_fraction; seed = draw index.
+exp: e06
+task: train
+variant: ft
+data:
+  split_version: 2

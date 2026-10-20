@@ -1,0 +1,9 @@
+# @package _global_
+# E8 open set, leave one packaging type out (PLAN 4.5-4.7; docs/experiments/E08.md). The job
+# sets data.heldout_type and the variant (e.g. ft-no-blister); fold is unused (0).
+exp: e08
+task: train
+variant: ft
+data:
+  split_version: 2
+  protocol: leave_type_out

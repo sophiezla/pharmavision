@@ -17,7 +17,7 @@ echo ============================================================
 echo.
 "%UV%" venv --python 3.13 .venv || goto fail
 "%UV%" pip install --python .venv\Scripts\python.exe --index-url __TORCH_INDEX__ -c constraints\cpu.txt torch torchvision || goto fail
-"%UV%" pip install --python .venv\Scripts\python.exe -c constraints\cpu.txt -e . || goto fail
+"%UV%" pip install --python .venv\Scripts\python.exe -c constraints\cpu.txt -e .[anomaly] || goto fail
 .venv\Scripts\python.exe scripts\kit_check.py || goto fail
 
 echo.

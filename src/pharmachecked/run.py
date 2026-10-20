@@ -38,11 +38,19 @@ def _model_task(name: str) -> Callable[[DictConfig, RunDir], None]:
     return task
 
 
+def _one_class(cfg: DictConfig, run: RunDir) -> None:
+    """E8 one-class methods (PatchCore, prototype verifier); imported lazily."""
+    from pharmachecked.training.one_class import run_one_class
+
+    run_one_class(cfg, run)
+
+
 TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {
     "noop": noop,
     "train": _model_task("train"),
     "handcrafted": _model_task("handcrafted"),
     "clip_zeroshot": _model_task("clip_zeroshot"),
+    "one_class": _one_class,
 }
 
 

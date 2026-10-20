@@ -1,0 +1,8 @@
+# @package _global_
+# Phase 4 reference batch (ADR-021): the comparison models retrained on data v2 under the full
+# protocol; the 100% arm of E6, the in-source reference of E7 and E8, the fold models of E9.
+exp: p4ref
+task: train
+variant: ft
+data:
+  split_version: 2

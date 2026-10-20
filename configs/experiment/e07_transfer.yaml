@@ -1,0 +1,9 @@
+# @package _global_
+# E7 cross-dataset transfer, one direction (PLAN 4.3-4.4; ADR-022; docs/experiments/E07.md):
+# train on the whole development pool, test on the pooled external sets. fold is unused (0).
+exp: e07
+task: train
+variant: ft
+data:
+  split_version: 2
+  protocol: whole_pool

@@ -1,0 +1,14 @@
+# E8 prototype verifier (PLAN 4.6): frozen DINOv2 ViT-S/14 embeddings, L2-normalized; score =
+# mean cosine distance to the k nearest authentic training embeddings. One-class (task one_class).
+name: prototype-dinov2
+kind: prototype
+k: 5
+img_size: 224
+mean: [0.4850, 0.4560, 0.4060]
+std: [0.2290, 0.2240, 0.2250]
+backbone:
+  source: timm
+  timm_name: vit_small_patch14_dinov2.lvd142m   # as configs/model/dinov2_vits14.yaml
+  pretrained: true
+  img_size: 224
+  embedding_dim: 384
