@@ -105,14 +105,16 @@ def max_prob_difference(recomputed: pd.DataFrame, original: pd.DataFrame) -> flo
     return float((merged["prob"] - merged["prob_orig"]).abs().max())
 
 
-def find_checkpoint(run_root: Path, recorded_dir: str, extra_roots: Iterable[Path]) -> Path | None:
-    """Locate a run's ``best.pt``.
+def find_checkpoint(
+    run_root: Path, recorded_dir: str, extra_roots: Iterable[Path], filename: str = "best.pt"
+) -> Path | None:
+    """Locate a run's checkpoint file (``best.pt``, or e.g. ``model.joblib``).
 
     Looked for, in order: under the checkpoints folder recorded in the run's config (the machine
-    that trained it), then ``<root>/checkpoints/<run_id>/best.pt`` for every extra root.
+    that trained it), then ``<root>/checkpoints/<run_id>/<filename>`` for every extra root.
     """
-    candidates = [Path(recorded_dir) / run_root.name / "best.pt"]
-    candidates += [Path(r) / "checkpoints" / run_root.name / "best.pt" for r in extra_roots]
+    candidates = [Path(recorded_dir) / run_root.name / filename]
+    candidates += [Path(r) / "checkpoints" / run_root.name / filename for r in extra_roots]
     return next((c for c in candidates if c.is_file()), None)
 
 
