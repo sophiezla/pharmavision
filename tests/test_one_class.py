@@ -9,6 +9,7 @@ import numpy as np
 import pytest
 
 from pharmachecked.models.prototype import PrototypeVerifier, l2_normalize
+from pharmachecked.training.one_class import patchcore_prob
 from pharmachecked.utils.run_dir import missing_files
 
 
@@ -66,6 +67,13 @@ def _one_class(tmp_path: Path, *model: str) -> Path:
 
 
 @pytest.mark.slow
+def test_patchcore_prob_keeps_large_scores_apart() -> None:
+    # Raw PatchCore scores of about 16-40 made 1 - exp(-score) tie at 1.0 (E8, first kit run).
+    score = np.array([0.0, 16.0, 40.0, 41.0, 80.0])
+    prob = patchcore_prob(score)
+    assert prob[0] == 0.0 and np.all(prob < 1.0) and np.all(np.diff(prob) > 0)
+
+
 def test_prototype_task_on_toy(tmp_path: Path) -> None:
     _one_class(tmp_path, "model=prototype_dinov2", "model.backbone.pretrained=false")
 

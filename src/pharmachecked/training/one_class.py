@@ -2,7 +2,7 @@
 
 Neither method sees a counterfeit image while fitting: the reference set is the authentic part
 of the run's training split. Scores become ``prob`` through a monotone map into [0, 1)
-(prototype: cosine distance / 2; PatchCore: 1 - exp(-score)), so ranking metrics (AUROC,
+(prototype: cosine distance / 2; PatchCore: score / (1 + score)), so ranking metrics (AUROC,
 AUPRC, sensitivity at 95% specificity) are exact while probability metrics (ECE, Brier) are not
 meaningful and are not reported for these methods. The threshold is picked on val (Youden), as
 for every other task, and the outputs follow CLAUDE.md section 7.
@@ -74,6 +74,17 @@ def _predictions(rows: pd.DataFrame, prob: np.ndarray) -> pd.DataFrame:
     p = np.clip(prob.astype(float), 1e-7, 1 - 1e-7)
     out = rows.assign(prob=prob.astype(float), logit=np.log(p / (1 - p)))
     return out[list(PRED_COLUMNS)]
+
+
+def patchcore_prob(score: np.ndarray) -> np.ndarray:
+    """Monotone map of PatchCore anomaly scores (>= 0) into [0, 1).
+
+    ``1 - exp(-score)`` rounds to exactly 1.0 for scores above about 37, which PatchCore's raw
+    feature distances exceed, so every image would tie; ``score / (1 + score)`` does not
+    saturate in float64 at these magnitudes.
+    """
+    score = score.astype(float)
+    return score / (1.0 + score)
 
 
 class _PatchCore:
@@ -157,7 +168,7 @@ def run_one_class(cfg: DictConfig, run: RunDir) -> None:
         preds = []
         for table, ids in targets:
             rows, score = pc.score(dataset(table, ids), bs, int(cfg.seed))
-            preds.append(_predictions(rows, 1.0 - np.exp(-score)))
+            preds.append(_predictions(rows, patchcore_prob(score)))
         checkpoint = ckpt_dir / "memory_bank.pt"
     else:
         raise ValueError(f"unknown one-class kind {cfg.model.kind!r}")
