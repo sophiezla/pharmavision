@@ -51,3 +51,15 @@ def test_e01_figure_from_table(tmp_path: Path) -> None:
     assert [p.suffix for p in paths] == [".png", ".pdf"]
     assert all(p.stat().st_size > 0 for p in paths)
     assert paths[0].stat().st_size < 1_000_000  # pre-commit large-file limit
+
+
+def test_e04_gate_figure_from_table(tmp_path: Path) -> None:
+    rows = [
+        {"packaging_type": t, "branch": b, "runs": 15, "images": n, "mean": m, "sd": 0.02}
+        for t, n in (("blister", 229), ("other", 124), ("all", 549))
+        for b, m in (("global", 0.5), ("local", 0.3), ("frequency", 0.2))
+    ]
+    pd.DataFrame(rows).to_csv(tmp_path / "e04_gate_weights.csv", index=False)
+    paths = make_figures.e04_gate_weights_by_packaging(tmp_path, tmp_path / "figs")
+    assert [p.suffix for p in paths] == [".png", ".pdf"]
+    assert paths[0].stat().st_size < 1_000_000

@@ -53,7 +53,8 @@ class FitResult:
     history: list[dict[str, float]] = field(default_factory=list)
 
 
-def _autocast(device: torch.device, enabled: bool) -> Any:
+def autocast(device: torch.device, enabled: bool) -> Any:
+    """bf16 autocast on CUDA when ``enabled``; a no-op context elsewhere."""
     return torch.autocast(
         device.type, dtype=torch.bfloat16, enabled=enabled and device.type == "cuda"
     )
@@ -77,7 +78,7 @@ def predict(
     rows = []
     loader = loader or DataLoader(ds, batch_size=cfg.eval_batch_size, num_workers=0)
     for batch in loader:
-        with _autocast(device, cfg.amp):
+        with autocast(device, cfg.amp):
             logits = model(batch["image"].to(device, non_blocking=True))["logits"].float()
         logits = logits.cpu()
         probs = torch.sigmoid(logits)
@@ -228,7 +229,7 @@ def fit(
             labels = batch["label"].to(device, non_blocking=True).float()
             images, targets = mix_batch(images, labels, mix_mode, mix_alpha)
             opt.zero_grad(set_to_none=True)
-            with _autocast(device, cfg.amp):
+            with autocast(device, cfg.amp):
                 out = model(images)
             loss = train_loss(out["logits"].float(), targets)
             if "router_logits" in out and mix_mode == "none":

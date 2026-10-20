@@ -170,9 +170,37 @@ def e02_auroc_by_strategy(tables: Path, out: Path) -> list[Path]:
     return save_figure(fig, out, "e02_auroc_by_strategy")
 
 
+E4_BRANCHES = ("global", "local", "frequency")
+E4_TYPES = ("blister", "packaging", "both", "other", "all")
+
+
+def e04_gate_weights_by_packaging(tables: Path, out: Path) -> list[Path]:
+    """Mean fusion gate weight (± sd over runs) per branch, grouped by packaging type."""
+    df = pd.read_csv(tables / "e04_gate_weights.csv")
+    types = [t for t in E4_TYPES if t in set(df["packaging_type"])]
+    images = df.groupby("packaging_type")["images"].first()
+    apply_style()
+    fig, ax = plt.subplots(figsize=(7.2, 3.6))
+    width = 0.8 / len(E4_BRANCHES)
+    for k, branch in enumerate(E4_BRANCHES):
+        part = df[df["branch"] == branch].set_index("packaging_type").reindex(types)
+        x = [i + (k - (len(E4_BRANCHES) - 1) / 2) * width for i in range(len(types))]
+        ax.bar(x, part["mean"], width, yerr=part["sd"], color=color_for(k), label=branch)
+    ax.set_xticks(range(len(types)))
+    ax.set_xticklabels([f"{t}\n(n={images[t]})" for t in types])
+    ax.set_ylabel("Mean gate weight (± sd over runs)")
+    ax.set_ylim(0, 1)
+    ax.grid(axis="x", visible=False)
+    ax.set_title("E4 full model: fusion gate weight by packaging type (held-out folds)")
+    ax.legend(loc="upper right", title="branch")
+    fig.tight_layout()
+    return save_figure(fig, out, "e04_gate_weights_by_packaging")
+
+
 FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
     "e01": [e01_auroc_vs_params],
     "e02": [e02_auroc_by_strategy],
+    "e04": [e04_gate_weights_by_packaging],
 }
 
 

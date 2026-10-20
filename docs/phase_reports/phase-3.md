@@ -166,6 +166,13 @@ None in this phase. `e04_gate_weights_by_packaging` is pending (Section 4); PLAN
 3. **Repository location:** is `C:\Projects\Projects\pharmavision-v2` now the main copy? If so, update CLAUDE.md §10; `.venv.broken` can be deleted.
 4. **Push `phase-3-model`, merge to `main` and tag `v0.2-model`** after approval?
 
+### Answers (Sophie, 2026-10-19)
+
+1. ADR-020 accepted.
+2. (a): a GPU-PC prediction pass over the 15 `full` checkpoints produces the gate weights.
+3. Yes: `C:\Projects\Projects\pharmavision-v2` is the main copy; `.venv.broken` deleted.
+4. Approved: push `phase-3-model`, merge into `main`, tag `v0.2-model`.
+
 ## 6. Proposed plan for Phase 4
 
 Phase 4 (generalization, E6–E9) uses the final Phase 3 model plus the comparison models carried over from Phases 2–3:

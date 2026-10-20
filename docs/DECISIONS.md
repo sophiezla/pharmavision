@@ -198,7 +198,7 @@ Template:
 - Consequences: E4 trained with the default recipe (`results/pipeline/e04_arms.json`). Six of the eight components raised pooled ECE (CI above 0 in `e05_vs_reference.md`), which is also a reason not to add them for the Phase 5 reliability work.
 
 ## ADR-020 · Final Phase 3 model: the global-only EfficientNetV2-S (no multi-branch component kept)
-- Date: 2026-10-19 · Status: Proposed (pre-registered rule, to be confirmed by Sophie at CHECKPOINT 3)
+- Date: 2026-10-19 · Status: Accepted (Sophie, 2026-10-19, CHECKPOINT 3)
 - Context: E04.md fixes the rule for the model carried into Phase 4 as the "full E4 model".
 - Options considered: `full` and its 7 ablation / design arms; the global-only reference `e05:efficientnetv2-s/default`.
 - Decision: `full` does not significantly beat `no-local`, `no-frequency` or `no-router`, so no branch is kept; no design variant significantly beats `full`. Under the fallback the final model is the global-only reference: EfficientNetV2-S + LoRA r8, backbone LR multiplier 1.0, default recipe, 224 px.
