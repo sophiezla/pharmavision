@@ -1,0 +1,15 @@
+# E9 corruptions (PLAN 4.8, docs/experiments/E09.md). One value per severity 1-5; severity 0 is
+# the identity. Parameters are in model-input pixels: corruptions are applied after the
+# evaluation geometry (resize + crop), so they act equally on both classes whatever their
+# native resolution (ADR-005).
+quality_auroc: 0.85             # ADR-023: e09_quality_limits threshold
+severities:
+  gaussian_blur: [0.5, 1.0, 1.5, 2.0, 3.0]        # Gaussian sigma, px
+  motion_blur: [3, 5, 7, 9, 13]                    # line-kernel length, px; angle random per image
+  gaussian_noise: [0.02, 0.04, 0.06, 0.09, 0.12]   # noise sd on the 0-1 intensity scale
+  jpeg: [80, 60, 40, 25, 10]                       # JPEG quality
+  brightness: [0.8, 0.65, 0.5, 0.4, 0.3]           # PIL brightness factor (darkening)
+  contrast: [0.8, 0.65, 0.5, 0.4, 0.3]             # PIL contrast factor
+  rotation: [5, 10, 15, 25, 35]                    # degrees; sign random per image, white fill
+  perspective: [0.05, 0.1, 0.15, 0.2, 0.3]         # max corner shift as a fraction of the side
+  glare: [0.2, 0.35, 0.5, 0.65, 0.8]               # peak additive intensity of the highlight
