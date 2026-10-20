@@ -204,3 +204,25 @@ Template:
 - Decision: `full` does not significantly beat `no-local`, `no-frequency` or `no-router`, so no branch is kept; no design variant significantly beats `full`. Under the fallback the final model is the global-only reference: EfficientNetV2-S + LoRA r8, backbone LR multiplier 1.0, default recipe, 224 px.
 - Evidence: `results/tables/e04_vs_reference.md`, `results/tables/e04_pairwise.md`, `results/tables/e04_summary.md`.
 - Consequences: Phase 4 compares against this model; the multi-branch code stays in the package and the E4 results are reported as a negative result. On the external sets the multi-branch arms trade Mendeley specificity for Split E recall (descriptive only, ADR-005). The planned gate-weight figure (PLAN 3.7) is not yet produced (needs the E4 checkpoints from the GPU PC).
+
+## ADR-021 · Phase 4 comparison models, retrained on data v2
+- Date: 2026-10-19 · Status: Accepted (Sophie delegated the choice, 2026-10-19)
+- Context: PLAN Phase 4 uses five "comparison models" (PLAN notation: handcrafted best, best pretrained CNN, best ViT, DINOv2 global-only, full E4 model). Only the final E4 model was trained on data v2; the E1 arms used v1.
+- Options considered: the five picked by the Phase 2 ranking rule, reused on v1 or retrained on v2; a different set.
+- Decision: by the Phase 2 rule (pooled OOF AUROC, exact ties → pooled OOF log-loss, default-settings arms per ADR-016; `results/pipeline/e01_ranking.csv`): `handcrafted-xgb/default`, `convnext-tiny/ft` (CNN), `swin-tiny/ft` (ViT), `dinov2-vits14/ft` (DINOv2), and EfficientNetV2-S + LoRA r8 with the default recipe (final model, ADR-020). The first four are retrained under the full protocol on data v2 (the fifth already is: `e05_efficientnetv2-s_default_*`), so every Phase 4 result uses one data version.
+- Evidence: `results/pipeline/e01_ranking.csv`, ADR-016, ADR-020.
+- Consequences: a `p4ref` batch (60 runs) precedes E6–E9 and is their 100% / in-source reference. The final model and the CNN pick are different backbones (EfficientNetV2-S LoRA vs ConvNeXt-T full fine-tuning).
+
+## ADR-022 · E7 cross-dataset transfer: one direction, Kaggle → pooled external sets
+- Date: 2026-10-19 · Status: Accepted (Sophie delegated the choice, 2026-10-19)
+- Context: PLAN 4.3 trains on source A and tests on source B, then reverses. The only other labelled sources are the Mendeley sets (authentic only) and Split E (counterfeit only) (`results/tables/raw_inventory.md`), so no second two-class source exists and the reverse direction cannot train a classifier.
+- Options considered: (a) one direction: train on the whole Kaggle development pool, test on Mendeley + Split E pooled; (b) both directions with source B = Mendeley + Split E, which makes external images training data (against ADR-005); (c) skip E7.
+- Decision: (a). Each comparison model is trained on all development images (one grouped, stratified train/val/cal split of the whole pool, 75/12.5/12.5, seed 42), 3 seeds, and tested on the pooled external sets: AUROC (threshold-free), Mendeley specificity and Split E recall at the val-selected threshold. Reference = the within-source 5-fold result of the same model (`p4ref`). External images stay out of training, selection, thresholds and calibration.
+- Evidence: `results/tables/raw_inventory.md`, ADR-001, ADR-005.
+- Consequences: the reverse direction is not run and the report says why. The pooled external AUROC also separates acquisition sources (phone photos vs web images), as `external_auroc_exploratory.md` notes; E7 is pre-registered, not exploratory, but carries the same caveat.
+
+## ADR-023 · E9 quality-limit threshold: AUROC 0.85
+- Date: 2026-10-19 · Status: Accepted (Sophie delegated the choice, 2026-10-19)
+- Context: PLAN 4.10 defines `e09_quality_limits` as the highest severity per corruption at which the final model's AUROC stays at or above a threshold, to be confirmed by Sophie.
+- Decision: 0.85, the plan's value, configurable in `configs/eval/corruptions.yaml`.
+- Consequences: the app (PLAN 8.6) rejects photos whose estimated corruption exceeds these limits.
