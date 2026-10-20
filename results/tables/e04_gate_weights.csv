@@ -1,0 +1,16 @@
+packaging_type,branch,runs,images,mean,sd
+all,frequency,15,549,0.0465,0.0878
+all,global,15,549,0.6071,0.1041
+all,local,15,549,0.3463,0.1493
+blister,frequency,15,229,0.0571,0.0975
+blister,global,15,229,0.5535,0.0599
+blister,local,15,229,0.3894,0.1338
+both,frequency,12,21,0.0017,0.0029
+both,global,12,21,0.8374,0.3705
+both,local,12,21,0.1609,0.3701
+other,frequency,15,124,0.0025,0.0028
+other,global,15,124,0.8544,0.3293
+other,local,15,124,0.1431,0.3291
+packaging,frequency,15,175,0.0683,0.1446
+packaging,global,15,175,0.4708,0.0783
+packaging,local,15,175,0.4610,0.1544

@@ -17,6 +17,25 @@ retyped. Template:
 
 ---
 
+## 2026-10-19 · E4 · Gate weights of the `full` model (PLAN 3.7)
+- Commit: 0ec1fe3 (scripts); results committed with this entry.
+- Command(s): `python scripts/predict_branch_outputs.py --exp e04 --model multibranch --variant full --paths local --checkpoint-root C:/Projects --device cpu`; `python scripts/gate_table.py --exp e04 --model multibranch --variant full`; `python scripts/make_figures.py --exp e04`
+- Hypothesis: none (descriptive figure pre-registered in E04.md).
+- Runs: no new training; the 15 `e04_multibranch_full_*` checkpoints (copied from the GPU PC to `C:\Projects\checkpoints`) re-predicted their held-out folds on the laptop CPU (about 8 minutes). Each run folder gained `branch_outputs.csv`.
+- Result (from `results/tables/e04_gate_weights.md`):
+
+| packaging_type | frequency | global | local | images |
+|---|---|---|---|---|
+| all | 0.047 ± 0.088 | 0.607 ± 0.104 | 0.346 ± 0.149 | 549 |
+| blister | 0.057 ± 0.098 | 0.553 ± 0.060 | 0.389 ± 0.134 | 229 |
+| both | 0.002 ± 0.003 | 0.837 ± 0.370 | 0.161 ± 0.370 | 21 |
+| other | 0.002 ± 0.003 | 0.854 ± 0.329 | 0.143 ± 0.329 | 124 |
+| packaging | 0.068 ± 0.145 | 0.471 ± 0.078 | 0.461 ± 0.154 | 175 |
+
+- Interpretation: the frequency branch gets little gate weight for every packaging type, consistent with its ablation making no difference. Global and local weights are close for `packaging`; for `both` and `other` the global branch dominates on average but varies strongly between runs (sd 0.33-0.37).
+- Issues / anomalies: the re-prediction ran in fp32 on CPU, the original runs in bf16 autocast on the GPU; the largest per-image probability difference against the original OOF predictions is 5.82e-02 (`results/pipeline/e04_full_branch_outputs.json`). The GPU kit `PRIVATE_gpu_kit_e04-gates_0ec1fe3.zip` built for this was not used.
+- Next: PLAN 3.7 complete; Phase 3 done.
+
 ## 2026-10-19 · E4 · Multi-branch model and ablations (Phase 3 kit)
 - Commit: Phase 3 GPU kit `PRIVATE_gpu_kit_phase3_0d31953.zip` (RTX 5060, data v2), results `RESULTS_phase3_20261014-062137.zip` installed in a6de29d; tables in b060204.
 - Command(s): pipeline stage 3; `python scripts/aggregate.py --exp e04 --include e05:efficientnetv2-s/default --reference multibranch/full`; `python scripts/external_auroc.py --exp e01 --exp e02 --exp e03 --exp e04 --exp e05`

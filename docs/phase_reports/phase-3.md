@@ -139,7 +139,7 @@ Further tables: `e03_summary.md`, `e03_pairwise.md`, `e04_pairwise.md`, `e05_pai
 
 ## 3. Figures produced
 
-None in this phase. `e04_gate_weights_by_packaging` is pending (Section 4); PLAN 3.x defines no other figure.
+- `results/figures/e04_gate_weights_by_packaging.{png,pdf}` (added after the checkpoint, 2026-10-19): mean gate weight per branch per packaging type, from `results/tables/e04_gate_weights.md`.
 
 ## 4. Anomalies, failed runs, open problems
 

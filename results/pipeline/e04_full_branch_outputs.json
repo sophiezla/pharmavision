@@ -1,0 +1,68 @@
+{
+  "device": "cpu",
+  "exp": "e04",
+  "model": "multibranch",
+  "runs": {
+    "e04_multibranch_full_f0_s0_20261013-214912": {
+      "images": 110,
+      "max_abs_prob_diff": 0.02497875690460205
+    },
+    "e04_multibranch_full_f0_s1_20261013-215215": {
+      "images": 110,
+      "max_abs_prob_diff": 0.017256200313568115
+    },
+    "e04_multibranch_full_f0_s2_20261013-215526": {
+      "images": 110,
+      "max_abs_prob_diff": 0.05120891332626337
+    },
+    "e04_multibranch_full_f1_s0_20261013-215915": {
+      "images": 111,
+      "max_abs_prob_diff": 0.005722982808947582
+    },
+    "e04_multibranch_full_f1_s1_20261013-220207": {
+      "images": 111,
+      "max_abs_prob_diff": 0.01816456019878382
+    },
+    "e04_multibranch_full_f1_s2_20261013-220523": {
+      "images": 111,
+      "max_abs_prob_diff": 0.024906992912292522
+    },
+    "e04_multibranch_full_f2_s0_20261013-220736": {
+      "images": 110,
+      "max_abs_prob_diff": 0.03544899821281433
+    },
+    "e04_multibranch_full_f2_s1_20261013-221022": {
+      "images": 110,
+      "max_abs_prob_diff": 0.024819672107696533
+    },
+    "e04_multibranch_full_f2_s2_20261013-221346": {
+      "images": 110,
+      "max_abs_prob_diff": 0.03521770238876343
+    },
+    "e04_multibranch_full_f3_s0_20261013-221646": {
+      "images": 109,
+      "max_abs_prob_diff": 0.04284013807773582
+    },
+    "e04_multibranch_full_f3_s1_20261013-222107": {
+      "images": 109,
+      "max_abs_prob_diff": 0.0222470760345459
+    },
+    "e04_multibranch_full_f3_s2_20261013-222457": {
+      "images": 109,
+      "max_abs_prob_diff": 0.004289805889129528
+    },
+    "e04_multibranch_full_f4_s0_20261013-222949": {
+      "images": 109,
+      "max_abs_prob_diff": 0.05821511149406433
+    },
+    "e04_multibranch_full_f4_s1_20261013-223249": {
+      "images": 109,
+      "max_abs_prob_diff": 0.041145205497741644
+    },
+    "e04_multibranch_full_f4_s2_20261013-223525": {
+      "images": 109,
+      "max_abs_prob_diff": 0.05356639623641968
+    }
+  },
+  "variant": "full"
+}
