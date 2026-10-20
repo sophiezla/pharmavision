@@ -102,7 +102,7 @@ def _handcrafted_objective(cfg: Any) -> float:
     from pharmachecked.training.task import _rows, handcrafted_features, load_data, partitions
 
     manifest, external, splits, images = load_data(cfg)
-    parts = partitions(cfg, splits, external)
+    parts = partitions(cfg, splits, external, manifest)
     size = int(cfg.model.img_size)
     cache = Path(cfg.paths.results_dir) / "scratch" / "features" / f"handcrafted_{size}"
     train_rows, val_rows = _rows(manifest, parts.train), _rows(manifest, parts.val)

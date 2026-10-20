@@ -22,6 +22,9 @@ data:
   img_size: null            # null = the model config's img_size
   max_train_images: null    # cap on training images (smoke runs only)
   max_external_per_source: null
+  protocol: kfold           # kfold | whole_pool (E7) | leave_type_out (E8); Phase 4 splits use seed 42
+  heldout_type: null        # leave_type_out: packaging type held out for testing
+  train_fraction: null      # E6: keep this fraction of the training groups (seed = run seed)
 
 augment:                    # E5 recipe switches (PLAN 3.2); all off = default recipe
   hflip: false

@@ -186,3 +186,66 @@ def apply_to_manifest(manifest: pd.DataFrame, spec: dict[str, Any]) -> pd.DataFr
     if missing:
         raise ValueError(f"{len(missing)} manifest images are in no partition")
     return out
+
+
+# Phase 4 partitions (docs/experiments/E06.md, E07.md, E08.md). They are built at run time from
+# the development pool (never the locked test set) and use the same inner 75/12.5/12.5 split.
+
+
+def inner_split(df: pd.DataFrame, seed: int) -> dict[str, list[str]]:
+    """Grouped, stratified train / val / cal (75 / 12.5 / 12.5) of ``df``, as in the folds.
+
+    Args:
+        df: Rows with ``image_id, label, group_id``.
+        seed: StratifiedGroupKFold seed.
+
+    Returns:
+        ``{"train", "val", "cal"}`` -> sorted image ids.
+    """
+    df = df[["image_id", "label", "group_id"]].sort_values("image_id").reset_index(drop=True)
+    inner = _sgkf(df, INNER_FOLDS, seed)
+    train = df.drop(index=np.concatenate([inner[0], inner[1]]))
+    return {
+        "train": sorted(train["image_id"]),
+        "val": sorted(df.iloc[inner[0]]["image_id"]),
+        "cal": sorted(df.iloc[inner[1]]["image_id"]),
+    }
+
+
+def subsample_groups(df: pd.DataFrame, fraction: float, seed: int) -> list[str]:
+    """Keep ``fraction`` of the groups of ``df``, stratified by group label (E6).
+
+    Per class, ``ceil(fraction * groups)`` groups (at least one) are drawn without replacement
+    with a generator seeded by ``seed``; every image of a kept group is kept.
+
+    Raises:
+        ValueError: If ``fraction`` is not in (0, 1].
+    """
+    if not 0 < fraction <= 1:
+        raise ValueError(f"fraction must be in (0, 1], got {fraction}")
+    labels = _group_labels(df).sort_index()
+    rng = np.random.default_rng(seed)
+    kept: list[str] = []
+    for label in sorted(labels.unique()):
+        groups = labels.index[labels == label].to_numpy()
+        n = max(1, int(np.ceil(fraction * len(groups))))
+        kept += list(rng.choice(groups, size=n, replace=False))
+    return sorted(df.loc[df["group_id"].isin(set(kept)), "image_id"])
+
+
+def leave_type_out(df: pd.DataFrame, packaging_type: str, seed: int) -> dict[str, list[str]]:
+    """Held-out = every image of ``packaging_type``; train/val/cal from groups without it (E8).
+
+    A near-duplicate group that contains any image of the held-out type is removed from the
+    training pool as a whole, so no group crosses train and test; its images of other types are
+    used nowhere.
+
+    Raises:
+        ValueError: If no image has ``packaging_type``.
+    """
+    is_type = df["packaging_type"] == packaging_type
+    if not is_type.any():
+        raise ValueError(f"no images of packaging type {packaging_type!r}")
+    blocked = set(df.loc[is_type, "group_id"])
+    parts = inner_split(df[~df["group_id"].isin(blocked)], seed)
+    return {**parts, "heldout": sorted(df.loc[is_type, "image_id"])}

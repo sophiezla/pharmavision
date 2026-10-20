@@ -28,7 +28,14 @@ from PIL import Image
 from pharmachecked.config import CONFIG_DIR, REPO_ROOT
 from pharmachecked.data.datasets import ManifestDataset
 from pharmachecked.data.manifest import read_manifest
-from pharmachecked.data.splits import DevSplits, load_dev_splits
+from pharmachecked.data.splits import (
+    DevSplits,
+    SplitSettings,
+    inner_split,
+    leave_type_out,
+    load_dev_splits,
+    subsample_groups,
+)
 from pharmachecked.data.toy import make_toy_dataset
 from pharmachecked.data.transforms import (
     build_eval_geometry,
@@ -80,20 +87,42 @@ class Partitions:
     external: list[str]
 
 
-def partitions(cfg: DictConfig, splits: DevSplits, external: pd.DataFrame) -> Partitions:
-    """Fold partitions, with the smoke-run caps applied when configured."""
-    train = list(splits.ids(cfg.fold, "train"))
+def partitions(
+    cfg: DictConfig, splits: DevSplits, external: pd.DataFrame, manifest: pd.DataFrame
+) -> Partitions:
+    """Partitions of one run under ``cfg.data.protocol``, with the E6 and smoke caps applied.
+
+    Protocols: ``kfold`` (default; fold ``cfg.fold`` of the split file), ``whole_pool`` (E7: one
+    inner train/val/cal split of the whole development pool, no held-out images; ADR-022) and
+    ``leave_type_out`` (E8: held-out = every image of ``cfg.data.heldout_type``). Phase 4 splits
+    use the protocol seed (``SplitSettings.seed``). ``cfg.data.train_fraction`` (E6) keeps that
+    fraction of the training groups, stratified, drawn with seed ``cfg.seed``.
+
+    Raises:
+        ValueError: If the protocol is unknown.
+    """
+    protocol = cfg.data.get("protocol") or "kfold"
+    dev = manifest[manifest["image_id"].isin(splits.all_ids())]
+    if protocol == "kfold":
+        train = list(splits.ids(cfg.fold, "train"))
+        val, heldout = list(splits.ids(cfg.fold, "val")), list(splits.ids(cfg.fold, "heldout"))
+    elif protocol == "whole_pool":
+        parts = inner_split(dev, SplitSettings().seed)
+        train, val, heldout = parts["train"], parts["val"], []
+    elif protocol == "leave_type_out":
+        parts = leave_type_out(dev, str(cfg.data.heldout_type), SplitSettings().seed)
+        train, val, heldout = parts["train"], parts["val"], parts["heldout"]
+    else:
+        raise ValueError(f"unknown data.protocol {protocol!r}")
+    fraction = cfg.data.get("train_fraction")
+    if fraction is not None and float(fraction) < 1:
+        train = subsample_groups(dev[dev["image_id"].isin(train)], float(fraction), int(cfg.seed))
     if cfg.data.max_train_images is not None:
         train = train[: int(cfg.data.max_train_images)]
     ext = external
     if cfg.data.max_external_per_source is not None:
         ext = external.groupby("source_dataset").head(int(cfg.data.max_external_per_source))
-    return Partitions(
-        train=train,
-        val=list(splits.ids(cfg.fold, "val")),
-        heldout=list(splits.ids(cfg.fold, "heldout")),
-        external=list(ext["image_id"]),
-    )
+    return Partitions(train=train, val=val, heldout=heldout, external=list(ext["image_id"]))
 
 
 def eval_dataset(
@@ -156,7 +185,12 @@ def write_outputs(
     write_json(
         run.file("metrics.json"),
         {
-            "heldout": binary_metrics(held["y_true"], held["prob"], threshold),
+            # E7 (whole_pool) has no held-out images: only the val-selected threshold is kept
+            "heldout": (
+                binary_metrics(held["y_true"], held["prob"], threshold)
+                if len(held)
+                else {"threshold": threshold}
+            ),
             "external": {
                 source: single_class_metric(part["y_true"], part["prob"], threshold)
                 for source, part in ext.groupby("source_dataset")
@@ -191,7 +225,7 @@ class FoldData:
 def fold_datasets(cfg: DictConfig) -> FoldData:
     """Train (augmented) and evaluation datasets of fold ``cfg.fold`` for ``cfg.model``."""
     manifest, external, splits, images = load_data(cfg)
-    parts = partitions(cfg, splits, external)
+    parts = partitions(cfg, splits, external, manifest)
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
     size = int(cfg.data.get("img_size") or cfg.model.img_size)
     mean, std = list(cfg.model.mean), list(cfg.model.std)
@@ -314,7 +348,7 @@ def run_handcrafted(cfg: DictConfig, run: RunDir) -> None:
 
     _check_threshold_rule(cfg)
     manifest, external, splits, images = load_data(cfg)
-    parts = partitions(cfg, splits, external)
+    parts = partitions(cfg, splits, external, manifest)
     size = int(cfg.model.img_size)
     cache = Path(cfg.paths.results_dir) / "scratch" / "features" / f"handcrafted_{size}"
 
@@ -329,6 +363,8 @@ def run_handcrafted(cfg: DictConfig, run: RunDir) -> None:
     seconds = time.perf_counter() - start
 
     def score(table: pd.DataFrame, ids: list[str]) -> pd.DataFrame:
+        if not ids:  # E7 (whole_pool) has no held-out images
+            return pd.DataFrame(columns=list(PRED_COLUMNS))
         rows, x = features(table, ids)
         return _predictions(rows, pipeline.predict_proba(x)[:, 1], cfg.seed)
 
@@ -362,7 +398,7 @@ def run_clip_zeroshot(cfg: DictConfig, run: RunDir) -> None:
 
     _check_threshold_rule(cfg)
     manifest, external, splits, images = load_data(cfg)
-    parts = partitions(cfg, splits, external)
+    parts = partitions(cfg, splits, external, manifest)
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
     mean, std, size = list(cfg.model.mean), list(cfg.model.std), int(cfg.model.img_size)
     device = device_for(cfg)
