@@ -100,7 +100,7 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
 
 - [x] **2.12** (4a682bf) Run `cleanlab.filter.find_label_issues` on pooled OOF probabilities of the E1-best model (average over seeds). Export flagged images to a review sheet in the annotation app.
 - [x] **2.13** (both removed, 2026-10-13) Sophie reviews; decisions saved to `data/annotations/label_audit.csv` (`image_id, original_label, decision {keep|relabel|remove}, new_label, reason`).
-- [x] **2.14** (data v2 built 2026-10-13; retrain = stage 0 of the Phase 3 kit) If any relabel/remove: create `manifest_v2.csv` and `splits/v2.json`; retrain E1-best on v2; table before vs after. Locked-test membership is copied unchanged from v1 (ADR-002); only the development pool is re-folded (same seeds and procedure). Test images are not audited.
+- [x] **2.14** (de7580b data v2; a6de29d retrain; b060204 table `e03_vs_reference.md`) If any relabel/remove: create `manifest_v2.csv` and `splits/v2.json`; retrain E1-best on v2; table before vs after. Locked-test membership is copied unchanged from v1 (ADR-002); only the development pool is re-folded (same seeds and procedure). Test images are not audited.
     - AC: ADR recording the data version used from now on.
 
 **CHECKPOINT 2.** Tag `v0.1-baselines`.
@@ -113,23 +113,23 @@ E5 runs first on the global-only model (cheap); its winning recipe is then used 
 
 ### E5 · Training recipe
 
-- [ ] **3.1** Write `docs/experiments/E05.md`.
-- [ ] **3.2** On the E2-chosen global-only model, one factor at a time vs default: + horizontal flip; + strong color jitter incl. hue 0.1; + RandAugment (n=2, m=9); + MixUp (α=0.2); + CutMix (α=1.0); focal loss (γ=2, class-balanced α); label smoothing 0.1; SupCon pretraining (20 epochs, temperature 0.1, projection head 128-d) then linear head.
-- [ ] **3.3** Aggregate ΔAUROC and ΔECE with CIs vs default → `e05_summary`.
+- [x] **3.1** (3761287) Write `docs/experiments/E05.md`.
+- [x] **3.2** (a624975, a6de29d) On the E2-chosen global-only model, one factor at a time vs default: + horizontal flip; + strong color jitter incl. hue 0.1; + RandAugment (n=2, m=9); + MixUp (α=0.2); + CutMix (α=1.0); focal loss (γ=2, class-balanced α); label smoothing 0.1; SupCon pretraining (20 epochs, temperature 0.1, projection head 128-d) then linear head.
+- [x] **3.3** (b060204; ADR-019, recipe = default, no combination arm) Aggregate ΔAUROC and ΔECE with CIs vs default → `e05_summary`.
     - AC: ADR fixing the recipe (combine only components that individually improved; verify the combination with one extra full-protocol run).
 
 ### E4 · Multi-branch model
 
-- [ ] **3.4** Write `docs/experiments/E04.md`.
-- [ ] **3.5 Components** (each with unit tests):
+- [x] **3.4** (3761287, 13b58af) Write `docs/experiments/E04.md`.
+- [x] **3.5 Components** (84d1600; peak 3.75 GB for `full` at batch 8) (each with unit tests):
     - `models/mil.py`: gated-attention MIL pooling (Ilse et al., 2018), input `(B, N, D)` → bag embedding `(B, D')` + attention `(B, N)` summing to 1.
     - `models/frequency.py`: grayscale model input (448 px, ADR-017; originally a 512 px center crop) → `log(1 + |FFT|)` centered magnitude + 8×8 block-DCT coefficient-energy map (resized to the same grid), stacked as 2 channels → 4-block CNN (32-64-128-256, BN, ReLU, max-pool) → global average pool → 256-d.
     - `models/router.py`: linear layer on the global embedding → 4-way packaging-type logits over `blister | packaging | both | other`; `not_a_drug` images get no router loss (ADR-009); auxiliary cross-entropy weight 0.3.
     - `models/fusion.py`: gated fusion — project each branch to 256-d, gate = softmax(MLP([e_g; e_l; e_f])) over 3 branches, fused = Σ gate_i · e_i; also `concat` mode for the ablation.
     - `models/multibranch.py`: input 448 px (ADR-017; originally 896 px); global branch = 224 px resize → backbone; local branch = 2×2 grid of 224 px tiles (originally 4×4) → the same backbone (shared weights, configurable) → MIL; expert heads = 4 linear heads (one per router class), output logits = Σ_k router_prob_k · head_k(fused) (soft) or argmax head (hard). Returns `logits, embedding, gate_weights, router_probs, mil_attention`.
     - AC: forward pass on GPU with batch 8 fits in the GPU PC's 8 GB (RTX 5060, ADR-010) with mixed precision (report peak memory); if not, enable gradient checkpointing on the backbone and/or gradient accumulation, and report.
-- [ ] **3.6 Arms** (full protocol, E5 recipe): full; − local; − frequency; − router (single head); concat fusion; separate local backbone; 4×4 tiles at 896 px (ablation; ADR-017 swapped it with the main 2×2/448 design); hard routing; global-only (reference = E2 winner).
-- [ ] **3.7** Aggregate → `e04_ablation` (ΔAUROC vs full, CI, Holm-corrected DeLong); figure `e04_gate_weights_by_packaging` (mean gate weight per branch per packaging type from OOF outputs).
+- [x] **3.6 Arms** (a6de29d) (full protocol, E5 recipe): full; − local; − frequency; − router (single head); concat fusion; separate local backbone; 4×4 tiles at 896 px (ablation; ADR-017 swapped it with the main 2×2/448 design); hard routing; global-only (reference = E2 winner).
+- [ ] **3.7** (b060204 tables, `e04_vs_reference.md` = `e04_ablation`; ADR-020 proposed; gate-weight figure pending, see phase-3 report) Aggregate → `e04_ablation` (ΔAUROC vs full, CI, Holm-corrected DeLong); figure `e04_gate_weights_by_packaging` (mean gate weight per branch per packaging type from OOF outputs).
     - AC: ADR defining the final model; components that did not improve are dropped and reported.
 
 **CHECKPOINT 3.** Tag `v0.2-model`.

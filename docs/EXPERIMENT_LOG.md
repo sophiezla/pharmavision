@@ -17,6 +17,65 @@ retyped. Template:
 
 ---
 
+## 2026-10-19 · E4 · Multi-branch model and ablations (Phase 3 kit)
+- Commit: Phase 3 GPU kit `PRIVATE_gpu_kit_phase3_0d31953.zip` (RTX 5060, data v2), results `RESULTS_phase3_20261014-062137.zip` installed in a6de29d; tables in b060204.
+- Command(s): pipeline stage 3; `python scripts/aggregate.py --exp e04 --include e05:efficientnetv2-s/default --reference multibranch/full`; `python scripts/external_auroc.py --exp e01 --exp e02 --exp e03 --exp e04 --exp e05`
+- Hypothesis: ablations indistinguishable from `full` in the development pool; the frequency branch may show on the external block (E04.md).
+- Runs: 120 under `results/runs/e04_multibranch_*` (8 arms × 15), default recipe (ADR-019); 8.5 h on the GPU (2026-10-13 21:49 to 2026-10-14 06:22).
+- Result: full table in `results/tables/e04_summary.md`. Each arm vs `full` (from `results/tables/e04_vs_reference.md`):
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| efficientnetv2-s/default | multibranch/full | 549 | 0.000 [-0.000, 0.001] | -0.004 [-0.014, 0.004] | -0.021 [-0.042, -0.003] | 0.3493 | 1 | False | False |
+| multibranch/concat | multibranch/full | 549 | -0.001 [-0.003, 0.000] | -0.001 [-0.008, 0.009] | -0.001 [-0.014, 0.015] | 0.2819 | 1 | False | False |
+| multibranch/hard-routing | multibranch/full | 549 | 0.000 [0.000, 0.001] | -0.000 [-0.009, 0.008] | -0.017 [-0.030, -0.007] | 0.1171 | 0.8875 | False | False |
+| multibranch/no-frequency | multibranch/full | 549 | -0.000 [-0.001, 0.000] | 0.001 [-0.006, 0.006] | -0.011 [-0.021, -0.003] | 0.6562 | 1 | False | False |
+| multibranch/no-local | multibranch/full | 549 | -0.003 [-0.008, -0.000] | -0.003 [-0.007, 0.011] | 0.014 [-0.008, 0.038] | 0.1109 | 0.8875 | False | False |
+| multibranch/no-router | multibranch/full | 549 | 0.001 [0.000, 0.001] | 0.003 [-0.005, 0.008] | -0.019 [-0.032, -0.009] | 0.1426 | 0.8875 | False | False |
+| multibranch/separate-local | multibranch/full | 549 | -0.001 [-0.004, 0.001] | -0.006 [-0.016, -0.001] | -0.025 [-0.042, -0.008] | 0.4959 | 1 | False | False |
+| multibranch/tiles4-896 | multibranch/full | 549 | -0.000 [-0.002, 0.001] | 0.014 [0.004, 0.023] | 0.009 [-0.013, 0.029] | 0.7151 | 1 | False | False |
+
+- Interpretation: no arm differs significantly from `full`, including the global-only reference, so by the pre-registered rule no branch is kept and the final model falls back to the global-only EfficientNetV2-S (ADR-020, proposed). On the external block all multi-branch arms have much lower Mendeley specificity and higher Split E recall than the global-only reference; `no-local` moves furthest back towards it, `no-frequency` does not. Exploratory threshold-free external AUROC (`external_auroc_exploratory.md`): global-only 0.851 [0.815, 0.884], `full` 0.529 [0.470, 0.589].
+- Issues / anomalies: no job failed. `e04_gate_weights_by_packaging` (PLAN 3.7) could not be built: gate weights are not written to the run folders and the checkpoints are on the GPU PC. `tiles4-896` took 12.0 min per run vs 2.8 for `full`.
+- Next: Sophie confirms ADR-020 at CHECKPOINT 3; decide how to produce the gate-weight figure.
+
+## 2026-10-19 · E5 · Training recipe (Phase 3 kit)
+- Commit: Phase 3 GPU kit `PRIVATE_gpu_kit_phase3_0d31953.zip` (RTX 5060, data v2), results `RESULTS_phase3_20261014-062137.zip` installed in a6de29d; tables in b060204.
+- Command(s): pipeline stage 1 (decision in `results/pipeline/e05_decisions.json`); `python scripts/aggregate.py --exp e05 --reference efficientnetv2-s/default`
+- Hypothesis: no component meets the improvement criterion at the ceiling (E05.md).
+- Runs: 135 under `results/runs/e05_efficientnetv2-s_*` (9 arms × 15); 2.8 h on the GPU.
+- Result: full table in `results/tables/e05_summary.md`. Each component vs `default` (from `results/tables/e05_vs_reference.md`):
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| efficientnetv2-s/colorjitter | efficientnetv2-s/default | 549 | -0.001 [-0.002, 0.000] | 0.010 [0.004, 0.014] | 0.012 [0.003, 0.022] | 0.2167 | 1 | False | False |
+| efficientnetv2-s/cutmix | efficientnetv2-s/default | 549 | 0.000 [-0.000, 0.001] | 0.043 [0.033, 0.048] | 0.038 [0.024, 0.049] | 0.2386 | 1 | False | False |
+| efficientnetv2-s/focal | efficientnetv2-s/default | 549 | 0.000 [-0.000, 0.001] | 0.028 [0.024, 0.036] | 0.030 [0.014, 0.041] | 0.4834 | 1 | False | False |
+| efficientnetv2-s/hflip | efficientnetv2-s/default | 549 | 0.000 [-0.000, 0.001] | -0.001 [-0.004, 0.003] | -0.002 [-0.010, 0.005] | 0.6564 | 1 | False | False |
+| efficientnetv2-s/mixup | efficientnetv2-s/default | 549 | 0.000 [-0.000, 0.001] | 0.019 [0.013, 0.025] | 0.017 [0.004, 0.026] | 0.9516 | 1 | False | False |
+| efficientnetv2-s/randaugment | efficientnetv2-s/default | 549 | -0.000 [-0.001, 0.000] | 0.000 [-0.005, 0.003] | 0.004 [-0.004, 0.017] | 0.6583 | 1 | False | False |
+| efficientnetv2-s/smoothing | efficientnetv2-s/default | 549 | -0.000 [-0.001, 0.000] | 0.056 [0.047, 0.065] | 0.062 [0.049, 0.073] | 0.2747 | 1 | False | False |
+| efficientnetv2-s/supcon | efficientnetv2-s/default | 549 | -0.003 [-0.008, -0.001] | 0.072 [0.057, 0.084] | 0.106 [0.090, 0.123] | 0.07076 | 0.5661 | False | False |
+
+- Interpretation: no component improves pooled AUROC, so the recipe stays the default and no combination arm ran (ADR-019). ECE differences are above 0 (worse calibration) for colorjitter, cutmix, focal, mixup, smoothing and supcon.
+- Issues / anomalies: none; no job failed.
+- Next: E4 used the default recipe.
+
+## 2026-10-19 · E3 · Retrain of the E1-best arm on data v2 (PLAN 2.14)
+- Commit: Phase 3 GPU kit `PRIVATE_gpu_kit_phase3_0d31953.zip` (RTX 5060, data v2), results `RESULTS_phase3_20261014-062137.zip` installed in a6de29d; tables in b060204.
+- Command(s): pipeline stage 0; `python scripts/aggregate.py --exp e03 --include e01:swin-tiny/ft-tuned --reference swin-tiny/ft-tuned`
+- Hypothesis: removing the 2 `not_a_drug` images does not change pooled AUROC.
+- Runs: 15 under `results/runs/e03_swin-tiny_ft-tuned-v2_*`; 0.2 h on the GPU.
+- Result: before (v1, E1) vs after (v2), from `results/tables/e03_vs_reference.md`:
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| swin-tiny/ft-tuned-v2 | swin-tiny/ft-tuned | 549 | 0.000 [-0.000, 0.000] | 0.000 [-0.009, 0.002] | -0.007 [-0.020, 0.007] | 0.3764 | 0.3764 | False | False |
+
+- Interpretation: no difference on the 549 images both versions share. The two runs also differ in augmentation draw (ADR-018), so the external columns in `e03_summary.md` (Mendeley specificity 0.761/0.660 → 0.540/0.424, Split E recall up) cannot be attributed to the data change alone.
+- Issues / anomalies: none.
+- Next: data v2 stays in use.
+
 ## 2026-10-13 · E2 · Adaptation strategy (Phase 2 kit)
 - Commit: 053e606 (same kit as E1); tables in 1714be0.
 - Command(s): pipeline stage 5; `python scripts/aggregate.py --exp e02 --include e01:convnext-tiny/ft --include e01:efficientnetv2-s/ft`; `python scripts/make_figures.py --exp e02`

@@ -188,3 +188,19 @@ Template:
     - Phase 3 is several times faster. The kit estimate drops from 3-4 days to roughly 12-24 hours.
     - With workers, the augmentation random stream differs from Phase 2's (a different draw of the same distributions); runs stay reproducible from scratch for a given seed. Comparisons inside E5 and E4 all use the new loader (E5 re-runs its `default` arm); the E3 before/after table compares runs that differ in both data version and augmentation draw, which is noted there.
     - A run resumed after an interruption with workers is no longer bit-identical to an uninterrupted one in its augmentation draws (exact resume still holds with `num_workers: 0`, which the tests use).
+
+## ADR-019 · E5 training recipe: the default (no component kept)
+- Date: 2026-10-19 · Status: Accepted (applied automatically under ADR-013)
+- Context: PLAN 3.3 / E05.md require an ADR fixing the training recipe used by E4 and later phases.
+- Options considered: the 8 single-change arms of E05.md, each compared with a re-run `default` under the pre-registered rule (Holm-corrected DeLong p < 0.05 and a positive AUROC-gain CI).
+- Decision: the default recipe (`configs/data/transforms.yaml`, BCE, no MixUp/CutMix, no SupCon). No component met the rule, so no `combo` arm ran.
+- Evidence: `results/pipeline/e05_decisions.json`, `results/tables/e05_vs_reference.md`, `results/tables/e05_summary.md`.
+- Consequences: E4 trained with the default recipe (`results/pipeline/e04_arms.json`). Six of the eight components raised pooled ECE (CI above 0 in `e05_vs_reference.md`), which is also a reason not to add them for the Phase 5 reliability work.
+
+## ADR-020 · Final Phase 3 model: the global-only EfficientNetV2-S (no multi-branch component kept)
+- Date: 2026-10-19 · Status: Proposed (pre-registered rule, to be confirmed by Sophie at CHECKPOINT 3)
+- Context: E04.md fixes the rule for the model carried into Phase 4 as the "full E4 model".
+- Options considered: `full` and its 7 ablation / design arms; the global-only reference `e05:efficientnetv2-s/default`.
+- Decision: `full` does not significantly beat `no-local`, `no-frequency` or `no-router`, so no branch is kept; no design variant significantly beats `full`. Under the fallback the final model is the global-only reference: EfficientNetV2-S + LoRA r8, backbone LR multiplier 1.0, default recipe, 224 px.
+- Evidence: `results/tables/e04_vs_reference.md`, `results/tables/e04_pairwise.md`, `results/tables/e04_summary.md`.
+- Consequences: Phase 4 compares against this model; the multi-branch code stays in the package and the E4 results are reported as a negative result. On the external sets the multi-branch arms trade Mendeley specificity for Split E recall (descriptive only, ADR-005). The planned gate-weight figure (PLAN 3.7) is not yet produced (needs the E4 checkpoints from the GPU PC).
