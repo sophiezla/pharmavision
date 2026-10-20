@@ -1,0 +1,1 @@
+checkpoints/p4ref_swin-tiny_ft_f4_s2_20261020-090208/best.pt

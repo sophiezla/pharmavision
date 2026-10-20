@@ -1,0 +1,32 @@
+{
+  "external": {
+    "mendeley_split_c": {
+      "n": 150,
+      "specificity": 0.7866666666666666
+    },
+    "mendeley_split_d": {
+      "n": 149,
+      "specificity": 0.2751677852348993
+    },
+    "split_e_harvested": {
+      "n": 121,
+      "recall": 0.5619834710743802
+    },
+    "split_e_regulatory": {
+      "n": 29,
+      "recall": 0.7586206896551724
+    }
+  },
+  "heldout": {
+    "threshold": 0.7300953269004822
+  },
+  "n": {
+    "external": 449,
+    "heldout": 0,
+    "val": 69
+  },
+  "n_features": 6190,
+  "n_train": 411,
+  "threshold_rule": "youden",
+  "train_seconds": 6.929279799980577
+}

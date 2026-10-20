@@ -1,0 +1,34 @@
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=1
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=2
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=1
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=2
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=1
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=2
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=1
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=2
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-blister model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-blister model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=1
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-blister model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=2
+experiment=e08_open_set model=prototype_dinov2 task=one_class variant=oc-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=patchcore task=one_class variant=oc-no-blister paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=blister fold=0 seed=0
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=1
+experiment=e08_open_set model=handcrafted_xgb task=handcrafted variant=default-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=2
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=1
+experiment=e08_open_set model=convnext_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=2
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=1
+experiment=e08_open_set model=swin_tiny task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=2
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=1
+experiment=e08_open_set model=dinov2_vits14 task=train variant=ft-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=2
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-packaging model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-packaging model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=1
+experiment=e08_open_set model=efficientnetv2_s task=train variant=default-no-packaging model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=2
+experiment=e08_open_set model=prototype_dinov2 task=one_class variant=oc-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0
+experiment=e08_open_set model=patchcore task=one_class variant=oc-no-packaging paths=remote train.num_workers=4 data.split_version=2 exp=e08 data.heldout_type=packaging fold=0 seed=0

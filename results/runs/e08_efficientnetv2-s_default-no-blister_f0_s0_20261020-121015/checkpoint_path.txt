@@ -1,0 +1,1 @@
+checkpoints/e08_efficientnetv2-s_default-no-blister_f0_s0_20261020-121015/best.pt

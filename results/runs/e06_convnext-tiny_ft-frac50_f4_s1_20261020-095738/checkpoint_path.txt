@@ -1,0 +1,1 @@
+checkpoints/e06_convnext-tiny_ft-frac50_f4_s1_20261020-095738/best.pt

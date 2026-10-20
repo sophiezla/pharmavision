@@ -1,0 +1,1 @@
+checkpoints/p4ref_convnext-tiny_ft_f4_s2_20261020-084741/best.pt

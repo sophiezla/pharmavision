@@ -1,0 +1,225 @@
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=2
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=0
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=1
+experiment=e06_data_efficiency model=handcrafted_xgb task=handcrafted variant=default-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=2
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=0
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=1
+experiment=e06_data_efficiency model=convnext_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=2
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=0
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=1
+experiment=e06_data_efficiency model=swin_tiny task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac10 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac25 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=2
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=0
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=1
+experiment=e06_data_efficiency model=dinov2_vits14 task=train variant=ft-frac50 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=0 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=1 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=2 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=3 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac10 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.1 fold=4 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=0 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=1 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=2 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=3 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac25 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.25 fold=4 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=0 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=1 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=2 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=3 seed=2
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=0
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=1
+experiment=e06_data_efficiency model=efficientnetv2_s task=train variant=default-frac50 model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e06 data.train_fraction=0.5 fold=4 seed=2

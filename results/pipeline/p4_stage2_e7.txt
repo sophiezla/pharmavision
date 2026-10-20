@@ -1,0 +1,15 @@
+experiment=e07_transfer model=handcrafted_xgb task=handcrafted variant=default paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=0
+experiment=e07_transfer model=handcrafted_xgb task=handcrafted variant=default paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=1
+experiment=e07_transfer model=handcrafted_xgb task=handcrafted variant=default paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=2
+experiment=e07_transfer model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=0
+experiment=e07_transfer model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=1
+experiment=e07_transfer model=convnext_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=2
+experiment=e07_transfer model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=0
+experiment=e07_transfer model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=1
+experiment=e07_transfer model=swin_tiny task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=2
+experiment=e07_transfer model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=0
+experiment=e07_transfer model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=1
+experiment=e07_transfer model=dinov2_vits14 task=train variant=ft paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=2
+experiment=e07_transfer model=efficientnetv2_s task=train variant=default model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=0
+experiment=e07_transfer model=efficientnetv2_s task=train variant=default model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=1
+experiment=e07_transfer model=efficientnetv2_s task=train variant=default model.mode=lora model.lora_rank=8 train.backbone_lr_mult=1.0 paths=remote train.num_workers=4 data.split_version=2 exp=e07 fold=0 seed=2

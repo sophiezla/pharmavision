@@ -1,0 +1,1 @@
+checkpoints/e06_efficientnetv2-s_default-frac25_f1_s2_20261020-112440/best.pt
