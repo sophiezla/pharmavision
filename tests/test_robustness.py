@@ -12,6 +12,7 @@ from omegaconf import OmegaConf
 from pharmachecked.data.corruptions import CORRUPTIONS, load_corruption_config
 from pharmachecked.evaluation.robustness import (
     CORRUPTION_FILE,
+    EXTENSION,
     conditions,
     corruption_predictions,
     quality_limits,
@@ -24,7 +25,11 @@ CFG = load_corruption_config()
 def test_conditions_are_clean_plus_every_level() -> None:
     conds = conditions(CFG)
     assert conds[0] == ("clean", 0)
-    assert len(conds) == 1 + 5 * len(CORRUPTIONS)
+    assert len(conds) == 1 + 5 * len(CORRUPTIONS)  # the pre-registered grid by default
+    ext = conditions(CFG, EXTENSION, clean=False)  # ADR-024
+    assert len(ext) == 3 * len(CORRUPTIONS) and min(s for _, s in ext) == 6
+    with pytest.raises(ValueError):
+        conditions(CFG, (9,))
 
 
 def _frame(seed: int, noise: float) -> pd.DataFrame:

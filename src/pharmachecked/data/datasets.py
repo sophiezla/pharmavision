@@ -14,8 +14,9 @@ from torch.utils.data import Dataset
 
 from pharmachecked.data.splits import DevSplits
 
-# Manifest partitions a dataset may read. The locked test set is not among them (Rule 2).
-READABLE_SPLITS = frozenset({"dev", "external"})
+# Manifest partitions a dataset may read. The locked test set is not among them (Rule 2);
+# "ood" marks the OOD reference sets of data/ood (data/ood.py), which are not task images.
+READABLE_SPLITS = frozenset({"dev", "external", "ood"})
 META_COLUMNS = ("source_dataset", "packaging_type", "group_id", "fold")
 
 

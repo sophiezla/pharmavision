@@ -266,7 +266,28 @@ def e08_seen_vs_unseen(tables: Path, out: Path) -> list[Path]:
 
 def e09_severity_curves(tables: Path, out: Path) -> list[Path]:
     """AUROC vs severity (0 = clean) per model, one panel per corruption."""
-    df = pd.read_csv(tables / "e09_severity.csv")
+    return _severity_curves(
+        pd.read_csv(tables / "e09_severity.csv"),
+        out,
+        "e09_severity_curves",
+        "E9: AUROC under corruption (dashed: 0.85 quality limit, ADR-023)",
+    )
+
+
+def e09_extension_curves(tables: Path, out: Path) -> list[Path]:
+    """As ``e09_severity_curves`` over severities 1-8; dotted line: start of the extension."""
+    return _severity_curves(
+        pd.read_csv(tables / "e09_ext_severity.csv"),
+        out,
+        "e09_ext_severity_curves",
+        "E9 extension: severities 1-8 (dotted: ADR-024 levels start; dashed: 0.85 limit)",
+        extension_from=6,
+    )
+
+
+def _severity_curves(
+    df: pd.DataFrame, out: Path, stem: str, title: str, extension_from: int | None = None
+) -> list[Path]:
     clean = df[df["corruption"] == "clean"].set_index("config")["auroc"]
     names = sorted(set(df["corruption"]) - {"clean"})
     apply_style()
@@ -279,16 +300,18 @@ def e09_severity_curves(tables: Path, out: Path) -> list[Path]:
         for k, config in enumerate(configs):
             sub = part[part["config"] == config].sort_values("severity")
             ax.plot(
-                [0, *sub["severity"]],
-                [clean[config], *sub["auroc"]],
+                [*([0] if config in clean else []), *sub["severity"]],  # 0 = clean, if present
+                [*([clean[config]] if config in clean else []), *sub["auroc"]],
                 marker="o",
                 markersize=3,
                 color=color_for(k),
                 label=config,
             )
         ax.axhline(0.85, color=INK_SECONDARY, linestyle="--", linewidth=0.8)
+        if extension_from is not None:
+            ax.axvline(extension_from - 0.5, color=INK_SECONDARY, linestyle=":", linewidth=0.8)
         ax.set_title(name.replace("_", " "))
-        ax.set_xticks(range(6))
+        ax.set_xticks(range(int(df["severity"].max()) + 1))
         ax.grid(axis="x", visible=False)
     for ax in axes.flat[len(names) :]:
         ax.set_visible(False)
@@ -297,9 +320,66 @@ def e09_severity_curves(tables: Path, out: Path) -> list[Path]:
     for ax in axes[-1, :]:
         ax.set_xlabel("Severity (0 = clean)")
     axes.flat[0].legend(loc="lower left", fontsize=7)
-    fig.suptitle("E9: AUROC under corruption (dashed: 0.85 quality limit, ADR-023)")
+    fig.suptitle(title)
     fig.tight_layout()
-    return save_figure(fig, out, "e09_severity_curves")
+    return save_figure(fig, out, stem)
+
+
+def _panels(n: int, width: float = 3.2, height: float = 3.0):
+    ncol = min(n, 3)
+    nrow = -(-n // ncol)
+    fig, axes = plt.subplots(nrow, ncol, figsize=(width * ncol, height * nrow), squeeze=False)
+    for ax in axes.flat[n:]:
+        ax.set_visible(False)
+    return fig, axes
+
+
+def e10_reliability_diagrams(tables: Path, out: Path) -> list[Path]:
+    """Pooled top-label reliability per model, before and after temperature scaling."""
+    df = pd.read_csv(tables / "e10_reliability_bins.csv")
+    configs = sorted(df["config"].unique())
+    apply_style()
+    fig, axes = _panels(len(configs))
+    for ax, config in zip(axes.flat, configs, strict=False):
+        ax.plot([0.5, 1], [0.5, 1], color=INK_SECONDARY, linestyle="--", linewidth=0.8)
+        for k, stage in enumerate(("before", "after")):
+            part = df[(df["config"] == config) & (df["stage"] == stage)].dropna()
+            ax.plot(
+                part["confidence"],
+                part["accuracy"],
+                marker="o",
+                markersize=3,
+                color=color_for(k),
+                label=f"{stage} temperature scaling",
+            )
+        ax.set_title(config, fontsize=9)
+        ax.set_xlim(0.5, 1.0)
+        ax.set_ylim(0.0, 1.02)
+        ax.set_xlabel("Mean confidence in bin")
+        ax.set_ylabel("Accuracy in bin")
+    axes.flat[0].legend(loc="lower right", fontsize=7)
+    fig.suptitle("E10: reliability diagrams (held-out folds, pooled; 15 bins)")
+    fig.tight_layout()
+    return save_figure(fig, out, "e10_reliability_diagrams")
+
+
+def e10_risk_coverage(tables: Path, out: Path) -> list[Path]:
+    """Selective risk vs coverage per model: single fold models vs 3-seed ensembles (pooled)."""
+    df = pd.read_csv(tables / "e10_risk_coverage.csv")
+    configs = sorted(df["config"].unique())
+    apply_style()
+    fig, axes = _panels(len(configs))
+    for ax, config in zip(axes.flat, configs, strict=False):
+        for k, kind in enumerate(("single", "ensemble")):
+            part = df[(df["config"] == config) & (df["kind"] == kind)]
+            ax.step(part["coverage"], part["risk"], where="post", color=color_for(k), label=kind)
+        ax.set_title(config, fontsize=9)
+        ax.set_xlabel("Coverage")
+        ax.set_ylabel("Selective risk (error rate)")
+    axes.flat[0].legend(loc="upper left", fontsize=7)
+    fig.suptitle("E10: risk-coverage (calibrated probabilities)")
+    fig.tight_layout()
+    return save_figure(fig, out, "e10_risk_coverage")
 
 
 FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
@@ -309,6 +389,8 @@ FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
     "e06": [e06_learning_curves],
     "e08": [e08_seen_vs_unseen],
     "e09": [e09_severity_curves],
+    "e09ext": [e09_extension_curves],
+    "e10": [e10_reliability_diagrams, e10_risk_coverage],
 }
 
 

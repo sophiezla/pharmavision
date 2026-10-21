@@ -2,7 +2,8 @@
 
 The kit holds a source snapshot of HEAD (``git archive``) with ``SNAPSHOT.json`` (commit + file
 SHA-256s), the processed development images minus the locked test set, all external images
-(Split E included: the kit is PRIVATE and stays on Sophie's machines), ``uv.exe`` (verified
+(Split E included: the kit is PRIVATE and stays on Sophie's machines), with ``--ood`` the OOD
+reference images of ``data/ood`` (E11, ADR-026), ``uv.exe`` (verified
 against its published SHA-256), the two .bat files, README_FIRST.txt and KIT.json naming the job
 list. The working tree must be clean.
 
@@ -28,6 +29,7 @@ from omegaconf import OmegaConf
 
 from pharmachecked.config import CONFIG_DIR, REPO_ROOT
 from pharmachecked.data.manifest import read_manifest
+from pharmachecked.data.ood import OOD_SETS, load_ood_set
 from pharmachecked.jobs import read_jobs
 from pharmachecked.utils.env import SNAPSHOT_FILE, git_info
 from pharmachecked.utils.logging import configure_logging, get_logger
@@ -112,6 +114,9 @@ def main() -> int:
     parser.add_argument("--name", required=True)
     parser.add_argument("--estimate", default="see the experiment page")
     parser.add_argument(
+        "--ood", action="store_true", help="also pack the data/ood images (E11, ADR-026)"
+    )
+    parser.add_argument(
         "--selftest",
         action="store_true",
         help="laptop dry run: CPU torch, no images (toy-data jobs), CPU allowed by the GPU check",
@@ -148,6 +153,12 @@ def main() -> int:
     ext = read_manifest(processed / "manifest_external_v1.csv").to_dict("records")
     ids = [] if args.selftest else kit_image_ids(dev, ext)
     image_bytes = sum((processed / "images" / f"{i}.png").stat().st_size for i in ids)
+    ood_files: list[Path] = []
+    if args.ood:
+        for name in OOD_SETS:
+            table, folder = load_ood_set(REPO_ROOT / "data", name)
+            ood_files += [folder / f"{i}.png" for i in table["image_id"]]
+        image_bytes += sum(f.stat().st_size for f in ood_files)
     disk_gb = max(60, round(image_bytes / 1e9 * 2 + int(kcfg.disk_gb_per_job * n_jobs)))
 
     prefix = "SELFTEST_kit" if args.selftest else "PRIVATE_gpu_kit"
@@ -182,6 +193,8 @@ def main() -> int:
                 processed / "images" / f"{image_id}.png",
                 f"pharmavision/data/processed/images/{image_id}.png",
             )
+        for path in ood_files:
+            zf.write(path, f"pharmavision/{path.relative_to(REPO_ROOT).as_posix()}")
         zf.writestr(
             "tools/uv.exe", fetch_uv(str(kcfg.uv_version)), compress_type=zipfile.ZIP_DEFLATED
         )
@@ -192,7 +205,7 @@ def main() -> int:
         "wrote %s: %d source files, %d images (%.2f GB), runs %s",
         out.relative_to(REPO_ROOT),
         len(files),
-        len(ids),
+        len(ids) + len(ood_files),
         image_bytes / 1e9,
         work_text,
     )

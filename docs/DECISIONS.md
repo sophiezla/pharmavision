@@ -238,13 +238,31 @@ Template:
   | gaussian_blur (sigma, px) | 4 | 6 | 8 |
   | motion_blur (kernel length, px) | 17 | 25 | 35 |
   | gaussian_noise (sd) | 0.18 | 0.25 | 0.35 |
-  | jpeg (quality) | 5 | 3 | 1 |
+  | jpeg (quality) | 5 | 4 | 3 |
   | brightness (factor) | 0.2 | 0.12 | 0.06 |
   | contrast (factor) | 0.2 | 0.12 | 0.06 |
   | rotation (degrees) | 45 | 60 | 90 |
   | perspective (corner shift) | 0.35 | 0.4 | 0.45 |
   | glare (peak intensity) | 0.9 | 1.0 | 1.2 |
 
+  Amended 2026-10-20 before any run: JPEG was first fixed at 5 / 3 / 1, but libjpeg produces identical images for quality 3, 2 and 1 (quantization tables saturate), which made severities 7 and 8 the same condition; 5 / 4 / 3 are distinct.
+
   Same fold models (the 75 of E9), same per-image seeding, no retraining. Severities 1–5 are not re-run; their results stand. Quality limits are recomputed over 1–8 with the same 0.85 rule.
 - Evidence: `results/tables/e09_quality_limits.md`, `e09_mean_corruption_auroc.md`, `docs/phase_reports/phase-4.md`.
 - Consequences: the extension runs in the next GPU kit (planned: the Phase 5 prediction-only kit), estimated about 0.5 h. Results are reported as an extension of E9 (PLAN 4.11), separate from the pre-registered 1–5 grid. `configs/eval/corruptions.yaml` gains the values when the kit is built.
+
+## ADR-025 · E10 without MC dropout
+- Date: 2026-10-20 · Status: Accepted (Sophie, 2026-10-20)
+- Context: PLAN 5.2 lists MC dropout (20 passes, dropout only in heads) as an uncertainty source, but every model was trained with `head_dropout = 0` (`configs/model/*.yaml`), so there is no dropout layer to sample.
+- Options considered: (a) drop MC dropout; (b) retrain the final model with head dropout for this arm only; (c) insert dropout at inference into models trained without it.
+- Decision: (a). E10 compares the softmax confidence of one model with the 3-seed deep ensemble.
+- Evidence: `configs/model/*.yaml` (`head_dropout: 0.0`).
+- Consequences: no retraining in Phase 5; E10.md and PLAN 5.2 note the change.
+
+## ADR-026 · Phase 5 design: prediction-only pass, models, OOD select/eval split
+- Date: 2026-10-20 · Status: Accepted (details within the PLAN delegated by Sophie, 2026-10-20)
+- Context: the run folders hold held-out, external and corruption predictions, but not `val`/`cal` logits, penultimate embeddings or OOD-image predictions, which E10 and E11 need. The p4ref checkpoints are on the GPU PC.
+- Options considered: (a) a prediction-only GPU kit over the existing fold models; (b) retrain with extra outputs.
+- Decision: (a). Models = the five comparison models of ADR-021 (75 fold models). Each writes `reliability_predictions.csv` (train/val/cal/held-out/OOD logits, plus Mahalanobis and kNN scores computed on the GPU PC from embeddings of its own training images, so no embeddings need to leave the PC). The handcrafted model gets output-based OOD scores only. Each OOD set is split once 50/50 (stratified by source and class, seed 42) into `select` (choose the guard score) and `eval` (end-to-end evaluation). The kit also runs the E9 extension (ADR-024).
+- Evidence: E10.md, E11.md.
+- Consequences: one kit of about 1 h; no training. `data/ood` images go into the PRIVATE kit.

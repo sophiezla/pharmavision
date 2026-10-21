@@ -171,16 +171,16 @@ All experiments use the five comparison models.
 
 ### E10 · Calibration, selective, conformal
 
-- [ ] **5.1** `docs/experiments/E10.md`. `evaluation/calibration.py`: temperature scaling fitted on `cal` by minimizing NLL (LBFGS); ECE, Brier, reliability-diagram data.
-- [ ] **5.2** Uncertainty sources: softmax confidence; 3-seed deep ensemble; MC dropout (20 passes; dropout enabled only in heads). `evaluation/selective.py`: risk–coverage curves and AURC.
-- [ ] **5.3** `evaluation/conformal.py`: split conformal with LAC and APS scores, marginal and class-conditional (Mondrian), α ∈ {0.05, 0.10}; quantile fitted on `cal`; evaluated on held-out folds. A set of size 2 = abstain.
+- [x] **5.1** (8425d1e, fd1e9e4; T = 1 when not identifiable) `docs/experiments/E10.md`. `evaluation/calibration.py`: temperature scaling fitted on `cal` by minimizing NLL (LBFGS); ECE, Brier, reliability-diagram data.
+- [x] **5.2** (8425d1e; MC dropout dropped, ADR-025) Uncertainty sources: softmax confidence; 3-seed deep ensemble; ~~MC dropout (20 passes; dropout enabled only in heads)~~ (dropped, ADR-025). `evaluation/selective.py`: risk–coverage curves and AURC.
+- [x] **5.3** (8425d1e; test_conformal passes) `evaluation/conformal.py`: split conformal with LAC and APS scores, marginal and class-conditional (Mondrian), α ∈ {0.05, 0.10}; quantile fitted on `cal`; evaluated on held-out folds. A set of size 2 = abstain.
     - AC: `test_conformal.py` passes.
 - [ ] **5.4** Tables `e10_calibration` (ECE/Brier before/after per model), `e10_conformal` (coverage overall + per class, mean set size, singleton rate, abstention rate); figures `e10_reliability_diagrams`, `e10_risk_coverage`.
     - AC: chosen conformal method's per-class coverage within 2 pp of target; ADR choosing the method.
 
 ### E11 · OOD guard
 
-- [ ] **5.5** `evaluation/ood.py`: MSP, energy score (T=1), Mahalanobis (class-conditional means, shared covariance with shrinkage, fitted on train embeddings), kNN (k=50, cosine, normalized penultimate features), ensemble disagreement. Threshold = 95% acceptance of in-distribution `val`.
+- [x] **5.5** (8425d1e; disagreement over the 3 seeds of a fold) `evaluation/ood.py`: MSP, energy score (T=1), Mahalanobis (class-conditional means, shared covariance with shrinkage, fitted on train embeddings), kNN (k=50, cosine, normalized penultimate features), ensemble disagreement. Threshold = 95% acceptance of in-distribution `val`.
 - [ ] **5.6** Table `e11_ood` (AUROC, FPR@95TPR; near vs far).
 - [ ] **5.7** End-to-end: `evaluation/pipeline.py` chains OOD guard → model → temperature → conformal on a mixed stream (held-out folds + all OOD images). Table `e11_end_to_end`: rejection rate, abstention rate, error rate on issued predictions; full system vs bare classifier.
 

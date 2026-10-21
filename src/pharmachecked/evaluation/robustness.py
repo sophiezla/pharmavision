@@ -8,6 +8,7 @@ equals the model's ordinary evaluation input.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
@@ -24,14 +25,25 @@ from pharmachecked.evaluation.metrics import auroc
 from pharmachecked.evaluation.stats import bootstrap_ci
 
 CORRUPTION_FILE = "corruption_predictions.csv"
+EXTENSION_FILE = "corruption_predictions_ext.csv"  # ADR-024, PLAN 4.11
 CLEAN = ("clean", 0)
+PREREGISTERED = tuple(range(1, 6))  # E9 as pre-registered (E09.md)
+EXTENSION = (6, 7, 8)  # ADR-024
 
 
-def conditions(cfg_corr: Any) -> list[tuple[str, int]]:
-    """``("clean", 0)`` followed by every (corruption, severity 1-5)."""
-    return [CLEAN] + [
-        (name, s) for name in CORRUPTIONS for s in range(1, len(cfg_corr.severities[name]) + 1)
-    ]
+def conditions(
+    cfg_corr: Any, severities: Iterable[int] = PREREGISTERED, clean: bool = True
+) -> list[tuple[str, int]]:
+    """``("clean", 0)`` (unless ``clean`` is False) and every corruption x ``severities``.
+
+    Raises:
+        ValueError: If a severity is not listed in the corruption config.
+    """
+    levels = tuple(severities)
+    for name in CORRUPTIONS:
+        if levels and max(levels) > len(cfg_corr.severities[name]):
+            raise ValueError(f"{name}: severity {max(levels)} not in the corruption config")
+    return ([CLEAN] if clean else []) + [(name, s) for name in CORRUPTIONS for s in levels]
 
 
 class CorruptedView(Dataset):
@@ -63,11 +75,18 @@ def _rows(preds: pd.DataFrame, corruption: str, severity: int) -> pd.DataFrame:
 
 
 def corruption_predictions(
-    run_root: Path, paths: DictConfig, checkpoint: Path, cfg_corr: Any, device: str | None = None
+    run_root: Path,
+    paths: DictConfig,
+    checkpoint: Path,
+    cfg_corr: Any,
+    device: str | None = None,
+    extension: bool = False,
 ) -> pd.DataFrame:
     """Predict the run's held-out fold under every condition; write ``corruption_predictions.csv``.
 
-    Supports runs of task ``train`` (torch models) and ``handcrafted`` (joblib pipelines).
+    Supports runs of task ``train`` (torch models) and ``handcrafted`` (joblib pipelines). With
+    ``extension``, only severities 6-8 (ADR-024) are predicted, without the clean condition,
+    into ``corruption_predictions_ext.csv``; the pre-registered file is left as it is.
 
     Returns:
         Long table ``image_id, fold, seed, y_true, prob, corruption, severity``.
@@ -86,6 +105,7 @@ def corruption_predictions(
     cfg = OmegaConf.load(run_root / "config.yaml")
     cfg.paths = paths
     cfg.device = device
+    conds = conditions(cfg_corr, EXTENSION, clean=False) if extension else conditions(cfg_corr)
     frames = []
     if cfg.task == "train":
         from pharmachecked.models.registry import build_model
@@ -100,7 +120,7 @@ def corruption_predictions(
         model.load_state_dict(torch.load(checkpoint, map_location="cpu", weights_only=True))
         model.to(dev)
         held = fold_datasets(cfg).heldout
-        for name, s in conditions(cfg_corr):
+        for name, s in conds:
             view = CorruptedView(held, name, s, cfg_corr)
             frames.append(_rows(predict(model, view, dev, cfg.train, int(cfg.seed)), name, s))
     elif cfg.task == "handcrafted":
@@ -118,7 +138,7 @@ def corruption_predictions(
         base = eval_dataset(cfg, tcfg, manifest, ids, images, [0.0] * 3, [1.0] * 3, size)
         meta = manifest.set_index("image_id").loc[ids]
         geoms = [base._load(i) for i in ids]
-        for name, s in conditions(cfg_corr):
+        for name, s in conds:
             x = np.stack(
                 [
                     extract_features(corrupt(g, i, name, s, cfg_corr) if s else g, size)
@@ -139,7 +159,8 @@ def corruption_predictions(
     else:
         raise ValueError(f"corruption evaluation does not support task {cfg.task!r}")
     out = pd.concat(frames, ignore_index=True)
-    out.to_csv(run_root / CORRUPTION_FILE, index=False, lineterminator="\n", float_format="%.6g")
+    target = run_root / (EXTENSION_FILE if extension else CORRUPTION_FILE)
+    out.to_csv(target, index=False, lineterminator="\n", float_format="%.6g")
     return out
 
 

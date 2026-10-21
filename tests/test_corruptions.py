@@ -31,9 +31,10 @@ def _laplacian_var(image: Image.Image) -> float:
     return float(lap.var())
 
 
-def test_config_lists_every_corruption_with_five_levels() -> None:
+def test_config_lists_every_corruption_with_eight_levels() -> None:
     assert set(CFG.severities) == set(CORRUPTIONS)
-    assert all(len(levels) == 5 for levels in CFG.severities.values())
+    # 1-5 pre-registered, 6-8 the extension of ADR-024
+    assert all(len(levels) == 8 for levels in CFG.severities.values())
     assert CFG.quality_auroc == 0.85
 
 
@@ -47,7 +48,7 @@ def test_severity_zero_is_identity(name: str) -> None:
 def test_distance_from_clean_grows_with_severity(name: str) -> None:
     image = _image()
     dist = [
-        np.abs(_arr(corrupt(image, "img", name, s, CFG)) - _arr(image)).mean() for s in range(6)
+        np.abs(_arr(corrupt(image, "img", name, s, CFG)) - _arr(image)).mean() for s in range(9)
     ]
     assert dist[0] == 0
     assert all(b > a for a, b in itertools.pairwise(dist)), dist
@@ -67,7 +68,7 @@ def test_specific_statistic_is_monotonic(name: str, statistic, direction: int) -
     # Motion blur is covered by the distance test only: on the periodic checkerboard a long
     # directional kernel can raise the Laplacian variance.
     image = _image()
-    values = [statistic(corrupt(image, "img", name, s, CFG)) for s in range(6)]
+    values = [statistic(corrupt(image, "img", name, s, CFG)) for s in range(9)]
     steps = [direction * (b - a) for a, b in itertools.pairwise(values)]
     assert all(step > 0 for step in steps), values
 
@@ -84,4 +85,4 @@ def test_rejects_unknown_corruption_and_severity() -> None:
     with pytest.raises(KeyError):
         corrupt(_image(), "img", "fog", 1, CFG)
     with pytest.raises(ValueError):
-        corrupt(_image(), "img", "jpeg", 6, CFG)
+        corrupt(_image(), "img", "jpeg", 9, CFG)
