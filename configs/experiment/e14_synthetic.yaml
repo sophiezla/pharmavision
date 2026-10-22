@@ -1,0 +1,18 @@
+# @package _global_
+# E14 synthetic counterfeits (PLAN 7.5; docs/experiments/E14.md). The final model (ADR-020)
+# trained with synthetic images; the job sets synthetic.generator / ratio / only and the variant.
+# Validation, calibration and held-out images stay real.
+exp: e14
+task: train
+variant: procedural-r1
+train:
+  backbone_lr_mult: 1.0
+model:
+  mode: lora
+  lora_rank: 8
+data:
+  split_version: 2
+synthetic:
+  generator: procedural     # procedural | inpaint
+  ratio: 1.0                # synthetic images = round(ratio x real training counterfeits)
+  only: false               # true: real training counterfeits removed (synthetic-only arm)

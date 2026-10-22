@@ -266,3 +266,18 @@ Template:
 - Decision: (a). Models = the five comparison models of ADR-021 (75 fold models). Each writes `reliability_predictions.csv` (train/val/cal/held-out/OOD logits, plus Mahalanobis and kNN scores computed on the GPU PC from embeddings of its own training images, so no embeddings need to leave the PC). The handcrafted model gets output-based OOD scores only. Each OOD set is split once 50/50 (stratified by source and class, seed 42) into `select` (choose the guard score) and `eval` (end-to-end evaluation). The kit also runs the E9 extension (ADR-024).
 - Evidence: E10.md, E11.md.
 - Consequences: one kit of about 1 h; no training. `data/ood` images go into the PRIVATE kit.
+
+## ADR-027 · One GPU kit for every remaining GPU experiment (Phases 5-8)
+- Date: 2026-10-22 · Status: Proposed (Sophie asked for one bundle, 2026-10-22; the points marked "to confirm" below need her answer before the kit is built)
+- Context: Sophie asked to limit the number of GPU bundles and to group the remaining work into one. The Phase 5 kit (`PRIVATE_gpu_kit_phase5_46d0a9f.zip`) had been built but not run. ADR-013 put the steps that need Sophie (concept labels, synthetic-image review) between kits.
+- Options considered: (a) one kit per phase (four more trips); (b) Phase 5 now, then one kit for Phases 6-8; (c) one kit for Phases 5-8.
+- Decision: (c). `scripts/combined_pipeline.py` (`pipeline/combined.py`) runs Phase 5 (unchanged, ADR-024-026), then E14 synthesis, E12, E13 + TCAV, E14 arms + E8 re-run, E16 + deployment pass, E15 defences + attacks + arms race, in that order; every decision inside is the pre-registered rule of its experiment page (ADR-013). The Phase 5 kit is superseded and must not be run. Details fixed with it:
+    - Concept labels (PLAN 1.8) are done on the laptop before the kit is built; the synthetic-image review (PLAN 7.4) moves after the kit, on a returned random sample of 100 images per generator, and is reported next to E14 instead of gating its arms.
+    - Stable Diffusion: `stable-diffusion-v1-5/stable-diffusion-inpainting` at a pinned revision (SD 2 inpainting is no longer public, checked 2026-10-21); about 2.1 GB downloaded on the GPU PC during the run (to confirm: PLAN 7.3 asks for approval before downloading weights).
+    - E12 methods per architecture (the final model is a CNN: Grad-CAM, Grad-CAM++, IG, random; rollout on DINOv2-S; MIL attention on the E4 model).
+    - E15 synthetic-edit defence = the best E14 ratio arm (no retraining); "both" = PGD training + that arm's synthetic images.
+    - E16 teacher = the final model's fold model of the same fold and seed (PLAN 8.1 allows the single model or the ensemble). Cross-entropy-only students are added as a reference arm (30 runs; to confirm, it adds an arm to PLAN 8.1).
+    - Results bundles still never contain weights; a second PRIVATE bundle (`MODELS_*.zip`, `scripts/pack_models.py`) carries the checkpoints Phase 10 needs on the laptop (final model, the E1 best model's v2 runs, every student), the fold-0 ONNX files for latency, and the review sample.
+    - Code for Phases 6-8 is written before CHECKPOINT 5, so CHECKPOINTS 5-8 become reviews of the returned results, one phase at a time.
+- Evidence: estimated run time about 20 h on the RTX 5060 from logged job times (final-model job 1.09 min, `results/job_logs/phase3_*_e05_stage1_e5.log`; breakdown in E12-E16.md); to confirm, it exceeds the 4 GPU-hour rule.
+- Consequences: one more trip to the GPU PC instead of four; the laptop handles latency, tables, figures, the app and Phase 10. `1_SETUP.bat` installs the `[synthesis]` extra and torchattacks (without its dependencies, which pin an old `requests`); `huggingface_hub` is pinned to 1.33.0 because diffusers 0.41 needs < 2.

@@ -1,0 +1,17 @@
+# @package _global_
+# E15 defences (PLAN 7.10; docs/experiments/E15.md): PGD adversarial training of the final model
+# (ADR-020), alone ("adv") or on top of the best E14 arm's synthetic images ("both").
+exp: e15
+task: adv_train
+variant: adv
+train:
+  backbone_lr_mult: 1.0
+model:
+  mode: lora
+  lora_rank: 8
+data:
+  split_version: 2
+adversarial:
+  eps: 0.01568627450980392  # 4/255
+  steps: 7                  # step size eps / 4
+  fraction: 0.5             # share of each batch replaced by adversarial examples

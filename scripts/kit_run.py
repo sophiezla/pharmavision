@@ -144,6 +144,17 @@ def main() -> int:
     finally:
         keep_awake(False)
     out = pack_results(kit, args.kit)
+    if kit.get("models"):  # weights and samples for the laptop (scripts/pack_models.py)
+        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        models = args.kit / f"MODELS_{kit['name']}_{stamp}.zip"
+        profile = "selftest" if kit.get("allow_cpu") else "full"
+        subprocess.run(
+            [sys.executable, "scripts/pack_models.py", "--out", str(models), "--profile", profile],
+            cwd=REPO_ROOT,
+            check=False,
+        )
+        if models.exists():
+            banner(f"Also copy this file back to the laptop:\n{models.name}")
     if not finished:
         banner(
             "Not everything finished.\n"

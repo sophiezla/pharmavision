@@ -23,6 +23,7 @@ PLANNED = {
     "clip_vitb16",
     "mobilenetv3_large",
     "efficientnet_lite0",
+    "cbm_efficientnetv2_s",  # E13 concept bottleneck on the final model's backbone
 }
 
 

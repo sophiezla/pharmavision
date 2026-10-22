@@ -117,6 +117,11 @@ def main() -> int:
         "--ood", action="store_true", help="also pack the data/ood images (E11, ADR-026)"
     )
     parser.add_argument(
+        "--models",
+        action="store_true",
+        help="also write a MODELS zip of weights and samples at the end (scripts/pack_models.py)",
+    )
+    parser.add_argument(
         "--selftest",
         action="store_true",
         help="laptop dry run: CPU torch, no images (toy-data jobs), CPU allowed by the GPU check",
@@ -171,6 +176,13 @@ def main() -> int:
         "__DISK__": str(disk_gb),
         "__WORK__": work_text,
         "__ESTIMATE__": args.estimate,
+        "__MODELS__": (
+            "\n   It also creates MODELS_....zip (model weights and a sample of generated images)."
+            "\n   Copy that file back too. 2_RUN.bat needs internet while it runs (it downloads"
+            "\n   the text-reading and image-generation models, about 2.5 GB, the first time)."
+            if args.models
+            else ""
+        ),
     }.items():
         readme = readme.replace(key, value)
     setup = (KIT_SRC / "1_SETUP.bat").read_text(encoding="utf-8")
@@ -182,6 +194,7 @@ def main() -> int:
         **work_json,
         "allow_cpu": bool(args.selftest),
         "bench": not args.selftest,
+        "models": bool(args.models),
     }
     with zipfile.ZipFile(out, "w") as zf:
         for path, data in sorted(files.items()):

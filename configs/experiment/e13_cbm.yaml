@@ -1,0 +1,14 @@
+# @package _global_
+# E13 concept bottleneck (PLAN 6.5-6.6; docs/experiments/E13.md). The job sets cbm.mode and the
+# variant (independent | sequential | joint). Backbone and recipe as the final model (ADR-020).
+exp: e13
+task: cbm
+variant: joint
+train:
+  backbone_lr_mult: 1.0
+data:
+  split_version: 2
+cbm:
+  mode: joint
+  concept_weight: 1.0       # joint loss = BCE(task) + concept_weight x masked concept BCE
+  concepts_file: ${paths.annotations_dir}/concepts.csv

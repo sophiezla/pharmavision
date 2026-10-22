@@ -190,6 +190,8 @@ All experiments use the five comparison models.
 
 ## Phase 6 · Interpretability (E12–E13)
 
+The GPU work of Phases 6–8 runs in one combined kit with Phase 5 (ADR-027, `scripts/combined_pipeline.py`); the code is written before CHECKPOINT 5 and each phase checkpoint reviews the returned results.
+
 ### E12 · Faithfulness
 
 - [ ] **6.1** `interpret/cams.py` (Grad-CAM, Grad-CAM++ via `grad-cam`), integrated gradients (Captum), `interpret/attention_rollout.py`, MIL tile-attention upsampled to image size, random-map baseline.

@@ -1,0 +1,25 @@
+# E14 synthetic counterfeits (PLAN 7.1-7.3; docs/experiments/E14.md). Read by
+# pharmachecked.synthesis.generate, not composed into run configs.
+per_source: 3             # edits per authentic development image, per generator
+seed: 42
+ocr_backend: easyocr      # easyocr | stub (laptop self-test only)
+procedural:
+  types: [font_swap, char_substitution, dose_digit_change, local_hue_shift,
+          local_blur_or_rehalftone, logo_warp, local_jpeg]
+inpaint:
+  backend: sd             # sd | stub (laptop self-test only)
+  # SD 2 inpainting (stabilityai) is no longer public (checked 2026-10-21); SD 1.5 inpainting,
+  # CreativeML OpenRAIL-M, not gated, pinned revision; fp16 weights about 2.1 GB without the
+  # safety checker.
+  model_id: stable-diffusion-v1-5/stable-diffusion-inpainting
+  revision: 8a4288a76071f7280aedbdb3253bdb9e9d5d84bb
+  steps: 25
+  guidance_scale: 7.5
+  strength_range: [0.75, 1.0]
+  prompts:
+    - printed text on a medicine box in a slightly different typeface
+    - medicine package label with misprinted lettering
+    - pharmaceutical packaging print with slightly wrong colours
+    - low quality reprint of a pill box label
+    - blister pack foil print with imperfect text
+qc_per_generator: 100     # PLAN 7.4: random sample per generator returned for Sophie's review

@@ -1,13 +1,16 @@
-"""Local Gradio app: packaging types (PLAN 1.7), concepts (PLAN 1.8), label audit (PLAN 2.13).
+"""Local Gradio app: packaging types (PLAN 1.7), concepts (PLAN 1.8), label audit (PLAN 2.13),
+synthetic-image review (PLAN 7.4).
 
 Packaging and concept modes never show an image's authentic/counterfeit label, so those
 annotations stay label-blind. The audit mode must show it: it reviews the label itself. The
-app binds to 127.0.0.1 only (no public share link) and saves after every click.
+synthetic mode hides the generator and edit type. The app binds to 127.0.0.1 only (no public
+share link) and saves after every click.
 
 Usage:
     python -m pharmachecked.data.annotation_app --mode packaging
     python -m pharmachecked.data.annotation_app --mode concepts
     python -m pharmachecked.data.annotation_app --mode audit
+    python -m pharmachecked.data.annotation_app --mode synthetic
 """
 
 from __future__ import annotations
@@ -27,15 +30,18 @@ from pharmachecked.data.annotations import (
     CONCEPT_VALUES,
     CONCEPTS,
     PACKAGING_TYPES,
+    QUALITY_VALUES,
     AuditStore,
     ConceptStore,
     PackagingStore,
+    SyntheticQualityStore,
 )
 
 LABEL_NAMES = {"0": "authentic", "1": "counterfeit"}
 
 ANNOTATIONS = REPO_ROOT / "data" / "annotations"
 IMAGES = REPO_ROOT / "data" / "processed" / "images"
+SYNTHETIC_QC = REPO_ROOT / "data" / "processed" / "synthetic_qc"
 
 
 def step(
@@ -230,10 +236,51 @@ def build_audit_app(store: AuditStore, images_dir: Path = IMAGES) -> gr.Blocks:
     return app
 
 
+def build_synthetic_app(
+    store: SyntheticQualityStore, images_dir: Path = SYNTHETIC_QC / "images"
+) -> gr.Blocks:
+    """Synthetic-image review: is this a plausible photo of real packaging? (PLAN 7.4)."""
+    ids = store.ids()
+
+    def done(image_id: str) -> bool:
+        return store.rating(image_id) != ""
+
+    def view(index: int) -> tuple[Any, ...]:
+        info = f"Image {index + 1} / {len(ids)} · {store.n_done()} done · `{ids[index]}`"
+        return index, _image(ids[index], images_dir), info, store.rating(ids[index]) or None
+
+    def save(index: int, rating: str | None, annotator: str) -> tuple[Any, ...]:
+        if rating is None or not annotator.strip():
+            raise gr.Error("Choose plausible or implausible and enter your name.")
+        store.set_rating(ids[index], rating, annotator)
+        return view(step(ids, index, +1, done, False))
+
+    with gr.Blocks(title="Synthetic image review") as app:
+        gr.Markdown(
+            "## Synthetic image review\nCould this be an unedited photo of real packaging? "
+            "Judge the whole image; the edit may be anywhere."
+        )
+        index = gr.State(first_todo(ids, done))
+        annotator = gr.Textbox(label="Annotator")
+        info = gr.Markdown()
+        image = gr.Image(type="pil", format="png", height=520, interactive=False, show_label=False)
+        rating = gr.Radio(list(QUALITY_VALUES), label="Rating")
+        with gr.Row():
+            prev_btn = gr.Button("◀ Previous")
+            save_btn = gr.Button("Save and next ▶", variant="primary")
+        outputs = [index, image, info, rating]
+        app.load(view, inputs=index, outputs=outputs)
+        save_btn.click(save, inputs=[index, rating, annotator], outputs=outputs)
+        prev_btn.click(lambda k: view(step(ids, k, -1, done, False)), inputs=index, outputs=outputs)
+    return app
+
+
 def main(argv: list[str] | None = None) -> int:
     """Launch the app locally; returns a process exit code."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--mode", choices=("packaging", "concepts", "audit"), required=True)
+    parser.add_argument(
+        "--mode", choices=("packaging", "concepts", "audit", "synthetic"), required=True
+    )
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument(
         "--review",
@@ -254,6 +301,17 @@ def main(argv: list[str] | None = None) -> int:
             sys.stderr.write("run scripts/label_audit.py first\n")
             return 1
         app = build_audit_app(AuditStore(path))
+    elif args.mode == "synthetic":
+        path = ANNOTATIONS / "synthetic_quality.csv"
+        if not path.exists():
+            sample = SYNTHETIC_QC / "qc_sample.csv"
+            if not sample.exists():
+                sys.stderr.write("install the MODELS bundle first (scripts/unpack_models.py)\n")
+                return 1
+            import pandas as pd
+
+            SyntheticQualityStore.create(path, pd.read_csv(sample, dtype=str))
+        app = build_synthetic_app(SyntheticQualityStore(path))
     else:
         path = ANNOTATIONS / "concepts.csv"
         if not path.exists():

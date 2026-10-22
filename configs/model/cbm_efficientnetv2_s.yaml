@@ -1,0 +1,15 @@
+# E13 concept bottleneck on EfficientNetV2-S + LoRA r8 (the final model's backbone; PLAN 6.5).
+name: cbm_efficientnetv2_s
+builder: concept_bottleneck
+mode: lora                # as the final model (ADR-020): LoRA r8 on conv_pw, conv_pwl
+trainable_blocks: 2       # used by mode last_k
+lora_targets: [conv_pw, conv_pwl]  # used by mode lora
+lora_rank: 8
+head_dropout: 0.0
+source: timm
+timm_name: tf_efficientnetv2_s.in21k_ft_in1k
+pretrained: true
+img_size: 224
+embedding_dim: 1280
+mean: [0.5000, 0.5000, 0.5000]
+std: [0.5000, 0.5000, 0.5000]

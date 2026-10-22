@@ -17,7 +17,9 @@ echo ============================================================
 echo.
 "%UV%" venv --python 3.13 .venv || goto fail
 "%UV%" pip install --python .venv\Scripts\python.exe --index-url __TORCH_INDEX__ -c constraints\cpu.txt torch torchvision || goto fail
-"%UV%" pip install --python .venv\Scripts\python.exe -c constraints\cpu.txt -e .[anomaly] || goto fail
+"%UV%" pip install --python .venv\Scripts\python.exe -c constraints\cpu.txt -e .[anomaly,synthesis] || goto fail
+rem torchattacks pins an old requests; installed without its dependencies (constraints/cpu.txt)
+"%UV%" pip install --python .venv\Scripts\python.exe --no-deps -c constraints\cpu.txt torchattacks || goto fail
 .venv\Scripts\python.exe scripts\kit_check.py || goto fail
 
 echo.

@@ -154,6 +154,8 @@ def fit(
     log_path: Path,
     seed: int,
     on_epoch: Callable[[int, float, float], None] | None = None,
+    batch_hook: Callable[[nn.Module, torch.Tensor, torch.Tensor], tuple[Any, Any]] | None = None,
+    loss_hook: Callable[[dict[str, Any], dict[str, torch.Tensor], torch.Tensor], Any] | None = None,
 ) -> FitResult:
     """Train with early stopping on validation AUROC and restore the best weights.
 
@@ -169,6 +171,10 @@ def fit(
         seed: Run seed (shuffling and augmentation).
         on_epoch: Optional hook ``(epoch, val_auroc, val_loss)`` called after each epoch's
             bookkeeping (e.g. Optuna reporting); an exception raised there stops training.
+        batch_hook: Optional ``(model, images, targets) -> (images, targets)`` applied to each
+            training batch after mixing (E15 adversarial training).
+        loss_hook: Optional ``(batch, out, targets) -> loss`` replacing the training loss
+            (E13 concept bottleneck, E16 distillation); the router loss is not added then.
 
     Returns:
         A :class:`FitResult`; the model holds the best weights afterwards.
@@ -228,11 +234,16 @@ def fit(
             images = batch["image"].to(device, non_blocking=True)
             labels = batch["label"].to(device, non_blocking=True).float()
             images, targets = mix_batch(images, labels, mix_mode, mix_alpha)
+            if batch_hook is not None:
+                images, targets = batch_hook(model, images, targets)
             opt.zero_grad(set_to_none=True)
             with autocast(device, cfg.amp):
                 out = model(images)
-            loss = train_loss(out["logits"].float(), targets)
-            if "router_logits" in out and mix_mode == "none":
+            if loss_hook is not None:
+                loss = loss_hook({**batch, "image": images}, out, targets)
+            else:
+                loss = train_loss(out["logits"].float(), targets)
+            if loss_hook is None and "router_logits" in out and mix_mode == "none":
                 # Auxiliary packaging-type loss (PLAN 3.5); not_a_drug images are ignored (ADR-009).
                 router_target = router_targets(batch["packaging_type"]).to(device)
                 if (router_target >= 0).any():

@@ -10,13 +10,14 @@ from typing import Any
 import numpy as np
 import pandas as pd
 from PIL import Image
-from torch.utils.data import Dataset
+from torch.utils.data import ConcatDataset, Dataset
 
 from pharmachecked.data.splits import DevSplits
 
 # Manifest partitions a dataset may read. The locked test set is not among them (Rule 2);
-# "ood" marks the OOD reference sets of data/ood (data/ood.py), which are not task images.
-READABLE_SPLITS = frozenset({"dev", "external", "ood"})
+# "ood" marks the OOD reference sets of data/ood (data/ood.py), which are not task images;
+# "synthetic" marks E14 synthetic and E15 evasive images derived from development images.
+READABLE_SPLITS = frozenset({"dev", "external", "ood", "synthetic"})
 META_COLUMNS = ("source_dataset", "packaging_type", "group_id", "fold")
 
 
@@ -129,3 +130,12 @@ class ManifestDataset(Dataset[dict[str, Any]]):
             item.update({k: "" if pd.isna(v) else str(v) for k, v in meta.items()})
             item["fold"] = -1 if pd.isna(fold) else int(fold)  # -1: external (no fold)
         return item
+
+
+class LabelledConcat(ConcatDataset):
+    """``ConcatDataset`` of manifest datasets that keeps the ``labels`` attribute (losses)."""
+
+    @property
+    def labels(self) -> tuple[int, ...]:
+        """Labels of every item, in order."""
+        return tuple(label for ds in self.datasets for label in ds.labels)

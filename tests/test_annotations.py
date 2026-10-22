@@ -153,3 +153,22 @@ def test_audit_store_and_app(tmp_path: Path, toy: ToyData) -> None:
     assert len(v2) == len(manifest) - 1 and ids[1] not in set(v2["image_id"])
     assert int(v2.set_index("image_id").loc[ids[0], "label"]) == 0  # relabelled 1 -> 0
     assert (v2["split"] == "").all() and v2["fold"].isna().all()
+
+
+def test_synthetic_quality_store_and_app(tmp_path: Path) -> None:
+    from pharmachecked.data.annotation_app import build_synthetic_app
+    from pharmachecked.data.annotations import SyntheticQualityStore
+
+    sample = pd.DataFrame(
+        {"image_id": ["b", "a"], "generator": ["inpaint", "procedural"], "edit_type": ["x", "y"]}
+    )
+    store = SyntheticQualityStore.create(tmp_path / "q.csv", sample)
+    assert store.ids() == ["a", "b"] and store.n_done() == 0
+    store.set_rating("a", "plausible", "Sophie")
+    again = SyntheticQualityStore(tmp_path / "q.csv")
+    assert again.rating("a") == "plausible" and again.n_done() == 1
+    with pytest.raises(ValueError):
+        again.set_rating("b", "maybe", "Sophie")
+    with pytest.raises(FileExistsError):
+        SyntheticQualityStore.create(tmp_path / "q.csv", sample)
+    build_synthetic_app(again, tmp_path)

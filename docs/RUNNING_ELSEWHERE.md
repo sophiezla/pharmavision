@@ -15,10 +15,13 @@ travels as one zip (ADR-011).
 3. Double-click **`2_RUN.bat`**. It benchmarks the GPU once, runs the kit's job list (finished
    runs are skipped and interrupted runs resume, so it can simply be double-clicked again), keeps
    Windows awake while working, and writes **`RESULTS_<name>_<timestamp>.zip`** next to itself.
-4. Copy the RESULTS zip back to the laptop.
+4. Copy the RESULTS zip back to the laptop. A kit built with `--models` (the combined Phases
+   5-8 kit, ADR-027) also writes **`MODELS_<name>_<timestamp>.zip`**: copy it back too.
 
 The kit is PRIVATE: it contains Split E images, which never leave Sophie's machines and are never
-uploaded or committed. Model weights stay in the kit folder on the GPU PC.
+uploaded or committed. Model weights stay in the kit folder on the GPU PC, except those in a
+MODELS zip (the checkpoints Phase 10 needs, fold-0 ONNX files for latency, and the
+synthetic-image review sample), which travels only between Sophie's machines.
 
 ## On the laptop
 
@@ -28,6 +31,9 @@ uploaded or committed. Model weights stay in the kit folder on the GPU PC.
 - **Install results:** `python scripts/unpack_results.py <RESULTS zip>`. It verifies every
   file's SHA-256 before writing, never overwrites different content, and installs runs, the GPU
   benchmark table and job logs. Then commit the run folders (CLAUDE.md §12).
+- **Install weights and samples:** `python scripts/unpack_models.py <MODELS zip>` (hash-checked;
+  weights go to `checkpoints/`, the review sample to `data/processed/synthetic_qc/`, both
+  git-ignored).
 
 ## What the kit contains
 

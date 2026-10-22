@@ -45,12 +45,27 @@ def _one_class(cfg: DictConfig, run: RunDir) -> None:
     run_one_class(cfg, run)
 
 
+def _lazy(module: str, function: str) -> Callable[[DictConfig, RunDir], None]:
+    """Task imported on first use (Phases 6-8 tasks pull in heavy modules)."""
+
+    def task(cfg: DictConfig, run: RunDir) -> None:
+        import importlib
+
+        getattr(importlib.import_module(module), function)(cfg, run)
+
+    return task
+
+
 TASKS: dict[str, Callable[[DictConfig, RunDir], None]] = {
     "noop": noop,
     "train": _model_task("train"),
     "handcrafted": _model_task("handcrafted"),
     "clip_zeroshot": _model_task("clip_zeroshot"),
     "one_class": _one_class,
+    "cbm": _lazy("pharmachecked.training.cbm", "run_cbm"),  # E13
+    "adv_train": _lazy("pharmachecked.adversarial.race", "run_adv_train"),  # E15 defences
+    "race": _lazy("pharmachecked.adversarial.race", "run_race"),  # E15 arms race
+    "distill": _lazy("pharmachecked.training.distill", "run_distill"),  # E16
 }
 
 

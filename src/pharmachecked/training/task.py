@@ -14,7 +14,7 @@ from __future__ import annotations
 import csv
 import time
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -26,7 +26,7 @@ from omegaconf import DictConfig, OmegaConf
 from PIL import Image
 
 from pharmachecked.config import CONFIG_DIR, REPO_ROOT
-from pharmachecked.data.datasets import ManifestDataset
+from pharmachecked.data.datasets import LabelledConcat, ManifestDataset
 from pharmachecked.data.manifest import read_manifest
 from pharmachecked.data.splits import (
     DevSplits,
@@ -216,40 +216,101 @@ def _write_single_row_log(run: RunDir, row: dict[str, float]) -> None:
 class FoldData:
     """Datasets of one fold for a torch model."""
 
-    train: ManifestDataset
+    train: ManifestDataset | LabelledConcat
     val: ManifestDataset
     heldout: ManifestDataset
     external: ManifestDataset
+    info: dict[str, Any] = field(default_factory=dict)
 
 
-def fold_datasets(cfg: DictConfig) -> FoldData:
-    """Train (augmented) and evaluation datasets of fold ``cfg.fold`` for ``cfg.model``."""
+ExtraImages = Callable[[Partitions, pd.DataFrame], list[tuple[pd.DataFrame, list[str], Path]]]
+
+
+def synthetic_extra(cfg: DictConfig) -> ExtraImages | None:
+    """E14: synthetic counterfeits whose source is in the run's training partition.
+
+    ``cfg.synthetic = {generator, ratio, only}``: ``round(ratio x real training counterfeits)``
+    images of ``generator`` are added (drawn with the run seed); with ``only``, the real
+    training counterfeits are removed (:func:`fold_datasets` drops them). None when not
+    configured.
+    """
+    syn = cfg.get("synthetic")
+    if syn is None or float(syn.get("ratio", 0)) <= 0:
+        return None
+    from pharmachecked.synthesis.generate import synthetic_store, training_images
+
+    store = synthetic_store(cfg)
+
+    def extra(parts: Partitions, manifest: pd.DataFrame) -> list:
+        labels = manifest.set_index("image_id").loc[parts.train, "label"]
+        n = round(float(syn.ratio) * int((labels == 1).sum()))
+        table = store.read()
+        ids = training_images(table, parts.train, str(syn.generator), n, int(cfg.seed))
+        if len(ids) < n:
+            log.warning("E14: %d synthetic images requested, %d available", n, len(ids))
+        return [(table, ids, store.images)]
+
+    return extra
+
+
+def fold_datasets(cfg: DictConfig, extra: ExtraImages | None = None) -> FoldData:
+    """Train (augmented) and evaluation datasets of fold ``cfg.fold`` for ``cfg.model``.
+
+    ``extra`` (or the E14 ``cfg.synthetic`` block) adds images to the training set only; each
+    item is ``(manifest-like table, image ids, images folder)``.
+    """
     manifest, external, splits, images = load_data(cfg)
     parts = partitions(cfg, splits, external, manifest)
     tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
     size = int(cfg.data.get("img_size") or cfg.model.img_size)
     mean, std = list(cfg.model.mean), list(cfg.model.std)
+    train_tf = build_train_transform(tcfg, mean, std, size=size, augment=cfg.get("augment"))
+    extra = extra or synthetic_extra(cfg)
+    train_ids = list(parts.train)
+    info: dict[str, Any] = {}
+    train: ManifestDataset | LabelledConcat = ManifestDataset(
+        manifest, train_ids, images, train_tf, True
+    )
+    if extra is not None:
+        added = extra(parts, manifest)
+        if cfg.get("synthetic") is not None and cfg.synthetic.get("only"):
+            labels = manifest.set_index("image_id").loc[train_ids, "label"]
+            train_ids = [i for i in train_ids if int(labels[i]) == 0]
+        datasets = [ManifestDataset(manifest, train_ids, images, train_tf, True)]
+        datasets += [ManifestDataset(t, ids, d, train_tf, True) for t, ids, d in added if ids]
+        train = LabelledConcat(datasets)
+        info = {"n_train_real": len(train_ids), "n_train_extra": sum(len(a[1]) for a in added)}
     return FoldData(
-        train=ManifestDataset(
-            manifest,
-            parts.train,
-            images,
-            build_train_transform(tcfg, mean, std, size=size, augment=cfg.get("augment")),
-            True,
-        ),
+        train=train,
         val=eval_dataset(cfg, tcfg, manifest, parts.val, images, mean, std, size),
         heldout=eval_dataset(cfg, tcfg, manifest, parts.heldout, images, mean, std, size),
         external=eval_dataset(cfg, tcfg, external, parts.external, images, mean, std, size),
+        info=info,
     )
 
 
-def run_training(cfg: DictConfig, run: RunDir) -> None:
-    """Train ``cfg.model`` on fold ``cfg.fold`` with seed ``cfg.seed`` and write all artifacts."""
+def run_training(
+    cfg: DictConfig,
+    run: RunDir,
+    extra: ExtraImages | None = None,
+    model: torch.nn.Module | None = None,
+    hooks: Callable[[torch.nn.Module, torch.device], dict[str, Any]] | None = None,
+) -> None:
+    """Train ``cfg.model`` on fold ``cfg.fold`` with seed ``cfg.seed`` and write all artifacts.
+
+    Args:
+        cfg: Composed run config.
+        run: Run folder.
+        extra: Extra training images (see :func:`fold_datasets`).
+        model: A prebuilt model (default: ``build_model(cfg.model)``).
+        hooks: ``(model, device) -> {"batch_hook": ..., "loss_hook": ...}`` passed to ``fit``
+            (E13, E15, E16).
+    """
     _check_threshold_rule(cfg)
-    data = fold_datasets(cfg)
+    data = fold_datasets(cfg, extra)
     train_ds, val_ds, held_ds, ext_ds = data.train, data.val, data.heldout, data.external
     device = device_for(cfg)
-    model = build_model(cfg.model)
+    model = model if model is not None else build_model(cfg.model)
     ckpt_dir = Path(cfg.paths.checkpoints_dir) / run.run_id
     if cfg.train.get("grad_checkpointing"):
         enabled = [
@@ -272,8 +333,17 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
         len(held_ds),
         len(ext_ds),
     )
+    fit_hooks = hooks(model, device) if hooks is not None else {}
     result = fit(
-        model, train_ds, val_ds, cfg.train, device, ckpt_dir, run.file("train_log.csv"), cfg.seed
+        model,
+        train_ds,
+        val_ds,
+        cfg.train,
+        device,
+        ckpt_dir,
+        run.file("train_log.csv"),
+        cfg.seed,
+        **fit_hooks,
     )
     preds = [predict(model, ds, device, cfg.train, cfg.seed) for ds in (val_ds, held_ds, ext_ds)]
     write_outputs(
@@ -293,6 +363,7 @@ def run_training(cfg: DictConfig, run: RunDir) -> None:
             "n_params": sum(p.numel() for p in model.parameters()),
             "n_trainable_params": sum(p.numel() for p in model.parameters() if p.requires_grad),
             "device": str(device),
+            **data.info,
         },
     )
     log.info(

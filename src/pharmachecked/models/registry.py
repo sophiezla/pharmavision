@@ -44,4 +44,7 @@ def registered() -> list[str]:
 
 def _import_builtin_models() -> None:
     """Import the modules whose builders self-register."""
-    from pharmachecked.models import backbones, cnn_small, multibranch  # noqa: F401
+    import importlib
+
+    for module in ("backbones", "cnn_small", "concept_bottleneck", "multibranch"):
+        importlib.import_module(f"pharmachecked.models.{module}")

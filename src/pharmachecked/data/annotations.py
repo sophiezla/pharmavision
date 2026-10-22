@@ -25,6 +25,9 @@ CONCEPTS = (
 )
 CONCEPT_VALUES = ("present", "absent", "unsure")
 CONCEPT_COLUMNS = ("image_id", *CONCEPTS, "annotator", "timestamp")
+# PLAN 7.4: synthetic-image review (E14), blind to the generator and edit type.
+QUALITY_VALUES = ("plausible", "implausible")
+QUALITY_COLUMNS = ("image_id", "generator", "edit_type", "rating", "annotator", "timestamp")
 
 
 def _now() -> str:
@@ -216,3 +219,47 @@ class ConceptStore:
     def n_done(self) -> int:
         """Number of images with all concepts filled."""
         return int((self.df[list(CONCEPTS)] != "").all(axis=1).sum())
+
+
+class SyntheticQualityStore:
+    """``synthetic_quality.csv``: plausible / implausible per reviewed synthetic image."""
+
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self.df = _read(path, QUALITY_COLUMNS).set_index("image_id", drop=False)
+
+    @staticmethod
+    def create(path: Path, sample: pd.DataFrame) -> SyntheticQualityStore:
+        """Write an empty store for the review sample (refuses to overwrite)."""
+        if path.exists():
+            raise FileExistsError(f"{path} exists; annotations are never overwritten")
+        df = sample[["image_id", "generator", "edit_type"]].astype(str).copy()
+        for col in ("rating", "annotator", "timestamp"):
+            df[col] = ""
+        _write(df.sort_values("image_id"), path)
+        return SyntheticQualityStore(path)
+
+    def ids(self) -> list[str]:
+        """All image ids, sorted (generators interleaved, so the order does not reveal them)."""
+        return sorted(self.df.index)
+
+    def rating(self, image_id: str) -> str:
+        """The rating of one image ('' when not reviewed)."""
+        return str(self.df.loc[image_id, "rating"])
+
+    def set_rating(self, image_id: str, rating: str, annotator: str) -> None:
+        """Record one rating and save immediately."""
+        if rating not in QUALITY_VALUES:
+            raise ValueError(f"rating must be one of {QUALITY_VALUES}")
+        if not annotator.strip():
+            raise ValueError("annotator name required")
+        self.df.loc[image_id, ["rating", "annotator", "timestamp"]] = [
+            rating,
+            annotator.strip(),
+            _now(),
+        ]
+        _write(self.df.reset_index(drop=True), self.path)
+
+    def n_done(self) -> int:
+        """Number of rated images."""
+        return int((self.df["rating"] != "").sum())
