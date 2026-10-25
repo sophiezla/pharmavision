@@ -1,0 +1,6 @@
+{
+  "config": "efficientnetv2-s/default",
+  "criterion_met": true,
+  "mode": "mondrian",
+  "score": "lac"
+}
