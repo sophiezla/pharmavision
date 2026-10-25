@@ -176,8 +176,9 @@ def main() -> int:
         f"system: guard `{guard}` (val threshold, 95% acceptance) -> temperature -> conformal "
         f"`{choice['score']}` / `{choice['mode']}` from cal; a singleton is issued, any other set "
         "abstains. Bare classifier: val-selected threshold on the raw probability, every image "
-        "issued. An issued prediction on an OOD image counts as an error. Rates are fractions of "
-        "the stream (ID/OOD rejected: of the ID/OOD images); mean ± sd over fold models.",
+        "issued. An issued prediction on an OOD image counts as an error. Abstained and issued are "
+        "fractions of the stream; ID/OOD rejected of the ID/OOD images; error on issued and OOD "
+        "among issued of the issued predictions. Mean ± sd over fold models.",
         rel.end_to_end_table(df, final, guard, choice["score"], choice["mode"], DATA_DIR),
     )
     return 0
