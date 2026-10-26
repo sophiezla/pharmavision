@@ -68,6 +68,7 @@ class Profile:
     synthesis_overrides: dict[str, object] = field(default_factory=dict)
     refs: dict[str, tuple[str, str, str]] = field(default_factory=dict)
     extra: tuple[str, ...] = ()
+    e12_folds: tuple[int, ...] | None = None  # None = every fold (self-test: fold 0 only)
 
 
 PROFILES = {
@@ -95,6 +96,7 @@ PROFILES = {
         1,
         6,
         synthesis_overrides={"ocr_backend": "stub", "inpaint.backend": "stub", "per_source": 2},
+        e12_folds=(0,),  # every E12 method still runs once; saliency on CPU is slow
         refs={
             "final": ("stp4ref", "efficientnetv2-s", "default"),
             "vit": ("stp4ref", "dinov2-vits14", "ft"),
@@ -208,7 +210,8 @@ def e12(p: Profile) -> bool:
             )
             return "done"
 
-        ok = _pass(f"{_exp(p, 'e12')}_{key}", refs(p, key), FAITH_FILE, work) and ok
+        runs = [r for r in refs(p, key) if p.e12_folds is None or r.fold in p.e12_folds]
+        ok = _pass(f"{_exp(p, 'e12')}_{key}", runs, FAITH_FILE, work) and ok
     return ok
 
 
