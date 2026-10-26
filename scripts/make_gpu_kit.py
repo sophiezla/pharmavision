@@ -177,9 +177,11 @@ def main() -> int:
         "__WORK__": work_text,
         "__ESTIMATE__": args.estimate,
         "__MODELS__": (
-            "\n   It also creates MODELS_....zip (model weights and a sample of generated images)."
-            "\n   Copy that file back too. 2_RUN.bat needs internet while it runs (it downloads"
-            "\n   the text-reading and image-generation models, about 2.5 GB, the first time)."
+            "\n   It also creates MODELS_....zip (model weights). Copy that file back too."
+            "\n   2_RUN.bat needs internet while it runs (it downloads the text-reading model"
+            "\n   the first time)."
+            "\n   IMPORTANT: it reuses the models trained by the earlier kits. Leave the"
+            "\n   folders of the Phase 3 and Phase 4 kits where they are, unchanged, while it runs."
             if args.models
             else ""
         ),
