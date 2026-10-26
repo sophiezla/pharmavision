@@ -295,3 +295,16 @@ Template:
 - Decision: LAC, Mondrian. Rule (E10.md): methods whose mean per-class coverage is at most 2 pp below 1 - alpha for both classes at alpha 0.05 and 0.10 qualify; the smallest mean set size at alpha 0.10 wins. LAC marginal (largest shortfall 1.63 pp) and LAC Mondrian (0.67 pp) qualify, both APS variants do not (2.51, 2.36 pp); LAC Mondrian has the smaller mean set size (0.9169 vs 0.9176). Criterion met.
 - Evidence: `results/tables/e10_conformal_choice.{md,json}`, `results/tables/e10_conformal.md`.
 - Consequences: the E11 end-to-end system and later phases (E16 re-fit, the app) use LAC Mondrian on `cal`. Mean set size is below 1: with a near-perfect classifier, coverage 1 - alpha is reached mostly through empty sets, not size-2 sets (CHECKPOINT 5 report, Section 4).
+
+## ADR-029 · No further manual annotation; reduced Phases 6-8 scope
+- Date: 2026-10-25 · Status: Accepted (Sophie, 2026-10-25: "make this more efficient, it's okay to do less; I will not annotate anything anymore")
+- Context: PLAN 1.8 (concept labels on 300 images) and PLAN 7.4 (review of 100 synthetic images per generator) need Sophie's annotation, which will not happen. Sophie also asked for less GPU time than the amended ADR-027 kit (about 17 h estimated).
+- Options considered: (a) keep every arm and wait for labels; (b) replace the labels with automatic concept labels (new, unvalidated method); (c) drop what depends on annotation and cut the arms with the least information per GPU hour (chosen).
+- Decision:
+    - Dropped, needs annotation: E13 entirely (PLAN 1.8, 6.5-6.8: concept bottleneck and TCAV); the synthetic-image review (PLAN 7.4) and its sample in the MODELS bundle.
+    - Dropped, no review possible and most of the synthesis cost: SD inpainting (PLAN 7.3, the 2.1 GB download approved in ADR-027 is no longer needed). E14 uses the procedural generator only; its edits come with exact masks (E12 localization, PLAN 6.3).
+    - Reduced: E14 ratios {1, 4} plus synthetic-only (ratio 0 = the final model's existing runs), 45 runs instead of 150; E16 at T = 4 only (2 students, 30 runs instead of 60); E15 without the PGD + synthetic-edit arm ("both"), and 3 arms-race rounds instead of 5.
+    - Kept as pre-registered: E12 (all three models and methods), E8 open-set re-run with the best E14 arm, the E15 attack pass (final model, E14 best arm, PGD defence), E16 deployment pass.
+    - X2 (PLAN 9.2, human-AI study) is not scheduled: it needs human participants.
+- Evidence: GPU estimates in E12.md, E14.md, E15.md and E16.md; the per-job time of a final-model run (1.09 min, `results/job_logs/phase3_*_e05_stage1_e5.log`).
+- Consequences: estimated kit time about 9 h instead of about 17 h (E12 under 2 h; synthesis without SD under 1 h; E14 45 runs about 1.3 h plus 6 E8 runs; E16 about 1.3 h with the deployment pass; E15 about 3.5 h); estimates, not timings. Code: `pipeline/combined.py` (constants and stage list), `configs/experiment/e15_defence.yaml`, `e16_distill.yaml`, `configs/synthesis/e14.yaml`. The library code for CBMs, TCAV, inpainting and the review app stays in the repository, unused by the kit. CHECKPOINT 6 covers E12 only.

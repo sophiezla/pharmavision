@@ -1,6 +1,6 @@
 # @package _global_
 # E15 defences (PLAN 7.10; docs/experiments/E15.md): PGD adversarial training of the final model
-# (ADR-020), alone ("adv") or on top of the best E14 arm's synthetic images ("both").
+# (ADR-020), "adv" (the "both" arm on top of E14 synthetic images was dropped, ADR-029).
 exp: e15
 task: adv_train
 variant: adv

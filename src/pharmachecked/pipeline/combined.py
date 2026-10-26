@@ -5,15 +5,17 @@ Pre-registered in docs/experiments/E12.md-E16.md and ADR-027. Phase 5 ran in its
 reference models. Stages:
 
 1. (self-test only) toy reference models via ``pipeline.phase5``.
-2. E14 synthesis: OCR, procedural edits, SD inpainting (``synthesis.generate``).
+2. E14 synthesis: OCR and procedural edits (``synthesis.generate``).
 3. E12 saliency pass: final model, DINOv2-S (rollout), E4 multi-branch (MIL attention).
-4. E13 concept bottleneck (3 modes x 15 runs), then TCAV on the final model's seed-0 models.
-5. E14 arms (2 generators x ratios 0.5/1/2/4, synthetic-only), the best-arm decision, and the
-   E8 open-set re-run with it.
-6. E16 distillation (2 students x T in {2, 4}), then the
-   ONNX export / INT8 / CPU prediction pass of every student and the final model.
-7. E15 defences (PGD training, PGD + E14 best), the attack pass over the final model, the E14
-   best arm and both defences, then 5 arms-race rounds.
+4. E14 arms (procedural, ratios 1 and 4, synthetic-only), the best-arm decision, and the E8
+   open-set re-run with it.
+5. E16 distillation (2 students at T = 4), then the ONNX export / INT8 / CPU prediction pass of
+   every student and the final model.
+6. E15 PGD defence, the attack pass over the final model, the E14 best arm and the PGD defence,
+   then 3 arms-race rounds.
+
+Reduced scope (ADR-029): no E13 (no concept labels), no SD inpainting, no synthetic-image
+review sample, fewer E14 ratios, one E16 temperature, no PGD + synthetic defence, 3 race rounds.
 
 Every stage is resumable: finished runs are skipped by the job runner, finished per-run files
 are kept. A failing stage does not stop independent later stages.
@@ -25,7 +27,6 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 
-import pandas as pd
 from omegaconf import OmegaConf
 
 from pharmachecked.config import CONFIG_DIR, REPO_ROOT
@@ -41,11 +42,11 @@ log = get_logger(__name__)
 PIPELINE_DIR = phase4.PIPELINE_DIR
 FINAL = phase4.FINAL
 LORA = FINAL.overrides
-E14_RATIOS = {"r05": 0.5, "r1": 1.0, "r2": 2.0, "r4": 4.0}
-GENERATORS = ("procedural", "inpaint")
+E14_RATIOS = {"r1": 1.0, "r4": 4.0}  # ratio 0 = the final model's runs (ADR-029)
+GENERATORS = ("procedural",)  # SD inpainting dropped with the synthetic review (ADR-029)
 STUDENTS = ("mobilenetv3_large", "efficientnet_lite0")
-TEMPERATURES = {"kd-t2": 2.0, "kd-t4": 4.0}
-RACE_ROUNDS = 5
+TEMPERATURES = {"kd-t4": 4.0}
+RACE_ROUNDS = 3
 E12_MODELS = {  # (experiment, model slug, variant) -> saliency methods (E12.md)
     "final": ("gradcam", "gradcampp", "ig", "random"),
     "vit": ("rollout", "ig", "random"),
@@ -90,8 +91,8 @@ PROFILES = {
         phase4.PROFILES["selftest"],
         {"r1": 1.0},
         STUDENTS[:1],
-        {"kd-t2": 2.0},
-        2,
+        TEMPERATURES,
+        1,
         6,
         synthesis_overrides={"ocr_backend": "stub", "inpaint.backend": "stub", "per_source": 2},
         refs={
@@ -160,21 +161,8 @@ def _paths() -> object:
 # --- stage 2: synthesis ----------------------------------------------------------------------
 
 
-def qc_sample(table: pd.DataFrame, per_generator: int) -> pd.DataFrame:
-    """Random sample of up to ``per_generator`` synthetic images per generator (PLAN 7.4).
-
-    Built per group and concatenated: pandas 3 drops the grouping column from
-    ``groupby(...).apply`` results, which the QC list needs.
-    """
-    parts = [
-        g.sample(n=min(len(g), per_generator), random_state=42)
-        for _, g in table.groupby("generator", sort=True)
-    ]
-    return pd.concat(parts).sort_values(["generator", "image_id"])
-
-
 def synthesis(p: Profile) -> bool:
-    """Generate the E14 synthetic images and the QC sample list (PLAN 7.1-7.4)."""
+    """Generate the E14 synthetic images (PLAN 7.1-7.2) and their counts per edit type."""
     from pharmachecked.synthesis.generate import generate, load_synthesis_config
 
     cfg = load_synthesis_config()
@@ -184,15 +172,11 @@ def synthesis(p: Profile) -> bool:
         ["experiment=e14_synthetic", "model=efficientnetv2_s", *p.base.extra, *p.extra]
     )
     try:
-        table = generate(run_cfg, cfg, limit=p.synthesis_limit)
+        table = generate(run_cfg, cfg, limit=p.synthesis_limit, generators=GENERATORS)
     except Exception:
         log.exception("E14 synthesis failed")
         return False
-    qc = qc_sample(table, int(cfg.qc_per_generator))
     PIPELINE_DIR.mkdir(parents=True, exist_ok=True)
-    qc[["image_id", "generator", "edit_type"]].to_csv(
-        PIPELINE_DIR / f"{_exp(p, 'e14')}_qc_sample.csv", index=False, lineterminator="\n"
-    )
     counts = table.groupby(["generator", "edit_type"]).size().reset_index(name="images")
     counts.to_csv(
         PIPELINE_DIR / f"{_exp(p, 'e14')}_synthesis_counts.csv", index=False, lineterminator="\n"
@@ -228,66 +212,7 @@ def e12(p: Profile) -> bool:
     return ok
 
 
-# --- stage 4: E13 ------------------------------------------------------------------------------
-
-
-def e13_jobs(p: Profile) -> list[list[str]]:
-    """Concept-bottleneck runs: 3 modes x folds x seeds."""
-    concepts = []
-    if p.name == "selftest":
-        concepts = [f"cbm.concepts_file={toy_concepts().as_posix()}"]
-    return [
-        job
-        for mode in ("independent", "sequential", "joint")
-        for job in _jobs(
-            p,
-            Arm("cbm_efficientnetv2_s", mode, "cbm"),
-            "e13_cbm",
-            _exp(p, "e13"),
-            (f"cbm.mode={mode}", *concepts, *p.extra),
-        )
-    ]
-
-
-def toy_concepts() -> Path:
-    """Random concept labels for the toy development pool (self-test only)."""
-    import numpy as np
-
-    from pharmachecked.data.annotations import CONCEPT_COLUMNS, CONCEPTS
-    from pharmachecked.data.toy import make_toy_dataset
-
-    paths = _paths()
-    toy = make_toy_dataset(Path(paths.toy_dir))
-    out = Path(paths.toy_dir) / "concepts.csv"
-    ids = pd.read_csv(toy.manifest, dtype={"image_id": str})["image_id"]
-    rng = np.random.default_rng(0)
-    values = np.array(["present", "absent", "unsure"])
-    table = pd.DataFrame({"image_id": ids})
-    for c in CONCEPTS:
-        table[c] = values[rng.integers(0, 3, len(ids))]
-    table["annotator"], table["timestamp"] = "toy", ""
-    table[list(CONCEPT_COLUMNS)].to_csv(out, index=False, lineterminator="\n")
-    return out
-
-
-def tcav(p: Profile) -> bool:
-    """TCAV on the final model's seed-0 fold models."""
-    from pharmachecked.interpret.tcav import TCAV_FILE, tcav_pass
-
-    paths = _paths()
-    concepts = (
-        toy_concepts() if p.name == "selftest" else REPO_ROOT / "data/annotations/concepts.csv"
-    )
-    runs = [r for r in refs(p, "final") if r.seed == 0]
-
-    def work(r: RunRecord, ckpt: Path) -> str:
-        tcav_pass(r.root, paths, ckpt, concepts)
-        return "done"
-
-    return _pass(f"{_exp(p, 'e13')}_tcav", runs, TCAV_FILE, work)
-
-
-# --- stage 5: E14 ------------------------------------------------------------------------------
+# --- stage 4: E14 ------------------------------------------------------------------------------
 
 
 def e14_arms(p: Profile) -> dict[str, tuple[str, float, bool]]:
@@ -377,7 +302,7 @@ def e14_open_set_jobs(p: Profile, best: dict[str, object]) -> list[list[str]]:
     return jobs
 
 
-# --- stage 6: E16 ------------------------------------------------------------------------------
+# --- stage 5: E16 ------------------------------------------------------------------------------
 
 
 def e16_jobs(p: Profile) -> list[list[str]]:
@@ -410,33 +335,23 @@ def deploy(p: Profile) -> bool:
     return _pass(f"{_exp(p, 'e16')}_deploy", runs, DEPLOY_JSON, work)
 
 
-# --- stage 7: E15 ------------------------------------------------------------------------------
+# --- stage 6: E15 ------------------------------------------------------------------------------
 
 
-def e15_defence_jobs(p: Profile, best: dict[str, object] | None) -> list[list[str]]:
-    """PGD adversarial training alone and on top of the best E14 arm."""
-    jobs = _jobs(
+def e15_defence_jobs(p: Profile) -> list[list[str]]:
+    """PGD adversarial training (the PGD + synthetic-edit arm was dropped, ADR-029)."""
+    return _jobs(
         p, Arm("efficientnetv2_s", "adv", "adv_train", LORA), "e15_defence", _exp(p, "e15"), p.extra
     )
-    if best is not None:
-        jobs += _jobs(
-            p,
-            Arm("efficientnetv2_s", "both", "adv_train", LORA),
-            "e15_defence",
-            _exp(p, "e15"),
-            (*_syn_overrides(str(best["generator"]), float(best["ratio"]), False), *p.extra),
-        )
-    return jobs
 
 
 def attacks(p: Profile, best: dict[str, object] | None) -> bool:
-    """E15 attack pass: final model, E14 best arm, PGD defence, PGD + E14 defence."""
+    """E15 attack pass: final model, E14 best arm (synthetic-edit defence), PGD defence."""
     from pharmachecked.adversarial.evaluate import ADV_FILE, adversarial_pass
 
     paths = _paths()
     runs = refs(p, "final")
     runs += arm_runs(_exp(p, "e15"), "efficientnetv2-s", "adv")
-    runs += arm_runs(_exp(p, "e15"), "efficientnetv2-s", "both")
     if best is not None:
         runs += arm_runs(_exp(p, "e14"), "efficientnetv2-s", str(best["variant"]))
 
@@ -489,8 +404,6 @@ def run(profile_name: str) -> int:
     syn_ok = synthesis(p)
     ok = syn_ok and ok
     ok = e12(p) and ok
-    ok = phase4._run(f"{pre}_e13", e13_jobs(p)) and ok
-    ok = tcav(p) and ok
     best = None
     if syn_ok:
         ok = phase4._run(f"{pre}_e14", e14_jobs(p)) and ok
@@ -499,7 +412,7 @@ def run(profile_name: str) -> int:
             ok = phase4._run(f"{pre}_e14os", e14_open_set_jobs(p, best)) and ok
     ok = phase4._run(f"{pre}_e16", e16_jobs(p)) and ok
     ok = deploy(p) and ok
-    ok = phase4._run(f"{pre}_e15_defences", e15_defence_jobs(p, best)) and ok
+    ok = phase4._run(f"{pre}_e15_defences", e15_defence_jobs(p)) and ok
     ok = attacks(p, best) and ok
     for r in range(1, p.race_rounds + 1):
         ok = phase4._run(f"{pre}_e15_race_round{r}", race_jobs(p, r)) and ok

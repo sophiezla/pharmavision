@@ -130,7 +130,6 @@ def main() -> int:
             "none": refs(p, "final"),
             "synth (E14 best)": arm_runs(f"{s}e14", "efficientnetv2-s", str(best["variant"])),
             "adv": arm_runs(f"{s}e15", "efficientnetv2-s", "adv"),
-            "both": arm_runs(f"{s}e15", "efficientnetv2-s", "both"),
         }
         _write(
             f"{s}e15_defences",

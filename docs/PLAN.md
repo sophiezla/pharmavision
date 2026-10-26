@@ -50,7 +50,7 @@ Answered 2026-10-09 (ADR-001): raw data copied into `data/raw/`; development poo
     - AC: test that the dataset never yields an index from another partition.
 - [x] **1.7 Packaging-type labels.** (d8e6143, 0b6d095, 9fed76a + this commit; five-type scheme, ADR-007) `data/annotation_app.py` (Gradio): CLIP zero-shot pre-labels each image as `blister | packaging | other` (three-type scheme, ADR-007; originally `box | blister | bottle | loose_pill | other`) with prompts `"a photo of a medicine {type}"`; Sophie's earlier labels are imported and she labels the rest in the app; writes `data/annotations/packaging_type.csv` (`image_id, clip_label, clip_conf, final_label, annotator, timestamp`).
     - AC: app launches; after Sophie annotates, every image has `final_label`; CLIP-vs-human agreement saved to `results/tables/packaging_label_agreement.md`.
-- [ ] **1.8 Concept labels.** Same app, concept mode, on a stratified subset of 300 images from the development pool (never the test set): `text_error, color_mismatch, print_blur, logo_distortion, layout_misalignment, missing_security_feature, seal_or_package_damage`, each `present | absent | unsure`. Writes `data/annotations/concepts.csv`.
+- [ ] (dropped, ADR-029: no further annotation) **1.8 Concept labels.** Same app, concept mode, on a stratified subset of 300 images from the development pool (never the test set): `text_error, color_mismatch, print_blur, logo_distortion, layout_misalignment, missing_security_feature, seal_or_package_damage`, each `present | absent | unsure`. Writes `data/annotations/concepts.csv`.
     - AC: subset selection script committed; annotations saved (Sophie may complete this during Phases 2–5; it gates only E13).
 - [x] **1.9 OOD reference sets.** (c6a4e21, 0b6d095 + this commit; Places365 replaced by Open Images V7 scenes, approved 2026-10-10) Assemble `data/ood/far/` (~500 natural-scene and texture images from a public dataset available through `torchvision.datasets` or the Hugging Face Hub, e.g. DTD textures + a scene dataset) and `data/ood/near/` (~500 non-medicine product-packaging images from a public grocery/retail product dataset). Propose specific datasets and their licences to Sophie before downloading.
     - AC: manifests `data/ood/*/manifest.csv` with source and licence columns.
@@ -196,15 +196,15 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 - [ ] **6.1** `interpret/cams.py` (Grad-CAM, Grad-CAM++ via `grad-cam`), integrated gradients (Captum), `interpret/attention_rollout.py`, MIL tile-attention upsampled to image size, random-map baseline.
 - [ ] **6.2** `evaluation/faithfulness.py`: deletion and insertion AUC (5% steps, blurred-image baseline); model-randomization sanity check (cascading re-initialization from the top layer; Spearman correlation of maps vs original).
-- [ ] **6.3** Localization on E14 synthetic counterfeits (run after 7.4): pointing-game accuracy and IoU of the top-15% map region vs edit mask.
+- [ ] (after 7.2 instead of 7.4, ADR-029) **6.3** Localization on E14 synthetic counterfeits (run after 7.4): pointing-game accuracy and IoU of the top-15% map region vs edit mask.
 - [ ] **6.4** Table `e12_faithfulness`; figure `e12_examples` (4 images × 6 methods).
 
 ### E13 · Concept bottleneck + TCAV
 
-- [ ] **6.5** `models/concept_bottleneck.py`: backbone → 7 sigmoid concept outputs → logistic-regression label head on concepts only; independent, sequential and joint training (Koh et al., 2020); concept loss masked where labels are missing or `unsure`.
-- [ ] **6.6** Intervention: replace the k most uncertain predicted concepts with annotated values, k = 0..7; task AUROC per k.
-- [ ] **6.7** `interpret/tcav.py`: concept activation vectors from annotated positives vs random negatives at 2–3 layers of the final model; 20 random-concept repeats; two-sided t-test.
-- [ ] **6.8** Tables `e13_concepts`, `e13_cbm_vs_blackbox`; figures `e13_intervention`, `e13_tcav`.
+- [ ] (dropped, ADR-029: no further annotation) **6.5** `models/concept_bottleneck.py`: backbone → 7 sigmoid concept outputs → logistic-regression label head on concepts only; independent, sequential and joint training (Koh et al., 2020); concept loss masked where labels are missing or `unsure`.
+- [ ] (dropped, ADR-029: no further annotation) **6.6** Intervention: replace the k most uncertain predicted concepts with annotated values, k = 0..7; task AUROC per k.
+- [ ] (dropped, ADR-029: no further annotation) **6.7** `interpret/tcav.py`: concept activation vectors from annotated positives vs random negatives at 2–3 layers of the final model; 20 random-concept repeats; two-sided t-test.
+- [ ] (dropped, ADR-029: no further annotation) **6.8** Tables `e13_concepts`, `e13_cbm_vs_blackbox`; figures `e13_intervention`, `e13_tcav`.
 
 **CHECKPOINT 6.**
 
@@ -217,9 +217,9 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 - [ ] **7.1** `synthesis/ocr.py` (EasyOCR text boxes, cached per image).
 - [ ] **7.2** `synthesis/procedural.py`: edit types `font_swap, char_substitution, dose_digit_change, local_hue_shift (10–30°), local_blur_or_rehalftone, logo_warp, local_jpeg`; each returns edited image, binary mask, edit type, strength. Only authentic images from training partitions; output inherits `group_id` and fold; saved under `data/processed/synthetic/` with `synthetic_manifest.csv`.
     - AC: `test_leakage.py` covers synthetic inheritance.
-- [ ] **7.3** `synthesis/inpaint.py`: Stable Diffusion inpainting (verify model ID and licence; ask Sophie before downloading weights) on masks derived from OCR/logo regions; prompts from a fixed list in config.
-- [ ] **7.4** Quality check: random 100 synthetic images per generator into the annotation app; Sophie labels plausible/implausible → `data/annotations/synthetic_quality.csv`.
-- [ ] **7.5** Arms (final model, full protocol): synthetic:real counterfeit ratio 0, 0.5, 1, 2, 4 per generator; synthetic-only (no real counterfeits); E8 open-set re-run with the best ratio. Evaluation always on real held-out images only.
+- [ ] (dropped, ADR-029: SD inpainting not run) **7.3** `synthesis/inpaint.py`: Stable Diffusion inpainting (verify model ID and licence; ask Sophie before downloading weights) on masks derived from OCR/logo regions; prompts from a fixed list in config.
+- [ ] (dropped, ADR-029: no further annotation) **7.4** Quality check: random 100 synthetic images per generator into the annotation app; Sophie labels plausible/implausible → `data/annotations/synthetic_quality.csv`.
+- [ ] (reduced, ADR-029: procedural generator only, ratios 1 and 4 + synthetic-only; ratio 0 = the final model's runs) **7.5** Arms (final model, full protocol): synthetic:real counterfeit ratio 0, 0.5, 1, 2, 4 per generator; synthetic-only (no real counterfeits); E8 open-set re-run with the best ratio. Evaluation always on real held-out images only.
 - [ ] **7.6** Figure `e14_ratio_curve`; tables `e14_synthetic_only`, `e14_open_set_gain`.
 
 ### E15 · Adaptive adversary
@@ -227,8 +227,8 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 - [ ] **7.7** `adversarial/attacks.py`: FGSM, PGD-20 (step ε/8) at L∞ ε ∈ {1,2,4,8}/255 via `torchattacks`, targeted toward "authentic", on counterfeit held-out images.
 - [ ] **7.8** `adversarial/physical.py`: optimize global brightness/contrast/hue/saturation parameters only (bounded), and a square patch ≤ 5% of image area at a fixed location, by gradient ascent.
 - [ ] **7.9** `adversarial/blackbox.py`: random search over procedural-edit parameters, 200 score-only queries per image.
-- [ ] **7.10** Defences: PGD adversarial training (ε=4/255, 7 steps, 50% adversarial per batch); synthetic-edit training (E14 best); both.
-- [ ] **7.11** Arms race: 5 rounds; each round the black-box attacker searches evasive edits on training-fold counterfeits, detector retrains including them, fresh search on held-out folds measures evasion rate.
+- [ ] (reduced, ADR-029: no PGD + synthetic-edit arm) **7.10** Defences: PGD adversarial training (ε=4/255, 7 steps, 50% adversarial per batch); synthetic-edit training (E14 best); both.
+- [ ] (reduced, ADR-029: 3 rounds) **7.11** Arms race: 5 rounds; each round the black-box attacker searches evasive edits on training-fold counterfeits, detector retrains including them, fresh search on held-out folds measures evasion rate.
 - [ ] **7.12** Figures `e15_success_vs_eps`, `e15_arms_race`; table `e15_defences` (clean AUROC cost vs robust gain).
 
 **CHECKPOINT 7.**
@@ -237,7 +237,7 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 ## Phase 8 · Deployment (E16 + app)
 
-- [ ] **8.1** `training/distill.py`: students MobileNetV3-Large and EfficientNet-Lite0; loss = 0.5·CE + 0.5·T²·KL(teacher‖student), T ∈ {2,4}; teacher = final model (or 3-seed ensemble, per ADR). Full protocol.
+- [ ] (reduced, ADR-029: T = 4 only) **8.1** `training/distill.py`: students MobileNetV3-Large and EfficientNet-Lite0; loss = 0.5·CE + 0.5·T²·KL(teacher‖student), T ∈ {2,4}; teacher = final model (or 3-seed ensemble, per ADR). Full protocol.
 - [ ] **8.2** `deploy/export_onnx.py` (opset documented; numerical check vs PyTorch outputs, max abs diff ≤ 1e-4 for FP32), `deploy/quantize.py` (ONNX Runtime static INT8, 200 training images for calibration).
 - [ ] **8.3** Re-fit temperature and conformal thresholds for every exported model; re-run E10 metrics.
 - [ ] **8.4** `deploy/latency.py`: median of 100 runs after 10 warm-ups, batch 1, laptop CPU; phone-browser latency via a minimal ONNX Runtime Web page (record device model and browser).
@@ -252,7 +252,7 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 ## Phase 9 · Optional extensions (only if Sophie approves)
 
 - [ ] **9.1 X1 Federated.** `federated/fedavg.py`: sites = source datasets; 4-site non-IID variant split by packaging type; centralized vs local-only vs FedAvg vs FedProx (μ ∈ {0.01, 0.1}); 50 rounds × 1 local epoch. Figure `x1_rounds`; table `x1_summary`.
-- [ ] **9.2 X2 Human–AI study.** Build the study app only after Sophie confirms consent forms and review-board approval are in place. Within-subject, 3 counterbalanced blocks × 20 balanced held-out images; store anonymous participant codes only. Analysis script: accuracy, sensitivity, specificity, over-reliance rate, mixed-effects logistic regression (participant random intercept).
+- [ ] (not scheduled, ADR-029) **9.2 X2 Human–AI study.** Build the study app only after Sophie confirms consent forms and review-board approval are in place. Within-subject, 3 counterbalanced blocks × 20 balanced held-out images; store anonymous participant codes only. Analysis script: accuracy, sensitivity, specificity, over-reliance rate, mixed-effects logistic regression (participant random intercept).
 
 ---
 

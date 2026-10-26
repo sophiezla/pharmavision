@@ -22,4 +22,3 @@ inpaint:
     - pharmaceutical packaging print with slightly wrong colours
     - low quality reprint of a pill box label
     - blister pack foil print with imperfect text
-qc_per_generator: 100     # PLAN 7.4: random sample per generator returned for Sophie's review

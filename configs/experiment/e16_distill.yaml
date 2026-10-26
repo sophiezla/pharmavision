@@ -1,14 +1,14 @@
 # @package _global_
 # E16 distillation (PLAN 8.1; docs/experiments/E16.md). Students: mobilenetv3_large and
 # efficientnet_lite0 (full fine-tuning, default recipe); the job sets model, distill.temperature
-# and the variant (kd-t2 | kd-t4). Teacher: the final model's run of the same fold and seed.
+# and the variant (kd-t4; kd-t2 dropped, ADR-029). Teacher: the final model's run of the same fold and seed.
 exp: e16
 task: distill
-variant: kd-t2
+variant: kd-t4
 data:
   split_version: 2
 distill:
-  temperature: 2.0
+  temperature: 4.0
   alpha: 0.5                # loss = (1 - alpha) BCE + alpha T^2 KL
   teacher_exp: e05
   teacher_model: efficientnetv2-s

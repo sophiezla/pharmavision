@@ -7,7 +7,7 @@ Results bundles never contain weights. This second, PRIVATE bundle carries:
   evaluation run on the laptop, which holds the locked test set);
 * ``checkpoints/<run_id>/model_{fp32,int8}.onnx`` of the fold-0 / seed-0 run of each E16 arm and
   of the final model (laptop and phone latency, PLAN 8.4);
-* ``synthetic_qc/`` the PLAN 7.4 review sample (images and masks) and the synthetic manifest.
+* ``synthetic_qc/synthetic_manifest.csv`` (the PLAN 7.4 review sample was dropped, ADR-029).
 
 ``MANIFEST.json`` lists the SHA-256 of every file; ``scripts/unpack_models.py`` verifies and
 installs it.
