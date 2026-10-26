@@ -17,6 +17,83 @@ retyped. Template:
 
 ---
 
+## 2026-10-25 · E11 · OOD guard and end-to-end system (Phase 5 kit)
+- Commit: Phase 5 GPU kit `PRIVATE_gpu_kit_phase5_46d0a9f.zip` (RTX 5060; source 46d0a9f, recreated as 5a6cdc8), results `RESULTS_phase5_20261025-082954.zip` installed in 863278a; tables 101644f, note fix 3006ecc.
+- Command(s): pipeline `p5_reliability`; `python scripts/phase5_tables.py --exp e11` (after `--exp e10`)
+- Hypothesis: feature-space scores beat output scores, especially near OOD; near is harder than far; the full system has a much lower error on issued predictions (E11.md).
+- Runs: no training; the 75 fold models (`p4ref_*`, `e05_efficientnetv2-s_default_*`) each wrote `reliability_predictions.csv`; 0 failures (`results/pipeline/p5_reliability_status.json`).
+- Result (from `results/tables/e11_end_to_end.md`):
+
+| system | runs | ID rejected | OOD rejected | abstained | issued | error on issued | OOD among issued |
+|---|---|---|---|---|---|---|---|
+| bare classifier | 15 | 0.000 ± 0.000 | 0.000 ± 0.000 | 0.000 ± 0.000 | 1.000 ± 0.000 | 0.829 ± 0.003 | 0.826 ± 0.001 |
+| full system (alpha 0.1) | 15 | 0.052 ± 0.051 | 0.766 ± 0.221 | 0.159 ± 0.184 | 0.199 ± 0.045 | 0.184 ± 0.139 | 0.183 ± 0.139 |
+| full system (alpha 0.05) | 15 | 0.052 ± 0.051 | 0.766 ± 0.221 | 0.058 ± 0.084 | 0.300 ± 0.180 | 0.337 ± 0.236 | 0.335 ± 0.237 |
+
+  Guard (from `results/tables/e11_guard_choice.md`):
+
+| score | select-half OOD AUROC |
+|---|---|
+| msp | 0.9761 |
+| energy | 0.9761 |
+| maha | 0.973 |
+| knn | 0.9593 |
+
+- Interpretation: for the final model MSP is the best guard on the `select` half; Mahalanobis is best on near OOD only for ConvNeXt and DINOv2 (`e11_ood.md`). The full system's error on issued predictions is 0.184 at alpha 0.10 against 0.829 for the bare classifier, mainly because the guard rejects 0.766 of OOD images; almost all remaining errors are accepted OOD images.
+- Issues / anomalies: alpha 0.05 issues more and errs more than alpha 0.10 (E11.md findings). The table note mislabelled the last two columns as fractions of the stream; corrected in 3006ecc (numbers unchanged).
+- Next: CHECKPOINT 5.
+
+## 2026-10-25 · E10 · Calibration, selective prediction, conformal (Phase 5 kit)
+- Commit: as E11 (same kit and results bundle); tables 101644f.
+- Command(s): pipeline `p5_reliability`; `python scripts/phase5_tables.py --exp e10`; `python scripts/make_figures.py --exp e10`
+- Hypothesis: temperature scaling does not raise ECE; the 3-seed ensemble has lower AURC; Mondrian keeps per-class coverage within 2 pp where marginal may not (E10.md).
+- Runs: as E11 (75 fold models, 0 failures).
+- Result (from `results/tables/e10_calibration.md`):
+
+| config | runs | images | T fitted (identifiable) | temperature (fitted runs) | ece before | ece after | ece diff (after - before) | brier before | brier after | brier diff (after - before) | log_loss before | log_loss after | log_loss diff (after - before) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| convnext-tiny/ft | 15 | 549 | 3 | 1.87 ± 0.94 | 0.0069 | 0.0069 | -0.0000 [-0.0007, 0.0006] | 0.0061 | 0.0061 | -0.0000 [-0.0001, 0.0001] | 0.0245 | 0.0246 | 0.0001 [-0.0003, 0.0005] |
+| dinov2-vits14/ft | 15 | 549 | 8 | 2.00 ± 0.93 | 0.0137 | 0.017 | 0.0034 [-0.0042, 0.0095] | 0.0102 | 0.0102 | -0.0001 [-0.0007, 0.0004] | 0.0485 | 0.0525 | 0.0040 [0.0003, 0.0063] |
+| efficientnetv2-s/default | 15 | 549 | 7 | 1.29 ± 0.55 | 0.0103 | 0.0099 | -0.0004 [-0.0030, 0.0030] | 0.0075 | 0.0074 | -0.0000 [-0.0003, 0.0001] | 0.0296 | 0.028 | -0.0016 [-0.0074, 0.0015] |
+| handcrafted-xgb/default | 15 | 549 | 15 | 1.06 ± 0.18 | 0.0319 | 0.0331 | 0.0012 [-0.0117, 0.0153] | 0.0606 | 0.061 | 0.0004 [-0.0008, 0.0015] | 0.1963 | 0.1996 | 0.0033 [-0.0038, 0.0100] |
+| swin-tiny/ft | 15 | 549 | 3 | 1.04 ± 0.44 | 0.0039 | 0.004 | 0.0001 [-0.0002, 0.0005] | 0.0031 | 0.0031 | 0.0000 [-0.0000, 0.0001] | 0.0175 | 0.0176 | 0.0000 [-0.0002, 0.0003] |
+
+  Conformal choice (from `results/tables/e10_conformal_choice.md`):
+
+| score | mode | largest per-class shortfall (pp) | mean set size (alpha 0.10) | qualifies |
+|---|---|---|---|---|
+| lac | marginal | 1.63 | 0.9176 | True |
+| lac | mondrian | 0.67 | 0.9169 | True |
+| aps | marginal | 2.51 | 0.9176 | False |
+| aps | mondrian | 2.36 | 0.9114 | False |
+
+- Interpretation: temperature scaling neither helps nor hurts ECE or Brier (every CI includes 0); the temperature was identifiable for only 3–8 of 15 fold models of each deep model. The ensemble's mean AURC is equal or lower for all five models (`e10_selective.md`, descriptive). LAC Mondrian is chosen for the final model (ADR-028).
+- Issues / anomalies: conformal sets are mostly singletons or empty; size-2 sets (abstentions) are almost absent for the deep models, so coverage 1 - alpha is reached through empty sets. Re-predicted held-out probabilities differ from the original OOF by up to 1.08e-02 (efficientnetv2-s) and 4.14e-03 (convnext-tiny); not investigated.
+- Next: E11 uses LAC Mondrian.
+
+## 2026-10-25 · E9 · Extension to severities 6–8 (Phase 5 kit, ADR-024)
+- Commit: as E11 (same kit and results bundle); tables and figure 101644f.
+- Command(s): pipeline `e09_extension`; `python scripts/phase5_tables.py --exp e09ext`; `python scripts/make_figures.py --exp e09ext`
+- Hypothesis: the stronger severities find a failure point at the 0.85 limit (ADR-024).
+- Runs: no training; the same 75 fold models each wrote `corruption_predictions_ext.csv` (27 conditions); 0 failures (`results/pipeline/e09_extension_status.json`).
+- Result (from `results/tables/e09_ext_quality_limits.md`):
+
+| corruption | max_severity | threshold |
+|---|---|---|
+| brightness | 8 | 0.85 |
+| contrast | 8 | 0.85 |
+| gaussian_blur | 8 | 0.85 |
+| gaussian_noise | 8 | 0.85 |
+| glare | 8 | 0.85 |
+| jpeg | 8 | 0.85 |
+| motion_blur | 8 | 0.85 |
+| perspective | 8 | 0.85 |
+| rotation | 8 | 0.85 |
+
+- Interpretation: the final model still has no failure point; its lowest condition is perspective warp at severity 8 (0.8743). DINOv2 (brightness from severity 6) and ConvNeXt (brightness at severity 8) do fall below 0.85 (`e09_ext_severity.md`).
+- Issues / anomalies: the 1–5 rows equal `e09_severity` exactly. Handcrafted rotation AUROC is not monotonic in severity (0.8815 at 45°, 0.9602 at 90°).
+- Next: none for E9.
+
 ## 2026-10-20 · E9 · Robustness to image corruptions (Phase 4 kit)
 - Commit: Phase 4 GPU kit `PRIVATE_gpu_kit_phase4_d0d2288.zip` (RTX 5060), results `RESULTS_phase4_20261020-125833.zip`; tables committed with this entry.
 - Command(s): pipeline `run_e9` (after stage 3); `python scripts/phase4_tables.py --exp e09`; `python scripts/make_figures.py --exp e09`

@@ -1,0 +1,5 @@
+score,mode,largest per-class shortfall (pp),mean set size (alpha 0.10),qualifies
+lac,marginal,1.63,0.9176,True
+lac,mondrian,0.67,0.9169,True
+aps,marginal,2.51,0.9176,False
+aps,mondrian,2.36,0.9114,False
