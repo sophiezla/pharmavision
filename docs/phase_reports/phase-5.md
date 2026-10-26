@@ -153,6 +153,14 @@ Per-condition AUROC for severities 1–8: `results/tables/e09_ext_severity.md`.
 4. **Git recovery.** Accept the recreated commits 5a6cdc8 and 4464f59 in place of the lost originals, and push both branches to GitHub?
 5. **CHECKPOINT 5.** Approve Phase 5, merge `phase-5-reliability` into `main` and tag `v0.3-reliable`?
 
+### Answers (Sophie, 2026-10-25)
+
+1. (a) LAC Mondrian accepted as specified (ADR-028 accepted).
+2. (a) Amend ADR-027: the combined kit no longer runs Phase 5.
+3. Delegated with the instruction to take the option with the least time and compute that is still best for the project: approve the Stable Diffusion inpainting download (PLAN 7.3 needs it), drop the cross-entropy-only student arm (not in PLAN 8.1), and accept the run time of the remaining kit above the 4-hour rule (recorded in ADR-027).
+4. The recreated commits 5a6cdc8 and 4464f59 are accepted in place of the lost originals.
+5. CHECKPOINT 5 approved: merge `phase-5-reliability` into `main`, tag `v0.3-reliable`.
+
 ## 6. Proposed plan for the next phase
 
 Phases 6–8 run as one GPU kit (ADR-027, code on `phase-6-8-combined`). Before building it: rebase or merge `phase-6-8-combined` onto the Phase 5 results, apply the answers to questions 2–3, and complete PLAN 1.8 (concept labels) on the laptop. Then build the kit with `--models`, run it on the GPU PC, and review the results one phase at a time (CHECKPOINTS 6, 7, 8).
