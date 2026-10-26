@@ -1,6 +1,8 @@
-"""Combined Phases 5-8 pipeline (ADR-027): job lists match the pre-registered arms."""
+"""Combined Phases 6-8 pipeline (ADR-027): job lists match the pre-registered arms."""
 
 from collections import Counter
+
+import pandas as pd
 
 from pharmachecked.jobs import compose_job
 from pharmachecked.pipeline import combined
@@ -47,3 +49,16 @@ def test_students_are_all_distilled() -> None:
     p = combined.PROFILES["full"]
     jobs = combined.e16_jobs(p)
     assert all("task=distill" in j for j in jobs) and not any("variant=ce" in j for j in jobs)
+
+
+def test_qc_sample_keeps_generator_and_caps_per_generator() -> None:
+    table = pd.DataFrame(
+        {
+            "image_id": [f"i{k}" for k in range(7)],
+            "generator": ["inpaint"] * 2 + ["procedural"] * 5,
+            "edit_type": ["inpaint"] * 2 + ["font_swap"] * 5,
+        }
+    )
+    qc = combined.qc_sample(table, 3)
+    assert {"image_id", "generator", "edit_type"} <= set(qc.columns)
+    assert qc.groupby("generator").size().to_dict() == {"inpaint": 2, "procedural": 3}

@@ -160,6 +160,19 @@ def _paths() -> object:
 # --- stage 2: synthesis ----------------------------------------------------------------------
 
 
+def qc_sample(table: pd.DataFrame, per_generator: int) -> pd.DataFrame:
+    """Random sample of up to ``per_generator`` synthetic images per generator (PLAN 7.4).
+
+    Built per group and concatenated: pandas 3 drops the grouping column from
+    ``groupby(...).apply`` results, which the QC list needs.
+    """
+    parts = [
+        g.sample(n=min(len(g), per_generator), random_state=42)
+        for _, g in table.groupby("generator", sort=True)
+    ]
+    return pd.concat(parts).sort_values(["generator", "image_id"])
+
+
 def synthesis(p: Profile) -> bool:
     """Generate the E14 synthetic images and the QC sample list (PLAN 7.1-7.4)."""
     from pharmachecked.synthesis.generate import generate, load_synthesis_config
@@ -175,11 +188,7 @@ def synthesis(p: Profile) -> bool:
     except Exception:
         log.exception("E14 synthesis failed")
         return False
-    qc = (
-        table.groupby("generator", group_keys=False)
-        .apply(lambda g: g.sample(n=min(len(g), int(cfg.qc_per_generator)), random_state=42))
-        .sort_values(["generator", "image_id"])
-    )
+    qc = qc_sample(table, int(cfg.qc_per_generator))
     PIPELINE_DIR.mkdir(parents=True, exist_ok=True)
     qc[["image_id", "generator", "edit_type"]].to_csv(
         PIPELINE_DIR / f"{_exp(p, 'e14')}_qc_sample.csv", index=False, lineterminator="\n"
