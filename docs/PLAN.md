@@ -161,7 +161,7 @@ All experiments use the five comparison models.
 - [x] **4.8** (b2ebb15; applied at model-input resolution, E09.md) `data/corruptions.py`: Gaussian blur, motion blur, Gaussian noise, JPEG compression, brightness, contrast, rotation, perspective warp, synthetic glare (additive elliptical highlight); 5 severity levels each, parameters listed in `configs/eval/corruptions.yaml`. Unit test: severity 0 = identity; severity monotonic in a simple image statistic.
 - [x] **4.9** (5e44e2f; Phase 4 kit) Evaluate the trained fold models (no retraining) on corrupted held-out folds; seeds fixed for corruption randomness.
 - [x] **4.10** (8f334f7; limit 0.85 per ADR-023) Figure `e09_severity_curves` (one panel per corruption); table `e09_mean_corruption_auroc`; table `e09_quality_limits` = highest severity per corruption at which the final model's AUROC ≥ 0.85 (threshold configurable; confirm with Sophie).
-- [ ] **4.11** (ADR-024; deferred to the next GPU kit) E9 extension: severities 6–8 on the same 75 fold models; extend `e09_severity`, `e09_quality_limits` and the figure.
+- [x] **4.11** (ADR-024; 863278a, 101644f; Phase 5 kit; separate `e09_ext_*` tables and figure; final model's limit 8 everywhere) E9 extension: severities 6–8 on the same 75 fold models; extend `e09_severity`, `e09_quality_limits` and the figure.
 
 **CHECKPOINT 4.**
 
@@ -175,14 +175,14 @@ All experiments use the five comparison models.
 - [x] **5.2** (8425d1e; MC dropout dropped, ADR-025) Uncertainty sources: softmax confidence; 3-seed deep ensemble; ~~MC dropout (20 passes; dropout enabled only in heads)~~ (dropped, ADR-025). `evaluation/selective.py`: risk–coverage curves and AURC.
 - [x] **5.3** (8425d1e; test_conformal passes) `evaluation/conformal.py`: split conformal with LAC and APS scores, marginal and class-conditional (Mondrian), α ∈ {0.05, 0.10}; quantile fitted on `cal`; evaluated on held-out folds. A set of size 2 = abstain.
     - AC: `test_conformal.py` passes.
-- [ ] **5.4** Tables `e10_calibration` (ECE/Brier before/after per model), `e10_conformal` (coverage overall + per class, mean set size, singleton rate, abstention rate); figures `e10_reliability_diagrams`, `e10_risk_coverage`.
+- [x] **5.4** (863278a, 101644f; LAC Mondrian, ADR-028) Tables `e10_calibration` (ECE/Brier before/after per model), `e10_conformal` (coverage overall + per class, mean set size, singleton rate, abstention rate); figures `e10_reliability_diagrams`, `e10_risk_coverage`.
     - AC: chosen conformal method's per-class coverage within 2 pp of target; ADR choosing the method.
 
 ### E11 · OOD guard
 
 - [x] **5.5** (8425d1e; disagreement over the 3 seeds of a fold) `evaluation/ood.py`: MSP, energy score (T=1), Mahalanobis (class-conditional means, shared covariance with shrinkage, fitted on train embeddings), kNN (k=50, cosine, normalized penultimate features), ensemble disagreement. Threshold = 95% acceptance of in-distribution `val`.
-- [ ] **5.6** Table `e11_ood` (AUROC, FPR@95TPR; near vs far).
-- [ ] **5.7** End-to-end: `evaluation/pipeline.py` chains OOD guard → model → temperature → conformal on a mixed stream (held-out folds + all OOD images). Table `e11_end_to_end`: rejection rate, abstention rate, error rate on issued predictions; full system vs bare classifier.
+- [x] **5.6** (101644f) Table `e11_ood` (AUROC, FPR@95TPR; near vs far).
+- [x] **5.7** (101644f, 3006ecc; guard MSP; the chain is `end_to_end_table` in `evaluation/reliability.py`, not a separate `pipeline.py`) End-to-end: `evaluation/pipeline.py` chains OOD guard → model → temperature → conformal on a mixed stream (held-out folds + all OOD images). Table `e11_end_to_end`: rejection rate, abstention rate, error rate on issued predictions; full system vs bare classifier.
 
 **CHECKPOINT 5.** Tag `v0.3-reliable`. (Minimum viable path continues at Phase 8 if Sophie decides so.)
 

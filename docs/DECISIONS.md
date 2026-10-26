@@ -266,3 +266,11 @@ Template:
 - Decision: (a). Models = the five comparison models of ADR-021 (75 fold models). Each writes `reliability_predictions.csv` (train/val/cal/held-out/OOD logits, plus Mahalanobis and kNN scores computed on the GPU PC from embeddings of its own training images, so no embeddings need to leave the PC). The handcrafted model gets output-based OOD scores only. Each OOD set is split once 50/50 (stratified by source and class, seed 42) into `select` (choose the guard score) and `eval` (end-to-end evaluation). The kit also runs the E9 extension (ADR-024).
 - Evidence: E10.md, E11.md.
 - Consequences: one kit of about 1 h; no training. `data/ood` images go into the PRIVATE kit.
+
+## ADR-028 · E10 conformal method: LAC, class-conditional (Mondrian)
+- Date: 2026-10-25 · Status: Proposed (chosen by the pre-registered rule in E10.md; for review at CHECKPOINT 5). ADR-027 is the number used on `phase-6-8-combined`.
+- Context: PLAN 5.4 requires one conformal method for the final model (ADR-020, `efficientnetv2-s/default`), chosen among {LAC, APS} × {marginal, Mondrian} with per-class coverage within 2 pp of the target.
+- Options considered: LAC marginal, LAC Mondrian, APS marginal, APS Mondrian (`results/tables/e10_conformal_choice.md`).
+- Decision: LAC, Mondrian. Rule (E10.md): methods whose mean per-class coverage is at most 2 pp below 1 - alpha for both classes at alpha 0.05 and 0.10 qualify; the smallest mean set size at alpha 0.10 wins. LAC marginal (largest shortfall 1.63 pp) and LAC Mondrian (0.67 pp) qualify, both APS variants do not (2.51, 2.36 pp); LAC Mondrian has the smaller mean set size (0.9169 vs 0.9176). Criterion met.
+- Evidence: `results/tables/e10_conformal_choice.{md,json}`, `results/tables/e10_conformal.md`.
+- Consequences: the E11 end-to-end system and later phases (E16 re-fit, the app) use LAC Mondrian on `cal`. Mean set size is below 1: with a near-perfect classifier, coverage 1 - alpha is reached mostly through empty sets, not size-2 sets (CHECKPOINT 5 report, Section 4).
