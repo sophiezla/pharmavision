@@ -16,7 +16,7 @@ travels as one zip (ADR-011).
    runs are skipped and interrupted runs resume, so it can simply be double-clicked again), keeps
    Windows awake while working, and writes **`RESULTS_<name>_<timestamp>.zip`** next to itself.
 4. Copy the RESULTS zip back to the laptop. A kit built with `--models` (the combined Phases
-   5-8 kit, ADR-027) also writes **`MODELS_<name>_<timestamp>.zip`**: copy it back too.
+   6-8 kit, ADR-027) also writes **`MODELS_<name>_<timestamp>.zip`**: copy it back too.
 
 The kit is PRIVATE: it contains Split E images, which never leave Sophie's machines and are never
 uploaded or committed. Model weights stay in the kit folder on the GPU PC, except those in a

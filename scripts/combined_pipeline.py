@@ -1,4 +1,4 @@
-"""Run Phases 5-8 on one GPU kit (ADR-027): every remaining GPU experiment.
+"""Run Phases 6-8 on one GPU kit (ADR-027): every remaining GPU experiment.
 
 Usage (the kit's 2_RUN.bat does this):
     python scripts/combined_pipeline.py --profile full

@@ -190,7 +190,7 @@ All experiments use the five comparison models.
 
 ## Phase 6 · Interpretability (E12–E13)
 
-The GPU work of Phases 6–8 runs in one combined kit with Phase 5 (ADR-027, `scripts/combined_pipeline.py`); the code is written before CHECKPOINT 5 and each phase checkpoint reviews the returned results.
+The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combined_pipeline.py`; Phase 5 ran in its own kit); the code is written before CHECKPOINT 5 and each phase checkpoint reviews the returned results.
 
 ### E12 · Faithfulness
 

@@ -267,8 +267,8 @@ Template:
 - Evidence: E10.md, E11.md.
 - Consequences: one kit of about 1 h; no training. `data/ood` images go into the PRIVATE kit.
 
-## ADR-027 · One GPU kit for every remaining GPU experiment (Phases 5-8)
-- Date: 2026-10-22 · Status: Proposed (Sophie asked for one bundle, 2026-10-22; the points marked "to confirm" below need her answer before the kit is built)
+## ADR-027 · One GPU kit for every remaining GPU experiment (Phases 5-8; amended to 6-8)
+- Date: 2026-10-22, amended 2026-10-25 · Status: Accepted as amended (Sophie, CHECKPOINT 5, 2026-10-25)
 - Context: Sophie asked to limit the number of GPU bundles and to group the remaining work into one. The Phase 5 kit (`PRIVATE_gpu_kit_phase5_46d0a9f.zip`) had been built but not run. ADR-013 put the steps that need Sophie (concept labels, synthetic-image review) between kits.
 - Options considered: (a) one kit per phase (four more trips); (b) Phase 5 now, then one kit for Phases 6-8; (c) one kit for Phases 5-8.
 - Decision: (c). `scripts/combined_pipeline.py` (`pipeline/combined.py`) runs Phase 5 (unchanged, ADR-024-026), then E14 synthesis, E12, E13 + TCAV, E14 arms + E8 re-run, E16 + deployment pass, E15 defences + attacks + arms race, in that order; every decision inside is the pre-registered rule of its experiment page (ADR-013). The Phase 5 kit is superseded and must not be run. Details fixed with it:
@@ -281,6 +281,12 @@ Template:
     - Code for Phases 6-8 is written before CHECKPOINT 5, so CHECKPOINTS 5-8 become reviews of the returned results, one phase at a time.
 - Evidence: estimated run time about 20 h on the RTX 5060 from logged job times (final-model job 1.09 min, `results/job_logs/phase3_*_e05_stage1_e5.log`; breakdown in E12-E16.md); to confirm, it exceeds the 4 GPU-hour rule.
 - Consequences: one more trip to the GPU PC instead of four; the laptop handles latency, tables, figures, the app and Phase 10. `1_SETUP.bat` installs the `[synthesis]` extra and torchattacks (without its dependencies, which pin an old `requests`); `huggingface_hub` is pinned to 1.33.0 because diffusers 0.41 needs < 2.
+- Amendment (2026-10-25, CHECKPOINT 5): the Phase 5 kit (`PRIVATE_gpu_kit_phase5_46d0a9f.zip`) was run on its own before the combined kit was built, and its results are installed (`results/pipeline/p5_reliability_status.json`, E10, E11, PLAN 4.11). Sophie chose (a) amend this ADR, and delegated the open points with the instruction to take the least time and compute that is still best for the project:
+    - Phase 5 is removed from `combined_pipeline.py`; the full profile starts with E14 synthesis (the self-test still runs `pipeline.phase5` for its toy reference models).
+    - The cross-entropy-only student arm (30 runs, not in PLAN 8.1) is dropped; E16 keeps the PLAN arms (2 students × T ∈ {2, 4}, 60 runs). The hypothesis it served is struck in E16.md.
+    - The Stable Diffusion inpainting download (about 2.1 GB, `stable-diffusion-v1-5/stable-diffusion-inpainting` at the pinned revision) is approved: PLAN 7.3 needs it for the second E14 generator.
+    - The kit's run time above the 4-hour rule is approved. Sum of the E12-E16.md estimates after the amendment: about 17 h on the RTX 5060 (E12 under 2 h, E13 0.8 h, E14 5.4 h, E15 6.8 h, E16 2.4 h); estimates, not timings.
+    - Every other arm stays as pre-registered.
 
 ## ADR-028 · E10 conformal method: LAC, class-conditional (Mondrian)
 - Date: 2026-10-25 · Status: Accepted (Sophie, CHECKPOINT 5, 2026-10-25; chosen by the pre-registered rule in E10.md). ADR-027 is the number used on `phase-6-8-combined`.

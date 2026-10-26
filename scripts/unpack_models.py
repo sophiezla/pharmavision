@@ -1,4 +1,4 @@
-"""Verify and install a MODELS bundle from the Phases 5-8 kit (see scripts/pack_models.py).
+"""Verify and install a MODELS bundle from the Phases 6-8 kit (see scripts/pack_models.py).
 
 Every file's SHA-256 is checked before anything is written. Weights go to ``checkpoints/``
 (git-ignored), the synthetic review sample to ``data/processed/synthetic_qc/`` (git-ignored).

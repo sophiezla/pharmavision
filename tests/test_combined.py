@@ -19,7 +19,7 @@ def test_full_profile_job_counts() -> None:
         [f"{g}-{r}" for g in ("procedural", "inpaint") for r in ("r05", "r1", "r2", "r4", "only")],
         15,
     )
-    assert len(combined.e16_jobs(p)) == 90
+    assert len(combined.e16_jobs(p)) == 60
     best = {"variant": "inpaint-r2", "generator": "inpaint", "ratio": 2.0}
     assert len(combined.e15_defence_jobs(p, best)) == 30
     assert len(combined.e15_defence_jobs(p, None)) == 15
@@ -43,7 +43,7 @@ def test_jobs_compose_to_the_intended_runs() -> None:
     assert cfg.task == "cbm" and cfg.cbm.mode == "independent"
 
 
-def test_ce_students_use_plain_training() -> None:
+def test_students_are_all_distilled() -> None:
     p = combined.PROFILES["full"]
-    ce = [j for j in combined.e16_jobs(p) if "variant=ce" in j]
-    assert len(ce) == 30 and all("task=train" in j for j in ce)
+    jobs = combined.e16_jobs(p)
+    assert all("task=distill" in j for j in jobs) and not any("variant=ce" in j for j in jobs)

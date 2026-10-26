@@ -1,14 +1,16 @@
-"""Phases 5-8 on one GPU kit (ADR-027): every remaining GPU experiment, in dependency order.
+"""Phases 6-8 on one GPU kit (ADR-027): every remaining GPU experiment, in dependency order.
 
-Pre-registered in docs/experiments/E10.md-E16.md and ADR-024-ADR-027. Stages:
+Pre-registered in docs/experiments/E12.md-E16.md and ADR-027. Phase 5 ran in its own kit
+(ADR-027 amendment, 2026-10-25); only the self-test still runs ``pipeline.phase5`` for its toy
+reference models. Stages:
 
-1. Phase 5 (E10/E11 prediction pass, E9 extension; ``pipeline.phase5``).
+1. (self-test only) toy reference models via ``pipeline.phase5``.
 2. E14 synthesis: OCR, procedural edits, SD inpainting (``synthesis.generate``).
 3. E12 saliency pass: final model, DINOv2-S (rollout), E4 multi-branch (MIL attention).
 4. E13 concept bottleneck (3 modes x 15 runs), then TCAV on the final model's seed-0 models.
 5. E14 arms (2 generators x ratios 0.5/1/2/4, synthetic-only), the best-arm decision, and the
    E8 open-set re-run with it.
-6. E16 distillation (2 students x T in {2, 4}, plus cross-entropy-only students), then the
+6. E16 distillation (2 students x T in {2, 4}), then the
    ONNX export / INT8 / CPU prediction pass of every student and the final model.
 7. E15 defences (PGD training, PGD + E14 best), the attack pass over the final model, the E14
    best arm and both defences, then 5 arms-race rounds.
@@ -370,7 +372,7 @@ def e14_open_set_jobs(p: Profile, best: dict[str, object]) -> list[list[str]]:
 
 
 def e16_jobs(p: Profile) -> list[list[str]]:
-    """Students with distillation (each T) and with cross-entropy only."""
+    """Students distilled at each temperature (the cross-entropy-only arm was dropped, ADR-027)."""
     teacher = p.refs["final"][0]
     jobs = []
     for student in p.students:
@@ -382,7 +384,6 @@ def e16_jobs(p: Profile) -> list[list[str]]:
                 _exp(p, "e16"),
                 (f"distill.temperature={t}", f"distill.teacher_exp={teacher}", *p.extra),
             )
-        jobs += _jobs(p, Arm(student, "ce", "train"), "e16_distill", _exp(p, "e16"), p.extra)
     return jobs
 
 
@@ -469,12 +470,12 @@ def selftest_e04(p: Profile) -> bool:
 
 
 def run(profile_name: str) -> int:
-    """Run Phases 5-8 end to end; returns a process exit code (0 = everything finished)."""
+    """Run Phases 6-8 end to end; returns a process exit code (0 = everything finished)."""
     p = PROFILES[profile_name]
     pre = _exp(p, "c")
     ok = True
-    ok = phase5.run(p.base.name) == 0 and ok
-    if p.name == "selftest":
+    if p.name == "selftest":  # toy reference models; the full profile reuses the Phase 5 runs
+        ok = phase5.run(p.base.name) == 0 and ok
         ok = selftest_e04(p) and ok
     syn_ok = synthesis(p)
     ok = syn_ok and ok

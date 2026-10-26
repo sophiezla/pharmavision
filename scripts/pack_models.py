@@ -1,4 +1,4 @@
-"""Pack the weights and samples the laptop needs after the Phases 5-8 kit (ADR-027).
+"""Pack the weights and samples the laptop needs after the Phases 6-8 kit (ADR-027).
 
 Results bundles never contain weights. This second, PRIVATE bundle carries:
 
