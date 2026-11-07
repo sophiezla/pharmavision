@@ -263,6 +263,18 @@ def main(argv: list[str] | None = None) -> int:
             f"{missing[0]}; the locked test set was not opened\n"
         )
         return EXIT_NOT_READY
+    # file existence only: no image is read before every prerequisite is in place
+    from pharmachecked.data.splits import load_locked_test
+
+    images = REPO_ROOT / "data" / "processed" / "images"
+    ids = load_locked_test(REPO_ROOT / "splits" / "v1.json", acknowledge_final=True)
+    absent = [i for i in ids if not (images / f"{i}.png").is_file()]
+    if absent:
+        sys.stderr.write(
+            f"not ready: {len(absent)} of {len(ids)} locked-test images are not in {images} "
+            "(normalize them from data/raw); the locked test set was not opened\n"
+        )
+        return EXIT_NOT_READY
     if args.check_only:
         sys.stderr.write(
             f"ready: {len(ckpts)} checkpoints found; the locked test set was not opened\n"

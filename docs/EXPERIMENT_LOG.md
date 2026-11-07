@@ -17,6 +17,16 @@ retyped. Template:
 
 ---
 
+## 2026-11-07 · Phase 10 · Locked-test evaluation attempt stopped: test images absent
+- Commit: c70b089 (tag `v1.0-rc`); fix in the following commit.
+- Command(s): `python scripts/final_eval.py --i-understand-this-is-final` (after Sophie's confirmation)
+- Hypothesis: none (one-time evaluation of the ADR-030 freeze).
+- Runs: none completed.
+- Result: crashed with `FileNotFoundError` on the first locked-test image (`data/processed/images/00e72ba432c2b4e1.png`) of the first fold model, after its `val` and `cal` images were scored. None of the 95 locked-test images is on this Mac: `data/processed/images` was restored from the Phase 5 kit, which carries development images only, and `data/raw` is not here. No test image was read, no test prediction exists, no table was written and `results/LOCK` was not created, so the one-time evaluation is still unused.
+- Interpretation: none (no result).
+- Issues / anomalies: the `--check-only` preflight checked checkpoints but not image files. It now also checks that every locked-test image file exists (existence only, nothing is read) and refuses otherwise.
+- Next: normalize the raw Kaggle images (`scripts/build_manifest.py`) once `data/raw` is back on this machine, confirm the regenerated development images are byte-identical to the existing ones, then run the evaluation.
+
 ## 2026-11-07 · E16 / app · Laptop latency and app acceptance test (MODELS bundle)
 - Commit: MODELS bundle `MODELS_phases6-8_20261107-041849.zip` installed with `scripts/unpack_models.py` (67 files, SHA-256 verified; checkpoints git-ignored); results in the following commit.
 - Command(s): `python scripts/e16_latency.py`; `python scripts/phase6to8_tables.py --exp e16`; `python scripts/make_figures.py --exp e16`; `python -m pytest -m slow tests/test_app.py`; `python scripts/final_eval.py --i-understand-this-is-final --check-only` (45 checkpoints found, test set not opened)
