@@ -1,0 +1,49 @@
+{
+  "machine": "macOS-27.0.1-arm64-arm-64bit-Mach-O / arm",
+  "models": {
+    "efficientnet-lite0/kd-t4|fp32": {
+      "median_ms": 3.7210624723229557,
+      "q1_ms": 3.646927245426923,
+      "q3_ms": 3.8543952687177807,
+      "run": "e16_efficientnet-lite0_kd-t4_f0_s0_20261106-150947",
+      "runs": 100
+    },
+    "efficientnet-lite0/kd-t4|int8": {
+      "median_ms": 1.2344170245341957,
+      "q1_ms": 1.2252919841557741,
+      "q3_ms": 1.2764902785420418,
+      "run": "e16_efficientnet-lite0_kd-t4_f0_s0_20261106-150947",
+      "runs": 100
+    },
+    "final model|fp32": {
+      "median_ms": 11.453437968157232,
+      "q1_ms": 10.775531263789162,
+      "q3_ms": 12.35518699104432,
+      "run": "e05_efficientnetv2-s_default_f0_s0_20261013-190119",
+      "runs": 100
+    },
+    "final model|int8": {
+      "median_ms": 9.548416506731883,
+      "q1_ms": 9.343958212411962,
+      "q3_ms": 10.64467674586922,
+      "run": "e05_efficientnetv2-s_default_f0_s0_20261013-190119",
+      "runs": 100
+    },
+    "mobilenetv3-large/kd-t4|fp32": {
+      "median_ms": 2.7754789916798472,
+      "q1_ms": 2.713271271204576,
+      "q3_ms": 2.945749496575445,
+      "run": "e16_mobilenetv3-large_kd-t4_f0_s0_20261106-144854",
+      "runs": 100
+    },
+    "mobilenetv3-large/kd-t4|int8": {
+      "median_ms": 1.653270999668166,
+      "q1_ms": 1.6248229803750291,
+      "q3_ms": 1.6734687378630042,
+      "run": "e16_mobilenetv3-large_kd-t4_f0_s0_20261106-144854",
+      "runs": 100
+    }
+  },
+  "onnxruntime": "1.31.0",
+  "python": "3.13.17"
+}

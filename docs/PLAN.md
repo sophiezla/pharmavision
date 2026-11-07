@@ -240,9 +240,9 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 - [x] (reduced, ADR-029: T = 4 only; teacher = same fold/seed final model; e69a6de) **8.1** `training/distill.py`: students MobileNetV3-Large and EfficientNet-Lite0; loss = 0.5·CE + 0.5·T²·KL(teacher‖student), T ∈ {2,4}; teacher = final model (or 3-seed ensemble, per ADR). Full protocol.
 - [x] **8.2** (4464f59, a62ecf9; e69a6de; opset 17; FP32 check failed in 2/15 fold models per student, see log) `deploy/export_onnx.py` (opset documented; numerical check vs PyTorch outputs, max abs diff ≤ 1e-4 for FP32), `deploy/quantize.py` (ONNX Runtime static INT8, 200 training images for calibration).
 - [x] **8.3** (e085e71; `e16_reliability`) Re-fit temperature and conformal thresholds for every exported model; re-run E10 metrics.
-- [ ] **8.4** `deploy/latency.py`: median of 100 runs after 10 warm-ups, batch 1, laptop CPU; phone-browser latency via a minimal ONNX Runtime Web page (record device model and browser).
-- [ ] (table and size-axis figure in e085e71; latency column waits for 8.4) **8.5** Figure `e16_pareto`; table `e16_deployment` (AUROC, ECE, coverage, size MB, latency ms).
-- [ ] **8.6 App** (`app/`): photo capture/upload → quality checks from `e09_quality_limits` → OOD guard → model → calibrated probability + conformal set → label `Likely authentic | Likely counterfeit | Uncertain — verify manually` → best E12 heatmap (+ E13 concepts if included) → footer with intended use and model-card link.
+- [ ] (laptop CPU done: `e16_latency.json`, `e16_deployment`; phone browser pending) **8.4** `deploy/latency.py`: median of 100 runs after 10 warm-ups, batch 1, laptop CPU; phone-browser latency via a minimal ONNX Runtime Web page (record device model and browser).
+- [x] (e085e71 + this batch; laptop latency) **8.5** Figure `e16_pareto`; table `e16_deployment` (AUROC, ECE, coverage, size MB, latency ms).
+- [ ] (54bba97; offline-equivalence test passes with the real fold model; phone run pending) **8.6 App** (`app/`): photo capture/upload → quality checks from `e09_quality_limits` → OOD guard → model → calibrated probability + conformal set → label `Likely authentic | Likely counterfeit | Uncertain — verify manually` → best E12 heatmap (+ E13 concepts if included) → footer with intended use and model-card link.
     - AC: outputs on 20 held-out images identical to the offline pipeline (automated test); runs in a phone browser.
 
 **CHECKPOINT 8.** Tag `v0.4-deploy`.

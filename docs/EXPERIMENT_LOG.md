@@ -17,6 +17,26 @@ retyped. Template:
 
 ---
 
+## 2026-11-07 · E16 / app · Laptop latency and app acceptance test (MODELS bundle)
+- Commit: MODELS bundle `MODELS_phases6-8_20261107-041849.zip` installed with `scripts/unpack_models.py` (67 files, SHA-256 verified; checkpoints git-ignored); results in the following commit.
+- Command(s): `python scripts/e16_latency.py`; `python scripts/phase6to8_tables.py --exp e16`; `python scripts/make_figures.py --exp e16`; `python -m pytest -m slow tests/test_app.py`; `python scripts/final_eval.py --i-understand-this-is-final --check-only` (45 checkpoints found, test set not opened)
+- Hypothesis: INT8 shrinks the model about 4x (E16.md); the app reproduces the offline pipeline (PLAN 8.6).
+- Runs: no training; fold-0 / seed-0 ONNX files of the two students and the final model; machine in `results/pipeline/e16_latency.json` (macOS 27.0.1 arm64, onnxruntime 1.31.0).
+- Result (from `results/tables/e16_deployment.md`):
+
+| model | precision | runs | AUROC (pooled, held-out) | size MB | max |ONNX - torch| (FP32) | export checks passed | latency ms (laptop CPU) |
+|---|---|---|---|---|---|---|---|
+| efficientnet-lite0/kd-t4 | fp32 | 15 | 0.9973 | 13.45 ± 0.00 | 4.79e-04 | 13/15 | 3.72 |
+| efficientnet-lite0/kd-t4 | int8 | 15 | 0.9977 | 3.81 ± 0.00 | 4.79e-04 | 13/15 | 1.23 |
+| mobilenetv3-large/kd-t4 | fp32 | 15 | 0.9978 | 16.81 ± 0.00 | 1.63e-04 | 13/15 | 2.78 |
+| mobilenetv3-large/kd-t4 | int8 | 15 | 0.9945 | 4.73 ± 0.00 | 1.63e-04 | 13/15 | 1.65 |
+| final model | fp32 | 15 | 0.9993 | 80.65 ± 0.00 | 1.60e-05 | 15/15 | 11.45 |
+| final model | int8 | 15 | 0.9994 | 22.93 ± 0.00 | 1.60e-05 | 15/15 | 9.55 |
+
+- Interpretation: on this laptop CPU the students run in 1.23-3.72 ms per image and the final model in 9.55-11.45 ms; INT8 is 3.0x faster than FP32 for EfficientNet-Lite0, 1.7x for MobileNetV3-L and 1.2x for the final model. The app gives the same label as the offline pipeline on all 110 held-out images of its fold model (the acceptance test checks the first 20).
+- Issues / anomalies: the offline logits in `reliability_predictions.csv` were computed under fp16 autocast on the GPU (every value is fp16-exact); the app runs fp32 on the CPU, so logits differ by up to 0.295 (median 0.045). The acceptance test first used a 1e-3 logit tolerance and failed; it now requires identical labels and |logit difference| <= 0.5. Phone-browser latency (`app/phone_latency.html`) and the app on a phone are not done yet: they need Sophie's phone.
+- Next: phone run; locked-test evaluation after Sophie's confirmation.
+
 ## 2026-11-07 · E16 · Distillation and on-device export (Phases 6-8 kit)
 - Commit: Phases 6-8 GPU kit `PRIVATE_gpu_kit_phases6-8_e7905b0.zip` (RTX 5060, source e7905b0, snapshot unmodified), results `RESULTS_phases6-8_20261107-041837.zip` installed in e69a6de; tables and figures e085e71.
 - Command(s): pipeline stage `c_e16`; `python scripts/aggregate.py --exp e16 --include e05:efficientnetv2-s/default --reference efficientnetv2-s/default`; `python scripts/phase6to8_tables.py --exp e16`; `python scripts/make_figures.py --exp e16`

@@ -555,6 +555,9 @@ def e16_pareto(tables: Path, out: Path) -> list[Path]:
                 label=f"{row['model']} {row['precision']}",
             )
         ax.set_xscale("log")
+        ax.xaxis.set_major_locator(FixedLocator([1, 2, 5, 10, 20, 50, 100]))
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+        ax.xaxis.set_minor_formatter(NullFormatter())
         ax.set_xlabel(label)
         ax.set_ylabel("pooled held-out AUROC")
     axes[0, 0].legend(fontsize=6, loc="lower right")
