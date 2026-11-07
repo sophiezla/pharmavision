@@ -144,6 +144,8 @@ def e12_pass(
         store = synthetic_store(cfg)
         table = store.read()
         table = table[table["source_image_id"].isin(set(held))].sort_values("image_id")
+        # ids are content hashes: identical synthetic images share one id, score them once
+        table = table.drop_duplicates("image_id")
         syn = ManifestDataset(
             table,
             list(table["image_id"]),

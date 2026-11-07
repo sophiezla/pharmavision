@@ -48,3 +48,6 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# E12 saliency arrays only feed the local-only e12_examples figure (ADR-006); kept in the results bundle
+results/runs/*/saliency_examples.npz

@@ -382,6 +382,187 @@ def e10_risk_coverage(tables: Path, out: Path) -> list[Path]:
     return save_figure(fig, out, "e10_risk_coverage")
 
 
+def e12_examples(tables: Path, out: Path) -> list[Path]:
+    """4 held-out images x the saliency methods of the three fold-0 / seed-0 models (E12.md).
+
+    Shows dataset images, so it is written to ``results/figures/local/`` (ADR-006) and built
+    from the run folders' ``saliency_examples.npz`` and the local processed images.
+    """
+    import numpy as np
+    from omegaconf import OmegaConf
+    from PIL import Image
+
+    from pharmachecked.config import CONFIG_DIR
+    from pharmachecked.data.transforms import build_eval_geometry
+
+    runs = REPO_ROOT / "results" / "runs"
+    columns = [
+        ("e05_efficientnetv2-s_default_f0_s0_*", "gradcam", "final: Grad-CAM"),
+        ("e05_efficientnetv2-s_default_f0_s0_*", "gradcampp", "final: Grad-CAM++"),
+        ("e05_efficientnetv2-s_default_f0_s0_*", "ig", "final: IG"),
+        ("p4ref_dinov2-vits14_ft_f0_s0_*", "rollout", "DINOv2-S: rollout"),
+        ("e04_multibranch_full_f0_s0_*", "mil", "E4: MIL attention"),
+        ("e05_efficientnetv2-s_default_f0_s0_*", "random", "random"),
+    ]
+    arrays = {g: np.load(next(runs.glob(g)) / "saliency_examples.npz") for g, _, _ in columns}
+    ids = [str(i) for i in arrays[columns[0][0]]["image_ids"]]
+    tcfg = OmegaConf.load(CONFIG_DIR / "data" / "transforms.yaml")
+    apply_style()
+    fig, axes = plt.subplots(
+        len(ids), len(columns) + 1, figsize=(1.9 * (len(columns) + 1), 1.9 * len(ids))
+    )
+    for r, image_id in enumerate(ids):
+        with Image.open(REPO_ROOT / "data" / "processed" / "images" / f"{image_id}.png") as im:
+            img = np.asarray(build_eval_geometry(tcfg, 224)(im.convert("RGB")))
+        label = "counterfeit" if r < 2 else "authentic"
+        axes[r, 0].imshow(img)
+        axes[r, 0].set_ylabel(label, fontsize=8)
+        for c, (g, method, title) in enumerate(columns, start=1):
+            sal = arrays[g][method][r].astype(float)
+            if sal.shape[0] != 224:
+                sal = np.asarray(Image.fromarray(sal.astype("float32")).resize((224, 224)))
+            axes[r, c].imshow(img)
+            axes[r, c].imshow(sal, cmap="inferno", alpha=0.55)
+            if r == 0:
+                axes[r, c].set_title(title, fontsize=8)
+        axes[0, 0].set_title("image", fontsize=8)
+    for ax in axes.flat:
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.grid(False)
+    fig.suptitle("E12: saliency examples (fold 0, seed 0; first 2 counterfeit + 2 authentic)")
+    fig.tight_layout()
+    local = out / "local"
+    local.mkdir(parents=True, exist_ok=True)
+    return save_figure(fig, local, "e12_examples")
+
+
+def e14_ratio_curve(tables: Path, out: Path) -> list[Path]:
+    """Pooled OOF AUROC (95% CI) vs synthetic:real counterfeit ratio; synthetic-only as a band."""
+    df = pd.read_csv(tables / "e14_summary.csv").set_index("config")
+    ratios = {
+        0: "efficientnetv2-s/default",
+        1: "efficientnetv2-s/procedural-r1",
+        4: "efficientnetv2-s/procedural-r4",
+    }
+    apply_style()
+    fig, ax = plt.subplots(figsize=(4.8, 3.6))
+    pts = [(r, *parse_ci(df.loc[c, "auroc (pooled)"])) for r, c in ratios.items() if c in df.index]
+    xs, es = [p[0] for p in pts], [p[1] for p in pts]
+    ax.errorbar(
+        xs,
+        es,
+        yerr=[[p[1] - p[2] for p in pts], [p[3] - p[1] for p in pts]],
+        fmt="o-",
+        color=color_for(0),
+        label="procedural, with real counterfeits",
+    )
+    only = "efficientnetv2-s/procedural-only"
+    if only in df.index:
+        e, lo, hi = parse_ci(df.loc[only, "auroc (pooled)"])
+        ax.axhspan(lo, hi, color=color_for(1), alpha=0.2)
+        ax.axhline(e, color=color_for(1), linestyle="--", label="procedural only (no real)")
+    ax.set_xticks(xs)
+    ax.set_xlabel("synthetic : real counterfeit ratio")
+    ax.set_ylabel("pooled OOF AUROC (95% CI)")
+    ax.legend(loc="lower left", fontsize=7)
+    ax.set_title("E14: AUROC vs synthetic ratio")
+    fig.tight_layout()
+    return save_figure(fig, out, "e14_ratio_curve")
+
+
+def _pm_value(text: str) -> tuple[float, float]:
+    mean, sd = (float(x) for x in str(text).split("±"))
+    return mean, sd
+
+
+def e15_success_vs_eps(tables: Path, out: Path) -> list[Path]:
+    """Evasion rate (mean ± sd over fold models) vs L-inf eps, FGSM and PGD, per defence."""
+    df = pd.read_csv(tables / "e15_defences.csv")
+    defences = list(dict.fromkeys(df["defence"]))
+    apply_style()
+    fig, axes = plt.subplots(1, 2, figsize=(9.0, 3.6), sharey=True)
+    for ax, attack in zip(axes, ("fgsm", "pgd"), strict=True):
+        for k, d in enumerate(defences):
+            part = df[(df["defence"] == d) & (df["attack"] == attack)].sort_values("eps (x255)")
+            vals = [_pm_value(v) for v in part["evasion rate"]]
+            ax.errorbar(
+                part["eps (x255)"],
+                [v[0] for v in vals],
+                yerr=[v[1] for v in vals],
+                fmt="o-",
+                capsize=2,
+                color=color_for(k),
+                label=d,
+            )
+        ax.set_xscale("log", base=2)
+        ax.set_xticks([1, 2, 4, 8])
+        ax.set_xticklabels(["1", "2", "4", "8"])
+        ax.set_xlabel("L-inf eps (x/255)")
+        ax.set_title(attack.upper())
+    axes[0].set_ylabel("evasion rate (mean ± sd)")
+    axes[0].legend(loc="lower right", fontsize=7)
+    fig.suptitle("E15: targeted evasion vs perturbation budget")
+    fig.tight_layout()
+    return save_figure(fig, out, "e15_success_vs_eps")
+
+
+def e15_arms_race(tables: Path, out: Path) -> list[Path]:
+    """Held-out black-box evasion per round; round 0 = the undefended final model."""
+    race = pd.read_csv(tables / "e15_arms_race.csv")
+    d = pd.read_csv(tables / "e15_defences.csv")
+    r0 = d[(d["defence"] == "none") & (d["attack"] == "blackbox")]["evasion rate"].iloc[0]
+    rounds = [0, *race["round"].tolist()]
+    vals = [_pm_value(r0), *(_pm_value(v) for v in race["evasion rate"])]
+    apply_style()
+    fig, ax = plt.subplots(figsize=(4.8, 3.6))
+    ax.errorbar(
+        rounds,
+        [v[0] for v in vals],
+        yerr=[v[1] for v in vals],
+        fmt="o-",
+        capsize=2,
+        color=color_for(0),
+    )
+    ax.set_xticks(rounds)
+    ax.set_xlabel("arms-race round (0 = final model)")
+    ax.set_ylabel("held-out evasion rate (mean ± sd)")
+    ax.set_ylim(bottom=0)
+    ax.set_title("E15: arms race (200-query black-box search)")
+    fig.tight_layout()
+    return save_figure(fig, out, "e15_arms_race")
+
+
+def e16_pareto(tables: Path, out: Path) -> list[Path]:
+    """Held-out AUROC vs model size (and latency once measured) per exported model."""
+    df = pd.read_csv(tables / "e16_deployment.csv")
+    has_latency = "latency ms (laptop CPU)" in df.columns
+    xs = [("size MB", "model size (MB, log)")]
+    if has_latency:
+        xs.append(("latency ms (laptop CPU)", "laptop CPU latency (ms, batch 1, log)"))
+    apply_style()
+    fig, axes = plt.subplots(1, len(xs), figsize=(4.8 * len(xs), 3.6), squeeze=False)
+    markers = {"fp32": "o", "int8": "s"}
+    models = list(dict.fromkeys(df["model"]))
+    for ax, (col, label) in zip(axes[0], xs, strict=True):
+        for _, row in df.iterrows():
+            x = _pm_value(row[col])[0] if "±" in str(row[col]) else float(row[col])
+            ax.scatter(
+                x,
+                row["AUROC (pooled, held-out)"],
+                marker=markers[row["precision"]],
+                color=color_for(models.index(row["model"])),
+                label=f"{row['model']} {row['precision']}",
+            )
+        ax.set_xscale("log")
+        ax.set_xlabel(label)
+        ax.set_ylabel("pooled held-out AUROC")
+    axes[0, 0].legend(fontsize=6, loc="lower right")
+    fig.suptitle("E16: accuracy vs cost of the exported models")
+    fig.tight_layout()
+    return save_figure(fig, out, "e16_pareto")
+
+
 FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
     "e01": [e01_auroc_vs_params],
     "e02": [e02_auroc_by_strategy],
@@ -391,6 +572,10 @@ FIGURE_SETS: dict[str, list[Callable[[Path, Path], list[Path]]]] = {
     "e09": [e09_severity_curves],
     "e09ext": [e09_extension_curves],
     "e10": [e10_reliability_diagrams, e10_risk_coverage],
+    "e12": [e12_examples],
+    "e14": [e14_ratio_curve],
+    "e15": [e15_success_vs_eps, e15_arms_race],
+    "e16": [e16_pareto],
 }
 
 

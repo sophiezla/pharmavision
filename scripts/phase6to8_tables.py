@@ -123,7 +123,46 @@ def main() -> int:
                 f"Chosen: `{decision['variant']}` (E14.md rule).",
                 pd.DataFrame(decision["ranking"]),
             )
-        log.info("summary and open-set tables: scripts/aggregate.py --exp %se14 / %se14os", s, s)
+            _write(
+                f"{s}e14_open_set_gain",
+                "E14: E8 open-set re-run with the best ratio arm",
+                "Trained without the packaging type, tested on all its development images; "
+                "seed-averaged, paired with the E8 final model on the same images; 95% paired "
+                "bootstrap CI (2000 resamples, seed 0), DeLong p, Holm over the types.",
+                t.e14_open_set_gain(
+                    collect_runs(RUNS, f"{s}e14os"),
+                    collect_runs(RUNS, f"{s}e08"),
+                    ("blister", "packaging"),
+                    str(decision["variant"]),
+                    2000,
+                ),
+            )
+        summary = TABLES / f"{s}e14_summary.csv"
+        if summary.is_file():
+            cols = [
+                "config",
+                "runs",
+                "auroc (pooled)",
+                "auprc (pooled)",
+                "sens_at_95_spec (pooled)",
+                "ece (pooled)",
+                "log_loss (pooled)",
+                "mendeley_split_c specificity",
+                "mendeley_split_d specificity",
+                "split_e_harvested recall",
+                "split_e_regulatory recall",
+            ]
+            sm = pd.read_csv(summary)
+            keep = sm["config"].isin(
+                ["efficientnetv2-s/default", "efficientnetv2-s/procedural-only"]
+            )
+            _write(
+                f"{s}e14_synthetic_only",
+                "E14: synthetic-only training vs the final model",
+                f"Rows of `{s}e14_summary.md` (run `scripts/aggregate.py --exp {s}e14` first); "
+                f"paired test in `{s}e14_vs_reference.md`.",
+                sm.loc[keep, [c for c in cols if c in sm]],
+            )
     elif args.exp == "e15":
         best = read_json(REPO_ROOT / "results" / "pipeline" / f"{s}e14_best.json")
         defences = {
@@ -158,6 +197,14 @@ def main() -> int:
             "Held-out probabilities of the exported models, seed-averaged; latency and the "
             "re-fitted reliability metrics are added on the laptop (PLAN 8.3-8.4).",
             t.e16_deployment(arms),
+        )
+        _write(
+            f"{s}e16_reliability",
+            "E16: E10 metrics re-fitted per exported model (PLAN 8.3)",
+            "Per fold model and precision: temperature on its `cal` predictions (T = 1 when not "
+            "identifiable), Youden threshold on `val`, LAC Mondrian conformal at alpha 0.10 on "
+            "`cal` (ADR-028); evaluated on the held-out fold; mean ± sd over fold models.",
+            t.e16_reliability(arms),
         )
     return 0
 
