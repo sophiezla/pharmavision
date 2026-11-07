@@ -2,9 +2,9 @@
 PY ?= python
 EXP ?=
 
-.PHONY: setup lint test smoke aggregate figures freeze
+.PHONY: setup lint test smoke aggregate figures freeze reproduce
 
-setup lint test smoke freeze:
+setup lint test smoke freeze reproduce:
 	$(PY) scripts/tasks.py $@
 
 aggregate figures:

@@ -1,0 +1,11 @@
+.venv
+.git
+data/raw
+data/processed/images
+checkpoints
+bundles
+kit
+mlruns
+results/scratch
+results/figures/local
+**/__pycache__

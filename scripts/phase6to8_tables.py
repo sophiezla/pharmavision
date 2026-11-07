@@ -39,6 +39,20 @@ def _write(stem: str, title: str, note: str, table: pd.DataFrame) -> None:
     log.info("wrote %s.{csv,md}", stem)
 
 
+def _with_latency(table: pd.DataFrame) -> pd.DataFrame:
+    """Add the laptop latency of ``scripts/e16_latency.py`` when it has been measured."""
+    path = REPO_ROOT / "results" / "pipeline" / "e16_latency.json"
+    if table.empty or not path.is_file():
+        return table
+    models = read_json(path)["models"]
+    key = table["model"] + "|" + table["precision"]
+    out = table.copy()
+    out["latency ms (laptop CPU)"] = [
+        round(models[k]["median_ms"], 2) if k in models else float("nan") for k in key
+    ]
+    return out
+
+
 def _by_variant(exp: str) -> dict[str, list]:
     out: dict[str, list] = {}
     for r in collect_runs(RUNS, exp):
@@ -196,7 +210,7 @@ def main() -> int:
             "E16: exported models (ONNX FP32 / INT8)",
             "Held-out probabilities of the exported models, seed-averaged; latency and the "
             "re-fitted reliability metrics are added on the laptop (PLAN 8.3-8.4).",
-            t.e16_deployment(arms),
+            _with_latency(t.e16_deployment(arms)),
         )
         _write(
             f"{s}e16_reliability",

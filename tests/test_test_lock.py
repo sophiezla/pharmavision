@@ -98,8 +98,11 @@ def test_final_eval_refuses_when_locked(tmp_path: Path) -> None:
     assert "already evaluated" in result.stderr
 
 
-def test_final_eval_stub_does_not_open_or_lock(tmp_path: Path) -> None:
-    result = _final_eval("--i-understand-this-is-final", "--results-dir", str(tmp_path))
+def test_final_eval_check_only_does_not_open_or_lock(tmp_path: Path) -> None:
+    # --check-only stops after locating checkpoints, so this never opens the real test set
+    result = _final_eval(
+        "--i-understand-this-is-final", "--check-only", "--results-dir", str(tmp_path)
+    )
     assert result.returncode == 3
     assert not (tmp_path / "LOCK").exists()
 

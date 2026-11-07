@@ -1,0 +1,61 @@
+<!doctype html>
+<!--
+  Phone-browser latency of an exported model (PLAN 8.4): ONNX Runtime Web, WASM backend,
+  batch 1, median of 100 runs after 10 warm-ups (same protocol as deploy/latency.py).
+  Serve this folder from the laptop (python -m http.server 8000 --directory app), open
+  http://<laptop-ip>:8000/phone_latency.html on the phone, pick a model_*.onnx file and the
+  input size, press Run, and copy the result line into results/pipeline/e16_phone_latency.json
+  together with the phone model.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone Latency</title>
+<style>
+  :root { --bg: #fafaf8; --fg: #1d1d1b; --muted: #6b6b66; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #161615; --fg: #ececea; --muted: #a3a39e; } }
+  body { background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 16px; }
+  main { max-width: 36rem; margin: 0 auto; }
+  label, button, input, select { display: block; margin: 0.5rem 0; font-size: 1rem; }
+  pre { white-space: pre-wrap; word-break: break-all; color: var(--muted); }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+</head>
+<body>
+<main>
+  <h1>Phone latency</h1>
+  <label>ONNX model <input id="file" type="file" accept=".onnx"></label>
+  <label>Input size
+    <select id="size"><option>224</option><option>256</option><option>288</option><option>384</option></select>
+  </label>
+  <button id="run">Run (10 warm-ups + 100 runs)</button>
+  <pre id="out">Pick a model file.</pre>
+</main>
+<script>
+const out = document.getElementById("out");
+document.getElementById("run").onclick = async () => {
+  const f = document.getElementById("file").files[0];
+  if (!f) { out.textContent = "No file selected."; return; }
+  const size = Number(document.getElementById("size").value);
+  out.textContent = "Loading " + f.name + " ...";
+  try {
+    const sess = await ort.InferenceSession.create(new Uint8Array(await f.arrayBuffer()),
+                                                   { executionProviders: ["wasm"] });
+    const x = new ort.Tensor("float32", new Float32Array(3 * size * size), [1, 3, size, size]);
+    for (let i = 0; i < 10; i++) await sess.run({ image: x });
+    const t = [];
+    for (let i = 0; i < 100; i++) {
+      const s = performance.now(); await sess.run({ image: x }); t.push(performance.now() - s);
+    }
+    t.sort((a, b) => a - b);
+    const q = p => t[Math.floor(p * (t.length - 1))];
+    out.textContent = JSON.stringify({
+      model: f.name, size, median_ms: q(0.5), q1_ms: q(0.25), q3_ms: q(0.75), runs: 100,
+      backend: "onnxruntime-web 1.20.1 wasm", user_agent: navigator.userAgent,
+    }, null, 1);
+  } catch (e) { out.textContent = "Error: " + e; }
+};
+</script>
+</body>
+</html>

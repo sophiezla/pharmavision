@@ -308,3 +308,17 @@ Template:
     - X2 (PLAN 9.2, human-AI study) is not scheduled: it needs human participants.
 - Evidence: GPU estimates in E12.md, E14.md, E15.md and E16.md; the per-job time of a final-model run (1.09 min, `results/job_logs/phase3_*_e05_stage1_e5.log`).
 - Consequences: estimated kit time about 9 h instead of about 17 h (E12 under 2 h; synthesis without SD under 1 h; E14 45 runs about 1.3 h plus 6 E8 runs; E16 about 1.3 h with the deployment pass; E15 about 3.5 h); estimates, not timings. Code: `pipeline/combined.py` (constants and stage list), `configs/experiment/e15_defence.yaml`, `e16_distill.yaml`, `configs/synthesis/e14.yaml`. The library code for CBMs, TCAV, inpainting and the review app stays in the repository, unused by the kit. CHECKPOINT 6 covers E12 only.
+
+## ADR-030 · Phase 10 freeze: final model, E1 best on data v2, MobileNetV3-L student; app on fold 0 / seed 0
+- Date: 2026-11-07 · Status: Accepted (under Sophie's standing delegation of 2026-10-25 and her 2026-11-07 instruction to finish the project; no paper)
+- Context: PLAN 10.1 freezes the models for the one-time locked-test evaluation (10.2): "E1 best, E4 final, E16 student". E16 ran two students at T = 4 (ADR-029) and pre-registered no rule for picking one; the app (PLAN 8.6) needs one fold model.
+- Options considered: student = EfficientNet-Lite0 or MobileNetV3-Large (FP32 PyTorch, or INT8 ONNX); app model = one fold model or a 15-model ensemble.
+- Decision:
+    - Final model: `e05_efficientnetv2-s_default` (ADR-020; E5 default recipe, ADR-019).
+    - E1 best: `p4ref_convnext-tiny_ft` (the E1 best ConvNeXt-T retrained on data v2, ADR-021).
+    - E16 student: `e16_mobilenetv3-large_kd-t4`, FP32 PyTorch weights, by the ADR-013 rule used elsewhere (highest pooled OOF AUROC, then lower log-loss): pooled OOF AUROC 0.998 vs 0.997 in `e16_summary.md`; neither differs from the final model (`e16_vs_reference.md`). Its INT8 export is not frozen: re-fitted ECE 0.1014 ± 0.0659 (`e16_reliability.md`).
+    - Each frozen configuration is evaluated as 15 fold models (per-run mean ± sd) and as their mean-probability ensemble; the final model is the DeLong reference.
+    - App: the final model's fold-0 / seed-0 run with the E11 chain (MSP guard, temperature, LAC Mondrian alpha 0.10), parameters in `results/app/app_params.json` (`scripts/app_params.py`). One fold model keeps CPU latency and the Grad-CAM++ map simple; its fold's held-out decisions are in the app test.
+    - Phase 9 (X1 federated) is not run: optional, not approved, and the cheapest path to a finished project (standing delegation); X2 stays unscheduled (ADR-029).
+- Evidence: `results/tables/e16_summary.md`, `e16_vs_reference.md`, `e16_reliability.md`, `e05_summary.md`, `e06_summary.md`.
+- Consequences: `scripts/final_eval.py` evaluates these 45 fold models once; it needs their checkpoints from the MODELS bundle (`scripts/unpack_models.py`). Tag `v1.0-rc` marks the freeze.

@@ -159,6 +159,11 @@ def figures(args: argparse.Namespace) -> None:
     run([sys.executable, "scripts/make_figures.py", "--exp", args.exp])
 
 
+def reproduce(_: argparse.Namespace) -> None:
+    """Regenerate every committed table and figure from the run folders (PLAN 10.3)."""
+    run([sys.executable, ROOT / "scripts" / "reproduce.py"])
+
+
 def not_yet(step: str) -> Callable[[argparse.Namespace], None]:
     """Build a task that exits with a pointer to the plan step that implements it."""
 
@@ -176,6 +181,7 @@ TASKS = {
     "smoke": smoke,
     "aggregate": aggregate,
     "figures": figures,
+    "reproduce": reproduce,
 }
 
 

@@ -17,6 +17,209 @@ retyped. Template:
 
 ---
 
+## 2026-11-07 · E16 · Distillation and on-device export (Phases 6-8 kit)
+- Commit: Phases 6-8 GPU kit `PRIVATE_gpu_kit_phases6-8_e7905b0.zip` (RTX 5060, source e7905b0, snapshot unmodified), results `RESULTS_phases6-8_20261107-041837.zip` installed in e69a6de; tables and figures e085e71.
+- Command(s): pipeline stage `c_e16`; `python scripts/aggregate.py --exp e16 --include e05:efficientnetv2-s/default --reference efficientnetv2-s/default`; `python scripts/phase6to8_tables.py --exp e16`; `python scripts/make_figures.py --exp e16`
+- Hypothesis: distilled students lose little pooled OOF AUROC; INT8 changes AUROC by < 0.01 and shrinks the model about 4x (E16.md).
+- Runs: 30, `e16_{mobilenetv3-large,efficientnet-lite0}_kd-t4_*`; deployment pass on these and the 15 final-model fold models (`deploy.json`, `deploy_predictions.csv`); 0 failures (`results/pipeline/e16_deploy_status.json`).
+- Result (from `results/tables/e16_vs_reference.md`):
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| efficientnet-lite0/kd-t4 | efficientnetv2-s/default | 549 | -0.002 [-0.005, 0.000] | 0.025 [0.018, 0.038] | 0.052 [0.037, 0.068] | 0.246 | 0.4759 | False | False |
+| mobilenetv3-large/kd-t4 | efficientnetv2-s/default | 549 | -0.002 [-0.005, 0.000] | 0.001 [-0.005, 0.009] | 0.015 [-0.002, 0.035] | 0.238 | 0.4759 | False | False |
+
+  Exported models (from `results/tables/e16_deployment.md`):
+
+| model | precision | runs | AUROC (pooled, held-out) | size MB | max |ONNX - torch| (FP32) | export checks passed |
+|---|---|---|---|---|---|---|
+| efficientnet-lite0/kd-t4 | fp32 | 15 | 0.9973 | 13.45 ± 0.00 | 4.79e-04 | 13/15 |
+| efficientnet-lite0/kd-t4 | int8 | 15 | 0.9977 | 3.81 ± 0.00 | 4.79e-04 | 13/15 |
+| mobilenetv3-large/kd-t4 | fp32 | 15 | 0.9978 | 16.81 ± 0.00 | 1.63e-04 | 13/15 |
+| mobilenetv3-large/kd-t4 | int8 | 15 | 0.9945 | 4.73 ± 0.00 | 1.63e-04 | 13/15 |
+| final model | fp32 | 15 | 0.9993 | 80.65 ± 0.00 | 1.60e-05 | 15/15 |
+| final model | int8 | 15 | 0.9994 | 22.93 ± 0.00 | 1.60e-05 | 15/15 |
+
+  Re-fitted reliability, PLAN 8.3 (from `results/tables/e16_reliability.md`):
+
+| model | precision | runs | T fitted (identifiable) | AUROC (per run) | ECE after T | error at val threshold | coverage (LAC Mondrian, alpha 0.10) | coverage authentic | coverage counterfeit | mean set size | abstention rate |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| efficientnet-lite0/kd-t4 | fp32 | 15 | 12 | 0.997 ± 0.006 | 0.0359 ± 0.0346 | 0.0286 ± 0.0301 | 0.907 ± 0.037 | 0.890 ± 0.058 | 0.936 ± 0.059 | 0.913 ± 0.033 | 0.000 ± 0.000 |
+| efficientnet-lite0/kd-t4 | int8 | 15 | 11 | 0.997 ± 0.007 | 0.0282 ± 0.0193 | 0.0322 ± 0.0279 | 0.919 ± 0.050 | 0.905 ± 0.073 | 0.943 ± 0.049 | 0.927 ± 0.048 | 0.000 ± 0.000 |
+| mobilenetv3-large/kd-t4 | fp32 | 15 | 11 | 0.999 ± 0.001 | 0.0207 ± 0.0089 | 0.0188 ± 0.0116 | 0.923 ± 0.043 | 0.916 ± 0.071 | 0.934 ± 0.064 | 0.927 ± 0.045 | 0.000 ± 0.000 |
+| mobilenetv3-large/kd-t4 | int8 | 15 | 15 | 0.995 ± 0.003 | 0.1014 ± 0.0659 | 0.0553 ± 0.0264 | 0.915 ± 0.073 | 0.915 ± 0.097 | 0.915 ± 0.068 | 0.937 ± 0.081 | 0.005 ± 0.017 |
+| final model | fp32 | 15 | 7 | 0.999 ± 0.001 | 0.0159 ± 0.0122 | 0.0183 ± 0.0159 | 0.917 ± 0.028 | 0.931 ± 0.036 | 0.893 ± 0.062 | 0.918 ± 0.029 | 0.000 ± 0.000 |
+| final model | int8 | 15 | 6 | 0.999 ± 0.001 | 0.0175 ± 0.0121 | 0.0116 ± 0.0117 | 0.921 ± 0.031 | 0.915 ± 0.058 | 0.931 ± 0.056 | 0.922 ± 0.033 | 0.000 ± 0.000 |
+
+- Interpretation: neither student is significantly different from the final model in pooled OOF AUROC (Holm p 0.4759 for both); EfficientNet-Lite0 has a higher ECE and log-loss than the final model (CIs above 0). INT8 shrinks every model about 3.5x; the pooled held-out AUROC of the INT8 MobileNetV3 is 0.0033 below its FP32 version, the other two change by less than that. After re-fitting, overall conformal coverage at alpha 0.10 is 0.907-0.923 for every model and precision (lowest per-class mean 0.890, Lite0 FP32 authentic); the INT8 MobileNetV3 has the highest re-fitted ECE (0.1014 ± 0.0659).
+- Issues / anomalies: the FP32 ONNX check (max |ONNX - PyTorch| <= 1e-4 on val) failed in 2 of 15 fold models per student (largest difference 4.79e-04 Lite0, 1.63e-04 MobileNetV3); the final model passed 15/15. The failed exports were still quantized and scored; their predictions are in the tables. Latency (PLAN 8.4) is not measured yet: the ONNX files come in the MODELS bundle, which was not on the drive.
+- Next: latency on the laptop and phone once the MODELS bundle is installed; the E16 student for Phase 10 is chosen then (ADR-030).
+
+## 2026-11-07 · E15 · Adaptive adversary (Phases 6-8 kit)
+- Commit: Phases 6-8 GPU kit `PRIVATE_gpu_kit_phases6-8_e7905b0.zip` (RTX 5060, source e7905b0, snapshot unmodified), results `RESULTS_phases6-8_20261107-041837.zip` installed in e69a6de; tables and figures e085e71.
+- Command(s): pipeline stages `c_e15_defences`, `c_e15_race_round1..3`; `python scripts/aggregate.py --exp e15 --include e05:efficientnetv2-s/default --include e14:efficientnetv2-s/procedural-r1 --reference efficientnetv2-s/default`; `python scripts/aggregate.py --exp e15race --include e05:efficientnetv2-s/default --reference efficientnetv2-s/default`; `python scripts/phase6to8_tables.py --exp e15`; `python scripts/make_figures.py --exp e15`
+- Hypothesis: targeted PGD at 4/255 evades the undefended final model on most held-out counterfeits; PGD training lowers PGD success at a small clean cost; arms-race evasion falls over the rounds (E15.md).
+- Runs: 15 `e15_efficientnetv2-s_adv_*`, 45 `e15race_efficientnetv2-s_round{1,2,3}_*` (3 rounds, ADR-029); attack pass on the 45 fold models of `none`, `synth` (E14 `procedural-r1`) and `adv`; 0 failures (`results/pipeline/e15_attacks_status.json`).
+- Result (from `results/tables/e15_defences.md`):
+
+| defence | attack | eps (x255) | runs | evasion rate | queries to evade (mean) |
+|---|---|---|---|---|---|
+| none | blackbox |  | 15 | 0.046 ± 0.042 | 48.2 |
+| none | color |  | 15 | 0.031 ± 0.025 | nan |
+| none | fgsm | 1 | 15 | 0.252 ± 0.142 | nan |
+| none | fgsm | 2 | 15 | 0.300 ± 0.169 | nan |
+| none | fgsm | 4 | 15 | 0.327 ± 0.188 | nan |
+| none | fgsm | 8 | 15 | 0.339 ± 0.182 | nan |
+| none | patch |  | 15 | 0.836 ± 0.169 | nan |
+| none | pgd | 1 | 15 | 0.872 ± 0.159 | nan |
+| none | pgd | 2 | 15 | 0.972 ± 0.054 | nan |
+| none | pgd | 4 | 15 | 0.987 ± 0.038 | nan |
+| none | pgd | 8 | 15 | 0.997 ± 0.009 | nan |
+| none | clean (detected) |  | 15 | 0.041 ± 0.043 | nan |
+| synth (E14 best) | blackbox |  | 15 | 0.040 ± 0.039 | 50.5 |
+| synth (E14 best) | color |  | 15 | 0.035 ± 0.041 | nan |
+| synth (E14 best) | fgsm | 1 | 15 | 0.284 ± 0.111 | nan |
+| synth (E14 best) | fgsm | 2 | 15 | 0.342 ± 0.131 | nan |
+| synth (E14 best) | fgsm | 4 | 15 | 0.344 ± 0.145 | nan |
+| synth (E14 best) | fgsm | 8 | 15 | 0.281 ± 0.148 | nan |
+| synth (E14 best) | patch |  | 15 | 0.830 ± 0.177 | nan |
+| synth (E14 best) | pgd | 1 | 15 | 0.956 ± 0.047 | nan |
+| synth (E14 best) | pgd | 2 | 15 | 1.000 ± 0.000 | nan |
+| synth (E14 best) | pgd | 4 | 15 | 1.000 ± 0.000 | nan |
+| synth (E14 best) | pgd | 8 | 15 | 1.000 ± 0.000 | nan |
+| synth (E14 best) | clean (detected) |  | 15 | 0.043 ± 0.033 | nan |
+| adv | blackbox |  | 15 | 0.036 ± 0.066 | 33.0 |
+| adv | color |  | 15 | 0.117 ± 0.066 | nan |
+| adv | fgsm | 1 | 15 | 0.555 ± 0.499 | nan |
+| adv | fgsm | 2 | 15 | 0.555 ± 0.499 | nan |
+| adv | fgsm | 4 | 15 | 0.550 ± 0.502 | nan |
+| adv | fgsm | 8 | 15 | 0.545 ± 0.505 | nan |
+| adv | patch |  | 15 | 0.620 ± 0.337 | nan |
+| adv | pgd | 1 | 15 | 0.641 ± 0.398 | nan |
+| adv | pgd | 2 | 15 | 0.658 ± 0.433 | nan |
+| adv | pgd | 4 | 15 | 0.643 ± 0.464 | nan |
+| adv | pgd | 8 | 15 | 0.669 ± 0.453 | nan |
+| adv | clean (detected) |  | 15 | 0.034 ± 0.026 | nan |
+
+  Clean cost (from `results/tables/e15_vs_reference.md`):
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| efficientnetv2-s/adv | efficientnetv2-s/default | 549 | -0.007 [-0.012, -0.002] | 0.082 [0.071, 0.100] | 0.138 [0.108, 0.166] | 0.01201 | 0.02402 | False | True |
+| efficientnetv2-s/procedural-r1 | efficientnetv2-s/default | 549 | -0.001 [-0.003, -0.000] | 0.074 [0.058, 0.092] | 0.151 [0.127, 0.173] | 0.03356 | 0.03356 | False | True |
+
+  Arms race (from `results/tables/e15_arms_race.md`; clean AUROC vs the final model in `results/tables/e15race_vs_reference.md`, no round differs):
+
+| round | lineages | evasion rate | evasive images added this round | clean AUROC (runs) |
+|---|---|---|---|---|
+| 1 | 15 | 0.028 ± 0.039 | 2.9 ± 4.0 | 0.999 ± 0.001 |
+| 2 | 15 | 0.034 ± 0.039 | 1.5 ± 1.7 | 0.999 ± 0.001 |
+| 3 | 15 | 0.032 ± 0.047 | 1.9 ± 2.6 | 0.999 ± 0.001 |
+
+- Interpretation: PGD at 4/255 evades the undefended final model on 0.987 ± 0.038 of the held-out counterfeits it detects when clean, and the 5% patch on 0.836 ± 0.169; colour shifts and the 200-query black-box search evade 0.031-0.046. PGD adversarial training lowers mean PGD evasion to 0.641-0.669, with very large spread across fold models, and costs clean AUROC (-0.007 [-0.012, -0.002], Holm p 0.024, `worse`); synthetic-edit training (`synth`) changes no evasion rate by more than 0.084 in either direction (PGD 1/255: 0.872 to 0.956). The black-box evasion rate does not fall over the 3 arms-race rounds (0.028, 0.034, 0.032), and clean AUROC is unchanged.
+- Issues / anomalies: the `adv` defence is bimodal. Pooled over the four eps values (`adversarial_predictions.csv`), 6 of 15 fold models (f0_s0, f2_s1, f2_s2, f4_s0-2) have FGSM evasion 0 and PGD 0.03-0.44; f2_s0 has FGSM 0.29 but PGD 1.0; the other 8 have FGSM 1.0 and PGD 0.92-1.0, above the undefended model's FGSM rate (0.252 ± 0.142). In `train_log.csv` the 6 robust runs ran 16-30 epochs and end at a clean val loss of 0.106-0.471, the 8 others 29-30 epochs ending at 0.0015-0.199; early stopping on clean val loss does not select for robustness, but the logs do not show the cause. Not re-run (Rule 9); a robust-validation stopping rule would be a new arm.
+- Next: the model card lists white-box gradient and patch attacks as a known failure mode; no defence is adopted for the final model.
+
+## 2026-11-07 · E14 · Procedural counterfeit synthesis (Phases 6-8 kit)
+- Commit: Phases 6-8 GPU kit `PRIVATE_gpu_kit_phases6-8_e7905b0.zip` (RTX 5060, source e7905b0, snapshot unmodified), results `RESULTS_phases6-8_20261107-041837.zip` installed in e69a6de; tables and figures e085e71.
+- Command(s): pipeline stages `c_e14`, `c_e14os`; `python scripts/aggregate.py --exp e14 --include e05:efficientnetv2-s/default --reference efficientnetv2-s/default`; `python scripts/phase6to8_tables.py --exp e14`; `python scripts/make_figures.py --exp e14`
+- Hypothesis: a moderate synthetic ratio does not lower pooled OOF AUROC; synthetic-only is far worse; the best ratio arm improves E8 open-set AUROC (E14.md).
+- Runs: 45 `e14_efficientnetv2-s_procedural-{r1,r4,only}_*` (ADR-029), 6 `e14os_efficientnetv2-s_procedural-r1-no-{blister,packaging}_*`.
+- Result (from `results/tables/e14_vs_reference.md`):
+
+| config | reference | images | auroc_diff | ece_diff | log_loss_diff | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| efficientnetv2-s/procedural-only | efficientnetv2-s/default | 549 | -0.277 [-0.318, -0.234] | 0.075 [0.057, 0.106] | 0.580 [0.552, 0.603] | 1.569e-37 | 4.706e-37 | False | True |
+| efficientnetv2-s/procedural-r1 | efficientnetv2-s/default | 549 | -0.001 [-0.003, -0.000] | 0.074 [0.058, 0.092] | 0.151 [0.127, 0.173] | 0.03356 | 0.03356 | False | True |
+| efficientnetv2-s/procedural-r4 | efficientnetv2-s/default | 549 | -0.012 [-0.019, -0.006] | 0.328 [0.304, 0.350] | 0.667 [0.634, 0.698] | 0.001174 | 0.002349 | False | True |
+
+  Decision (from `results/tables/e14_best.md`, rule fixed in E14.md):
+
+| auroc | log_loss | runs | variant |
+|---|---|---|---|
+| 0.9979 | 0.1804 | 15 | procedural-r1 |
+| 0.9877 | 0.6965 | 15 | procedural-r4 |
+
+  E8 re-run (from `results/tables/e14_open_set_gain.md`):
+
+| held-out type | images | runs (E14 / E8) | E8 final model AUROC | E14 procedural-r1 AUROC | AUROC diff (E14 - E8) | delong_p | holm_p | improves | worse |
+|---|---|---|---|---|---|---|---|---|---|
+| blister | 229 | 3 / 3 | 0.9541 | 0.9121 | -0.042 [-0.069, -0.017] | 0.001727 | 0.003453 | False | True |
+| packaging | 175 | 3 / 3 | 0.9947 | 0.9907 | -0.004 [-0.012, 0.002] | 0.2161 | 0.2161 | False | False |
+
+  Synthetic images (from `results/tables/e14_synthesis.md`):
+
+| generator | edit_type | images |
+|---|---|---|
+| procedural | char_substitution | 102 |
+| procedural | dose_digit_change | 70 |
+| procedural | font_swap | 72 |
+| procedural | local_blur_or_rehalftone | 213 |
+| procedural | local_hue_shift | 185 |
+| procedural | local_jpeg | 207 |
+| procedural | logo_warp | 189 |
+
+- Interpretation: every synthetic arm is significantly worse than the final model in pooled OOF AUROC (`worse` = True for all three), though for `procedural-r1` the difference is -0.001 [-0.003, -0.000]; ECE and log-loss rise in every arm. Synthetic-only training reaches a pooled AUROC of 0.722 [0.681, 0.765] (`e14_synthetic_only.md`). The best ratio arm does not improve open-set AUROC: it is worse on unseen blister (-0.042 [-0.069, -0.017]) and not different on unseen packaging. The first hypothesis is not supported; the second and the negative open-set result are.
+- Issues / anomalies: the synthetic manifest holds 14 image ids twice (ids are content hashes, so these are identical images); E12 scored them twice and wrote the metadata lookup as a stringified Series. The table builder now drops the duplicates and restores the values (`repair_localization`, test in `tests/test_phase6to8_tables.py`); the kit code drops duplicate ids for future runs. Training arms may have seen these 14 images twice; not re-run. The plausibility review (PLAN 7.4) was dropped (ADR-029), so synthetic quality is unchecked.
+- Next: `procedural-r1` was the `synth` defence in E15; no synthetic data in the final model.
+
+## 2026-11-07 · E12 · Faithfulness of saliency maps (Phases 6-8 kit)
+- Commit: Phases 6-8 GPU kit `PRIVATE_gpu_kit_phases6-8_e7905b0.zip` (RTX 5060, source e7905b0, snapshot unmodified), results `RESULTS_phases6-8_20261107-041837.zip` installed in e69a6de; tables and figures e085e71.
+- Command(s): pipeline stages E12 (`results/pipeline/e12_{final,vit,mil}_status.json`); `python scripts/phase6to8_tables.py --exp e12`; `python scripts/make_figures.py --exp e12` (local-only figure, ADR-006)
+- Hypothesis: every method beats the random map on deletion and insertion; Grad-CAM-type maps pass the randomization check, IG may not; localization is weak for small text edits (E12.md).
+- Runs: no training; 45 fold models (final model, DINOv2-S `p4ref`, E4 multi-branch) wrote `faithfulness.csv` and `localization.csv`; the three fold-0 / seed-0 runs wrote `randomization.csv` and `saliency_examples.npz`; 0 failures.
+- Result (from `results/tables/e12_faithfulness.md`):
+
+| model | method | runs | images | deletion AUC (lower better) | insertion AUC (higher better) | deletion vs random p (Holm) | insertion vs random p (Holm) |
+|---|---|---|---|---|---|---|---|
+| final | gradcam | 15 | 1647 | 0.949 ± 0.022 | 0.979 ± 0.011 | 1.2e-54 | 8.34e-160 |
+| final | gradcampp | 15 | 1647 | 0.953 ± 0.023 | 0.978 ± 0.011 | 1.39e-64 | 1.59e-152 |
+| final | ig | 15 | 1647 | 0.940 ± 0.019 | 0.976 ± 0.015 | 7.88e-26 | 7.7e-196 |
+| final | random | 15 | 1647 | 0.904 ± 0.057 | 0.901 ± 0.057 | nan | nan |
+| DINOv2-S | rollout | 15 | 1647 | 0.924 ± 0.048 | 0.937 ± 0.057 | 0.401 | 2.05e-10 |
+| DINOv2-S | ig | 15 | 1647 | 0.834 ± 0.086 | 0.977 ± 0.018 | 6.4e-124 | 7.91e-135 |
+| DINOv2-S | random | 15 | 1647 | 0.929 ± 0.056 | 0.928 ± 0.058 | nan | nan |
+| E4 multi-branch | mil | 15 | 1647 | 0.948 ± 0.025 | 0.958 ± 0.020 | 2.65e-11 | 2.67e-33 |
+| E4 multi-branch | ig | 15 | 1647 | 0.914 ± 0.025 | 0.951 ± 0.021 | 2.1e-22 | 5.21e-26 |
+| E4 multi-branch | random | 15 | 1647 | 0.941 ± 0.024 | 0.941 ± 0.023 | nan | nan |
+
+  Localization of the final model (from `results/tables/e12_localization.md`, rows for `final`):
+
+| model | method | generator | edit_type | images | pointing game | IoU top 15% | mean mask fraction |
+|---|---|---|---|---|---|---|---|
+| final | gradcam | procedural | char_substitution | 19 | 0.007 ± 0.018 | 0.006 ± 0.004 | 0.009 |
+| final | gradcam | procedural | dose_digit_change | 14 | 0.000 ± 0.000 | 0.008 ± 0.005 | 0.014 |
+| final | gradcam | procedural | font_swap | 14 | 0.105 ± 0.074 | 0.063 ± 0.020 | 0.038 |
+| final | gradcam | procedural | local_blur_or_rehalftone | 41 | 0.198 ± 0.056 | 0.092 ± 0.015 | 0.174 |
+| final | gradcam | procedural | local_hue_shift | 36 | 0.241 ± 0.089 | 0.116 ± 0.026 | 0.167 |
+| final | gradcam | procedural | local_jpeg | 41 | 0.244 ± 0.062 | 0.123 ± 0.022 | 0.174 |
+| final | gradcam | procedural | logo_warp | 37 | 0.160 ± 0.039 | 0.092 ± 0.025 | 0.149 |
+| final | gradcampp | procedural | char_substitution | 19 | 0.010 ± 0.020 | 0.008 ± 0.005 | 0.009 |
+| final | gradcampp | procedural | dose_digit_change | 14 | 0.005 ± 0.020 | 0.008 ± 0.005 | 0.014 |
+| final | gradcampp | procedural | font_swap | 14 | 0.105 ± 0.075 | 0.065 ± 0.022 | 0.038 |
+| final | gradcampp | procedural | local_blur_or_rehalftone | 41 | 0.227 ± 0.073 | 0.100 ± 0.016 | 0.174 |
+| final | gradcampp | procedural | local_hue_shift | 36 | 0.263 ± 0.084 | 0.123 ± 0.029 | 0.167 |
+| final | gradcampp | procedural | local_jpeg | 41 | 0.270 ± 0.068 | 0.134 ± 0.021 | 0.174 |
+| final | gradcampp | procedural | logo_warp | 37 | 0.210 ± 0.060 | 0.113 ± 0.029 | 0.149 |
+| final | ig | procedural | char_substitution | 19 | 0.003 ± 0.013 | 0.014 ± 0.005 | 0.009 |
+| final | ig | procedural | dose_digit_change | 14 | 0.032 ± 0.041 | 0.012 ± 0.003 | 0.014 |
+| final | ig | procedural | font_swap | 14 | 0.030 ± 0.053 | 0.046 ± 0.008 | 0.038 |
+| final | ig | procedural | local_blur_or_rehalftone | 41 | 0.163 ± 0.067 | 0.098 ± 0.017 | 0.174 |
+| final | ig | procedural | local_hue_shift | 36 | 0.285 ± 0.080 | 0.126 ± 0.017 | 0.167 |
+| final | ig | procedural | local_jpeg | 41 | 0.312 ± 0.071 | 0.131 ± 0.015 | 0.174 |
+| final | ig | procedural | logo_warp | 37 | 0.239 ± 0.076 | 0.130 ± 0.019 | 0.149 |
+| final | random | procedural | char_substitution | 19 | 0.000 ± 0.000 | 0.008 ± 0.003 | 0.009 |
+| final | random | procedural | dose_digit_change | 14 | 0.033 ± 0.069 | 0.009 ± 0.005 | 0.014 |
+| final | random | procedural | font_swap | 14 | 0.032 ± 0.045 | 0.027 ± 0.005 | 0.038 |
+| final | random | procedural | local_blur_or_rehalftone | 41 | 0.119 ± 0.034 | 0.063 ± 0.008 | 0.174 |
+| final | random | procedural | local_hue_shift | 36 | 0.125 ± 0.044 | 0.064 ± 0.008 | 0.167 |
+| final | random | procedural | local_jpeg | 41 | 0.129 ± 0.029 | 0.063 ± 0.009 | 0.174 |
+| final | random | procedural | logo_warp | 37 | 0.137 ± 0.068 | 0.063 ± 0.012 | 0.149 |
+
+- Interpretation: on insertion every method beats the random map (Holm p < 1e-9). On deletion only DINOv2-S IG (0.834 ± 0.086 vs random 0.929 ± 0.056) and E4 IG (0.914 vs 0.941) are clearly below their random map (DINOv2-S rollout 0.924, Holm p 0.401); all three final-model methods have a higher deletion AUC than random, so the first hypothesis holds for insertion only. In the randomization check (`e12_randomization.md`) Grad-CAM and Grad-CAM++ correlations fall to around 0 by the middle blocks, while IG stays at 0.776-0.865 through all layers of the final model, so IG fails the sanity check. The final model's maps hit the edit mask (pointing game) in at most 0.312 of the images for region edits (IG, `local_jpeg`; random map 0.119-0.137) and at most 0.105 for text edits (Grad-CAM / Grad-CAM++, `font_swap`).
+- Issues / anomalies: the duplicate synthetic ids (E14 entry) affected `localization.csv`; repaired at table-build time.
+- Next: the app shows the Grad-CAM++ map (passes the randomization check, unlike IG, and is at or above Grad-CAM in every localization row); maps are labelled as indicative only.
+
 ## 2026-10-25 · E11 · OOD guard and end-to-end system (Phase 5 kit)
 - Commit: Phase 5 GPU kit `PRIVATE_gpu_kit_phase5_46d0a9f.zip` (RTX 5060; source 46d0a9f, recreated as 5a6cdc8), results `RESULTS_phase5_20261025-082954.zip` installed in 863278a; tables 101644f, note fix 3006ecc.
 - Command(s): pipeline `p5_reliability`; `python scripts/phase5_tables.py --exp e11` (after `--exp e10`)

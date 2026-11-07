@@ -1,0 +1,15 @@
+{
+  "alpha": 0.1,
+  "guard_threshold": -0.9511422213778251,
+  "quality": {
+    "brightness": 0.03957473614445778,
+    "contrast": 0.01065226251217596,
+    "sharpness": 0.002705399666452956
+  },
+  "quantiles": [
+    0.0018102110262026017,
+    0.00011591934318644359
+  ],
+  "run": "e05_efficientnetv2-s_default_f0_s0_20261013-190119",
+  "temperature": 1.0
+}

@@ -194,10 +194,10 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 ### E12 · Faithfulness
 
-- [ ] **6.1** `interpret/cams.py` (Grad-CAM, Grad-CAM++ via `grad-cam`), integrated gradients (Captum), `interpret/attention_rollout.py`, MIL tile-attention upsampled to image size, random-map baseline.
-- [ ] **6.2** `evaluation/faithfulness.py`: deletion and insertion AUC (5% steps, blurred-image baseline); model-randomization sanity check (cascading re-initialization from the top layer; Spearman correlation of maps vs original).
-- [ ] (after 7.2 instead of 7.4, ADR-029) **6.3** Localization on E14 synthetic counterfeits (run after 7.4): pointing-game accuracy and IoU of the top-15% map region vs edit mask.
-- [ ] **6.4** Table `e12_faithfulness`; figure `e12_examples` (4 images × 6 methods).
+- [x] **6.1** (4464f59, a62ecf9; results e69a6de) `interpret/cams.py` (Grad-CAM, Grad-CAM++ via `grad-cam`), integrated gradients (Captum), `interpret/attention_rollout.py`, MIL tile-attention upsampled to image size, random-map baseline.
+- [x] **6.2** (4464f59, a62ecf9; results e69a6de) `evaluation/faithfulness.py`: deletion and insertion AUC (5% steps, blurred-image baseline); model-randomization sanity check (cascading re-initialization from the top layer; Spearman correlation of maps vs original).
+- [x] (after 7.2 instead of 7.4, ADR-029; e69a6de, e085e71; duplicate-id repair) **6.3** Localization on E14 synthetic counterfeits (run after 7.4): pointing-game accuracy and IoU of the top-15% map region vs edit mask.
+- [x] **6.4** (e085e71; `e12_examples` is local-only, ADR-006; plus `e12_randomization`, `e12_localization`) Table `e12_faithfulness`; figure `e12_examples` (4 images × 6 methods).
 
 ### E13 · Concept bottleneck + TCAV
 
@@ -214,22 +214,22 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 ### E14 · Generative counterfeit synthesis
 
-- [ ] **7.1** `synthesis/ocr.py` (EasyOCR text boxes, cached per image).
-- [ ] **7.2** `synthesis/procedural.py`: edit types `font_swap, char_substitution, dose_digit_change, local_hue_shift (10–30°), local_blur_or_rehalftone, logo_warp, local_jpeg`; each returns edited image, binary mask, edit type, strength. Only authentic images from training partitions; output inherits `group_id` and fold; saved under `data/processed/synthetic/` with `synthetic_manifest.csv`.
+- [x] **7.1** (4464f59, a62ecf9) `synthesis/ocr.py` (EasyOCR text boxes, cached per image).
+- [x] **7.2** (4464f59, a62ecf9; e69a6de) `synthesis/procedural.py`: edit types `font_swap, char_substitution, dose_digit_change, local_hue_shift (10–30°), local_blur_or_rehalftone, logo_warp, local_jpeg`; each returns edited image, binary mask, edit type, strength. Only authentic images from training partitions; output inherits `group_id` and fold; saved under `data/processed/synthetic/` with `synthetic_manifest.csv`.
     - AC: `test_leakage.py` covers synthetic inheritance.
 - [ ] (dropped, ADR-029: SD inpainting not run) **7.3** `synthesis/inpaint.py`: Stable Diffusion inpainting (verify model ID and licence; ask Sophie before downloading weights) on masks derived from OCR/logo regions; prompts from a fixed list in config.
 - [ ] (dropped, ADR-029: no further annotation) **7.4** Quality check: random 100 synthetic images per generator into the annotation app; Sophie labels plausible/implausible → `data/annotations/synthetic_quality.csv`.
-- [ ] (reduced, ADR-029: procedural generator only, ratios 1 and 4 + synthetic-only; ratio 0 = the final model's runs) **7.5** Arms (final model, full protocol): synthetic:real counterfeit ratio 0, 0.5, 1, 2, 4 per generator; synthetic-only (no real counterfeits); E8 open-set re-run with the best ratio. Evaluation always on real held-out images only.
-- [ ] **7.6** Figure `e14_ratio_curve`; tables `e14_synthetic_only`, `e14_open_set_gain`.
+- [x] (reduced, ADR-029: procedural generator only, ratios 1 and 4 + synthetic-only; ratio 0 = the final model's runs; e69a6de, e085e71; best `procedural-r1`) **7.5** Arms (final model, full protocol): synthetic:real counterfeit ratio 0, 0.5, 1, 2, 4 per generator; synthetic-only (no real counterfeits); E8 open-set re-run with the best ratio. Evaluation always on real held-out images only.
+- [x] **7.6** (e085e71) Figure `e14_ratio_curve`; tables `e14_synthetic_only`, `e14_open_set_gain`.
 
 ### E15 · Adaptive adversary
 
-- [ ] **7.7** `adversarial/attacks.py`: FGSM, PGD-20 (step ε/8) at L∞ ε ∈ {1,2,4,8}/255 via `torchattacks`, targeted toward "authentic", on counterfeit held-out images.
-- [ ] **7.8** `adversarial/physical.py`: optimize global brightness/contrast/hue/saturation parameters only (bounded), and a square patch ≤ 5% of image area at a fixed location, by gradient ascent.
-- [ ] **7.9** `adversarial/blackbox.py`: random search over procedural-edit parameters, 200 score-only queries per image.
-- [ ] (reduced, ADR-029: no PGD + synthetic-edit arm) **7.10** Defences: PGD adversarial training (ε=4/255, 7 steps, 50% adversarial per batch); synthetic-edit training (E14 best); both.
-- [ ] (reduced, ADR-029: 3 rounds) **7.11** Arms race: 5 rounds; each round the black-box attacker searches evasive edits on training-fold counterfeits, detector retrains including them, fresh search on held-out folds measures evasion rate.
-- [ ] **7.12** Figures `e15_success_vs_eps`, `e15_arms_race`; table `e15_defences` (clean AUROC cost vs robust gain).
+- [x] **7.7** (4464f59, a62ecf9; e69a6de) `adversarial/attacks.py`: FGSM, PGD-20 (step ε/8) at L∞ ε ∈ {1,2,4,8}/255 via `torchattacks`, targeted toward "authentic", on counterfeit held-out images.
+- [x] **7.8** (4464f59, a62ecf9; e69a6de) `adversarial/physical.py`: optimize global brightness/contrast/hue/saturation parameters only (bounded), and a square patch ≤ 5% of image area at a fixed location, by gradient ascent.
+- [x] **7.9** (4464f59, a62ecf9; e69a6de) `adversarial/blackbox.py`: random search over procedural-edit parameters, 200 score-only queries per image.
+- [x] (reduced, ADR-029: no PGD + synthetic-edit arm; e69a6de; `adv` bimodal, see log) **7.10** Defences: PGD adversarial training (ε=4/255, 7 steps, 50% adversarial per batch); synthetic-edit training (E14 best); both.
+- [x] (reduced, ADR-029: 3 rounds; e69a6de) **7.11** Arms race: 5 rounds; each round the black-box attacker searches evasive edits on training-fold counterfeits, detector retrains including them, fresh search on held-out folds measures evasion rate.
+- [x] **7.12** (e085e71) Figures `e15_success_vs_eps`, `e15_arms_race`; table `e15_defences` (clean AUROC cost vs robust gain).
 
 **CHECKPOINT 7.**
 
@@ -237,11 +237,11 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 ## Phase 8 · Deployment (E16 + app)
 
-- [ ] (reduced, ADR-029: T = 4 only) **8.1** `training/distill.py`: students MobileNetV3-Large and EfficientNet-Lite0; loss = 0.5·CE + 0.5·T²·KL(teacher‖student), T ∈ {2,4}; teacher = final model (or 3-seed ensemble, per ADR). Full protocol.
-- [ ] **8.2** `deploy/export_onnx.py` (opset documented; numerical check vs PyTorch outputs, max abs diff ≤ 1e-4 for FP32), `deploy/quantize.py` (ONNX Runtime static INT8, 200 training images for calibration).
-- [ ] **8.3** Re-fit temperature and conformal thresholds for every exported model; re-run E10 metrics.
+- [x] (reduced, ADR-029: T = 4 only; teacher = same fold/seed final model; e69a6de) **8.1** `training/distill.py`: students MobileNetV3-Large and EfficientNet-Lite0; loss = 0.5·CE + 0.5·T²·KL(teacher‖student), T ∈ {2,4}; teacher = final model (or 3-seed ensemble, per ADR). Full protocol.
+- [x] **8.2** (4464f59, a62ecf9; e69a6de; opset 17; FP32 check failed in 2/15 fold models per student, see log) `deploy/export_onnx.py` (opset documented; numerical check vs PyTorch outputs, max abs diff ≤ 1e-4 for FP32), `deploy/quantize.py` (ONNX Runtime static INT8, 200 training images for calibration).
+- [x] **8.3** (e085e71; `e16_reliability`) Re-fit temperature and conformal thresholds for every exported model; re-run E10 metrics.
 - [ ] **8.4** `deploy/latency.py`: median of 100 runs after 10 warm-ups, batch 1, laptop CPU; phone-browser latency via a minimal ONNX Runtime Web page (record device model and browser).
-- [ ] **8.5** Figure `e16_pareto`; table `e16_deployment` (AUROC, ECE, coverage, size MB, latency ms).
+- [ ] (table and size-axis figure in e085e71; latency column waits for 8.4) **8.5** Figure `e16_pareto`; table `e16_deployment` (AUROC, ECE, coverage, size MB, latency ms).
 - [ ] **8.6 App** (`app/`): photo capture/upload → quality checks from `e09_quality_limits` → OOD guard → model → calibrated probability + conformal set → label `Likely authentic | Likely counterfeit | Uncertain — verify manually` → best E12 heatmap (+ E13 concepts if included) → footer with intended use and model-card link.
     - AC: outputs on 20 held-out images identical to the offline pipeline (automated test); runs in a phone browser.
 

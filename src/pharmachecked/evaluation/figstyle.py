@@ -77,6 +77,6 @@ def save_figure(fig: plt.Figure, out_dir: Path, name: str) -> list[Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = [out_dir / f"{name}.png", out_dir / f"{name}.pdf"]
     fig.savefig(paths[0], dpi=300, bbox_inches="tight")
-    fig.savefig(paths[1], bbox_inches="tight")
+    fig.savefig(paths[1], bbox_inches="tight", metadata={"CreationDate": None})  # reproducible
     plt.close(fig)
     return paths
