@@ -1,0 +1,1 @@
+checkpoints/e16_mobilenetv3-large_kd-t4_f4_s2_20261106-150823/best.pt

@@ -1,0 +1,8 @@
+generator,edit_type,images
+procedural,char_substitution,102
+procedural,dose_digit_change,70
+procedural,font_swap,72
+procedural,local_blur_or_rehalftone,213
+procedural,local_hue_shift,185
+procedural,local_jpeg,207
+procedural,logo_warp,189

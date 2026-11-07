@@ -1,0 +1,1 @@
+checkpoints/e16_efficientnet-lite0_kd-t4_f0_s1_20261106-151111/best.pt

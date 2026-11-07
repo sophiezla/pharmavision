@@ -1,0 +1,1 @@
+checkpoints/e15race_efficientnetv2-s_round2_f3_s1_20261107-032732/best.pt

@@ -1,0 +1,12 @@
+{
+  "exporter": "torch.onnx.export(dynamo=False), torch 2.14.1+cu130",
+  "fp32_check_passed": true,
+  "img_size": 224,
+  "max_abs_diff_fp32": 1.0013580322265625e-05,
+  "n_calibration": 200,
+  "n_params": 20830289,
+  "opset": 17,
+  "size_mb_checkpoint": 84.306623,
+  "size_mb_fp32": 80.650102,
+  "size_mb_int8": 22.930448
+}

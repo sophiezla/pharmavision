@@ -1,0 +1,1 @@
+checkpoints/e14_efficientnetv2-s_procedural-r4_f2_s1_20261106-141054/best.pt

@@ -1,0 +1,1117 @@
+image_id,source_image_id,generator,edit_type,fold,seed,method,prob,mask_fraction,hit,iou
+00fdca2417a15a0f,a002c5116bee746e,procedural,logo_warp,2,2,gradcam,5.22726e-06,0.178571,0,0
+023db416097d550a,461a75fe9e800764,procedural,logo_warp,2,2,gradcam,0.0388307,0.606465,0,0.0879385
+02bd86fe1fac92b6,4f1a5d91504cbea6,procedural,logo_warp,2,2,gradcam,0.000235958,0.107143,0,0.0955252
+039fbd79f29b1a5d,34b7461cfa238b00,procedural,local_blur_or_rehalftone,2,2,gradcam,7.97384e-05,0.0683992,0,0.0757903
+06f821f3a35c0547,c8d1bc89639bcf61,procedural,local_jpeg,2,2,gradcam,6.2144e-06,0.0511201,0,0.124972
+07b64832fba12a7f,5ee739f7cc0e31ef,procedural,local_blur_or_rehalftone,2,2,gradcam,2.07661e-05,0.03408,0,0
+0944fe5e43ae3120,a8e1084ca768b5f0,procedural,char_substitution,2,2,gradcam,7.57092e-07,0.016761,0,0
+0bdae5a20fbd39e2,dde822a18bd8ea6b,procedural,local_jpeg,2,2,gradcam,1.29705e-05,1,1,0.149992
+00fdca2417a15a0f,a002c5116bee746e,procedural,logo_warp,2,2,gradcampp,5.22726e-06,0.178571,0,0
+023db416097d550a,461a75fe9e800764,procedural,logo_warp,2,2,gradcampp,0.0388307,0.606465,1,0.247322
+02bd86fe1fac92b6,4f1a5d91504cbea6,procedural,logo_warp,2,2,gradcampp,0.000235958,0.107143,0,0.180313
+039fbd79f29b1a5d,34b7461cfa238b00,procedural,local_blur_or_rehalftone,2,2,gradcampp,7.97384e-05,0.0683992,0,0.104414
+06f821f3a35c0547,c8d1bc89639bcf61,procedural,local_jpeg,2,2,gradcampp,6.2144e-06,0.0511201,0,0.0738534
+07b64832fba12a7f,5ee739f7cc0e31ef,procedural,local_blur_or_rehalftone,2,2,gradcampp,2.07661e-05,0.03408,0,0
+0944fe5e43ae3120,a8e1084ca768b5f0,procedural,char_substitution,2,2,gradcampp,7.57092e-07,0.016761,0,0
+0bdae5a20fbd39e2,dde822a18bd8ea6b,procedural,local_jpeg,2,2,gradcampp,1.29705e-05,1,1,0.149992
+00fdca2417a15a0f,a002c5116bee746e,procedural,logo_warp,2,2,ig,5.22726e-06,0.178571,0,0.0561179
+023db416097d550a,461a75fe9e800764,procedural,logo_warp,2,2,ig,0.0388307,0.606465,0,0.175145
+02bd86fe1fac92b6,4f1a5d91504cbea6,procedural,logo_warp,2,2,ig,0.000235958,0.107143,0,0.115897
+039fbd79f29b1a5d,34b7461cfa238b00,procedural,local_blur_or_rehalftone,2,2,ig,7.97384e-05,0.0683992,0,0.0313412
+06f821f3a35c0547,c8d1bc89639bcf61,procedural,local_jpeg,2,2,ig,6.2144e-06,0.0511201,0,0.060982
+07b64832fba12a7f,5ee739f7cc0e31ef,procedural,local_blur_or_rehalftone,2,2,ig,2.07661e-05,0.03408,0,0.0249695
+0944fe5e43ae3120,a8e1084ca768b5f0,procedural,char_substitution,2,2,ig,7.57092e-07,0.016761,0,0.0186267
+0bdae5a20fbd39e2,dde822a18bd8ea6b,procedural,local_jpeg,2,2,ig,1.29705e-05,1,1,0.149992
+00fdca2417a15a0f,a002c5116bee746e,procedural,logo_warp,2,2,random,5.22726e-06,0.178571,0,0.113092
+023db416097d550a,461a75fe9e800764,procedural,logo_warp,2,2,random,0.0388307,0.606465,1,0.149102
+02bd86fe1fac92b6,4f1a5d91504cbea6,procedural,logo_warp,2,2,random,0.000235958,0.107143,1,0.186609
+039fbd79f29b1a5d,34b7461cfa238b00,procedural,local_blur_or_rehalftone,2,2,random,7.97384e-05,0.0683992,0,0.0101401
+06f821f3a35c0547,c8d1bc89639bcf61,procedural,local_jpeg,2,2,random,6.2144e-06,0.0511201,0,0.0323274
+07b64832fba12a7f,5ee739f7cc0e31ef,procedural,local_blur_or_rehalftone,2,2,random,2.07661e-05,0.03408,0,0.0574765
+0944fe5e43ae3120,a8e1084ca768b5f0,procedural,char_substitution,2,2,random,7.57092e-07,0.016761,0,0
+0bdae5a20fbd39e2,dde822a18bd8ea6b,procedural,local_jpeg,2,2,random,1.29705e-05,1,1,0.149992
+0c949474d13fb9e9,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,gradcam,3.32227e-05,0.0382653,0,0.0219626
+0d6a1818163f217a,86a273856140bd7a,procedural,font_swap,2,2,gradcam,1.15028e-06,0.0270647,0,0.0232665
+0f9a20ed2b0a9357,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,gradcam,1.62461e-05,0.045739,0,0.154054
+1156d9d07cf69610,b7d2a48e1c7c1a21,procedural,local_blur_or_rehalftone,2,2,gradcam,5.23078e-05,0.0265466,0,0
+12f6afd35b55ed11,f54e38cb60f2d41f,procedural,dose_digit_change,2,2,gradcam,3.46128e-07,0.00129544,0,0.00863673
+13ff8b54b0bc3289,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,gradcam,0.000730504,0.636579,1,0.235622
+1798f778eb017fa4,622407a0eab33008,procedural,local_hue_shift,2,2,gradcam,6.33898e-05,0.0516582,0,0
+18545264e9d676b5,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,gradcam,2.18117e-05,0.0535714,0,0
+0c949474d13fb9e9,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,gradcampp,3.32227e-05,0.0382653,0,0.050723
+0d6a1818163f217a,86a273856140bd7a,procedural,font_swap,2,2,gradcampp,1.15028e-06,0.0270647,0,0.0147344
+0f9a20ed2b0a9357,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,gradcampp,1.62461e-05,0.045739,0,0.229161
+1156d9d07cf69610,b7d2a48e1c7c1a21,procedural,local_blur_or_rehalftone,2,2,gradcampp,5.23078e-05,0.0265466,0,0
+12f6afd35b55ed11,f54e38cb60f2d41f,procedural,dose_digit_change,2,2,gradcampp,3.46128e-07,0.00129544,0,0.00689747
+13ff8b54b0bc3289,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.000730504,0.636579,1,0.235622
+1798f778eb017fa4,622407a0eab33008,procedural,local_hue_shift,2,2,gradcampp,6.33898e-05,0.0516582,0,0
+18545264e9d676b5,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,gradcampp,2.18117e-05,0.0535714,0,0.00690063
+0c949474d13fb9e9,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,ig,3.32227e-05,0.0382653,0,0.0344979
+0d6a1818163f217a,86a273856140bd7a,procedural,font_swap,2,2,ig,1.15028e-06,0.0270647,0,0.0383357
+0f9a20ed2b0a9357,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,ig,1.62461e-05,0.045739,1,0.0415739
+1156d9d07cf69610,b7d2a48e1c7c1a21,procedural,local_blur_or_rehalftone,2,2,ig,5.23078e-05,0.0265466,0,0.0239279
+12f6afd35b55ed11,f54e38cb60f2d41f,procedural,dose_digit_change,2,2,ig,3.46128e-07,0.00129544,0,0.000395361
+13ff8b54b0bc3289,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,ig,0.000730504,0.636579,0,0.0661282
+1798f778eb017fa4,622407a0eab33008,procedural,local_hue_shift,2,2,ig,6.33898e-05,0.0516582,0,0.0377436
+18545264e9d676b5,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,ig,2.18117e-05,0.0535714,0,0.0764043
+0c949474d13fb9e9,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,random,3.32227e-05,0.0382653,0,0.0136281
+0d6a1818163f217a,86a273856140bd7a,procedural,font_swap,2,2,random,1.15028e-06,0.0270647,0,0.0183402
+0f9a20ed2b0a9357,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,random,1.62461e-05,0.045739,0,0.00285919
+1156d9d07cf69610,b7d2a48e1c7c1a21,procedural,local_blur_or_rehalftone,2,2,random,5.23078e-05,0.0265466,0,0.0102646
+12f6afd35b55ed11,f54e38cb60f2d41f,procedural,dose_digit_change,2,2,random,3.46128e-07,0.00129544,0,0
+13ff8b54b0bc3289,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,random,0.000730504,0.636579,1,0.137443
+1798f778eb017fa4,622407a0eab33008,procedural,local_hue_shift,2,2,random,6.33898e-05,0.0516582,0,0.0179074
+18545264e9d676b5,367c5e1fcd4f9d7c,procedural,local_jpeg,2,2,random,2.18117e-05,0.0535714,0,0.0681866
+18ccb7dab52c7549,58f81c1e778c8f90,procedural,local_hue_shift,2,2,gradcam,3.06614e-05,0.0195312,0,0.0315304
+197fa97fdecbe294,979f9f2ac0eb805f,procedural,local_blur_or_rehalftone,2,2,gradcam,5.42393e-05,0.0552455,0,0.00645035
+1af8b04edd3a91fa,a002c5116bee746e,procedural,local_jpeg,2,2,gradcam,2.66935e-06,0.178571,0,0
+1d49b865357c748b,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,gradcam,9.88058e-06,0.00149474,0,0
+1d5b6d53681b4c5f,5ee739f7cc0e31ef,procedural,logo_warp,2,2,gradcam,4.39069e-06,0.03408,0,0
+1e3ab1542902978d,2ebab87d72158ec1,procedural,dose_digit_change,2,2,gradcam,3.25534e-05,0.00167411,0,0.0111613
+20cccee372e46b4a,6e62ca49bd549d45,procedural,local_jpeg,2,2,gradcam,0.000198403,0.332031,1,0.451741
+23bfb35ff00e0feb,4f1a5d91504cbea6,procedural,char_substitution,2,2,gradcam,0.000239497,0.00677615,0,0.00306044
+18ccb7dab52c7549,58f81c1e778c8f90,procedural,local_hue_shift,2,2,gradcampp,3.06614e-05,0.0195312,0,0.0122575
+197fa97fdecbe294,979f9f2ac0eb805f,procedural,local_blur_or_rehalftone,2,2,gradcampp,5.42393e-05,0.0552455,0,0.00155612
+1af8b04edd3a91fa,a002c5116bee746e,procedural,local_jpeg,2,2,gradcampp,2.66935e-06,0.178571,0,0
+1d49b865357c748b,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,gradcampp,9.88058e-06,0.00149474,0,0
+1d5b6d53681b4c5f,5ee739f7cc0e31ef,procedural,logo_warp,2,2,gradcampp,4.39069e-06,0.03408,0,0.00599063
+1e3ab1542902978d,2ebab87d72158ec1,procedural,dose_digit_change,2,2,gradcampp,3.25534e-05,0.00167411,0,0.0111613
+20cccee372e46b4a,6e62ca49bd549d45,procedural,local_jpeg,2,2,gradcampp,0.000198403,0.332031,1,0.451741
+23bfb35ff00e0feb,4f1a5d91504cbea6,procedural,char_substitution,2,2,gradcampp,0.000239497,0.00677615,0,0.00626839
+18ccb7dab52c7549,58f81c1e778c8f90,procedural,local_hue_shift,2,2,ig,3.06614e-05,0.0195312,0,0.0588821
+197fa97fdecbe294,979f9f2ac0eb805f,procedural,local_blur_or_rehalftone,2,2,ig,5.42393e-05,0.0552455,0,0.0207156
+1af8b04edd3a91fa,a002c5116bee746e,procedural,local_jpeg,2,2,ig,2.66935e-06,0.178571,0,0.051336
+1d49b865357c748b,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,ig,9.88058e-06,0.00149474,0,0.00197733
+1d5b6d53681b4c5f,5ee739f7cc0e31ef,procedural,logo_warp,2,2,ig,4.39069e-06,0.03408,0,0.082386
+1e3ab1542902978d,2ebab87d72158ec1,procedural,dose_digit_change,2,2,ig,3.25534e-05,0.00167411,0,0.0047531
+20cccee372e46b4a,6e62ca49bd549d45,procedural,local_jpeg,2,2,ig,0.000198403,0.332031,1,0.276643
+23bfb35ff00e0feb,4f1a5d91504cbea6,procedural,char_substitution,2,2,ig,0.000239497,0.00677615,0,0.00807382
+18ccb7dab52c7549,58f81c1e778c8f90,procedural,local_hue_shift,2,2,random,3.06614e-05,0.0195312,1,0.0401076
+197fa97fdecbe294,979f9f2ac0eb805f,procedural,local_blur_or_rehalftone,2,2,random,5.42393e-05,0.0552455,0,0.0212217
+1af8b04edd3a91fa,a002c5116bee746e,procedural,local_jpeg,2,2,random,2.66935e-06,0.178571,1,0.144225
+1d49b865357c748b,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,random,9.88058e-06,0.00149474,0,0
+1d5b6d53681b4c5f,5ee739f7cc0e31ef,procedural,logo_warp,2,2,random,4.39069e-06,0.03408,0,0.0299989
+1e3ab1542902978d,2ebab87d72158ec1,procedural,dose_digit_change,2,2,random,3.25534e-05,0.00167411,0,0
+20cccee372e46b4a,6e62ca49bd549d45,procedural,local_jpeg,2,2,random,0.000198403,0.332031,0,0.0946863
+23bfb35ff00e0feb,4f1a5d91504cbea6,procedural,char_substitution,2,2,random,0.000239497,0.00677615,0,0.011314
+241e801f20f21bd7,9e1fd9217005e1fd,procedural,local_blur_or_rehalftone,2,2,gradcam,3.84798e-05,0.0513393,0,0
+24c04c022edefdce,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,gradcam,3.46585e-06,0.0439254,0,0.247756
+255842e9b406c227,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,gradcam,3.48123e-07,0.0502232,0,0.0343904
+2685b5b642a3033e,b16d44a83b8f793a,procedural,local_jpeg,2,2,gradcam,0.00971542,0.0353954,0,0.0583684
+272fffa869d8ada8,51dffa080d1523fa,procedural,dose_digit_change,2,2,gradcam,1.24497e-07,0.00304927,0,0
+286095e77759e1f0,81dbff3c1030e6d6,procedural,local_blur_or_rehalftone,2,2,gradcam,1.21765e-05,0.027284,0,0.0159909
+28925f1aedca5fb9,931f207fb0c8ee60,procedural,local_hue_shift,2,2,gradcam,5.88008e-05,0.0793009,1,0.230087
+2971947492bc2b81,75e47d2e30b9e960,procedural,logo_warp,2,2,gradcam,2.70378e-06,0.0601881,0,0
+241e801f20f21bd7,9e1fd9217005e1fd,procedural,local_blur_or_rehalftone,2,2,gradcampp,3.84798e-05,0.0513393,0,0.0229873
+24c04c022edefdce,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,gradcampp,3.46585e-06,0.0439254,1,0.259221
+255842e9b406c227,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,gradcampp,3.48123e-07,0.0502232,0,0.014645
+2685b5b642a3033e,b16d44a83b8f793a,procedural,local_jpeg,2,2,gradcampp,0.00971542,0.0353954,0,0.118567
+272fffa869d8ada8,51dffa080d1523fa,procedural,dose_digit_change,2,2,gradcampp,1.24497e-07,0.00304927,0,0
+286095e77759e1f0,81dbff3c1030e6d6,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.21765e-05,0.027284,0,0.0248877
+28925f1aedca5fb9,931f207fb0c8ee60,procedural,local_hue_shift,2,2,gradcampp,5.88008e-05,0.0793009,0,0.287345
+2971947492bc2b81,75e47d2e30b9e960,procedural,logo_warp,2,2,gradcampp,2.70378e-06,0.0601881,0,0
+241e801f20f21bd7,9e1fd9217005e1fd,procedural,local_blur_or_rehalftone,2,2,ig,3.84798e-05,0.0513393,0,0.00909
+24c04c022edefdce,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,ig,3.46585e-06,0.0439254,0,0.0965851
+255842e9b406c227,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,ig,3.48123e-07,0.0502232,0,0.0634064
+2685b5b642a3033e,b16d44a83b8f793a,procedural,local_jpeg,2,2,ig,0.00971542,0.0353954,1,0.0587298
+272fffa869d8ada8,51dffa080d1523fa,procedural,dose_digit_change,2,2,ig,1.24497e-07,0.00304927,0,0.00655394
+286095e77759e1f0,81dbff3c1030e6d6,procedural,local_blur_or_rehalftone,2,2,ig,1.21765e-05,0.027284,0,0.0208883
+28925f1aedca5fb9,931f207fb0c8ee60,procedural,local_hue_shift,2,2,ig,5.88008e-05,0.0793009,0,0.141256
+2971947492bc2b81,75e47d2e30b9e960,procedural,logo_warp,2,2,ig,2.70378e-06,0.0601881,0,0.154967
+241e801f20f21bd7,9e1fd9217005e1fd,procedural,local_blur_or_rehalftone,2,2,random,3.84798e-05,0.0513393,0,0.0536087
+24c04c022edefdce,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,random,3.46585e-06,0.0439254,0,0.0011318
+255842e9b406c227,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,random,3.48123e-07,0.0502232,0,0.0265686
+2685b5b642a3033e,b16d44a83b8f793a,procedural,local_jpeg,2,2,random,0.00971542,0.0353954,0,0.0189506
+272fffa869d8ada8,51dffa080d1523fa,procedural,dose_digit_change,2,2,random,1.24497e-07,0.00304927,1,0.00615828
+286095e77759e1f0,81dbff3c1030e6d6,procedural,local_blur_or_rehalftone,2,2,random,1.21765e-05,0.027284,0,0.0135597
+28925f1aedca5fb9,931f207fb0c8ee60,procedural,local_hue_shift,2,2,random,5.88008e-05,0.0793009,0,0.00797267
+2971947492bc2b81,75e47d2e30b9e960,procedural,logo_warp,2,2,random,2.70378e-06,0.0601881,0,0.0321002
+299b7391206a5aa5,9e1fd9217005e1fd,procedural,local_jpeg,2,2,gradcam,5.07763e-05,0.0637755,0,0
+2a5d938277cfe176,34b7461cfa238b00,procedural,dose_digit_change,2,2,gradcam,0.000170081,0.00478316,0,0
+2ad1894f2686fec6,a8e1084ca768b5f0,procedural,font_swap,2,2,gradcam,4.01066e-07,0.0860172,0,0.008173
+2d6e5da7a1d28943,87e58a8922912429,procedural,local_hue_shift,2,2,gradcam,4.59829e-05,0.0181362,0,0
+303d77268a1a8ef7,dcac71d41239983f,procedural,font_swap,2,2,gradcam,7.58435e-07,0.00191327,0,0
+30410d457a32676b,de29f27c70692555,procedural,local_jpeg,2,2,gradcam,2.13859e-07,0.0418527,0,0.00658789
+33fd2f0edd95a285,461a75fe9e800764,procedural,font_swap,2,2,gradcam,8.58109e-05,0.123724,0,0.16026
+34b221cc94e0bfc9,75e47d2e30b9e960,procedural,char_substitution,2,2,gradcam,5.18166e-07,0.00251116,0,0.016742
+299b7391206a5aa5,9e1fd9217005e1fd,procedural,local_jpeg,2,2,gradcampp,5.07763e-05,0.0637755,0,0
+2a5d938277cfe176,34b7461cfa238b00,procedural,dose_digit_change,2,2,gradcampp,0.000170081,0.00478316,0,0
+2ad1894f2686fec6,a8e1084ca768b5f0,procedural,font_swap,2,2,gradcampp,4.01066e-07,0.0860172,0,0.0139567
+2d6e5da7a1d28943,87e58a8922912429,procedural,local_hue_shift,2,2,gradcampp,4.59829e-05,0.0181362,0,0
+303d77268a1a8ef7,dcac71d41239983f,procedural,font_swap,2,2,gradcampp,7.58435e-07,0.00191327,0,0
+30410d457a32676b,de29f27c70692555,procedural,local_jpeg,2,2,gradcampp,2.13859e-07,0.0418527,0,0.165516
+33fd2f0edd95a285,461a75fe9e800764,procedural,font_swap,2,2,gradcampp,8.58109e-05,0.123724,0,0.0504015
+34b221cc94e0bfc9,75e47d2e30b9e960,procedural,char_substitution,2,2,gradcampp,5.18166e-07,0.00251116,0,0.011233
+299b7391206a5aa5,9e1fd9217005e1fd,procedural,local_jpeg,2,2,ig,5.07763e-05,0.0637755,0,0.146185
+2a5d938277cfe176,34b7461cfa238b00,procedural,dose_digit_change,2,2,ig,0.000170081,0.00478316,0,0.0159602
+2ad1894f2686fec6,a8e1084ca768b5f0,procedural,font_swap,2,2,ig,4.01066e-07,0.0860172,0,0.0767412
+2d6e5da7a1d28943,87e58a8922912429,procedural,local_hue_shift,2,2,ig,4.59829e-05,0.0181362,0,0.101737
+303d77268a1a8ef7,dcac71d41239983f,procedural,font_swap,2,2,ig,7.58435e-07,0.00191327,0,0.0017085
+30410d457a32676b,de29f27c70692555,procedural,local_jpeg,2,2,ig,2.13859e-07,0.0418527,0,0.0329434
+33fd2f0edd95a285,461a75fe9e800764,procedural,font_swap,2,2,ig,8.58109e-05,0.123724,0,0.00948181
+34b221cc94e0bfc9,75e47d2e30b9e960,procedural,char_substitution,2,2,ig,5.18166e-07,0.00251116,0,0.00354098
+299b7391206a5aa5,9e1fd9217005e1fd,procedural,local_jpeg,2,2,random,5.07763e-05,0.0637755,0,0.0560205
+2a5d938277cfe176,34b7461cfa238b00,procedural,dose_digit_change,2,2,random,0.000170081,0.00478316,0,0.00309997
+2ad1894f2686fec6,a8e1084ca768b5f0,procedural,font_swap,2,2,random,4.01066e-07,0.0860172,0,0.0616819
+2d6e5da7a1d28943,87e58a8922912429,procedural,local_hue_shift,2,2,random,4.59829e-05,0.0181362,0,0
+303d77268a1a8ef7,dcac71d41239983f,procedural,font_swap,2,2,random,7.58435e-07,0.00191327,0,0
+30410d457a32676b,de29f27c70692555,procedural,local_jpeg,2,2,random,2.13859e-07,0.0418527,0,0.00996747
+33fd2f0edd95a285,461a75fe9e800764,procedural,font_swap,2,2,random,8.58109e-05,0.123724,0,0.0739756
+34b221cc94e0bfc9,75e47d2e30b9e960,procedural,char_substitution,2,2,random,5.18166e-07,0.00251116,0,0.00183294
+3721863e6645076b,eae76b216e53b885,procedural,local_hue_shift,2,2,gradcam,4.52551e-06,0.366071,0,0
+3a3144f1e33735dd,979f9f2ac0eb805f,procedural,local_jpeg,2,2,gradcam,0.000114684,0.0313895,0,0
+3a3f0a2f366656f8,5a7bdb1747a94ad8,procedural,local_blur_or_rehalftone,2,2,gradcam,1.36784e-06,0.0439254,1,0.237913
+3a6ed094a9306d3b,3fc64e4adc2fe22a,procedural,char_substitution,2,2,gradcam,1.81615e-05,0.00617825,0,0
+3c34aeb090bc6df5,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,gradcam,0.000100269,0.0645727,0,0.00148837
+3e18315a8bc3f432,de29f27c70692555,procedural,local_hue_shift,2,2,gradcam,2.65566e-07,0.0435069,0,0
+3fb73de4929249bf,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,gradcam,4.65155e-06,0.062779,0,0.0592321
+41124de81f7d487a,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,gradcam,0.00066741,0.636579,1,0.235622
+3721863e6645076b,eae76b216e53b885,procedural,local_hue_shift,2,2,gradcampp,4.52551e-06,0.366071,0,0
+3a3144f1e33735dd,979f9f2ac0eb805f,procedural,local_jpeg,2,2,gradcampp,0.000114684,0.0313895,0,0
+3a3f0a2f366656f8,5a7bdb1747a94ad8,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.36784e-06,0.0439254,1,0.238701
+3a6ed094a9306d3b,3fc64e4adc2fe22a,procedural,char_substitution,2,2,gradcampp,1.81615e-05,0.00617825,0,0.00693909
+3c34aeb090bc6df5,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.000100269,0.0645727,0,0
+3e18315a8bc3f432,de29f27c70692555,procedural,local_hue_shift,2,2,gradcampp,2.65566e-07,0.0435069,0,0
+3fb73de4929249bf,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,gradcampp,4.65155e-06,0.062779,0,0.159553
+41124de81f7d487a,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.00066741,0.636579,1,0.235506
+3721863e6645076b,eae76b216e53b885,procedural,local_hue_shift,2,2,ig,4.52551e-06,0.366071,0,0.100093
+3a3144f1e33735dd,979f9f2ac0eb805f,procedural,local_jpeg,2,2,ig,0.000114684,0.0313895,0,0.0525038
+3a3f0a2f366656f8,5a7bdb1747a94ad8,procedural,local_blur_or_rehalftone,2,2,ig,1.36784e-06,0.0439254,1,0.137613
+3a6ed094a9306d3b,3fc64e4adc2fe22a,procedural,char_substitution,2,2,ig,1.81615e-05,0.00617825,0,0.0109663
+3c34aeb090bc6df5,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,ig,0.000100269,0.0645727,0,0.133979
+3e18315a8bc3f432,de29f27c70692555,procedural,local_hue_shift,2,2,ig,2.65566e-07,0.0435069,0,0.0146306
+3fb73de4929249bf,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,ig,4.65155e-06,0.062779,0,0.00432738
+41124de81f7d487a,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,ig,0.00066741,0.636579,0,0.134533
+3721863e6645076b,eae76b216e53b885,procedural,local_hue_shift,2,2,random,4.52551e-06,0.366071,0,0.0769871
+3a3144f1e33735dd,979f9f2ac0eb805f,procedural,local_jpeg,2,2,random,0.000114684,0.0313895,0,0.0767866
+3a3f0a2f366656f8,5a7bdb1747a94ad8,procedural,local_blur_or_rehalftone,2,2,random,1.36784e-06,0.0439254,0,0.0387531
+3a6ed094a9306d3b,3fc64e4adc2fe22a,procedural,char_substitution,2,2,random,1.81615e-05,0.00617825,0,0
+3c34aeb090bc6df5,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,random,0.000100269,0.0645727,0,0.023968
+3e18315a8bc3f432,de29f27c70692555,procedural,local_hue_shift,2,2,random,2.65566e-07,0.0435069,0,0.000103008
+3fb73de4929249bf,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,random,4.65155e-06,0.062779,0,0.0534833
+41124de81f7d487a,3fc64e4adc2fe22a,procedural,local_blur_or_rehalftone,2,2,random,0.00066741,0.636579,0,0.112938
+412902872d3f59d7,eae76b216e53b885,procedural,logo_warp,2,2,gradcam,3.79844e-06,0.366071,0,0
+4368500fdd4d9795,c4a15643a2b727e8,procedural,local_blur_or_rehalftone,2,2,gradcam,7.83355e-06,0.544184,0,0.134265
+44774de5f8129b4f,cbde7c9808e8d82d,procedural,logo_warp,2,2,gradcam,4.35742e-07,0.0751355,0,0.0280306
+45eaf917f1934567,d91f329fa5d46559,procedural,local_jpeg,2,2,gradcam,1.10357e-05,0.219228,0,0.0052089
+485f3425bed68a2b,2b0f0e6a64fb9a94,procedural,local_blur_or_rehalftone,2,2,gradcam,2.30065e-06,0.205975,1,0.298982
+4c5efe285c9990c7,86c767678dba0a16,procedural,char_substitution,2,2,gradcam,3.22374e-06,0.00175383,0,0.0116928
+4c972272584a8369,0cde29d96f6987a6,procedural,local_hue_shift,2,2,gradcam,2.37082e-05,0.575893,1,0.167858
+4cba0d8d48023a70,8b2f6cda14c99144,procedural,char_substitution,2,2,gradcam,9.1887e-05,0.040896,0,0
+412902872d3f59d7,eae76b216e53b885,procedural,logo_warp,2,2,gradcampp,3.79844e-06,0.366071,0,0
+4368500fdd4d9795,c4a15643a2b727e8,procedural,local_blur_or_rehalftone,2,2,gradcampp,7.83355e-06,0.544184,1,0.159565
+44774de5f8129b4f,cbde7c9808e8d82d,procedural,logo_warp,2,2,gradcampp,4.35742e-07,0.0751355,0,0.140549
+45eaf917f1934567,d91f329fa5d46559,procedural,local_jpeg,2,2,gradcampp,1.10357e-05,0.219228,0,0.00580922
+485f3425bed68a2b,2b0f0e6a64fb9a94,procedural,local_blur_or_rehalftone,2,2,gradcampp,2.30065e-06,0.205975,0,0.27197
+4c5efe285c9990c7,86c767678dba0a16,procedural,char_substitution,2,2,gradcampp,3.22374e-06,0.00175383,0,0.0116928
+4c972272584a8369,0cde29d96f6987a6,procedural,local_hue_shift,2,2,gradcampp,2.37082e-05,0.575893,1,0.198723
+4cba0d8d48023a70,8b2f6cda14c99144,procedural,char_substitution,2,2,gradcampp,9.1887e-05,0.040896,0,0
+412902872d3f59d7,eae76b216e53b885,procedural,logo_warp,2,2,ig,3.79844e-06,0.366071,0,0.130792
+4368500fdd4d9795,c4a15643a2b727e8,procedural,local_blur_or_rehalftone,2,2,ig,7.83355e-06,0.544184,0,0.138231
+44774de5f8129b4f,cbde7c9808e8d82d,procedural,logo_warp,2,2,ig,4.35742e-07,0.0751355,0,0.0672714
+45eaf917f1934567,d91f329fa5d46559,procedural,local_jpeg,2,2,ig,1.10357e-05,0.219228,1,0.243606
+485f3425bed68a2b,2b0f0e6a64fb9a94,procedural,local_blur_or_rehalftone,2,2,ig,2.30065e-06,0.205975,0,0.137498
+4c5efe285c9990c7,86c767678dba0a16,procedural,char_substitution,2,2,ig,3.22374e-06,0.00175383,0,0.00981432
+4c972272584a8369,0cde29d96f6987a6,procedural,local_hue_shift,2,2,ig,2.37082e-05,0.575893,0,0.117994
+4cba0d8d48023a70,8b2f6cda14c99144,procedural,char_substitution,2,2,ig,9.1887e-05,0.040896,0,0.0111909
+412902872d3f59d7,eae76b216e53b885,procedural,logo_warp,2,2,random,3.79844e-06,0.366071,0,0.134408
+4368500fdd4d9795,c4a15643a2b727e8,procedural,local_blur_or_rehalftone,2,2,random,7.83355e-06,0.544184,0,0.1293
+44774de5f8129b4f,cbde7c9808e8d82d,procedural,logo_warp,2,2,random,4.35742e-07,0.0751355,0,0.103772
+45eaf917f1934567,d91f329fa5d46559,procedural,local_jpeg,2,2,random,1.10357e-05,0.219228,0,0.0783469
+485f3425bed68a2b,2b0f0e6a64fb9a94,procedural,local_blur_or_rehalftone,2,2,random,2.30065e-06,0.205975,0,0.0606924
+4c5efe285c9990c7,86c767678dba0a16,procedural,char_substitution,2,2,random,3.22374e-06,0.00175383,0,0
+4c972272584a8369,0cde29d96f6987a6,procedural,local_hue_shift,2,2,random,2.37082e-05,0.575893,1,0.169283
+4cba0d8d48023a70,8b2f6cda14c99144,procedural,char_substitution,2,2,random,9.1887e-05,0.040896,0,0.0626872
+4d2aed68d73a1d59,931f207fb0c8ee60,procedural,local_jpeg,2,2,gradcam,5.12537e-05,0.0793009,1,0.225631
+4ddb94761ba2fd48,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,gradcam,4.99519e-05,0.0135523,0,0
+4fb8ab94d186b060,d91f329fa5d46559,procedural,logo_warp,2,2,gradcam,1.84417e-05,0.219228,0,0.02066
+50078a3c9049cbcd,75e47d2e30b9e960,procedural,local_blur_or_rehalftone,2,2,gradcam,3.83375e-07,0.0601881,0,0.112682
+5060c54c9cd94d8b,f6338979bc1b1e68,procedural,logo_warp,2,2,gradcam,9.58655e-05,0.0362723,1,0.236571
+522b17339c984d03,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcam,0.00305688,0.104153,0,0
+535a294ad6a05b6e,87e58a8922912429,procedural,logo_warp,2,2,gradcam,4.86845e-05,0.0181362,0,0
+5456c071ec9806ad,87e58a8922912429,procedural,local_hue_shift,2,2,gradcam,3.3782e-05,0.0181362,0,0
+4d2aed68d73a1d59,931f207fb0c8ee60,procedural,local_jpeg,2,2,gradcampp,5.12537e-05,0.0793009,1,0.314106
+4ddb94761ba2fd48,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,gradcampp,4.99519e-05,0.0135523,0,0
+4fb8ab94d186b060,d91f329fa5d46559,procedural,logo_warp,2,2,gradcampp,1.84417e-05,0.219228,0,0.0343364
+50078a3c9049cbcd,75e47d2e30b9e960,procedural,local_blur_or_rehalftone,2,2,gradcampp,3.83375e-07,0.0601881,0,0.0428162
+5060c54c9cd94d8b,f6338979bc1b1e68,procedural,logo_warp,2,2,gradcampp,9.58655e-05,0.0362723,1,0.241663
+522b17339c984d03,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcampp,0.00305688,0.104153,0,0.0803118
+535a294ad6a05b6e,87e58a8922912429,procedural,logo_warp,2,2,gradcampp,4.86845e-05,0.0181362,0,0
+5456c071ec9806ad,87e58a8922912429,procedural,local_hue_shift,2,2,gradcampp,3.3782e-05,0.0181362,0,0
+4d2aed68d73a1d59,931f207fb0c8ee60,procedural,local_jpeg,2,2,ig,5.12537e-05,0.0793009,1,0.150385
+4ddb94761ba2fd48,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,ig,4.99519e-05,0.0135523,0,0.0125864
+4fb8ab94d186b060,d91f329fa5d46559,procedural,logo_warp,2,2,ig,1.84417e-05,0.219228,0,0.183316
+50078a3c9049cbcd,75e47d2e30b9e960,procedural,local_blur_or_rehalftone,2,2,ig,3.83375e-07,0.0601881,0,0.1363
+5060c54c9cd94d8b,f6338979bc1b1e68,procedural,logo_warp,2,2,ig,9.58655e-05,0.0362723,0,0.145905
+522b17339c984d03,a1d68f095348f4dc,procedural,logo_warp,2,2,ig,0.00305688,0.104153,0,0.140608
+535a294ad6a05b6e,87e58a8922912429,procedural,logo_warp,2,2,ig,4.86845e-05,0.0181362,0,0.0971518
+5456c071ec9806ad,87e58a8922912429,procedural,local_hue_shift,2,2,ig,3.3782e-05,0.0181362,0,0.0923216
+4d2aed68d73a1d59,931f207fb0c8ee60,procedural,local_jpeg,2,2,random,5.12537e-05,0.0793009,0,0.0173313
+4ddb94761ba2fd48,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,random,4.99519e-05,0.0135523,1,0.0322013
+4fb8ab94d186b060,d91f329fa5d46559,procedural,logo_warp,2,2,random,1.84417e-05,0.219228,1,0.133019
+50078a3c9049cbcd,75e47d2e30b9e960,procedural,local_blur_or_rehalftone,2,2,random,3.83375e-07,0.0601881,0,0.055022
+5060c54c9cd94d8b,f6338979bc1b1e68,procedural,logo_warp,2,2,random,9.58655e-05,0.0362723,0,0.0676262
+522b17339c984d03,a1d68f095348f4dc,procedural,logo_warp,2,2,random,0.00305688,0.104153,0,0.0267311
+535a294ad6a05b6e,87e58a8922912429,procedural,logo_warp,2,2,random,4.86845e-05,0.0181362,0,0.0381492
+5456c071ec9806ad,87e58a8922912429,procedural,local_hue_shift,2,2,random,3.3782e-05,0.0181362,0,0.00957396
+5520ca2bd382359a,d91f329fa5d46559,procedural,local_jpeg,2,2,gradcam,1.1559e-05,0.219228,0,0.0187517
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,gradcam,3.73553e-06,0.0386639,0,0.1619
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,gradcam,3.73553e-06,0.0386639,0,0.1619
+571cd16351efb1d7,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,gradcam,5.83566e-05,0.0135523,0,0
+575f1ad20e9c63c4,367c5e1fcd4f9d7c,procedural,local_blur_or_rehalftone,2,2,gradcam,5.099e-05,0.0398597,0,0
+5b91447bcf0a7988,dcac71d41239983f,procedural,char_substitution,2,2,gradcam,1.01957e-06,0.00179369,0,0
+5bbd3147236ff091,dde822a18bd8ea6b,procedural,logo_warp,2,2,gradcam,3.52841e-05,1,1,0.149992
+603b805e769345a5,111d31b35adb23cb,procedural,local_jpeg,2,2,gradcam,2.38915e-06,0.0214844,0,0.0763072
+5520ca2bd382359a,d91f329fa5d46559,procedural,local_jpeg,2,2,gradcampp,1.1559e-05,0.219228,0,0.0297943
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,gradcampp,3.73553e-06,0.0386639,0,0.149205
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,gradcampp,3.73553e-06,0.0386639,0,0.149205
+571cd16351efb1d7,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,gradcampp,5.83566e-05,0.0135523,0,0
+575f1ad20e9c63c4,367c5e1fcd4f9d7c,procedural,local_blur_or_rehalftone,2,2,gradcampp,5.099e-05,0.0398597,1,0.0690158
+5b91447bcf0a7988,dcac71d41239983f,procedural,char_substitution,2,2,gradcampp,1.01957e-06,0.00179369,0,0
+5bbd3147236ff091,dde822a18bd8ea6b,procedural,logo_warp,2,2,gradcampp,3.52841e-05,1,1,0.149992
+603b805e769345a5,111d31b35adb23cb,procedural,local_jpeg,2,2,gradcampp,2.38915e-06,0.0214844,0,0.0848569
+5520ca2bd382359a,d91f329fa5d46559,procedural,local_jpeg,2,2,ig,1.1559e-05,0.219228,0,0.20416
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,ig,3.73553e-06,0.0386639,0,0.124228
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,ig,3.73553e-06,0.0386639,0,0.124228
+571cd16351efb1d7,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,ig,5.83566e-05,0.0135523,0,0.0124614
+575f1ad20e9c63c4,367c5e1fcd4f9d7c,procedural,local_blur_or_rehalftone,2,2,ig,5.099e-05,0.0398597,0,0.0967073
+5b91447bcf0a7988,dcac71d41239983f,procedural,char_substitution,2,2,ig,1.01957e-06,0.00179369,0,0.00647549
+5bbd3147236ff091,dde822a18bd8ea6b,procedural,logo_warp,2,2,ig,3.52841e-05,1,1,0.149992
+603b805e769345a5,111d31b35adb23cb,procedural,local_jpeg,2,2,ig,2.38915e-06,0.0214844,0,0.0859523
+5520ca2bd382359a,d91f329fa5d46559,procedural,local_jpeg,2,2,random,1.1559e-05,0.219228,0,0.101492
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,random,3.73553e-06,0.0386639,0,0.0240156
+56e168fc24bad9e6,"image_id
+56e168fc24bad9e6    a6cde236093006a8
+56e168fc24bad9e6    a6cde236093006a8
+Name: source_image_id, dtype: str","image_id
+56e168fc24bad9e6    procedural
+56e168fc24bad9e6    procedural
+Name: generator, dtype: str","image_id
+56e168fc24bad9e6    font_swap
+56e168fc24bad9e6    font_swap
+Name: edit_type, dtype: str",2,2,random,3.73553e-06,0.0386639,0,0.0240156
+571cd16351efb1d7,f2e6876ddf22e36b,procedural,dose_digit_change,2,2,random,5.83566e-05,0.0135523,0,0.0144641
+575f1ad20e9c63c4,367c5e1fcd4f9d7c,procedural,local_blur_or_rehalftone,2,2,random,5.099e-05,0.0398597,0,0.000945676
+5b91447bcf0a7988,dcac71d41239983f,procedural,char_substitution,2,2,random,1.01957e-06,0.00179369,0,0.000525486
+5bbd3147236ff091,dde822a18bd8ea6b,procedural,logo_warp,2,2,random,3.52841e-05,1,1,0.149992
+603b805e769345a5,111d31b35adb23cb,procedural,local_jpeg,2,2,random,2.38915e-06,0.0214844,0,0.0139053
+605c63ffc5493d80,b334b7ebe90b004b,procedural,local_jpeg,2,2,gradcam,1.70285e-06,0.0997489,0,0.208157
+60612a872601e9e5,6e62ca49bd549d45,procedural,local_jpeg,2,2,gradcam,0.000128602,0.332031,1,0.451741
+60d14ddcbce9a721,ae16a1dd4bc5609a,procedural,local_hue_shift,2,2,gradcam,1.15949e-05,0.327487,0,0.057655
+61726d8139064636,86a273856140bd7a,procedural,dose_digit_change,2,2,gradcam,1.298e-06,0.00167411,0,0.0111613
+6178d4fc07cfbb8a,f0440c621e272bf6,procedural,logo_warp,2,2,gradcam,0.000221781,0.050861,0,0
+6311d3c620de7f65,2ac67ce8ce872dfa,procedural,local_jpeg,2,2,gradcam,1.0881e-06,0.348055,0,0.254392
+63e197da21ac2a90,111d31b35adb23cb,procedural,local_jpeg,2,2,gradcam,1.82741e-06,0.0214844,0,0.102229
+664a50c897882d27,86c767678dba0a16,procedural,char_substitution,2,2,gradcam,2.77577e-06,0.00175383,0,0.00621118
+605c63ffc5493d80,b334b7ebe90b004b,procedural,local_jpeg,2,2,gradcampp,1.70285e-06,0.0997489,0,0.224209
+60612a872601e9e5,6e62ca49bd549d45,procedural,local_jpeg,2,2,gradcampp,0.000128602,0.332031,1,0.451741
+60d14ddcbce9a721,ae16a1dd4bc5609a,procedural,local_hue_shift,2,2,gradcampp,1.15949e-05,0.327487,0,0.11901
+61726d8139064636,86a273856140bd7a,procedural,dose_digit_change,2,2,gradcampp,1.298e-06,0.00167411,0,0.0111613
+6178d4fc07cfbb8a,f0440c621e272bf6,procedural,logo_warp,2,2,gradcampp,0.000221781,0.050861,0,0
+6311d3c620de7f65,2ac67ce8ce872dfa,procedural,local_jpeg,2,2,gradcampp,1.0881e-06,0.348055,1,0.307829
+63e197da21ac2a90,111d31b35adb23cb,procedural,local_jpeg,2,2,gradcampp,1.82741e-06,0.0214844,0,0.096051
+664a50c897882d27,86c767678dba0a16,procedural,char_substitution,2,2,gradcampp,2.77577e-06,0.00175383,0,0.00197394
+605c63ffc5493d80,b334b7ebe90b004b,procedural,local_jpeg,2,2,ig,1.70285e-06,0.0997489,0,0.064475
+60612a872601e9e5,6e62ca49bd549d45,procedural,local_jpeg,2,2,ig,0.000128602,0.332031,1,0.271208
+60d14ddcbce9a721,ae16a1dd4bc5609a,procedural,local_hue_shift,2,2,ig,1.15949e-05,0.327487,1,0.114118
+61726d8139064636,86a273856140bd7a,procedural,dose_digit_change,2,2,ig,1.298e-06,0.00167411,0,0.0035606
+6178d4fc07cfbb8a,f0440c621e272bf6,procedural,logo_warp,2,2,ig,0.000221781,0.050861,0,0.144837
+6311d3c620de7f65,2ac67ce8ce872dfa,procedural,local_jpeg,2,2,ig,1.0881e-06,0.348055,0,0.156677
+63e197da21ac2a90,111d31b35adb23cb,procedural,local_jpeg,2,2,ig,1.82741e-06,0.0214844,0,0.0788715
+664a50c897882d27,86c767678dba0a16,procedural,char_substitution,2,2,ig,2.77577e-06,0.00175383,0,0.0106185
+605c63ffc5493d80,b334b7ebe90b004b,procedural,local_jpeg,2,2,random,1.70285e-06,0.0997489,0,0.0172918
+60612a872601e9e5,6e62ca49bd549d45,procedural,local_jpeg,2,2,random,0.000128602,0.332031,0,0.122008
+60d14ddcbce9a721,ae16a1dd4bc5609a,procedural,local_hue_shift,2,2,random,1.15949e-05,0.327487,0,0.0769577
+61726d8139064636,86a273856140bd7a,procedural,dose_digit_change,2,2,random,1.298e-06,0.00167411,0,0
+6178d4fc07cfbb8a,f0440c621e272bf6,procedural,logo_warp,2,2,random,0.000221781,0.050861,0,9.92359e-05
+6311d3c620de7f65,2ac67ce8ce872dfa,procedural,local_jpeg,2,2,random,1.0881e-06,0.348055,1,0.149547
+63e197da21ac2a90,111d31b35adb23cb,procedural,local_jpeg,2,2,random,1.82741e-06,0.0214844,0,0
+664a50c897882d27,86c767678dba0a16,procedural,char_substitution,2,2,random,2.77577e-06,0.00175383,0,0.00236967
+6a3b28b291b58cf8,86c8913ec23ec421,procedural,local_jpeg,2,2,gradcam,4.75223e-06,0.0386639,0,0
+6db4c3959e220aa8,f2e6876ddf22e36b,procedural,local_jpeg,2,2,gradcam,2.09238e-06,0.674785,1,0.222281
+6e3d4be5230bc6c8,a002c5116bee746e,procedural,logo_warp,2,2,gradcam,8.39978e-06,0.178571,0,0
+6e591ed3a1c99110,de29f27c70692555,procedural,local_hue_shift,2,2,gradcam,2.9471e-07,0.0632175,0,0
+6f4679addd6321f7,6e62ca49bd549d45,procedural,local_hue_shift,2,2,gradcam,5.98766e-05,0.332031,1,0.451741
+6f5429294b4551c5,4f1a5d91504cbea6,procedural,local_blur_or_rehalftone,2,2,gradcam,0.00016376,0.0734415,0,0.0317504
+6f9dc5591a26b2c1,6b8137d2829d933e,procedural,char_substitution,2,2,gradcam,0.0252792,0.00362723,0,0
+6fc7763b150ebe3b,2ebab87d72158ec1,procedural,local_hue_shift,2,2,gradcam,1.80651e-05,0.171237,0,0.257254
+6a3b28b291b58cf8,86c8913ec23ec421,procedural,local_jpeg,2,2,gradcampp,4.75223e-06,0.0386639,0,0
+6db4c3959e220aa8,f2e6876ddf22e36b,procedural,local_jpeg,2,2,gradcampp,2.09238e-06,0.674785,1,0.222281
+6e3d4be5230bc6c8,a002c5116bee746e,procedural,logo_warp,2,2,gradcampp,8.39978e-06,0.178571,0,0.0138991
+6e591ed3a1c99110,de29f27c70692555,procedural,local_hue_shift,2,2,gradcampp,2.9471e-07,0.0632175,0,0
+6f4679addd6321f7,6e62ca49bd549d45,procedural,local_hue_shift,2,2,gradcampp,5.98766e-05,0.332031,1,0.451741
+6f5429294b4551c5,4f1a5d91504cbea6,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.00016376,0.0734415,0,0.0467787
+6f9dc5591a26b2c1,6b8137d2829d933e,procedural,char_substitution,2,2,gradcampp,0.0252792,0.00362723,0,0
+6fc7763b150ebe3b,2ebab87d72158ec1,procedural,local_hue_shift,2,2,gradcampp,1.80651e-05,0.171237,0,0.188906
+6a3b28b291b58cf8,86c8913ec23ec421,procedural,local_jpeg,2,2,ig,4.75223e-06,0.0386639,0,0.0919368
+6db4c3959e220aa8,f2e6876ddf22e36b,procedural,local_jpeg,2,2,ig,2.09238e-06,0.674785,1,0.194619
+6e3d4be5230bc6c8,a002c5116bee746e,procedural,logo_warp,2,2,ig,8.39978e-06,0.178571,0,0.0697554
+6e591ed3a1c99110,de29f27c70692555,procedural,local_hue_shift,2,2,ig,2.9471e-07,0.0632175,0,0.0564882
+6f4679addd6321f7,6e62ca49bd549d45,procedural,local_hue_shift,2,2,ig,5.98766e-05,0.332031,0,0.263768
+6f5429294b4551c5,4f1a5d91504cbea6,procedural,local_blur_or_rehalftone,2,2,ig,0.00016376,0.0734415,0,0.0134695
+6f9dc5591a26b2c1,6b8137d2829d933e,procedural,char_substitution,2,2,ig,0.0252792,0.00362723,0,0.00299284
+6fc7763b150ebe3b,2ebab87d72158ec1,procedural,local_hue_shift,2,2,ig,1.80651e-05,0.171237,0,0.165269
+6a3b28b291b58cf8,86c8913ec23ec421,procedural,local_jpeg,2,2,random,4.75223e-06,0.0386639,0,0.0449277
+6db4c3959e220aa8,f2e6876ddf22e36b,procedural,local_jpeg,2,2,random,2.09238e-06,0.674785,0,0.0925603
+6e3d4be5230bc6c8,a002c5116bee746e,procedural,logo_warp,2,2,random,8.39978e-06,0.178571,0,0.0853907
+6e591ed3a1c99110,de29f27c70692555,procedural,local_hue_shift,2,2,random,2.9471e-07,0.0632175,0,0.0392462
+6f4679addd6321f7,6e62ca49bd549d45,procedural,local_hue_shift,2,2,random,5.98766e-05,0.332031,0,0.0575889
+6f5429294b4551c5,4f1a5d91504cbea6,procedural,local_blur_or_rehalftone,2,2,random,0.00016376,0.0734415,0,0.0237421
+6f9dc5591a26b2c1,6b8137d2829d933e,procedural,char_substitution,2,2,random,0.0252792,0.00362723,0,0.000649098
+6fc7763b150ebe3b,2ebab87d72158ec1,procedural,local_hue_shift,2,2,random,1.80651e-05,0.171237,0,0.0931905
+70ae967397db9376,c8d1bc89639bcf61,procedural,local_jpeg,2,2,gradcam,9.51828e-06,0.053113,0,0.0472716
+70f621071b691596,8a0eda4f42ab3c28,procedural,local_hue_shift,2,2,gradcam,7.70576e-07,0.0437062,0,0
+7193f2677eaabcc8,30f7f25c925b2a4f,procedural,logo_warp,2,2,gradcam,0.00155505,0.332031,1,0.435967
+72049516679d718e,86c8913ec23ec421,procedural,local_hue_shift,2,2,gradcam,5.43711e-06,0.0386639,0,0
+720ad073c5867563,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcam,0.00340951,0.104153,0,0.00330448
+737607f34519120e,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcam,0.00531175,0.104153,0,0.000549235
+73e8283c7abd2439,2ac67ce8ce872dfa,procedural,local_blur_or_rehalftone,2,2,gradcam,4.0361e-07,0.348055,0,0.0662173
+749fa32baf944a9c,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,gradcam,7.67187e-07,0.11641,1,0.246573
+70ae967397db9376,c8d1bc89639bcf61,procedural,local_jpeg,2,2,gradcampp,9.51828e-06,0.053113,0,0.110373
+70f621071b691596,8a0eda4f42ab3c28,procedural,local_hue_shift,2,2,gradcampp,7.70576e-07,0.0437062,0,0.0240228
+7193f2677eaabcc8,30f7f25c925b2a4f,procedural,logo_warp,2,2,gradcampp,0.00155505,0.332031,1,0.450522
+72049516679d718e,86c8913ec23ec421,procedural,local_hue_shift,2,2,gradcampp,5.43711e-06,0.0386639,0,0
+720ad073c5867563,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcampp,0.00340951,0.104153,0,0.0921548
+737607f34519120e,a1d68f095348f4dc,procedural,logo_warp,2,2,gradcampp,0.00531175,0.104153,0,0.077118
+73e8283c7abd2439,2ac67ce8ce872dfa,procedural,local_blur_or_rehalftone,2,2,gradcampp,4.0361e-07,0.348055,0,0.0942768
+749fa32baf944a9c,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,gradcampp,7.67187e-07,0.11641,1,0.399393
+70ae967397db9376,c8d1bc89639bcf61,procedural,local_jpeg,2,2,ig,9.51828e-06,0.053113,0,0.0612309
+70f621071b691596,8a0eda4f42ab3c28,procedural,local_hue_shift,2,2,ig,7.70576e-07,0.0437062,0,0.115204
+7193f2677eaabcc8,30f7f25c925b2a4f,procedural,logo_warp,2,2,ig,0.00155505,0.332031,1,0.297393
+72049516679d718e,86c8913ec23ec421,procedural,local_hue_shift,2,2,ig,5.43711e-06,0.0386639,0,0.0962362
+720ad073c5867563,a1d68f095348f4dc,procedural,logo_warp,2,2,ig,0.00340951,0.104153,0,0.141425
+737607f34519120e,a1d68f095348f4dc,procedural,logo_warp,2,2,ig,0.00531175,0.104153,0,0.148518
+73e8283c7abd2439,2ac67ce8ce872dfa,procedural,local_blur_or_rehalftone,2,2,ig,4.0361e-07,0.348055,0,0.121483
+749fa32baf944a9c,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,ig,7.67187e-07,0.11641,0,0.06936
+70ae967397db9376,c8d1bc89639bcf61,procedural,local_jpeg,2,2,random,9.51828e-06,0.053113,0,0.027733
+70f621071b691596,8a0eda4f42ab3c28,procedural,local_hue_shift,2,2,random,7.70576e-07,0.0437062,0,0.0442678
+7193f2677eaabcc8,30f7f25c925b2a4f,procedural,logo_warp,2,2,random,0.00155505,0.332031,1,0.157613
+72049516679d718e,86c8913ec23ec421,procedural,local_hue_shift,2,2,random,5.43711e-06,0.0386639,0,0.0150118
+720ad073c5867563,a1d68f095348f4dc,procedural,logo_warp,2,2,random,0.00340951,0.104153,1,0.10321
+737607f34519120e,a1d68f095348f4dc,procedural,logo_warp,2,2,random,0.00531175,0.104153,0,0.0386902
+73e8283c7abd2439,2ac67ce8ce872dfa,procedural,local_blur_or_rehalftone,2,2,random,4.0361e-07,0.348055,1,0.0643554
+749fa32baf944a9c,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,random,7.67187e-07,0.11641,0,0.0319617
+77cea9cb8e303411,ca6d4703b72e590d,procedural,local_hue_shift,2,2,gradcam,4.72341e-07,0.0717475,0,0.0831386
+783ca67f5264362f,4ab2fff587be75f1,procedural,local_jpeg,2,2,gradcam,1.12177e-05,0.162986,0,0.347867
+7a54603ee315473d,1f5acf1720a31967,procedural,logo_warp,2,2,gradcam,2.20005e-06,0.325255,0,0.0227312
+7da1e6248e92ebe8,f31665578f5bf7b4,procedural,font_swap,2,2,gradcam,0.00108016,0.00223214,0,0
+7f5b841c46fd685d,86c8913ec23ec421,procedural,local_hue_shift,2,2,gradcam,5.09845e-06,0.0386639,0,0
+8041c95303311d85,03b813b7b36807d8,procedural,logo_warp,2,2,gradcam,7.08735e-06,0.0478516,0,0.00171544
+8058606a413cab15,81dbff3c1030e6d6,procedural,logo_warp,2,2,gradcam,1.91833e-05,0.0341996,0,0
+826f98698926f832,979f9f2ac0eb805f,procedural,logo_warp,2,2,gradcam,0.000430223,0.111747,0,0.0925957
+77cea9cb8e303411,ca6d4703b72e590d,procedural,local_hue_shift,2,2,gradcampp,4.72341e-07,0.0717475,1,0.232525
+783ca67f5264362f,4ab2fff587be75f1,procedural,local_jpeg,2,2,gradcampp,1.12177e-05,0.162986,0,0.268908
+7a54603ee315473d,1f5acf1720a31967,procedural,logo_warp,2,2,gradcampp,2.20005e-06,0.325255,0,0.11717
+7da1e6248e92ebe8,f31665578f5bf7b4,procedural,font_swap,2,2,gradcampp,0.00108016,0.00223214,0,0
+7f5b841c46fd685d,86c8913ec23ec421,procedural,local_hue_shift,2,2,gradcampp,5.09845e-06,0.0386639,0,0.00105753
+8041c95303311d85,03b813b7b36807d8,procedural,logo_warp,2,2,gradcampp,7.08735e-06,0.0478516,0,0.000201511
+8058606a413cab15,81dbff3c1030e6d6,procedural,logo_warp,2,2,gradcampp,1.91833e-05,0.0341996,0,0.0568325
+826f98698926f832,979f9f2ac0eb805f,procedural,logo_warp,2,2,gradcampp,0.000430223,0.111747,0,0.100746
+77cea9cb8e303411,ca6d4703b72e590d,procedural,local_hue_shift,2,2,ig,4.72341e-07,0.0717475,0,0.060427
+783ca67f5264362f,4ab2fff587be75f1,procedural,local_jpeg,2,2,ig,1.12177e-05,0.162986,0,0.191412
+7a54603ee315473d,1f5acf1720a31967,procedural,logo_warp,2,2,ig,2.20005e-06,0.325255,1,0.252087
+7da1e6248e92ebe8,f31665578f5bf7b4,procedural,font_swap,2,2,ig,0.00108016,0.00223214,0,0.00447133
+7f5b841c46fd685d,86c8913ec23ec421,procedural,local_hue_shift,2,2,ig,5.09845e-06,0.0386639,0,0.099164
+8041c95303311d85,03b813b7b36807d8,procedural,logo_warp,2,2,ig,7.08735e-06,0.0478516,0,0.062848
+8058606a413cab15,81dbff3c1030e6d6,procedural,logo_warp,2,2,ig,1.91833e-05,0.0341996,0,0.0573161
+826f98698926f832,979f9f2ac0eb805f,procedural,logo_warp,2,2,ig,0.000430223,0.111747,0,0.0672897
+77cea9cb8e303411,ca6d4703b72e590d,procedural,local_hue_shift,2,2,random,4.72341e-07,0.0717475,0,0.0502171
+783ca67f5264362f,4ab2fff587be75f1,procedural,local_jpeg,2,2,random,1.12177e-05,0.162986,0,0.0595061
+7a54603ee315473d,1f5acf1720a31967,procedural,logo_warp,2,2,random,2.20005e-06,0.325255,0,0.137691
+7da1e6248e92ebe8,f31665578f5bf7b4,procedural,font_swap,2,2,random,0.00108016,0.00223214,0,0
+7f5b841c46fd685d,86c8913ec23ec421,procedural,local_hue_shift,2,2,random,5.09845e-06,0.0386639,0,0.0249026
+8041c95303311d85,03b813b7b36807d8,procedural,logo_warp,2,2,random,7.08735e-06,0.0478516,0,0.0280655
+8058606a413cab15,81dbff3c1030e6d6,procedural,logo_warp,2,2,random,1.91833e-05,0.0341996,0,0.0425268
+826f98698926f832,979f9f2ac0eb805f,procedural,logo_warp,2,2,random,0.000430223,0.111747,0,0.111083
+8402582b8288c79d,0cde29d96f6987a6,procedural,char_substitution,2,2,gradcam,2.31064e-05,0.023856,0,0.0411793
+85504baf21c0ded6,b16d44a83b8f793a,procedural,local_blur_or_rehalftone,2,2,gradcam,0.00982454,0.0803173,0,0.00121296
+86dcd60b5c2939c8,eae76b216e53b885,procedural,local_hue_shift,2,2,gradcam,3.63407e-06,0.366071,0,0
+8d6a64f680a15130,f6338979bc1b1e68,procedural,logo_warp,2,2,gradcam,9.86875e-05,0.0325654,0,0
+8d74806c3d1da3a5,0c752bcf30437338,procedural,local_jpeg,2,2,gradcam,4.70898e-06,0.0279815,0,0.132674
+8eaedc13aac0bb81,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,gradcam,0.00620904,0.0630182,0,0
+8fa710f98d9d3d9c,6b8137d2829d933e,procedural,local_hue_shift,2,2,gradcam,0.0276703,0.083227,0,0.155183
+9334b59ac1d188e2,c8d1bc89639bcf61,procedural,local_hue_shift,2,2,gradcam,7.96276e-06,0.0427495,0,0.000413779
+8402582b8288c79d,0cde29d96f6987a6,procedural,char_substitution,2,2,gradcampp,2.31064e-05,0.023856,1,0.0560533
+85504baf21c0ded6,b16d44a83b8f793a,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.00982454,0.0803173,1,0.324166
+86dcd60b5c2939c8,eae76b216e53b885,procedural,local_hue_shift,2,2,gradcampp,3.63407e-06,0.366071,0,0
+8d6a64f680a15130,f6338979bc1b1e68,procedural,logo_warp,2,2,gradcampp,9.86875e-05,0.0325654,0,0
+8d74806c3d1da3a5,0c752bcf30437338,procedural,local_jpeg,2,2,gradcampp,4.70898e-06,0.0279815,0,0.127383
+8eaedc13aac0bb81,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,gradcampp,0.00620904,0.0630182,0,0.140053
+8fa710f98d9d3d9c,6b8137d2829d933e,procedural,local_hue_shift,2,2,gradcampp,0.0276703,0.083227,0,0.11639
+9334b59ac1d188e2,c8d1bc89639bcf61,procedural,local_hue_shift,2,2,gradcampp,7.96276e-06,0.0427495,0,0
+8402582b8288c79d,0cde29d96f6987a6,procedural,char_substitution,2,2,ig,2.31064e-05,0.023856,0,0.0619674
+85504baf21c0ded6,b16d44a83b8f793a,procedural,local_blur_or_rehalftone,2,2,ig,0.00982454,0.0803173,0,0.0841542
+86dcd60b5c2939c8,eae76b216e53b885,procedural,local_hue_shift,2,2,ig,3.63407e-06,0.366071,0,0.0967387
+8d6a64f680a15130,f6338979bc1b1e68,procedural,logo_warp,2,2,ig,9.86875e-05,0.0325654,0,0.106949
+8d74806c3d1da3a5,0c752bcf30437338,procedural,local_jpeg,2,2,ig,4.70898e-06,0.0279815,0,0.0617049
+8eaedc13aac0bb81,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,ig,0.00620904,0.0630182,1,0.073955
+8fa710f98d9d3d9c,6b8137d2829d933e,procedural,local_hue_shift,2,2,ig,0.0276703,0.083227,0,0.164262
+9334b59ac1d188e2,c8d1bc89639bcf61,procedural,local_hue_shift,2,2,ig,7.96276e-06,0.0427495,0,0.025448
+8402582b8288c79d,0cde29d96f6987a6,procedural,char_substitution,2,2,random,2.31064e-05,0.023856,0,0.0367245
+85504baf21c0ded6,b16d44a83b8f793a,procedural,local_blur_or_rehalftone,2,2,random,0.00982454,0.0803173,0,0.0633051
+86dcd60b5c2939c8,eae76b216e53b885,procedural,local_hue_shift,2,2,random,3.63407e-06,0.366071,0,0.137148
+8d6a64f680a15130,f6338979bc1b1e68,procedural,logo_warp,2,2,random,9.86875e-05,0.0325654,0,0.0351452
+8d74806c3d1da3a5,0c752bcf30437338,procedural,local_jpeg,2,2,random,4.70898e-06,0.0279815,0,0.0550567
+8eaedc13aac0bb81,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,random,0.00620904,0.0630182,0,0.0487685
+8fa710f98d9d3d9c,6b8137d2829d933e,procedural,local_hue_shift,2,2,random,0.0276703,0.083227,0,0.0819157
+9334b59ac1d188e2,c8d1bc89639bcf61,procedural,local_hue_shift,2,2,random,7.96276e-06,0.0427495,1,0.0347742
+9369f7cd70405834,dcac71d41239983f,procedural,local_hue_shift,2,2,gradcam,7.72459e-07,0.029536,0,0.000333148
+93dd7ba6481a277e,0a29453673586e99,procedural,local_jpeg,2,2,gradcam,4.93853e-06,0.247947,0,0.291276
+961f35c60bb93b95,ae16a1dd4bc5609a,procedural,logo_warp,2,2,gradcam,3.44114e-06,0.327487,0,0.0959242
+995715bb71ea4998,34b7461cfa238b00,procedural,local_jpeg,2,2,gradcam,6.23221e-05,0.0471341,1,0.314244
+9aaa9c4dd0577920,58f81c1e778c8f90,procedural,local_blur_or_rehalftone,2,2,gradcam,4.50151e-05,0.0195312,0,0
+9b4806cf8f218d08,b334b7ebe90b004b,procedural,local_hue_shift,2,2,gradcam,1.91172e-06,0.0805564,0,0.139031
+9b6afaafa0219054,86a273856140bd7a,procedural,local_blur_or_rehalftone,2,2,gradcam,1.39075e-07,0.104632,0,0.368173
+9bebc13de60f3433,622407a0eab33008,procedural,char_substitution,2,2,gradcam,3.69493e-05,0.00398597,0,0
+9369f7cd70405834,dcac71d41239983f,procedural,local_hue_shift,2,2,gradcampp,7.72459e-07,0.029536,0,0
+93dd7ba6481a277e,0a29453673586e99,procedural,local_jpeg,2,2,gradcampp,4.93853e-06,0.247947,0,0.266861
+961f35c60bb93b95,ae16a1dd4bc5609a,procedural,logo_warp,2,2,gradcampp,3.44114e-06,0.327487,0,0.172515
+995715bb71ea4998,34b7461cfa238b00,procedural,local_jpeg,2,2,gradcampp,6.23221e-05,0.0471341,1,0.314244
+9aaa9c4dd0577920,58f81c1e778c8f90,procedural,local_blur_or_rehalftone,2,2,gradcampp,4.50151e-05,0.0195312,0,0
+9b4806cf8f218d08,b334b7ebe90b004b,procedural,local_hue_shift,2,2,gradcampp,1.91172e-06,0.0805564,0,0.091012
+9b6afaafa0219054,86a273856140bd7a,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.39075e-07,0.104632,0,0.367002
+9bebc13de60f3433,622407a0eab33008,procedural,char_substitution,2,2,gradcampp,3.69493e-05,0.00398597,0,0
+9369f7cd70405834,dcac71d41239983f,procedural,local_hue_shift,2,2,ig,7.72459e-07,0.029536,0,0.0379076
+93dd7ba6481a277e,0a29453673586e99,procedural,local_jpeg,2,2,ig,4.93853e-06,0.247947,1,0.225195
+961f35c60bb93b95,ae16a1dd4bc5609a,procedural,logo_warp,2,2,ig,3.44114e-06,0.327487,0,0.0911327
+995715bb71ea4998,34b7461cfa238b00,procedural,local_jpeg,2,2,ig,6.23221e-05,0.0471341,0,0.0916014
+9aaa9c4dd0577920,58f81c1e778c8f90,procedural,local_blur_or_rehalftone,2,2,ig,4.50151e-05,0.0195312,0,0.0402348
+9b4806cf8f218d08,b334b7ebe90b004b,procedural,local_hue_shift,2,2,ig,1.91172e-06,0.0805564,0,0.0951434
+9b6afaafa0219054,86a273856140bd7a,procedural,local_blur_or_rehalftone,2,2,ig,1.39075e-07,0.104632,0,0.101759
+9bebc13de60f3433,622407a0eab33008,procedural,char_substitution,2,2,ig,3.69493e-05,0.00398597,0,0.0125819
+9369f7cd70405834,dcac71d41239983f,procedural,local_hue_shift,2,2,random,7.72459e-07,0.029536,0,0
+93dd7ba6481a277e,0a29453673586e99,procedural,local_jpeg,2,2,random,4.93853e-06,0.247947,0,0.108847
+961f35c60bb93b95,ae16a1dd4bc5609a,procedural,logo_warp,2,2,random,3.44114e-06,0.327487,0,0.10681
+995715bb71ea4998,34b7461cfa238b00,procedural,local_jpeg,2,2,random,6.23221e-05,0.0471341,0,0.0245494
+9aaa9c4dd0577920,58f81c1e778c8f90,procedural,local_blur_or_rehalftone,2,2,random,4.50151e-05,0.0195312,0,0.0387105
+9b4806cf8f218d08,b334b7ebe90b004b,procedural,local_hue_shift,2,2,random,1.91172e-06,0.0805564,0,0.0219984
+9b6afaafa0219054,86a273856140bd7a,procedural,local_blur_or_rehalftone,2,2,random,1.39075e-07,0.104632,0,0.0285806
+9bebc13de60f3433,622407a0eab33008,procedural,char_substitution,2,2,random,3.69493e-05,0.00398597,0,0.00233524
+9ef007e94195c06a,f0440c621e272bf6,procedural,dose_digit_change,2,2,gradcam,0.00013862,0.0028699,0,0.0191337
+9f96eedc78733fb9,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,gradcam,8.84446e-06,0.703942,1,0.213074
+9fc6e9c6ce262ad6,f0440c621e272bf6,procedural,dose_digit_change,2,2,gradcam,0.000149458,0.00322864,0,0.0215254
+a0530b91ed398fa5,0a29453673586e99,procedural,local_hue_shift,2,2,gradcam,2.13403e-05,0.247947,1,0.227756
+a2ade0be7236665d,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,gradcam,4.30015e-06,0.0439254,1,0.264457
+a3bbc578dd4336b1,1ad4e03b5c3395f4,procedural,local_hue_shift,2,2,gradcam,3.96841e-06,0.0484694,0,0.0583484
+a7e11e6fa5a92395,86c767678dba0a16,procedural,local_hue_shift,2,2,gradcam,1.19276e-06,0.0621811,0,0.120514
+a89b97566c14727c,a880996937bc887b,procedural,dose_digit_change,2,2,gradcam,0.00111889,0.00378667,0,0
+9ef007e94195c06a,f0440c621e272bf6,procedural,dose_digit_change,2,2,gradcampp,0.00013862,0.0028699,0,0.016702
+9f96eedc78733fb9,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,gradcampp,8.84446e-06,0.703942,1,0.213074
+9fc6e9c6ce262ad6,f0440c621e272bf6,procedural,dose_digit_change,2,2,gradcampp,0.000149458,0.00322864,0,0.0215254
+a0530b91ed398fa5,0a29453673586e99,procedural,local_hue_shift,2,2,gradcampp,2.13403e-05,0.247947,1,0.2513
+a2ade0be7236665d,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,gradcampp,4.30015e-06,0.0439254,1,0.263472
+a3bbc578dd4336b1,1ad4e03b5c3395f4,procedural,local_hue_shift,2,2,gradcampp,3.96841e-06,0.0484694,0,0.16291
+a7e11e6fa5a92395,86c767678dba0a16,procedural,local_hue_shift,2,2,gradcampp,1.19276e-06,0.0621811,0,0.150795
+a89b97566c14727c,a880996937bc887b,procedural,dose_digit_change,2,2,gradcampp,0.00111889,0.00378667,0,0
+9ef007e94195c06a,f0440c621e272bf6,procedural,dose_digit_change,2,2,ig,0.00013862,0.0028699,1,0.0165673
+9f96eedc78733fb9,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,ig,8.84446e-06,0.703942,1,0.191949
+9fc6e9c6ce262ad6,f0440c621e272bf6,procedural,dose_digit_change,2,2,ig,0.000149458,0.00322864,0,0.0186829
+a0530b91ed398fa5,0a29453673586e99,procedural,local_hue_shift,2,2,ig,2.13403e-05,0.247947,0,0.228058
+a2ade0be7236665d,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,ig,4.30015e-06,0.0439254,0,0.117748
+a3bbc578dd4336b1,1ad4e03b5c3395f4,procedural,local_hue_shift,2,2,ig,3.96841e-06,0.0484694,0,0.121775
+a7e11e6fa5a92395,86c767678dba0a16,procedural,local_hue_shift,2,2,ig,1.19276e-06,0.0621811,0,0.280029
+a89b97566c14727c,a880996937bc887b,procedural,dose_digit_change,2,2,ig,0.00111889,0.00378667,0,0.0108738
+9ef007e94195c06a,f0440c621e272bf6,procedural,dose_digit_change,2,2,random,0.00013862,0.0028699,0,0
+9f96eedc78733fb9,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,random,8.84446e-06,0.703942,0,0.104219
+9fc6e9c6ce262ad6,f0440c621e272bf6,procedural,dose_digit_change,2,2,random,0.000149458,0.00322864,0,0.00143285
+a0530b91ed398fa5,0a29453673586e99,procedural,local_hue_shift,2,2,random,2.13403e-05,0.247947,0,0.145488
+a2ade0be7236665d,5a7bdb1747a94ad8,procedural,local_hue_shift,2,2,random,4.30015e-06,0.0439254,0,0.00329965
+a3bbc578dd4336b1,1ad4e03b5c3395f4,procedural,local_hue_shift,2,2,random,3.96841e-06,0.0484694,0,0.0184087
+a7e11e6fa5a92395,86c767678dba0a16,procedural,local_hue_shift,2,2,random,1.19276e-06,0.0621811,0,0.0628994
+a89b97566c14727c,a880996937bc887b,procedural,dose_digit_change,2,2,random,0.00111889,0.00378667,0,0.000259269
+ac1467f96196139a,b334b7ebe90b004b,procedural,logo_warp,2,2,gradcam,1.81707e-06,0.0670241,0,0
+ac4e60a29ddd6aac,a6cde236093006a8,procedural,logo_warp,2,2,gradcam,2.32663e-06,0.375,0,0
+ace4f864ab1c70c6,52b0aeb0e7fe72b9,procedural,logo_warp,2,2,gradcam,1.18156e-05,0.703942,1,0.213074
+ad9afae814ec37c1,2ebab87d72158ec1,procedural,local_jpeg,2,2,gradcam,4.16784e-05,0.171237,0,0.265944
+add49a8f8f90b107,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,gradcam,3.6623e-05,0.703942,1,0.213074
+ae27831a0efc95a7,8a0eda4f42ab3c28,procedural,local_jpeg,2,2,gradcam,9.34124e-07,0.0437062,0,0
+af3b0d4255568071,51dffa080d1523fa,procedural,logo_warp,2,2,gradcam,3.84388e-07,0.544643,0,0.0219616
+b2b41c69c721dce0,ea9398bf8989b651,procedural,dose_digit_change,2,2,gradcam,2.55371e-06,0.00167411,0,0.0111613
+ac1467f96196139a,b334b7ebe90b004b,procedural,logo_warp,2,2,gradcampp,1.81707e-06,0.0670241,0,0
+ac4e60a29ddd6aac,a6cde236093006a8,procedural,logo_warp,2,2,gradcampp,2.32663e-06,0.375,0,0
+ace4f864ab1c70c6,52b0aeb0e7fe72b9,procedural,logo_warp,2,2,gradcampp,1.18156e-05,0.703942,1,0.192978
+ad9afae814ec37c1,2ebab87d72158ec1,procedural,local_jpeg,2,2,gradcampp,4.16784e-05,0.171237,0,0.169921
+add49a8f8f90b107,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,gradcampp,3.6623e-05,0.703942,1,0.213074
+ae27831a0efc95a7,8a0eda4f42ab3c28,procedural,local_jpeg,2,2,gradcampp,9.34124e-07,0.0437062,0,0
+af3b0d4255568071,51dffa080d1523fa,procedural,logo_warp,2,2,gradcampp,3.84388e-07,0.544643,0,0.0185867
+b2b41c69c721dce0,ea9398bf8989b651,procedural,dose_digit_change,2,2,gradcampp,2.55371e-06,0.00167411,0,0.0111613
+ac1467f96196139a,b334b7ebe90b004b,procedural,logo_warp,2,2,ig,1.81707e-06,0.0670241,0,0.0248471
+ac4e60a29ddd6aac,a6cde236093006a8,procedural,logo_warp,2,2,ig,2.32663e-06,0.375,0,0.125871
+ace4f864ab1c70c6,52b0aeb0e7fe72b9,procedural,logo_warp,2,2,ig,1.18156e-05,0.703942,1,0.188412
+ad9afae814ec37c1,2ebab87d72158ec1,procedural,local_jpeg,2,2,ig,4.16784e-05,0.171237,0,0.186019
+add49a8f8f90b107,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,ig,3.6623e-05,0.703942,1,0.191949
+ae27831a0efc95a7,8a0eda4f42ab3c28,procedural,local_jpeg,2,2,ig,9.34124e-07,0.0437062,0,0.100057
+af3b0d4255568071,51dffa080d1523fa,procedural,logo_warp,2,2,ig,3.84388e-07,0.544643,0,0.163856
+b2b41c69c721dce0,ea9398bf8989b651,procedural,dose_digit_change,2,2,ig,2.55371e-06,0.00167411,0,0.00541683
+ac1467f96196139a,b334b7ebe90b004b,procedural,logo_warp,2,2,random,1.81707e-06,0.0670241,0,0.0880296
+ac4e60a29ddd6aac,a6cde236093006a8,procedural,logo_warp,2,2,random,2.32663e-06,0.375,0,0.0910823
+ace4f864ab1c70c6,52b0aeb0e7fe72b9,procedural,logo_warp,2,2,random,1.18156e-05,0.703942,1,0.146316
+ad9afae814ec37c1,2ebab87d72158ec1,procedural,local_jpeg,2,2,random,4.16784e-05,0.171237,0,0.0777666
+add49a8f8f90b107,52b0aeb0e7fe72b9,procedural,local_hue_shift,2,2,random,3.6623e-05,0.703942,1,0.133908
+ae27831a0efc95a7,8a0eda4f42ab3c28,procedural,local_jpeg,2,2,random,9.34124e-07,0.0437062,0,0.0228373
+af3b0d4255568071,51dffa080d1523fa,procedural,logo_warp,2,2,random,3.84388e-07,0.544643,1,0.15648
+b2b41c69c721dce0,ea9398bf8989b651,procedural,dose_digit_change,2,2,random,2.55371e-06,0.00167411,0,0.000131423
+b34317057fd9c463,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,gradcam,2.81348e-05,0.870536,1,0.172299
+b41b00f6fdc198c3,81dbff3c1030e6d6,procedural,char_substitution,2,2,gradcam,1.84037e-05,0.0263074,0,0.0157309
+b65f8d81b896bf4c,5ee739f7cc0e31ef,procedural,local_hue_shift,2,2,gradcam,6.03983e-06,0.03408,0,0.0336877
+b70ea38b20cfb7fe,622407a0eab33008,procedural,local_jpeg,2,2,gradcam,2.55226e-05,0.0901626,0,0.113473
+b76019c4fd41b51c,128af52359016dd8,procedural,local_jpeg,2,2,gradcam,3.30368e-05,0.0645727,0,0.0166195
+b7aa374033d2f6ad,8734f7f0a499316e,procedural,local_hue_shift,2,2,gradcam,0.00149384,0.0652902,0,0
+b98e7b66fc8083a7,a880996937bc887b,procedural,logo_warp,2,2,gradcam,0.000627087,0.370536,0,0
+ba370ecb2aaed583,2b0f0e6a64fb9a94,procedural,local_hue_shift,2,2,gradcam,9.79073e-06,0.205975,1,0.334903
+b34317057fd9c463,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,gradcampp,2.81348e-05,0.870536,1,0.172299
+b41b00f6fdc198c3,81dbff3c1030e6d6,procedural,char_substitution,2,2,gradcampp,1.84037e-05,0.0263074,0,0.133376
+b65f8d81b896bf4c,5ee739f7cc0e31ef,procedural,local_hue_shift,2,2,gradcampp,6.03983e-06,0.03408,0,0.0447964
+b70ea38b20cfb7fe,622407a0eab33008,procedural,local_jpeg,2,2,gradcampp,2.55226e-05,0.0901626,0,0.0713968
+b76019c4fd41b51c,128af52359016dd8,procedural,local_jpeg,2,2,gradcampp,3.30368e-05,0.0645727,0,0
+b7aa374033d2f6ad,8734f7f0a499316e,procedural,local_hue_shift,2,2,gradcampp,0.00149384,0.0652902,0,0.1965
+b98e7b66fc8083a7,a880996937bc887b,procedural,logo_warp,2,2,gradcampp,0.000627087,0.370536,0,0
+ba370ecb2aaed583,2b0f0e6a64fb9a94,procedural,local_hue_shift,2,2,gradcampp,9.79073e-06,0.205975,1,0.326181
+b34317057fd9c463,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,ig,2.81348e-05,0.870536,0,0.116572
+b41b00f6fdc198c3,81dbff3c1030e6d6,procedural,char_substitution,2,2,ig,1.84037e-05,0.0263074,1,0.0904832
+b65f8d81b896bf4c,5ee739f7cc0e31ef,procedural,local_hue_shift,2,2,ig,6.03983e-06,0.03408,0,0.0755794
+b70ea38b20cfb7fe,622407a0eab33008,procedural,local_jpeg,2,2,ig,2.55226e-05,0.0901626,0,0.057203
+b76019c4fd41b51c,128af52359016dd8,procedural,local_jpeg,2,2,ig,3.30368e-05,0.0645727,0,0.0691162
+b7aa374033d2f6ad,8734f7f0a499316e,procedural,local_hue_shift,2,2,ig,0.00149384,0.0652902,0,0.044075
+b98e7b66fc8083a7,a880996937bc887b,procedural,logo_warp,2,2,ig,0.000627087,0.370536,0,0.133692
+ba370ecb2aaed583,2b0f0e6a64fb9a94,procedural,local_hue_shift,2,2,ig,9.79073e-06,0.205975,0,0.294275
+b34317057fd9c463,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,random,2.81348e-05,0.870536,1,0.133152
+b41b00f6fdc198c3,81dbff3c1030e6d6,procedural,char_substitution,2,2,random,1.84037e-05,0.0263074,0,0.00317532
+b65f8d81b896bf4c,5ee739f7cc0e31ef,procedural,local_hue_shift,2,2,random,6.03983e-06,0.03408,0,0.0314943
+b70ea38b20cfb7fe,622407a0eab33008,procedural,local_jpeg,2,2,random,2.55226e-05,0.0901626,0,0.0424777
+b76019c4fd41b51c,128af52359016dd8,procedural,local_jpeg,2,2,random,3.30368e-05,0.0645727,0,0.0165235
+b7aa374033d2f6ad,8734f7f0a499316e,procedural,local_hue_shift,2,2,random,0.00149384,0.0652902,0,0.00915546
+b98e7b66fc8083a7,a880996937bc887b,procedural,logo_warp,2,2,random,0.000627087,0.370536,0,0.121185
+ba370ecb2aaed583,2b0f0e6a64fb9a94,procedural,local_hue_shift,2,2,random,9.79073e-06,0.205975,0,0.100629
+bc27104317a20a29,0c752bcf30437338,procedural,local_jpeg,2,2,gradcam,3.92807e-06,0.045739,0,0.0200457
+bd987134661288da,8734f7f0a499316e,procedural,logo_warp,2,2,gradcam,0.00205476,0.0518176,0,0
+bf9f9e8a4e6de958,8b2f6cda14c99144,procedural,char_substitution,2,2,gradcam,8.86329e-05,0.040896,0,0
+c0b533ee30003197,0c752bcf30437338,procedural,local_blur_or_rehalftone,2,2,gradcam,1.87232e-06,0.0464764,0,0.0738562
+c0e92a72959983c8,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,gradcam,1.22653e-06,0.11641,1,0.380318
+c2d90a80212c60c8,5827ce423e3b3814,procedural,logo_warp,2,2,gradcam,8.8746e-08,0.044045,0,0.0594124
+c30366e03a26b415,dde822a18bd8ea6b,procedural,local_jpeg,2,2,gradcam,1.14287e-05,1,1,0.149992
+c402e153eb658c3f,2b0f0e6a64fb9a94,procedural,logo_warp,2,2,gradcam,5.83033e-06,0.205975,0,0.243456
+bc27104317a20a29,0c752bcf30437338,procedural,local_jpeg,2,2,gradcampp,3.92807e-06,0.045739,0,0.016351
+bd987134661288da,8734f7f0a499316e,procedural,logo_warp,2,2,gradcampp,0.00205476,0.0518176,0,0
+bf9f9e8a4e6de958,8b2f6cda14c99144,procedural,char_substitution,2,2,gradcampp,8.86329e-05,0.040896,0,0
+c0b533ee30003197,0c752bcf30437338,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.87232e-06,0.0464764,0,0.0955768
+c0e92a72959983c8,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.22653e-06,0.11641,1,0.465198
+c2d90a80212c60c8,5827ce423e3b3814,procedural,logo_warp,2,2,gradcampp,8.8746e-08,0.044045,0,0.0855168
+c30366e03a26b415,dde822a18bd8ea6b,procedural,local_jpeg,2,2,gradcampp,1.14287e-05,1,1,0.149992
+c402e153eb658c3f,2b0f0e6a64fb9a94,procedural,logo_warp,2,2,gradcampp,5.83033e-06,0.205975,0,0.262351
+bc27104317a20a29,0c752bcf30437338,procedural,local_jpeg,2,2,ig,3.92807e-06,0.045739,0,0.0991606
+bd987134661288da,8734f7f0a499316e,procedural,logo_warp,2,2,ig,0.00205476,0.0518176,0,0.0425203
+bf9f9e8a4e6de958,8b2f6cda14c99144,procedural,char_substitution,2,2,ig,8.86329e-05,0.040896,0,0.0156946
+c0b533ee30003197,0c752bcf30437338,procedural,local_blur_or_rehalftone,2,2,ig,1.87232e-06,0.0464764,0,0.113521
+c0e92a72959983c8,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,ig,1.22653e-06,0.11641,0,0.173161
+c2d90a80212c60c8,5827ce423e3b3814,procedural,logo_warp,2,2,ig,8.8746e-08,0.044045,1,0.0922145
+c30366e03a26b415,dde822a18bd8ea6b,procedural,local_jpeg,2,2,ig,1.14287e-05,1,1,0.149992
+c402e153eb658c3f,2b0f0e6a64fb9a94,procedural,logo_warp,2,2,ig,5.83033e-06,0.205975,1,0.289696
+bc27104317a20a29,0c752bcf30437338,procedural,local_jpeg,2,2,random,3.92807e-06,0.045739,0,0.0637998
+bd987134661288da,8734f7f0a499316e,procedural,logo_warp,2,2,random,0.00205476,0.0518176,0,0.00977264
+bf9f9e8a4e6de958,8b2f6cda14c99144,procedural,char_substitution,2,2,random,8.86329e-05,0.040896,0,0.00810441
+c0b533ee30003197,0c752bcf30437338,procedural,local_blur_or_rehalftone,2,2,random,1.87232e-06,0.0464764,0,0.0156604
+c0e92a72959983c8,b3f839885c9d6b3d,procedural,local_blur_or_rehalftone,2,2,random,1.22653e-06,0.11641,0,0.123844
+c2d90a80212c60c8,5827ce423e3b3814,procedural,logo_warp,2,2,random,8.8746e-08,0.044045,0,0.0642763
+c30366e03a26b415,dde822a18bd8ea6b,procedural,local_jpeg,2,2,random,1.14287e-05,1,1,0.149992
+c402e153eb658c3f,2b0f0e6a64fb9a94,procedural,logo_warp,2,2,random,5.83033e-06,0.205975,0,0.0938878
+c4a99e71dc00c79f,ae16a1dd4bc5609a,procedural,local_blur_or_rehalftone,2,2,gradcam,9.23886e-06,0.327487,0,0.0529138
+c553f8f3c56a77b2,51dffa080d1523fa,procedural,local_hue_shift,2,2,gradcam,3.81635e-07,0.544643,0,0.0570787
+c62c9aeb3d15ad5e,d1c19db9fdf11893,procedural,logo_warp,2,2,gradcam,1.56886e-06,0.331055,1,0.230852
+c674adf773dc3ae0,ca6d4703b72e590d,procedural,local_jpeg,2,2,gradcam,4.89109e-07,0.00908801,0,0
+c8d13cbbb6d0c309,0461d82bfbc43c54,procedural,char_substitution,2,2,gradcam,6.06863e-07,0.00825096,0,0.011465
+caa0b62757aac0a4,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,gradcam,6.39506e-07,0.0355947,0,0.0619227
+cc80073606480dde,0461d82bfbc43c54,procedural,local_jpeg,2,2,gradcam,3.94966e-07,0.0312101,0,0.0361254
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,gradcam,6.97708e-07,0.0149075,0,0
+c4a99e71dc00c79f,ae16a1dd4bc5609a,procedural,local_blur_or_rehalftone,2,2,gradcampp,9.23886e-06,0.327487,0,0.0702703
+c553f8f3c56a77b2,51dffa080d1523fa,procedural,local_hue_shift,2,2,gradcampp,3.81635e-07,0.544643,0,0.0561178
+c62c9aeb3d15ad5e,d1c19db9fdf11893,procedural,logo_warp,2,2,gradcampp,1.56886e-06,0.331055,1,0.220767
+c674adf773dc3ae0,ca6d4703b72e590d,procedural,local_jpeg,2,2,gradcampp,4.89109e-07,0.00908801,0,0
+c8d13cbbb6d0c309,0461d82bfbc43c54,procedural,char_substitution,2,2,gradcampp,6.06863e-07,0.00825096,0,0
+caa0b62757aac0a4,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,gradcampp,6.39506e-07,0.0355947,0,0.0669111
+cc80073606480dde,0461d82bfbc43c54,procedural,local_jpeg,2,2,gradcampp,3.94966e-07,0.0312101,0,0.122469
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,gradcampp,6.97708e-07,0.0149075,0,0
+c4a99e71dc00c79f,ae16a1dd4bc5609a,procedural,local_blur_or_rehalftone,2,2,ig,9.23886e-06,0.327487,0,0.116143
+c553f8f3c56a77b2,51dffa080d1523fa,procedural,local_hue_shift,2,2,ig,3.81635e-07,0.544643,1,0.178695
+c62c9aeb3d15ad5e,d1c19db9fdf11893,procedural,logo_warp,2,2,ig,1.56886e-06,0.331055,0,0.247068
+c674adf773dc3ae0,ca6d4703b72e590d,procedural,local_jpeg,2,2,ig,4.89109e-07,0.00908801,0,0.00163132
+c8d13cbbb6d0c309,0461d82bfbc43c54,procedural,char_substitution,2,2,ig,6.06863e-07,0.00825096,0,0.0221421
+caa0b62757aac0a4,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,ig,6.39506e-07,0.0355947,0,0.0613175
+cc80073606480dde,0461d82bfbc43c54,procedural,local_jpeg,2,2,ig,3.94966e-07,0.0312101,0,0.0653855
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,ig,6.97708e-07,0.0149075,0,0.0245171
+c4a99e71dc00c79f,ae16a1dd4bc5609a,procedural,local_blur_or_rehalftone,2,2,random,9.23886e-06,0.327487,0,0.103191
+c553f8f3c56a77b2,51dffa080d1523fa,procedural,local_hue_shift,2,2,random,3.81635e-07,0.544643,0,0.171209
+c62c9aeb3d15ad5e,d1c19db9fdf11893,procedural,logo_warp,2,2,random,1.56886e-06,0.331055,0,0.0764394
+c674adf773dc3ae0,ca6d4703b72e590d,procedural,local_jpeg,2,2,random,4.89109e-07,0.00908801,0,0.00566965
+c8d13cbbb6d0c309,0461d82bfbc43c54,procedural,char_substitution,2,2,random,6.06863e-07,0.00825096,0,0.0306334
+caa0b62757aac0a4,cbde7c9808e8d82d,procedural,local_hue_shift,2,2,random,6.39506e-07,0.0355947,0,0.0498309
+cc80073606480dde,0461d82bfbc43c54,procedural,local_jpeg,2,2,random,3.94966e-07,0.0312101,0,0.00932504
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,random,6.97708e-07,0.0149075,0,0.00914746
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,gradcam,6.97708e-07,0.0149075,0,0
+ce0ac92d2a57f995,c4a15643a2b727e8,procedural,dose_digit_change,2,2,gradcam,5.51355e-06,0.00195312,0,0.0095339
+cf2f63a7dddbecbd,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,gradcam,6.66482e-06,0.0350765,0,0
+d1115da81d8fab60,8734f7f0a499316e,procedural,local_jpeg,2,2,gradcam,0.0013131,0.0332031,0,0
+d187634aba1d7e6c,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,gradcam,9.43347e-06,0.0015346,0,0
+d1bbb31af96fca95,ca6d4703b72e590d,procedural,local_blur_or_rehalftone,2,2,gradcam,1.06702e-06,0.0408562,0,0
+d2bf92a5b9dc90e2,931f207fb0c8ee60,procedural,local_jpeg,2,2,gradcam,7.49734e-05,0.0793009,0,0.215274
+d33ba41295bc7ed8,5827ce423e3b3814,procedural,char_substitution,2,2,gradcam,5.44404e-08,0.00219228,0,0.014616
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,gradcampp,6.97708e-07,0.0149075,0,0
+ce0ac92d2a57f995,c4a15643a2b727e8,procedural,dose_digit_change,2,2,gradcampp,5.51355e-06,0.00195312,0,0.0130215
+cf2f63a7dddbecbd,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,gradcampp,6.66482e-06,0.0350765,0,0
+d1115da81d8fab60,8734f7f0a499316e,procedural,local_jpeg,2,2,gradcampp,0.0013131,0.0332031,0,0
+d187634aba1d7e6c,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,gradcampp,9.43347e-06,0.0015346,0,0
+d1bbb31af96fca95,ca6d4703b72e590d,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.06702e-06,0.0408562,0,0
+d2bf92a5b9dc90e2,931f207fb0c8ee60,procedural,local_jpeg,2,2,gradcampp,7.49734e-05,0.0793009,0,0.311261
+d33ba41295bc7ed8,5827ce423e3b3814,procedural,char_substitution,2,2,gradcampp,5.44404e-08,0.00219228,0,0.014616
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,ig,6.97708e-07,0.0149075,0,0.0245171
+ce0ac92d2a57f995,c4a15643a2b727e8,procedural,dose_digit_change,2,2,ig,5.51355e-06,0.00195312,0,0.00355403
+cf2f63a7dddbecbd,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,ig,6.66482e-06,0.0350765,0,0.0115468
+d1115da81d8fab60,8734f7f0a499316e,procedural,local_jpeg,2,2,ig,0.0013131,0.0332031,0,0.010443
+d187634aba1d7e6c,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,ig,9.43347e-06,0.0015346,0,0.00582088
+d1bbb31af96fca95,ca6d4703b72e590d,procedural,local_blur_or_rehalftone,2,2,ig,1.06702e-06,0.0408562,0,0.065302
+d2bf92a5b9dc90e2,931f207fb0c8ee60,procedural,local_jpeg,2,2,ig,7.49734e-05,0.0793009,1,0.144321
+d33ba41295bc7ed8,5827ce423e3b3814,procedural,char_substitution,2,2,ig,5.44404e-08,0.00219228,0,0.00275772
+cdb8ed6790885d0d,"image_id
+cdb8ed6790885d0d    1f5acf1720a31967
+cdb8ed6790885d0d    1f5acf1720a31967
+Name: source_image_id, dtype: str","image_id
+cdb8ed6790885d0d    procedural
+cdb8ed6790885d0d    procedural
+Name: generator, dtype: str","image_id
+cdb8ed6790885d0d    char_substitution
+cdb8ed6790885d0d    char_substitution
+Name: edit_type, dtype: str",2,2,random,6.97708e-07,0.0149075,0,0.00914746
+ce0ac92d2a57f995,c4a15643a2b727e8,procedural,dose_digit_change,2,2,random,5.51355e-06,0.00195312,0,0.00779907
+cf2f63a7dddbecbd,03b813b7b36807d8,procedural,local_blur_or_rehalftone,2,2,random,6.66482e-06,0.0350765,0,0.04891
+d1115da81d8fab60,8734f7f0a499316e,procedural,local_jpeg,2,2,random,0.0013131,0.0332031,0,0.00448038
+d187634aba1d7e6c,a5fbc9d73b6ad62b,procedural,char_substitution,2,2,random,9.43347e-06,0.0015346,0,0
+d1bbb31af96fca95,ca6d4703b72e590d,procedural,local_blur_or_rehalftone,2,2,random,1.06702e-06,0.0408562,0,0.0483906
+d2bf92a5b9dc90e2,931f207fb0c8ee60,procedural,local_jpeg,2,2,random,7.49734e-05,0.0793009,0,0.0420252
+d33ba41295bc7ed8,5827ce423e3b3814,procedural,char_substitution,2,2,random,5.44404e-08,0.00219228,0,0.000261986
+d350a839f0737387,a5fbc9d73b6ad62b,procedural,local_jpeg,2,2,gradcam,4.18187e-06,0.202806,1,0.391448
+d468c3dacf02e926,8ff30d40f9d1b5c0,procedural,local_blur_or_rehalftone,2,2,gradcam,0.00587688,0.0440051,0,0.00537079
+d47ce2cee80cc544,a880996937bc887b,procedural,local_blur_or_rehalftone,2,2,gradcam,0.00149577,0.370536,0,0
+d5b22ab245e872a1,6b8137d2829d933e,procedural,local_jpeg,2,2,gradcam,0.0223137,0.083227,0,0.169265
+d9cf8c6048c4b05d,1ad4e03b5c3395f4,procedural,logo_warp,2,2,gradcam,7.05927e-06,0.0484694,0,0.00271876
+dc1bbb03f23d3d7d,8a0eda4f42ab3c28,procedural,local_blur_or_rehalftone,2,2,gradcam,1.71051e-06,0.0437062,0,0
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,gradcam,5.65942e-05,0.332031,1,0.451741
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,gradcam,5.65942e-05,0.332031,1,0.451741
+d350a839f0737387,a5fbc9d73b6ad62b,procedural,local_jpeg,2,2,gradcampp,4.18187e-06,0.202806,0,0.346877
+d468c3dacf02e926,8ff30d40f9d1b5c0,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.00587688,0.0440051,0,0
+d47ce2cee80cc544,a880996937bc887b,procedural,local_blur_or_rehalftone,2,2,gradcampp,0.00149577,0.370536,0,0
+d5b22ab245e872a1,6b8137d2829d933e,procedural,local_jpeg,2,2,gradcampp,0.0223137,0.083227,0,0.149735
+d9cf8c6048c4b05d,1ad4e03b5c3395f4,procedural,logo_warp,2,2,gradcampp,7.05927e-06,0.0484694,0,0.0904512
+dc1bbb03f23d3d7d,8a0eda4f42ab3c28,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.71051e-06,0.0437062,0,0
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,gradcampp,5.65942e-05,0.332031,1,0.451741
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,gradcampp,5.65942e-05,0.332031,1,0.451741
+d350a839f0737387,a5fbc9d73b6ad62b,procedural,local_jpeg,2,2,ig,4.18187e-06,0.202806,0,0.282382
+d468c3dacf02e926,8ff30d40f9d1b5c0,procedural,local_blur_or_rehalftone,2,2,ig,0.00587688,0.0440051,0,0.0273351
+d47ce2cee80cc544,a880996937bc887b,procedural,local_blur_or_rehalftone,2,2,ig,0.00149577,0.370536,0,0.00923529
+d5b22ab245e872a1,6b8137d2829d933e,procedural,local_jpeg,2,2,ig,0.0223137,0.083227,0,0.177975
+d9cf8c6048c4b05d,1ad4e03b5c3395f4,procedural,logo_warp,2,2,ig,7.05927e-06,0.0484694,0,0.126088
+dc1bbb03f23d3d7d,8a0eda4f42ab3c28,procedural,local_blur_or_rehalftone,2,2,ig,1.71051e-06,0.0437062,0,0.0127123
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,ig,5.65942e-05,0.332031,1,0.272211
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,ig,5.65942e-05,0.332031,1,0.272211
+d350a839f0737387,a5fbc9d73b6ad62b,procedural,local_jpeg,2,2,random,4.18187e-06,0.202806,0,0.0879479
+d468c3dacf02e926,8ff30d40f9d1b5c0,procedural,local_blur_or_rehalftone,2,2,random,0.00587688,0.0440051,0,0.0114298
+d47ce2cee80cc544,a880996937bc887b,procedural,local_blur_or_rehalftone,2,2,random,0.00149577,0.370536,0,0.119023
+d5b22ab245e872a1,6b8137d2829d933e,procedural,local_jpeg,2,2,random,0.0223137,0.083227,0,0.0764419
+d9cf8c6048c4b05d,1ad4e03b5c3395f4,procedural,logo_warp,2,2,random,7.05927e-06,0.0484694,0,0.040326
+dc1bbb03f23d3d7d,8a0eda4f42ab3c28,procedural,local_blur_or_rehalftone,2,2,random,1.71051e-06,0.0437062,0,0.00309629
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,random,5.65942e-05,0.332031,0,0.089067
+dcef8fe685551223,"image_id
+dcef8fe685551223    30f7f25c925b2a4f
+dcef8fe685551223    30f7f25c925b2a4f
+Name: source_image_id, dtype: str","image_id
+dcef8fe685551223    procedural
+dcef8fe685551223    procedural
+Name: generator, dtype: str","image_id
+dcef8fe685551223    local_hue_shift
+dcef8fe685551223    local_hue_shift
+Name: edit_type, dtype: str",2,2,random,5.65942e-05,0.332031,0,0.089067
+de673147cf717c65,d1c19db9fdf11893,procedural,char_substitution,2,2,gradcam,7.03995e-07,0.00109614,0,0
+dee5eacdbde0601b,4ab2fff587be75f1,procedural,local_blur_or_rehalftone,2,2,gradcam,1.84991e-05,0.162986,0,0.16585
+e01fd216461d1159,c4a15643a2b727e8,procedural,local_jpeg,2,2,gradcam,3.06715e-06,0.544184,0,0.0873474
+e093698db3d448ce,ea9398bf8989b651,procedural,logo_warp,2,2,gradcam,1.67416e-05,0.385284,1,0.2024
+e10b079e2484359f,9e1fd9217005e1fd,procedural,local_jpeg,2,2,gradcam,3.17367e-05,0.0454201,0,0
+e137791b768e6ac7,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,gradcam,5.0626e-05,0.0452009,0,0
+e296fbb1c82c7a98,58f81c1e778c8f90,procedural,logo_warp,2,2,gradcam,3.50293e-05,0.0195312,0,0.0809506
+e4aed428b6574f40,d1c19db9fdf11893,procedural,local_hue_shift,2,2,gradcam,7.29773e-07,0.331055,1,0.254
+de673147cf717c65,d1c19db9fdf11893,procedural,char_substitution,2,2,gradcampp,7.03995e-07,0.00109614,0,0
+dee5eacdbde0601b,4ab2fff587be75f1,procedural,local_blur_or_rehalftone,2,2,gradcampp,1.84991e-05,0.162986,0,0.186999
+e01fd216461d1159,c4a15643a2b727e8,procedural,local_jpeg,2,2,gradcampp,3.06715e-06,0.544184,1,0.128166
+e093698db3d448ce,ea9398bf8989b651,procedural,logo_warp,2,2,gradcampp,1.67416e-05,0.385284,1,0.228693
+e10b079e2484359f,9e1fd9217005e1fd,procedural,local_jpeg,2,2,gradcampp,3.17367e-05,0.0454201,0,0.00296645
+e137791b768e6ac7,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,gradcampp,5.0626e-05,0.0452009,0,0
+e296fbb1c82c7a98,58f81c1e778c8f90,procedural,logo_warp,2,2,gradcampp,3.50293e-05,0.0195312,0,0.0619226
+e4aed428b6574f40,d1c19db9fdf11893,procedural,local_hue_shift,2,2,gradcampp,7.29773e-07,0.331055,0,0.191656
+de673147cf717c65,d1c19db9fdf11893,procedural,char_substitution,2,2,ig,7.03995e-07,0.00109614,0,0.00503778
+dee5eacdbde0601b,4ab2fff587be75f1,procedural,local_blur_or_rehalftone,2,2,ig,1.84991e-05,0.162986,0,0.0147325
+e01fd216461d1159,c4a15643a2b727e8,procedural,local_jpeg,2,2,ig,3.06715e-06,0.544184,1,0.202354
+e093698db3d448ce,ea9398bf8989b651,procedural,logo_warp,2,2,ig,1.67416e-05,0.385284,0,0.281454
+e10b079e2484359f,9e1fd9217005e1fd,procedural,local_jpeg,2,2,ig,3.17367e-05,0.0454201,0,0.0387753
+e137791b768e6ac7,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,ig,5.0626e-05,0.0452009,0,0
+e296fbb1c82c7a98,58f81c1e778c8f90,procedural,logo_warp,2,2,ig,3.50293e-05,0.0195312,1,0.0873067
+e4aed428b6574f40,d1c19db9fdf11893,procedural,local_hue_shift,2,2,ig,7.29773e-07,0.331055,1,0.213768
+de673147cf717c65,d1c19db9fdf11893,procedural,char_substitution,2,2,random,7.03995e-07,0.00109614,0,0
+dee5eacdbde0601b,4ab2fff587be75f1,procedural,local_blur_or_rehalftone,2,2,random,1.84991e-05,0.162986,0,0.084156
+e01fd216461d1159,c4a15643a2b727e8,procedural,local_jpeg,2,2,random,3.06715e-06,0.544184,1,0.117524
+e093698db3d448ce,ea9398bf8989b651,procedural,logo_warp,2,2,random,1.67416e-05,0.385284,1,0.0946811
+e10b079e2484359f,9e1fd9217005e1fd,procedural,local_jpeg,2,2,random,3.17367e-05,0.0454201,0,0.059084
+e137791b768e6ac7,b7d2a48e1c7c1a21,procedural,logo_warp,2,2,random,5.0626e-05,0.0452009,0,0.0614501
+e296fbb1c82c7a98,58f81c1e778c8f90,procedural,logo_warp,2,2,random,3.50293e-05,0.0195312,0,0.0111745
+e4aed428b6574f40,d1c19db9fdf11893,procedural,local_hue_shift,2,2,random,7.29773e-07,0.331055,0,0.140205
+e52354058336a16f,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,gradcam,0.00880537,0.0318678,0,0
+e551efba7568c6d4,2ac67ce8ce872dfa,procedural,logo_warp,2,2,gradcam,1.57416e-06,0.348055,1,0.267756
+e78bc8fd18fa17b5,111d31b35adb23cb,procedural,local_hue_shift,2,2,gradcam,3.0878e-06,0.0214844,0,0.0978691
+e7a0d8972d9b9734,f6338979bc1b1e68,procedural,local_blur_or_rehalftone,2,2,gradcam,4.64662e-05,0.0621811,0,0.0200249
+e82fa4f27bc9b6b0,5827ce423e3b3814,procedural,logo_warp,2,2,gradcam,1.21317e-07,0.044045,0,0.00298753
+e8de0144cc883204,8b2f6cda14c99144,procedural,logo_warp,2,2,gradcam,6.81057e-05,0.0378667,0,0.192108
+e8f0324ae5859a87,ea9398bf8989b651,procedural,font_swap,2,2,gradcam,2.16955e-06,0.0406569,0,0.134622
+eab23c41722bc68d,0a29453673586e99,procedural,logo_warp,2,2,gradcam,3.40211e-06,0.247947,0,0.109031
+e52354058336a16f,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,gradcampp,0.00880537,0.0318678,0,0.000109601
+e551efba7568c6d4,2ac67ce8ce872dfa,procedural,logo_warp,2,2,gradcampp,1.57416e-06,0.348055,1,0.351103
+e78bc8fd18fa17b5,111d31b35adb23cb,procedural,local_hue_shift,2,2,gradcampp,3.0878e-06,0.0214844,0,0.0514481
+e7a0d8972d9b9734,f6338979bc1b1e68,procedural,local_blur_or_rehalftone,2,2,gradcampp,4.64662e-05,0.0621811,0,0.0271105
+e82fa4f27bc9b6b0,5827ce423e3b3814,procedural,logo_warp,2,2,gradcampp,1.21317e-07,0.044045,0,0.074851
+e8de0144cc883204,8b2f6cda14c99144,procedural,logo_warp,2,2,gradcampp,6.81057e-05,0.0378667,0,0.177808
+e8f0324ae5859a87,ea9398bf8989b651,procedural,font_swap,2,2,gradcampp,2.16955e-06,0.0406569,0,0.159234
+eab23c41722bc68d,0a29453673586e99,procedural,logo_warp,2,2,gradcampp,3.40211e-06,0.247947,0,0.126488
+e52354058336a16f,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,ig,0.00880537,0.0318678,0,0.0498159
+e551efba7568c6d4,2ac67ce8ce872dfa,procedural,logo_warp,2,2,ig,1.57416e-06,0.348055,1,0.248439
+e78bc8fd18fa17b5,111d31b35adb23cb,procedural,local_hue_shift,2,2,ig,3.0878e-06,0.0214844,0,0.0927102
+e7a0d8972d9b9734,f6338979bc1b1e68,procedural,local_blur_or_rehalftone,2,2,ig,4.64662e-05,0.0621811,0,0.0216891
+e82fa4f27bc9b6b0,5827ce423e3b3814,procedural,logo_warp,2,2,ig,1.21317e-07,0.044045,0,0.09788
+e8de0144cc883204,8b2f6cda14c99144,procedural,logo_warp,2,2,ig,6.81057e-05,0.0378667,0,0.0384488
+e8f0324ae5859a87,ea9398bf8989b651,procedural,font_swap,2,2,ig,2.16955e-06,0.0406569,0,0.10756
+eab23c41722bc68d,0a29453673586e99,procedural,logo_warp,2,2,ig,3.40211e-06,0.247947,0,0.256418
+e52354058336a16f,8ff30d40f9d1b5c0,procedural,local_jpeg,2,2,random,0.00880537,0.0318678,0,0.0391755
+e551efba7568c6d4,2ac67ce8ce872dfa,procedural,logo_warp,2,2,random,1.57416e-06,0.348055,1,0.0997184
+e78bc8fd18fa17b5,111d31b35adb23cb,procedural,local_hue_shift,2,2,random,3.0878e-06,0.0214844,0,0.000930665
+e7a0d8972d9b9734,f6338979bc1b1e68,procedural,local_blur_or_rehalftone,2,2,random,4.64662e-05,0.0621811,0,0.0430097
+e82fa4f27bc9b6b0,5827ce423e3b3814,procedural,logo_warp,2,2,random,1.21317e-07,0.044045,0,0.0747323
+e8de0144cc883204,8b2f6cda14c99144,procedural,logo_warp,2,2,random,6.81057e-05,0.0378667,0,0.0484983
+e8f0324ae5859a87,ea9398bf8989b651,procedural,font_swap,2,2,random,2.16955e-06,0.0406569,0,0.0330454
+eab23c41722bc68d,0a29453673586e99,procedural,logo_warp,2,2,random,3.40211e-06,0.247947,0,0.111253
+ed8190d0a0850652,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,gradcam,5.75527e-06,0.870536,1,0.172299
+ef64467f7e4e915b,b16d44a83b8f793a,procedural,local_hue_shift,2,2,gradcam,0.0452878,0.0880899,0,0
+ef92fccb4af1a1e5,4ab2fff587be75f1,procedural,logo_warp,2,2,gradcam,1.20106e-05,0.162986,0,0.153942
+f190192f18feeed7,f54e38cb60f2d41f,procedural,char_substitution,2,2,gradcam,3.42479e-07,0.00304927,0,0.0203295
+f1d816fb460307ce,a8e1084ca768b5f0,procedural,local_jpeg,2,2,gradcam,5.28902e-07,0.0546875,0,0.0525776
+f246bf3c7f42b33a,2f944f3ca1f3d74b,procedural,font_swap,2,2,gradcam,4.95559e-06,0.0507015,1,0.185543
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,gradcam,0.00621708,0.300263,0,0
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,gradcam,0.00621708,0.300263,0,0
+ed8190d0a0850652,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,gradcampp,5.75527e-06,0.870536,1,0.172299
+ef64467f7e4e915b,b16d44a83b8f793a,procedural,local_hue_shift,2,2,gradcampp,0.0452878,0.0880899,1,0.58414
+ef92fccb4af1a1e5,4ab2fff587be75f1,procedural,logo_warp,2,2,gradcampp,1.20106e-05,0.162986,0,0.157856
+f190192f18feeed7,f54e38cb60f2d41f,procedural,char_substitution,2,2,gradcampp,3.42479e-07,0.00304927,0,0.01803
+f1d816fb460307ce,a8e1084ca768b5f0,procedural,local_jpeg,2,2,gradcampp,5.28902e-07,0.0546875,0,0.0898864
+f246bf3c7f42b33a,2f944f3ca1f3d74b,procedural,font_swap,2,2,gradcampp,4.95559e-06,0.0507015,1,0.168485
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,gradcampp,0.00621708,0.300263,0,0
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,gradcampp,0.00621708,0.300263,0,0
+ed8190d0a0850652,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,ig,5.75527e-06,0.870536,1,0.159609
+ef64467f7e4e915b,b16d44a83b8f793a,procedural,local_hue_shift,2,2,ig,0.0452878,0.0880899,0,0.0632844
+ef92fccb4af1a1e5,4ab2fff587be75f1,procedural,logo_warp,2,2,ig,1.20106e-05,0.162986,1,0.194311
+f190192f18feeed7,f54e38cb60f2d41f,procedural,char_substitution,2,2,ig,3.42479e-07,0.00304927,0,0.00405335
+f1d816fb460307ce,a8e1084ca768b5f0,procedural,local_jpeg,2,2,ig,5.28902e-07,0.0546875,0,0.10991
+f246bf3c7f42b33a,2f944f3ca1f3d74b,procedural,font_swap,2,2,ig,4.95559e-06,0.0507015,0,0.0392157
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,ig,0.00621708,0.300263,0,0.111155
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,ig,0.00621708,0.300263,0,0.111155
+ed8190d0a0850652,2f944f3ca1f3d74b,procedural,local_blur_or_rehalftone,2,2,random,5.75527e-06,0.870536,0,0.142685
+ef64467f7e4e915b,b16d44a83b8f793a,procedural,local_hue_shift,2,2,random,0.0452878,0.0880899,0,0.0443221
+ef92fccb4af1a1e5,4ab2fff587be75f1,procedural,logo_warp,2,2,random,1.20106e-05,0.162986,0,0.0435938
+f190192f18feeed7,f54e38cb60f2d41f,procedural,char_substitution,2,2,random,3.42479e-07,0.00304927,0,0.0102618
+f1d816fb460307ce,a8e1084ca768b5f0,procedural,local_jpeg,2,2,random,5.28902e-07,0.0546875,0,0.0489225
+f246bf3c7f42b33a,2f944f3ca1f3d74b,procedural,font_swap,2,2,random,4.95559e-06,0.0507015,1,0.102716
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,random,0.00621708,0.300263,0,0.125772
+f4feeae24c8dc6ff,"image_id
+f4feeae24c8dc6ff    f31665578f5bf7b4
+f4feeae24c8dc6ff    f31665578f5bf7b4
+Name: source_image_id, dtype: str","image_id
+f4feeae24c8dc6ff    procedural
+f4feeae24c8dc6ff    procedural
+Name: generator, dtype: str","image_id
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+f4feeae24c8dc6ff    local_blur_or_rehalftone
+Name: edit_type, dtype: str",2,2,random,0.00621708,0.300263,0,0.125772
+f54150e5e3d28845,1ad4e03b5c3395f4,procedural,logo_warp,2,2,gradcam,1.25511e-05,0.0484694,0,0.0163299
+f96082b57f0e3b42,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,gradcam,4.43928e-05,0.0645727,0,0
+fbb9614c6c6596ed,0cde29d96f6987a6,procedural,local_blur_or_rehalftone,2,2,gradcam,9.33699e-05,0.575893,1,0.0839558
+fcdb3e723e3f2f53,461a75fe9e800764,procedural,font_swap,2,2,gradcam,3.2637e-05,0.0269053,0,0
+fdf01537350988e0,f54e38cb60f2d41f,procedural,logo_warp,2,2,gradcam,7.98996e-07,0.107083,0,0.01026
+fec6f5fe2ed3a624,0461d82bfbc43c54,procedural,local_blur_or_rehalftone,2,2,gradcam,2.71804e-07,0.0312101,0,0.112171
+ff5de75b9fcbf96c,b3f839885c9d6b3d,procedural,local_jpeg,2,2,gradcam,7.24387e-07,0.11641,1,0.461034
+f54150e5e3d28845,1ad4e03b5c3395f4,procedural,logo_warp,2,2,gradcampp,1.25511e-05,0.0484694,0,0.0894967
+f96082b57f0e3b42,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,gradcampp,4.43928e-05,0.0645727,0,0
+fbb9614c6c6596ed,0cde29d96f6987a6,procedural,local_blur_or_rehalftone,2,2,gradcampp,9.33699e-05,0.575893,1,0.150738
+fcdb3e723e3f2f53,461a75fe9e800764,procedural,font_swap,2,2,gradcampp,3.2637e-05,0.0269053,0,0.0081781
+fdf01537350988e0,f54e38cb60f2d41f,procedural,logo_warp,2,2,gradcampp,7.98996e-07,0.107083,0,0
+fec6f5fe2ed3a624,0461d82bfbc43c54,procedural,local_blur_or_rehalftone,2,2,gradcampp,2.71804e-07,0.0312101,1,0.17711
+ff5de75b9fcbf96c,b3f839885c9d6b3d,procedural,local_jpeg,2,2,gradcampp,7.24387e-07,0.11641,1,0.442119
+f54150e5e3d28845,1ad4e03b5c3395f4,procedural,logo_warp,2,2,ig,1.25511e-05,0.0484694,0,0.146311
+f96082b57f0e3b42,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,ig,4.43928e-05,0.0645727,0,0.0189286
+fbb9614c6c6596ed,0cde29d96f6987a6,procedural,local_blur_or_rehalftone,2,2,ig,9.33699e-05,0.575893,0,0.0785632
+fcdb3e723e3f2f53,461a75fe9e800764,procedural,font_swap,2,2,ig,3.2637e-05,0.0269053,0,0.0113947
+fdf01537350988e0,f54e38cb60f2d41f,procedural,logo_warp,2,2,ig,7.98996e-07,0.107083,1,0.115927
+fec6f5fe2ed3a624,0461d82bfbc43c54,procedural,local_blur_or_rehalftone,2,2,ig,2.71804e-07,0.0312101,0,0.0705287
+ff5de75b9fcbf96c,b3f839885c9d6b3d,procedural,local_jpeg,2,2,ig,7.24387e-07,0.11641,1,0.308182
+f54150e5e3d28845,1ad4e03b5c3395f4,procedural,logo_warp,2,2,random,1.25511e-05,0.0484694,0,0.0314895
+f96082b57f0e3b42,128af52359016dd8,procedural,local_blur_or_rehalftone,2,2,random,4.43928e-05,0.0645727,0,0.0282713
+fbb9614c6c6596ed,0cde29d96f6987a6,procedural,local_blur_or_rehalftone,2,2,random,9.33699e-05,0.575893,0,0.126291
+fcdb3e723e3f2f53,461a75fe9e800764,procedural,font_swap,2,2,random,3.2637e-05,0.0269053,0,0.00429962
+fdf01537350988e0,f54e38cb60f2d41f,procedural,logo_warp,2,2,random,7.98996e-07,0.107083,0,0.0537538
+fec6f5fe2ed3a624,0461d82bfbc43c54,procedural,local_blur_or_rehalftone,2,2,random,2.71804e-07,0.0312101,0,0.000109999
+ff5de75b9fcbf96c,b3f839885c9d6b3d,procedural,local_jpeg,2,2,random,7.24387e-07,0.11641,0,0.0499568

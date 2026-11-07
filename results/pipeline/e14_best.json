@@ -1,0 +1,22 @@
+{
+  "auroc": 0.9979213531136992,
+  "generator": "procedural",
+  "log_loss": 0.18044155688481323,
+  "ranking": [
+    {
+      "auroc": 0.9979213531136992,
+      "log_loss": 0.18044155688481323,
+      "runs": 15,
+      "variant": "procedural-r1"
+    },
+    {
+      "auroc": 0.9877416782938011,
+      "log_loss": 0.6965153151758374,
+      "runs": 15,
+      "variant": "procedural-r4"
+    }
+  ],
+  "ratio": 1.0,
+  "runs": 15,
+  "variant": "procedural-r1"
+}

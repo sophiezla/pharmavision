@@ -1,0 +1,1 @@
+checkpoints/e14os_efficientnetv2-s_procedural-r1-no-blister_f0_s1_20261106-144214/best.pt

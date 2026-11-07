@@ -1,0 +1,13 @@
+{
+  "detected_clean": 37,
+  "evasion_rate": 0.05405405405405406,
+  "evasive_added_per_round": [
+    0,
+    4
+  ],
+  "heldout_counterfeits": 41,
+  "mean_queries_evaded": 6.0,
+  "previous_run": "e15race_efficientnetv2-s_round1_f1_s0_20261107-022954",
+  "round": 2,
+  "train_counterfeits_attacked": 121
+}
