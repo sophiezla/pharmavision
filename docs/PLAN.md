@@ -264,6 +264,6 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
     - AC: a clean clone + Docker reproduces all tables bit-for-bit from committed run folders.
 - [x] **10.4 Model card** (54bba97, 4a2df8f) `docs/MODEL_CARD.md`: intended use, out-of-scope uses, data, metrics with CIs, per-packaging-type performance, calibration, known failure modes (E7–E9, E15).
 - [x] **10.5 Paper assets.** (ba66e1a; mapping in `results/paper/README.md`) `results/paper/` with final versions of Fig 1–8 and Tab 1–4 (see the plan doc's figure list); a `numbers.json` holding every number cited in the text, each with its source file.
-- [ ] **10.6** Update README with the full reproduction guide. Tag `v1.0`.
+- [x] **10.6** (fb2111f; tag `v1.0` waits for Sophie) Update README with the full reproduction guide. Tag `v1.0`.
 
 **FINAL CHECKPOINT.**

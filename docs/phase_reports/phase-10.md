@@ -12,7 +12,7 @@ Branch: `phase-6-8-combined` (local; not pushed). Locked-test run at f47bc9e (`r
 | 10.3 benchmark release | 54bba97 (Dockerfile, reproduce), ba66e1a (leaderboard, weight packing) | weight zips built outside the repo; GitHub release upload waits for Sophie (Kaggle licence not confirmed, DATA_CARD) |
 | 10.4 model card | 54bba97, 4a2df8f | locked-test table and coverage note added |
 | 10.5 paper assets | ba66e1a | Fig 1-8 / Tab 1-4 mapping chosen here (the plan doc's list is not on this Mac); `numbers.json` = every cell of Tab 1-4 with its source |
-| 10.6 README | this commit | reproduction guide (data, weights, locked test); tag `v1.0` waits for Sophie |
+| 10.6 README | fb2111f | reproduction guide (data, weights, locked test); tag `v1.0` waits for Sophie |
 
 Skipped: 8.4 phone-browser latency and the 8.6 phone run (Sophie, 2026-11-12: skip the phone test for now).
 
