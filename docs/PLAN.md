@@ -258,12 +258,12 @@ The GPU work of Phases 6–8 runs in one combined kit (ADR-027, `scripts/combine
 
 ## Phase 10 · Final evaluation, release, write-up
 
-- [ ] **10.1 Freeze.** ADR listing the final models (E1 best, E4 final, E16 student). Tag `v1.0-rc`.
-- [ ] **10.2 Locked test evaluation.** `scripts/final_eval.py --i-understand-this-is-final`; writes `results/tables/final_test.{csv,md}` and `results/LOCK`. Report results exactly as produced.
-- [ ] **10.3 Benchmark release.** Frozen splits, evaluation harness, baseline table, leaderboard Markdown, weights (release assets), Dockerfile, `make reproduce` that regenerates every table and figure from run folders.
+- [x] **10.1 Freeze.** (54bba97, ADR-030; tag `v1.0-rc` at c70b089) ADR listing the final models (E1 best, E4 final, E16 student). Tag `v1.0-rc`.
+- [x] **10.2 Locked test evaluation.** (run at f47bc9e; 79294c5) `scripts/final_eval.py --i-understand-this-is-final`; writes `results/tables/final_test.{csv,md}` and `results/LOCK`. Report results exactly as produced.
+- [x] **10.3 Benchmark release.** (54bba97, ba66e1a; weight zips built, GitHub release upload pending Sophie) Frozen splits, evaluation harness, baseline table, leaderboard Markdown, weights (release assets), Dockerfile, `make reproduce` that regenerates every table and figure from run folders.
     - AC: a clean clone + Docker reproduces all tables bit-for-bit from committed run folders.
-- [ ] **10.4 Model card** `docs/MODEL_CARD.md`: intended use, out-of-scope uses, data, metrics with CIs, per-packaging-type performance, calibration, known failure modes (E7–E9, E15).
-- [ ] **10.5 Paper assets.** `results/paper/` with final versions of Fig 1–8 and Tab 1–4 (see the plan doc's figure list); a `numbers.json` holding every number cited in the text, each with its source file.
+- [x] **10.4 Model card** (54bba97, 4a2df8f) `docs/MODEL_CARD.md`: intended use, out-of-scope uses, data, metrics with CIs, per-packaging-type performance, calibration, known failure modes (E7–E9, E15).
+- [x] **10.5 Paper assets.** (ba66e1a; mapping in `results/paper/README.md`) `results/paper/` with final versions of Fig 1–8 and Tab 1–4 (see the plan doc's figure list); a `numbers.json` holding every number cited in the text, each with its source file.
 - [ ] **10.6** Update README with the full reproduction guide. Tag `v1.0`.
 
 **FINAL CHECKPOINT.**

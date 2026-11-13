@@ -8,15 +8,18 @@ It then studies generalization, interpretability, synthetic counterfeits, advers
 and on-device deployment. Every experiment follows one fixed evaluation protocol; see
 `docs/PLAN.md`.
 
-Status: Phases 0-8 complete (E13, SD inpainting and the synthetic-image review dropped,
-ADR-029). Phase 10 code is in place; the one-time locked-test evaluation, laptop/phone latency
-and the app acceptance test wait for the frozen checkpoints (ADR-030).
+Status: Phases 0-8 and 10 complete (E13, SD inpainting and the synthetic-image review dropped,
+ADR-029). The locked test set was evaluated once (`results/tables/final_test.md`,
+`results/LOCK`). Open: phone-browser latency and the phone run of the app (PLAN 8.4, 8.6) and
+the optional Phase 9 extensions.
 
 - Results: `results/tables/` (CSV + Markdown), `results/figures/`, one folder per run in
   `results/runs/`.
 - What was run and what it showed: `docs/EXPERIMENT_LOG.md` (newest first),
   `docs/experiments/E*.md`, `docs/phase_reports/`.
 - Decisions: `docs/DECISIONS.md`. Data: `docs/DATA_CARD.md`. Models: `docs/MODEL_CARD.md`.
+- Leaderboard: `results/tables/leaderboard.md`. Paper figures and tables: `results/paper/`
+  (`README.md` maps each to its source; `numbers.json` holds every table cell with its source).
 
 ## Install
 
@@ -72,14 +75,31 @@ bundles the run folders, and `scripts/unpack_results.py` verifies (SHA-256) and 
 Each run folder records its resolved config, git commit and environment (`config.yaml`,
 `env.json`). See `docs/RUNNING_ELSEWHERE.md`.
 
-### Locked test set (once)
+### Data
 
-After installing the frozen checkpoints (`python scripts/unpack_models.py <MODELS zip>`):
+Images are not redistributed. Place the original sources under `data/raw/` (see
+`docs/DATA_CARD.md` for sources and licences), then rebuild the processed images and manifest
+(`scripts/build_manifest.py`). Image ids are the first 16 hex digits of each original file's
+SHA-256, and `data/processed/manifest_v2.csv` lists the full hash, so a different copy of a source
+shows up as missing ids. `splits/v1.json` and `splits/v2.json` fix the folds and the locked test
+set.
+
+### Weights
+
+The frozen models (ADR-030) are packed one zip per configuration with a SHA-256 `MANIFEST.json`
+(`python scripts/release_assets.py --weights <folder outside the repo>`). Unzip into
+`checkpoints/`; each run folder's `checkpoint_path.txt` points there.
+
+### Locked test set (done once)
+
+The locked test set was evaluated on 2026-11-12 (`results/LOCK`); `final_eval.py` now refuses to
+run again. The commands were:
 
 ```bash
 python scripts/final_eval.py --i-understand-this-is-final --check-only   # opens nothing
 python scripts/final_eval.py --i-understand-this-is-final                 # writes results/LOCK
 python scripts/model_card.py                                             # adds the results
+python scripts/release_assets.py                                         # leaderboard, paper
 ```
 
 ## App
