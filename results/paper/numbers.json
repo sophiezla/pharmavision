@@ -1,0 +1,3764 @@
+{
+ "tab1/clip-vitb16/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "runs"
+ },
+ "tab1/clip-vitb16/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "folds"
+ },
+ "tab1/clip-vitb16/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "seeds"
+ },
+ "tab1/clip-vitb16/ft/auroc (runs)": {
+  "value": "0.999 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/clip-vitb16/ft/auprc (runs)": {
+  "value": "0.999 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/clip-vitb16/ft/sens_at_95_spec (runs)": {
+  "value": "0.993 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/clip-vitb16/ft/balanced_accuracy (runs)": {
+  "value": "0.966 ± 0.033",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/clip-vitb16/ft/macro_f1 (runs)": {
+  "value": "0.971 ± 0.027",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/clip-vitb16/ft/ece (runs)": {
+  "value": "0.012 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/clip-vitb16/ft/brier (runs)": {
+  "value": "0.011 ± 0.010",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/clip-vitb16/ft/auroc (pooled)": {
+  "value": "0.994 [0.984, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/clip-vitb16/ft/auprc (pooled)": {
+  "value": "0.995 [0.987, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/clip-vitb16/ft/sens_at_95_spec (pooled)": {
+  "value": "0.990 [0.975, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/clip-vitb16/ft/ece (pooled)": {
+  "value": "0.010 [0.005, 0.018]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/clip-vitb16/ft/brier (pooled)": {
+  "value": "0.006 [0.002, 0.013]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/clip-vitb16/ft/log_loss (pooled)": {
+  "value": "0.045 [0.009, 0.099]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/clip-vitb16/ft/mendeley_split_c specificity": {
+  "value": "0.773 [0.751, 0.794]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/clip-vitb16/ft/mendeley_split_d specificity": {
+  "value": "0.797 [0.771, 0.821]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/clip-vitb16/ft/split_e_harvested recall": {
+  "value": "0.355 [0.316, 0.394]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/clip-vitb16/ft/split_e_regulatory recall": {
+  "value": "0.375 [0.292, 0.458]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/clip-vitb16/ft/train min/run": {
+  "value": "5.4",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "train min/run"
+ },
+ "tab1/clip-vitb16/ft/params (M)": {
+  "value": "86.193153",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "params (M)"
+ },
+ "tab1/clip-vitb16/ft/trainable params (M)": {
+  "value": "86.193153",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/clip-vitb16/ft/peak GPU GB (max)": {
+  "value": "3.64",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/clip-vitb16/lp/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "runs"
+ },
+ "tab1/clip-vitb16/lp/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "folds"
+ },
+ "tab1/clip-vitb16/lp/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "seeds"
+ },
+ "tab1/clip-vitb16/lp/auroc (runs)": {
+  "value": "0.994 ± 0.005",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "auroc (runs)"
+ },
+ "tab1/clip-vitb16/lp/auprc (runs)": {
+  "value": "0.988 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "auprc (runs)"
+ },
+ "tab1/clip-vitb16/lp/sens_at_95_spec (runs)": {
+  "value": "0.967 ± 0.029",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/clip-vitb16/lp/balanced_accuracy (runs)": {
+  "value": "0.937 ± 0.031",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/clip-vitb16/lp/macro_f1 (runs)": {
+  "value": "0.940 ± 0.024",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/clip-vitb16/lp/ece (runs)": {
+  "value": "0.183 ± 0.022",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "ece (runs)"
+ },
+ "tab1/clip-vitb16/lp/brier (runs)": {
+  "value": "0.119 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "brier (runs)"
+ },
+ "tab1/clip-vitb16/lp/auroc (pooled)": {
+  "value": "0.995 [0.991, 0.998]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "auroc (pooled)"
+ },
+ "tab1/clip-vitb16/lp/auprc (pooled)": {
+  "value": "0.991 [0.983, 0.997]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "auprc (pooled)"
+ },
+ "tab1/clip-vitb16/lp/sens_at_95_spec (pooled)": {
+  "value": "0.975 [0.941, 0.995]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/clip-vitb16/lp/ece (pooled)": {
+  "value": "0.165 [0.149, 0.192]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "ece (pooled)"
+ },
+ "tab1/clip-vitb16/lp/brier (pooled)": {
+  "value": "0.118 [0.112, 0.124]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "brier (pooled)"
+ },
+ "tab1/clip-vitb16/lp/log_loss (pooled)": {
+  "value": "0.398 [0.386, 0.410]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/clip-vitb16/lp/mendeley_split_c specificity": {
+  "value": "0.193 [0.155, 0.233]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/clip-vitb16/lp/mendeley_split_d specificity": {
+  "value": "0.189 [0.152, 0.229]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/clip-vitb16/lp/split_e_harvested recall": {
+  "value": "0.783 [0.736, 0.829]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/clip-vitb16/lp/split_e_regulatory recall": {
+  "value": "0.913 [0.841, 0.970]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/clip-vitb16/lp/train min/run": {
+  "value": "7.2",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "train min/run"
+ },
+ "tab1/clip-vitb16/lp/params (M)": {
+  "value": "86.193153",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "params (M)"
+ },
+ "tab1/clip-vitb16/lp/trainable params (M)": {
+  "value": "0.000513",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "trainable params (M)"
+ },
+ "tab1/clip-vitb16/lp/peak GPU GB (max)": {
+  "value": "0.78",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/lp",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/clip-vitb16/zeroshot/runs": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "runs"
+ },
+ "tab1/clip-vitb16/zeroshot/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "folds"
+ },
+ "tab1/clip-vitb16/zeroshot/seeds": {
+  "value": "1",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "seeds"
+ },
+ "tab1/clip-vitb16/zeroshot/auroc (runs)": {
+  "value": "0.704 ± 0.068",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "auroc (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/auprc (runs)": {
+  "value": "0.543 ± 0.101",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "auprc (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/sens_at_95_spec (runs)": {
+  "value": "0.118 ± 0.132",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/balanced_accuracy (runs)": {
+  "value": "0.655 ± 0.041",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/macro_f1 (runs)": {
+  "value": "0.615 ± 0.055",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/ece (runs)": {
+  "value": "0.263 ± 0.016",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "ece (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/brier (runs)": {
+  "value": "0.299 ± 0.013",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "brier (runs)"
+ },
+ "tab1/clip-vitb16/zeroshot/auroc (pooled)": {
+  "value": "0.702 [0.658, 0.744]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "auroc (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/auprc (pooled)": {
+  "value": "0.521 [0.475, 0.579]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "auprc (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/sens_at_95_spec (pooled)": {
+  "value": "0.069 [0.029, 0.167]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/ece (pooled)": {
+  "value": "0.255 [0.233, 0.276]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "ece (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/brier (pooled)": {
+  "value": "0.299 [0.290, 0.308]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "brier (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/log_loss (pooled)": {
+  "value": "0.804 [0.782, 0.827]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/clip-vitb16/zeroshot/mendeley_split_c specificity": {
+  "value": "0.805 [0.741, 0.860]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/clip-vitb16/zeroshot/mendeley_split_d specificity": {
+  "value": "0.846 [0.788, 0.895]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/clip-vitb16/zeroshot/split_e_harvested recall": {
+  "value": "0.403 [0.326, 0.489]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/clip-vitb16/zeroshot/split_e_regulatory recall": {
+  "value": "0.607 [0.434, 0.779]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/clip-vitb16/zeroshot/train min/run": {
+  "value": "0.0",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "train min/run"
+ },
+ "tab1/clip-vitb16/zeroshot/params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "params (M)"
+ },
+ "tab1/clip-vitb16/zeroshot/trainable params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "trainable params (M)"
+ },
+ "tab1/clip-vitb16/zeroshot/peak GPU GB (max)": {
+  "value": "nan",
+  "source": "results/tables/e01_summary.csv",
+  "row": "clip-vitb16/zeroshot",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/cnn-small/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "runs"
+ },
+ "tab1/cnn-small/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "folds"
+ },
+ "tab1/cnn-small/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "seeds"
+ },
+ "tab1/cnn-small/ft/auroc (runs)": {
+  "value": "0.947 ± 0.023",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/cnn-small/ft/auprc (runs)": {
+  "value": "0.902 ± 0.046",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/cnn-small/ft/sens_at_95_spec (runs)": {
+  "value": "0.719 ± 0.125",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/cnn-small/ft/balanced_accuracy (runs)": {
+  "value": "0.863 ± 0.036",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/cnn-small/ft/macro_f1 (runs)": {
+  "value": "0.855 ± 0.040",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/cnn-small/ft/ece (runs)": {
+  "value": "0.103 ± 0.022",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/cnn-small/ft/brier (runs)": {
+  "value": "0.095 ± 0.018",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/cnn-small/ft/auroc (pooled)": {
+  "value": "0.945 [0.927, 0.961]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/cnn-small/ft/auprc (pooled)": {
+  "value": "0.895 [0.855, 0.929]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/cnn-small/ft/sens_at_95_spec (pooled)": {
+  "value": "0.647 [0.510, 0.784]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/cnn-small/ft/ece (pooled)": {
+  "value": "0.064 [0.055, 0.094]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/cnn-small/ft/brier (pooled)": {
+  "value": "0.092 [0.080, 0.106]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/cnn-small/ft/log_loss (pooled)": {
+  "value": "0.304 [0.273, 0.339]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/cnn-small/ft/mendeley_split_c specificity": {
+  "value": "0.122 [0.110, 0.134]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/cnn-small/ft/mendeley_split_d specificity": {
+  "value": "0.184 [0.156, 0.213]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/cnn-small/ft/split_e_harvested recall": {
+  "value": "0.687 [0.617, 0.749]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/cnn-small/ft/split_e_regulatory recall": {
+  "value": "0.708 [0.586, 0.821]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/cnn-small/ft/train min/run": {
+  "value": "5.3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "train min/run"
+ },
+ "tab1/cnn-small/ft/params (M)": {
+  "value": "0.093601",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "params (M)"
+ },
+ "tab1/cnn-small/ft/trainable params (M)": {
+  "value": "0.093601",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/cnn-small/ft/peak GPU GB (max)": {
+  "value": "1.34",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/cnn-small/ft-tuned/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "runs"
+ },
+ "tab1/cnn-small/ft-tuned/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "folds"
+ },
+ "tab1/cnn-small/ft-tuned/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "seeds"
+ },
+ "tab1/cnn-small/ft-tuned/auroc (runs)": {
+  "value": "0.934 ± 0.033",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "auroc (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/auprc (runs)": {
+  "value": "0.879 ± 0.065",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "auprc (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/sens_at_95_spec (runs)": {
+  "value": "0.615 ± 0.171",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/balanced_accuracy (runs)": {
+  "value": "0.853 ± 0.038",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/macro_f1 (runs)": {
+  "value": "0.844 ± 0.038",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/ece (runs)": {
+  "value": "0.127 ± 0.052",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "ece (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/brier (runs)": {
+  "value": "0.134 ± 0.049",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "brier (runs)"
+ },
+ "tab1/cnn-small/ft-tuned/auroc (pooled)": {
+  "value": "0.916 [0.892, 0.937]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "auroc (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/auprc (pooled)": {
+  "value": "0.836 [0.785, 0.885]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "auprc (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/sens_at_95_spec (pooled)": {
+  "value": "0.520 [0.382, 0.686]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/ece (pooled)": {
+  "value": "0.059 [0.049, 0.095]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "ece (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/brier (pooled)": {
+  "value": "0.116 [0.099, 0.134]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "brier (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/log_loss (pooled)": {
+  "value": "0.368 [0.321, 0.421]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/cnn-small/ft-tuned/mendeley_split_c specificity": {
+  "value": "0.180 [0.167, 0.193]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/cnn-small/ft-tuned/mendeley_split_d specificity": {
+  "value": "0.207 [0.184, 0.230]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/cnn-small/ft-tuned/split_e_harvested recall": {
+  "value": "0.678 [0.615, 0.737]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/cnn-small/ft-tuned/split_e_regulatory recall": {
+  "value": "0.667 [0.556, 0.768]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/cnn-small/ft-tuned/train min/run": {
+  "value": "3.9",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "train min/run"
+ },
+ "tab1/cnn-small/ft-tuned/params (M)": {
+  "value": "0.093601",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "params (M)"
+ },
+ "tab1/cnn-small/ft-tuned/trainable params (M)": {
+  "value": "0.093601",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "trainable params (M)"
+ },
+ "tab1/cnn-small/ft-tuned/peak GPU GB (max)": {
+  "value": "1.34",
+  "source": "results/tables/e01_summary.csv",
+  "row": "cnn-small/ft-tuned",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/convnext-tiny/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "runs"
+ },
+ "tab1/convnext-tiny/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "folds"
+ },
+ "tab1/convnext-tiny/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "seeds"
+ },
+ "tab1/convnext-tiny/ft/auroc (runs)": {
+  "value": "0.999 ± 0.003",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/convnext-tiny/ft/auprc (runs)": {
+  "value": "0.998 ± 0.003",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/convnext-tiny/ft/sens_at_95_spec (runs)": {
+  "value": "0.993 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/convnext-tiny/ft/balanced_accuracy (runs)": {
+  "value": "0.962 ± 0.033",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/convnext-tiny/ft/macro_f1 (runs)": {
+  "value": "0.968 ± 0.027",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/convnext-tiny/ft/ece (runs)": {
+  "value": "0.012 ± 0.008",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/convnext-tiny/ft/brier (runs)": {
+  "value": "0.010 ± 0.007",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/convnext-tiny/ft/auroc (pooled)": {
+  "value": "0.999 [0.998, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/convnext-tiny/ft/auprc (pooled)": {
+  "value": "0.999 [0.996, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/convnext-tiny/ft/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.975, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/convnext-tiny/ft/ece (pooled)": {
+  "value": "0.012 [0.005, 0.019]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/convnext-tiny/ft/brier (pooled)": {
+  "value": "0.008 [0.002, 0.015]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/convnext-tiny/ft/log_loss (pooled)": {
+  "value": "0.041 [0.009, 0.083]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/convnext-tiny/ft/mendeley_split_c specificity": {
+  "value": "0.726 [0.708, 0.743]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/convnext-tiny/ft/mendeley_split_d specificity": {
+  "value": "0.638 [0.613, 0.660]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/convnext-tiny/ft/split_e_harvested recall": {
+  "value": "0.462 [0.423, 0.498]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/convnext-tiny/ft/split_e_regulatory recall": {
+  "value": "0.441 [0.372, 0.515]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/convnext-tiny/ft/train min/run": {
+  "value": "4.4",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "train min/run"
+ },
+ "tab1/convnext-tiny/ft/params (M)": {
+  "value": "27.820897",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "params (M)"
+ },
+ "tab1/convnext-tiny/ft/trainable params (M)": {
+  "value": "27.820897",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/convnext-tiny/ft/peak GPU GB (max)": {
+  "value": "2.48",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/convnext-tiny/ft-tuned/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "runs"
+ },
+ "tab1/convnext-tiny/ft-tuned/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "folds"
+ },
+ "tab1/convnext-tiny/ft-tuned/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "seeds"
+ },
+ "tab1/convnext-tiny/ft-tuned/auroc (runs)": {
+  "value": "0.999 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "auroc (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/auprc (runs)": {
+  "value": "0.998 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "auprc (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/sens_at_95_spec (runs)": {
+  "value": "0.993 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/balanced_accuracy (runs)": {
+  "value": "0.953 ± 0.037",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/macro_f1 (runs)": {
+  "value": "0.959 ± 0.032",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/ece (runs)": {
+  "value": "0.014 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "ece (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/brier (runs)": {
+  "value": "0.011 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "brier (runs)"
+ },
+ "tab1/convnext-tiny/ft-tuned/auroc (pooled)": {
+  "value": "0.999 [0.996, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "auroc (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/auprc (pooled)": {
+  "value": "0.998 [0.995, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "auprc (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.985, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/ece (pooled)": {
+  "value": "0.009 [0.006, 0.017]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "ece (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/brier (pooled)": {
+  "value": "0.007 [0.002, 0.013]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "brier (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/log_loss (pooled)": {
+  "value": "0.035 [0.011, 0.075]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/convnext-tiny/ft-tuned/mendeley_split_c specificity": {
+  "value": "0.777 [0.764, 0.789]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/convnext-tiny/ft-tuned/mendeley_split_d specificity": {
+  "value": "0.744 [0.724, 0.763]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/convnext-tiny/ft-tuned/split_e_harvested recall": {
+  "value": "0.374 [0.337, 0.410]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/convnext-tiny/ft-tuned/split_e_regulatory recall": {
+  "value": "0.379 [0.315, 0.453]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/convnext-tiny/ft-tuned/train min/run": {
+  "value": "4.3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "train min/run"
+ },
+ "tab1/convnext-tiny/ft-tuned/params (M)": {
+  "value": "27.820897",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "params (M)"
+ },
+ "tab1/convnext-tiny/ft-tuned/trainable params (M)": {
+  "value": "27.820897",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "trainable params (M)"
+ },
+ "tab1/convnext-tiny/ft-tuned/peak GPU GB (max)": {
+  "value": "2.48",
+  "source": "results/tables/e01_summary.csv",
+  "row": "convnext-tiny/ft-tuned",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/dinov2-vitb14/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "runs"
+ },
+ "tab1/dinov2-vitb14/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "folds"
+ },
+ "tab1/dinov2-vitb14/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "seeds"
+ },
+ "tab1/dinov2-vitb14/ft/auroc (runs)": {
+  "value": "0.997 ± 0.004",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/auprc (runs)": {
+  "value": "0.997 ± 0.004",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/sens_at_95_spec (runs)": {
+  "value": "0.992 ± 0.012",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/balanced_accuracy (runs)": {
+  "value": "0.962 ± 0.031",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/macro_f1 (runs)": {
+  "value": "0.967 ± 0.026",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/ece (runs)": {
+  "value": "0.019 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/brier (runs)": {
+  "value": "0.015 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/dinov2-vitb14/ft/auroc (pooled)": {
+  "value": "0.996 [0.989, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/auprc (pooled)": {
+  "value": "0.997 [0.991, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.980, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/ece (pooled)": {
+  "value": "0.012 [0.008, 0.022]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/brier (pooled)": {
+  "value": "0.009 [0.004, 0.015]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/log_loss (pooled)": {
+  "value": "0.051 [0.017, 0.108]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/dinov2-vitb14/ft/mendeley_split_c specificity": {
+  "value": "0.805 [0.782, 0.827]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/dinov2-vitb14/ft/mendeley_split_d specificity": {
+  "value": "0.898 [0.875, 0.920]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/dinov2-vitb14/ft/split_e_harvested recall": {
+  "value": "0.286 [0.238, 0.332]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/dinov2-vitb14/ft/split_e_regulatory recall": {
+  "value": "0.257 [0.170, 0.352]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/dinov2-vitb14/ft/train min/run": {
+  "value": "4.1",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "train min/run"
+ },
+ "tab1/dinov2-vitb14/ft/params (M)": {
+  "value": "85.725697",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "params (M)"
+ },
+ "tab1/dinov2-vitb14/ft/trainable params (M)": {
+  "value": "85.725697",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/dinov2-vitb14/ft/peak GPU GB (max)": {
+  "value": "4.46",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/dinov2-vitb14/lp/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "runs"
+ },
+ "tab1/dinov2-vitb14/lp/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "folds"
+ },
+ "tab1/dinov2-vitb14/lp/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "seeds"
+ },
+ "tab1/dinov2-vitb14/lp/auroc (runs)": {
+  "value": "0.995 ± 0.003",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "auroc (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/auprc (runs)": {
+  "value": "0.993 ± 0.003",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "auprc (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/sens_at_95_spec (runs)": {
+  "value": "0.974 ± 0.020",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/balanced_accuracy (runs)": {
+  "value": "0.949 ± 0.044",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/macro_f1 (runs)": {
+  "value": "0.951 ± 0.038",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/ece (runs)": {
+  "value": "0.074 ± 0.012",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "ece (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/brier (runs)": {
+  "value": "0.030 ± 0.007",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "brier (runs)"
+ },
+ "tab1/dinov2-vitb14/lp/auroc (pooled)": {
+  "value": "0.996 [0.992, 0.999]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "auroc (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/auprc (pooled)": {
+  "value": "0.994 [0.989, 0.998]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "auprc (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/sens_at_95_spec (pooled)": {
+  "value": "0.980 [0.956, 0.995]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/ece (pooled)": {
+  "value": "0.069 [0.060, 0.083]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "ece (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/brier (pooled)": {
+  "value": "0.028 [0.022, 0.035]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "brier (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/log_loss (pooled)": {
+  "value": "0.120 [0.103, 0.139]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/dinov2-vitb14/lp/mendeley_split_c specificity": {
+  "value": "0.360 [0.311, 0.411]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/dinov2-vitb14/lp/mendeley_split_d specificity": {
+  "value": "0.455 [0.398, 0.514]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/dinov2-vitb14/lp/split_e_harvested recall": {
+  "value": "0.478 [0.411, 0.539]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/dinov2-vitb14/lp/split_e_regulatory recall": {
+  "value": "0.487 [0.343, 0.625]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/dinov2-vitb14/lp/train min/run": {
+  "value": "7.3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "train min/run"
+ },
+ "tab1/dinov2-vitb14/lp/params (M)": {
+  "value": "85.725697",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "params (M)"
+ },
+ "tab1/dinov2-vitb14/lp/trainable params (M)": {
+  "value": "0.000769",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "trainable params (M)"
+ },
+ "tab1/dinov2-vitb14/lp/peak GPU GB (max)": {
+  "value": "0.85",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vitb14/lp",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/dinov2-vits14/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "runs"
+ },
+ "tab1/dinov2-vits14/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "folds"
+ },
+ "tab1/dinov2-vits14/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "seeds"
+ },
+ "tab1/dinov2-vits14/ft/auroc (runs)": {
+  "value": "0.997 ± 0.005",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/dinov2-vits14/ft/auprc (runs)": {
+  "value": "0.993 ± 0.014",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/dinov2-vits14/ft/sens_at_95_spec (runs)": {
+  "value": "0.989 ± 0.013",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/dinov2-vits14/ft/balanced_accuracy (runs)": {
+  "value": "0.957 ± 0.024",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/dinov2-vits14/ft/macro_f1 (runs)": {
+  "value": "0.964 ± 0.019",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/dinov2-vits14/ft/ece (runs)": {
+  "value": "0.020 ± 0.010",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/dinov2-vits14/ft/brier (runs)": {
+  "value": "0.019 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/dinov2-vits14/ft/auroc (pooled)": {
+  "value": "0.997 [0.990, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/auprc (pooled)": {
+  "value": "0.996 [0.990, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/sens_at_95_spec (pooled)": {
+  "value": "0.990 [0.971, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/ece (pooled)": {
+  "value": "0.016 [0.011, 0.026]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/brier (pooled)": {
+  "value": "0.011 [0.005, 0.018]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/log_loss (pooled)": {
+  "value": "0.069 [0.020, 0.141]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/dinov2-vits14/ft/mendeley_split_c specificity": {
+  "value": "0.833 [0.805, 0.859]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/dinov2-vits14/ft/mendeley_split_d specificity": {
+  "value": "0.911 [0.889, 0.932]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/dinov2-vits14/ft/split_e_harvested recall": {
+  "value": "0.300 [0.250, 0.349]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/dinov2-vits14/ft/split_e_regulatory recall": {
+  "value": "0.248 [0.163, 0.338]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/dinov2-vits14/ft/train min/run": {
+  "value": "4.8",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "train min/run"
+ },
+ "tab1/dinov2-vits14/ft/params (M)": {
+  "value": "21.629185",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "params (M)"
+ },
+ "tab1/dinov2-vits14/ft/trainable params (M)": {
+  "value": "21.629185",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/dinov2-vits14/ft/peak GPU GB (max)": {
+  "value": "2.00",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "runs"
+ },
+ "tab1/dinov2-vits14/ft-tuned/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "folds"
+ },
+ "tab1/dinov2-vits14/ft-tuned/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "seeds"
+ },
+ "tab1/dinov2-vits14/ft-tuned/auroc (runs)": {
+  "value": "0.998 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "auroc (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/auprc (runs)": {
+  "value": "0.998 ± 0.003",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "auprc (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/sens_at_95_spec (runs)": {
+  "value": "0.989 ± 0.016",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/balanced_accuracy (runs)": {
+  "value": "0.960 ± 0.024",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/macro_f1 (runs)": {
+  "value": "0.965 ± 0.020",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/ece (runs)": {
+  "value": "0.015 ± 0.008",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "ece (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/brier (runs)": {
+  "value": "0.011 ± 0.007",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "brier (runs)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/auroc (pooled)": {
+  "value": "0.997 [0.991, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "auroc (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/auprc (pooled)": {
+  "value": "0.996 [0.991, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "auprc (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/sens_at_95_spec (pooled)": {
+  "value": "0.990 [0.971, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/ece (pooled)": {
+  "value": "0.010 [0.006, 0.019]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "ece (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/brier (pooled)": {
+  "value": "0.009 [0.003, 0.017]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "brier (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/log_loss (pooled)": {
+  "value": "0.056 [0.016, 0.112]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/mendeley_split_c specificity": {
+  "value": "0.705 [0.685, 0.722]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/dinov2-vits14/ft-tuned/mendeley_split_d specificity": {
+  "value": "0.757 [0.741, 0.771]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/dinov2-vits14/ft-tuned/split_e_harvested recall": {
+  "value": "0.336 [0.300, 0.373]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/dinov2-vits14/ft-tuned/split_e_regulatory recall": {
+  "value": "0.324 [0.267, 0.391]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/dinov2-vits14/ft-tuned/train min/run": {
+  "value": "4.0",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "train min/run"
+ },
+ "tab1/dinov2-vits14/ft-tuned/params (M)": {
+  "value": "21.629185",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "params (M)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/trainable params (M)": {
+  "value": "21.629185",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "trainable params (M)"
+ },
+ "tab1/dinov2-vits14/ft-tuned/peak GPU GB (max)": {
+  "value": "2.00",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/ft-tuned",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/dinov2-vits14/lp/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "runs"
+ },
+ "tab1/dinov2-vits14/lp/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "folds"
+ },
+ "tab1/dinov2-vits14/lp/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "seeds"
+ },
+ "tab1/dinov2-vits14/lp/auroc (runs)": {
+  "value": "0.992 ± 0.008",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "auroc (runs)"
+ },
+ "tab1/dinov2-vits14/lp/auprc (runs)": {
+  "value": "0.990 ± 0.007",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "auprc (runs)"
+ },
+ "tab1/dinov2-vits14/lp/sens_at_95_spec (runs)": {
+  "value": "0.961 ± 0.028",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/dinov2-vits14/lp/balanced_accuracy (runs)": {
+  "value": "0.943 ± 0.028",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/dinov2-vits14/lp/macro_f1 (runs)": {
+  "value": "0.949 ± 0.022",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/dinov2-vits14/lp/ece (runs)": {
+  "value": "0.083 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "ece (runs)"
+ },
+ "tab1/dinov2-vits14/lp/brier (runs)": {
+  "value": "0.037 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "brier (runs)"
+ },
+ "tab1/dinov2-vits14/lp/auroc (pooled)": {
+  "value": "0.994 [0.987, 0.998]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "auroc (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/auprc (pooled)": {
+  "value": "0.992 [0.985, 0.997]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "auprc (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/sens_at_95_spec (pooled)": {
+  "value": "0.966 [0.936, 0.995]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/ece (pooled)": {
+  "value": "0.075 [0.065, 0.091]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "ece (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/brier (pooled)": {
+  "value": "0.033 [0.026, 0.041]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "brier (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/log_loss (pooled)": {
+  "value": "0.140 [0.120, 0.162]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/dinov2-vits14/lp/mendeley_split_c specificity": {
+  "value": "0.313 [0.272, 0.356]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/dinov2-vits14/lp/mendeley_split_d specificity": {
+  "value": "0.256 [0.220, 0.297]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/dinov2-vits14/lp/split_e_harvested recall": {
+  "value": "0.429 [0.370, 0.488]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/dinov2-vits14/lp/split_e_regulatory recall": {
+  "value": "0.384 [0.267, 0.506]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/dinov2-vits14/lp/train min/run": {
+  "value": "7.2",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "train min/run"
+ },
+ "tab1/dinov2-vits14/lp/params (M)": {
+  "value": "21.629185",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "params (M)"
+ },
+ "tab1/dinov2-vits14/lp/trainable params (M)": {
+  "value": "0.000385",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "trainable params (M)"
+ },
+ "tab1/dinov2-vits14/lp/peak GPU GB (max)": {
+  "value": "0.39",
+  "source": "results/tables/e01_summary.csv",
+  "row": "dinov2-vits14/lp",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/efficientnetv2-s/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "runs"
+ },
+ "tab1/efficientnetv2-s/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "folds"
+ },
+ "tab1/efficientnetv2-s/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "seeds"
+ },
+ "tab1/efficientnetv2-s/ft/auroc (runs)": {
+  "value": "0.999 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/auprc (runs)": {
+  "value": "0.998 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/sens_at_95_spec (runs)": {
+  "value": "0.995 ± 0.010",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/balanced_accuracy (runs)": {
+  "value": "0.965 ± 0.021",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/macro_f1 (runs)": {
+  "value": "0.967 ± 0.022",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/ece (runs)": {
+  "value": "0.041 ± 0.031",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/brier (runs)": {
+  "value": "0.013 ± 0.007",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/efficientnetv2-s/ft/auroc (pooled)": {
+  "value": "0.999 [0.997, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/auprc (pooled)": {
+  "value": "0.998 [0.996, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.980, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/ece (pooled)": {
+  "value": "0.033 [0.026, 0.041]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/brier (pooled)": {
+  "value": "0.011 [0.007, 0.017]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/log_loss (pooled)": {
+  "value": "0.055 [0.043, 0.071]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/efficientnetv2-s/ft/mendeley_split_c specificity": {
+  "value": "0.752 [0.717, 0.784]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/efficientnetv2-s/ft/mendeley_split_d specificity": {
+  "value": "0.749 [0.712, 0.783]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/efficientnetv2-s/ft/split_e_harvested recall": {
+  "value": "0.499 [0.443, 0.559]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/efficientnetv2-s/ft/split_e_regulatory recall": {
+  "value": "0.549 [0.432, 0.667]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/efficientnetv2-s/ft/train min/run": {
+  "value": "6.5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "train min/run"
+ },
+ "tab1/efficientnetv2-s/ft/params (M)": {
+  "value": "20.178769",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "params (M)"
+ },
+ "tab1/efficientnetv2-s/ft/trainable params (M)": {
+  "value": "20.178769",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/efficientnetv2-s/ft/peak GPU GB (max)": {
+  "value": "2.89",
+  "source": "results/tables/e01_summary.csv",
+  "row": "efficientnetv2-s/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/handcrafted-lr/default/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "runs"
+ },
+ "tab1/handcrafted-lr/default/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "folds"
+ },
+ "tab1/handcrafted-lr/default/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "seeds"
+ },
+ "tab1/handcrafted-lr/default/auroc (runs)": {
+  "value": "0.952 ± 0.020",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "auroc (runs)"
+ },
+ "tab1/handcrafted-lr/default/auprc (runs)": {
+  "value": "0.904 ± 0.034",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "auprc (runs)"
+ },
+ "tab1/handcrafted-lr/default/sens_at_95_spec (runs)": {
+  "value": "0.775 ± 0.133",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/handcrafted-lr/default/balanced_accuracy (runs)": {
+  "value": "0.897 ± 0.037",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/handcrafted-lr/default/macro_f1 (runs)": {
+  "value": "0.880 ± 0.048",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/handcrafted-lr/default/ece (runs)": {
+  "value": "0.097 ± 0.034",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "ece (runs)"
+ },
+ "tab1/handcrafted-lr/default/brier (runs)": {
+  "value": "0.090 ± 0.036",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "brier (runs)"
+ },
+ "tab1/handcrafted-lr/default/auroc (pooled)": {
+  "value": "0.951 [0.933, 0.967]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "auroc (pooled)"
+ },
+ "tab1/handcrafted-lr/default/auprc (pooled)": {
+  "value": "0.900 [0.860, 0.935]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "auprc (pooled)"
+ },
+ "tab1/handcrafted-lr/default/sens_at_95_spec (pooled)": {
+  "value": "0.681 [0.500, 0.809]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/handcrafted-lr/default/ece (pooled)": {
+  "value": "0.078 [0.063, 0.108]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "ece (pooled)"
+ },
+ "tab1/handcrafted-lr/default/brier (pooled)": {
+  "value": "0.090 [0.070, 0.112]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "brier (pooled)"
+ },
+ "tab1/handcrafted-lr/default/log_loss (pooled)": {
+  "value": "0.379 [0.285, 0.490]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/handcrafted-lr/default/mendeley_split_c specificity": {
+  "value": "0.537 [0.480, 0.600]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/handcrafted-lr/default/mendeley_split_d specificity": {
+  "value": "0.149 [0.114, 0.184]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/handcrafted-lr/default/split_e_harvested recall": {
+  "value": "0.782 [0.717, 0.841]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/handcrafted-lr/default/split_e_regulatory recall": {
+  "value": "0.917 [0.848, 0.979]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/handcrafted-lr/default/train min/run": {
+  "value": "0.0",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "train min/run"
+ },
+ "tab1/handcrafted-lr/default/params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "params (M)"
+ },
+ "tab1/handcrafted-lr/default/trainable params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "trainable params (M)"
+ },
+ "tab1/handcrafted-lr/default/peak GPU GB (max)": {
+  "value": "nan",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-lr/default",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/handcrafted-xgb/default/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "runs"
+ },
+ "tab1/handcrafted-xgb/default/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "folds"
+ },
+ "tab1/handcrafted-xgb/default/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "seeds"
+ },
+ "tab1/handcrafted-xgb/default/auroc (runs)": {
+  "value": "0.976 ± 0.011",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "auroc (runs)"
+ },
+ "tab1/handcrafted-xgb/default/auprc (runs)": {
+  "value": "0.959 ± 0.020",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "auprc (runs)"
+ },
+ "tab1/handcrafted-xgb/default/sens_at_95_spec (runs)": {
+  "value": "0.891 ± 0.076",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/handcrafted-xgb/default/balanced_accuracy (runs)": {
+  "value": "0.892 ± 0.029",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/handcrafted-xgb/default/macro_f1 (runs)": {
+  "value": "0.888 ± 0.023",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/handcrafted-xgb/default/ece (runs)": {
+  "value": "0.067 ± 0.015",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "ece (runs)"
+ },
+ "tab1/handcrafted-xgb/default/brier (runs)": {
+  "value": "0.060 ± 0.018",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "brier (runs)"
+ },
+ "tab1/handcrafted-xgb/default/auroc (pooled)": {
+  "value": "0.977 [0.966, 0.986]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "auroc (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/auprc (pooled)": {
+  "value": "0.960 [0.941, 0.976]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "auprc (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/sens_at_95_spec (pooled)": {
+  "value": "0.858 [0.779, 0.917]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/ece (pooled)": {
+  "value": "0.036 [0.032, 0.066]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "ece (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/brier (pooled)": {
+  "value": "0.059 [0.045, 0.075]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "brier (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/log_loss (pooled)": {
+  "value": "0.190 [0.148, 0.239]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/handcrafted-xgb/default/mendeley_split_c specificity": {
+  "value": "0.484 [0.446, 0.521]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/handcrafted-xgb/default/mendeley_split_d specificity": {
+  "value": "0.243 [0.216, 0.270]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/handcrafted-xgb/default/split_e_harvested recall": {
+  "value": "0.655 [0.598, 0.705]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/handcrafted-xgb/default/split_e_regulatory recall": {
+  "value": "0.761 [0.655, 0.857]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/handcrafted-xgb/default/train min/run": {
+  "value": "0.2",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "train min/run"
+ },
+ "tab1/handcrafted-xgb/default/params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "params (M)"
+ },
+ "tab1/handcrafted-xgb/default/trainable params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "trainable params (M)"
+ },
+ "tab1/handcrafted-xgb/default/peak GPU GB (max)": {
+  "value": "nan",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "runs"
+ },
+ "tab1/handcrafted-xgb/default-tuned/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "folds"
+ },
+ "tab1/handcrafted-xgb/default-tuned/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "seeds"
+ },
+ "tab1/handcrafted-xgb/default-tuned/auroc (runs)": {
+  "value": "0.976 ± 0.014",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "auroc (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/auprc (runs)": {
+  "value": "0.960 ± 0.024",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "auprc (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/sens_at_95_spec (runs)": {
+  "value": "0.893 ± 0.080",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/balanced_accuracy (runs)": {
+  "value": "0.891 ± 0.033",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/macro_f1 (runs)": {
+  "value": "0.885 ± 0.031",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/ece (runs)": {
+  "value": "0.071 ± 0.017",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "ece (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/brier (runs)": {
+  "value": "0.060 ± 0.021",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "brier (runs)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/auroc (pooled)": {
+  "value": "0.977 [0.965, 0.985]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "auroc (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/auprc (pooled)": {
+  "value": "0.959 [0.938, 0.975]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "auprc (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/sens_at_95_spec (pooled)": {
+  "value": "0.838 [0.755, 0.931]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/ece (pooled)": {
+  "value": "0.043 [0.035, 0.069]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "ece (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/brier (pooled)": {
+  "value": "0.059 [0.045, 0.076]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "brier (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/log_loss (pooled)": {
+  "value": "0.194 [0.149, 0.245]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/mendeley_split_c specificity": {
+  "value": "0.484 [0.448, 0.518]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/handcrafted-xgb/default-tuned/mendeley_split_d specificity": {
+  "value": "0.240 [0.213, 0.266]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/handcrafted-xgb/default-tuned/split_e_harvested recall": {
+  "value": "0.667 [0.614, 0.717]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/handcrafted-xgb/default-tuned/split_e_regulatory recall": {
+  "value": "0.761 [0.660, 0.855]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/handcrafted-xgb/default-tuned/train min/run": {
+  "value": "0.2",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "train min/run"
+ },
+ "tab1/handcrafted-xgb/default-tuned/params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "params (M)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/trainable params (M)": {
+  "value": "",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "trainable params (M)"
+ },
+ "tab1/handcrafted-xgb/default-tuned/peak GPU GB (max)": {
+  "value": "nan",
+  "source": "results/tables/e01_summary.csv",
+  "row": "handcrafted-xgb/default-tuned",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/resnet50/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "runs"
+ },
+ "tab1/resnet50/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "folds"
+ },
+ "tab1/resnet50/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "seeds"
+ },
+ "tab1/resnet50/ft/auroc (runs)": {
+  "value": "0.984 ± 0.014",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/resnet50/ft/auprc (runs)": {
+  "value": "0.976 ± 0.019",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/resnet50/ft/sens_at_95_spec (runs)": {
+  "value": "0.927 ± 0.086",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/resnet50/ft/balanced_accuracy (runs)": {
+  "value": "0.936 ± 0.032",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/resnet50/ft/macro_f1 (runs)": {
+  "value": "0.932 ± 0.037",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/resnet50/ft/ece (runs)": {
+  "value": "0.145 ± 0.023",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/resnet50/ft/brier (runs)": {
+  "value": "0.103 ± 0.015",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/resnet50/ft/auroc (pooled)": {
+  "value": "0.987 [0.980, 0.993]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/resnet50/ft/auprc (pooled)": {
+  "value": "0.980 [0.968, 0.989]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/resnet50/ft/sens_at_95_spec (pooled)": {
+  "value": "0.936 [0.858, 0.980]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/resnet50/ft/ece (pooled)": {
+  "value": "0.146 [0.123, 0.169]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/resnet50/ft/brier (pooled)": {
+  "value": "0.102 [0.096, 0.108]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/resnet50/ft/log_loss (pooled)": {
+  "value": "0.331 [0.316, 0.346]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/resnet50/ft/mendeley_split_c specificity": {
+  "value": "0.267 [0.227, 0.308]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/resnet50/ft/mendeley_split_d specificity": {
+  "value": "0.105 [0.077, 0.137]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/resnet50/ft/split_e_harvested recall": {
+  "value": "0.754 [0.690, 0.816]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/resnet50/ft/split_e_regulatory recall": {
+  "value": "0.699 [0.563, 0.818]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/resnet50/ft/train min/run": {
+  "value": "7.0",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "train min/run"
+ },
+ "tab1/resnet50/ft/params (M)": {
+  "value": "23.510081",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "params (M)"
+ },
+ "tab1/resnet50/ft/trainable params (M)": {
+  "value": "23.510081",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/resnet50/ft/peak GPU GB (max)": {
+  "value": "1.85",
+  "source": "results/tables/e01_summary.csv",
+  "row": "resnet50/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/swin-tiny/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "runs"
+ },
+ "tab1/swin-tiny/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "folds"
+ },
+ "tab1/swin-tiny/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "seeds"
+ },
+ "tab1/swin-tiny/ft/auroc (runs)": {
+  "value": "0.999 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/swin-tiny/ft/auprc (runs)": {
+  "value": "0.999 ± 0.002",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/swin-tiny/ft/sens_at_95_spec (runs)": {
+  "value": "0.997 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/swin-tiny/ft/balanced_accuracy (runs)": {
+  "value": "0.964 ± 0.019",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/swin-tiny/ft/macro_f1 (runs)": {
+  "value": "0.967 ± 0.018",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/swin-tiny/ft/ece (runs)": {
+  "value": "0.010 ± 0.010",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/swin-tiny/ft/brier (runs)": {
+  "value": "0.006 ± 0.006",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/swin-tiny/ft/auroc (pooled)": {
+  "value": "0.999 [0.996, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/swin-tiny/ft/auprc (pooled)": {
+  "value": "0.999 [0.995, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/swin-tiny/ft/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.985, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/swin-tiny/ft/ece (pooled)": {
+  "value": "0.005 [0.003, 0.012]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/swin-tiny/ft/brier (pooled)": {
+  "value": "0.005 [0.001, 0.011]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/swin-tiny/ft/log_loss (pooled)": {
+  "value": "0.026 [0.006, 0.056]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/swin-tiny/ft/mendeley_split_c specificity": {
+  "value": "0.719 [0.702, 0.736]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/swin-tiny/ft/mendeley_split_d specificity": {
+  "value": "0.633 [0.603, 0.660]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/swin-tiny/ft/split_e_harvested recall": {
+  "value": "0.351 [0.309, 0.392]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/swin-tiny/ft/split_e_regulatory recall": {
+  "value": "0.398 [0.308, 0.497]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/swin-tiny/ft/train min/run": {
+  "value": "5.5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "train min/run"
+ },
+ "tab1/swin-tiny/ft/params (M)": {
+  "value": "27.520123",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "params (M)"
+ },
+ "tab1/swin-tiny/ft/trainable params (M)": {
+  "value": "27.520123",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/swin-tiny/ft/peak GPU GB (max)": {
+  "value": "2.75",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/swin-tiny/ft-tuned/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "runs"
+ },
+ "tab1/swin-tiny/ft-tuned/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "folds"
+ },
+ "tab1/swin-tiny/ft-tuned/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "seeds"
+ },
+ "tab1/swin-tiny/ft-tuned/auroc (runs)": {
+  "value": "1.000 ± 0.000",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "auroc (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/auprc (runs)": {
+  "value": "0.999 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "auprc (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/sens_at_95_spec (runs)": {
+  "value": "1.000 ± 0.000",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/balanced_accuracy (runs)": {
+  "value": "0.959 ± 0.022",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/macro_f1 (runs)": {
+  "value": "0.963 ± 0.020",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/ece (runs)": {
+  "value": "0.013 ± 0.013",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "ece (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/brier (runs)": {
+  "value": "0.009 ± 0.006",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "brier (runs)"
+ },
+ "tab1/swin-tiny/ft-tuned/auroc (pooled)": {
+  "value": "1.000 [0.999, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "auroc (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/auprc (pooled)": {
+  "value": "0.999 [0.998, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "auprc (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.985, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/ece (pooled)": {
+  "value": "0.006 [0.005, 0.015]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "ece (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/brier (pooled)": {
+  "value": "0.006 [0.002, 0.012]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "brier (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/log_loss (pooled)": {
+  "value": "0.025 [0.010, 0.045]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/swin-tiny/ft-tuned/mendeley_split_c specificity": {
+  "value": "0.761 [0.746, 0.775]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/swin-tiny/ft-tuned/mendeley_split_d specificity": {
+  "value": "0.660 [0.630, 0.687]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/swin-tiny/ft-tuned/split_e_harvested recall": {
+  "value": "0.330 [0.289, 0.368]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/swin-tiny/ft-tuned/split_e_regulatory recall": {
+  "value": "0.389 [0.299, 0.487]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/swin-tiny/ft-tuned/train min/run": {
+  "value": "4.8",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "train min/run"
+ },
+ "tab1/swin-tiny/ft-tuned/params (M)": {
+  "value": "27.520123",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "params (M)"
+ },
+ "tab1/swin-tiny/ft-tuned/trainable params (M)": {
+  "value": "27.520123",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "trainable params (M)"
+ },
+ "tab1/swin-tiny/ft-tuned/peak GPU GB (max)": {
+  "value": "2.75",
+  "source": "results/tables/e01_summary.csv",
+  "row": "swin-tiny/ft-tuned",
+  "column": "peak GPU GB (max)"
+ },
+ "tab1/vit-b16/ft/runs": {
+  "value": "15",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "runs"
+ },
+ "tab1/vit-b16/ft/folds": {
+  "value": "5",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "folds"
+ },
+ "tab1/vit-b16/ft/seeds": {
+  "value": "3",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "seeds"
+ },
+ "tab1/vit-b16/ft/auroc (runs)": {
+  "value": "0.999 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "auroc (runs)"
+ },
+ "tab1/vit-b16/ft/auprc (runs)": {
+  "value": "0.999 ± 0.001",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "auprc (runs)"
+ },
+ "tab1/vit-b16/ft/sens_at_95_spec (runs)": {
+  "value": "0.997 ± 0.009",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "sens_at_95_spec (runs)"
+ },
+ "tab1/vit-b16/ft/balanced_accuracy (runs)": {
+  "value": "0.956 ± 0.026",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "balanced_accuracy (runs)"
+ },
+ "tab1/vit-b16/ft/macro_f1 (runs)": {
+  "value": "0.962 ± 0.021",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "macro_f1 (runs)"
+ },
+ "tab1/vit-b16/ft/ece (runs)": {
+  "value": "0.013 ± 0.008",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "ece (runs)"
+ },
+ "tab1/vit-b16/ft/brier (runs)": {
+  "value": "0.010 ± 0.006",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "brier (runs)"
+ },
+ "tab1/vit-b16/ft/auroc (pooled)": {
+  "value": "0.999 [0.996, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "auroc (pooled)"
+ },
+ "tab1/vit-b16/ft/auprc (pooled)": {
+  "value": "0.998 [0.995, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "auprc (pooled)"
+ },
+ "tab1/vit-b16/ft/sens_at_95_spec (pooled)": {
+  "value": "0.995 [0.985, 1.000]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "sens_at_95_spec (pooled)"
+ },
+ "tab1/vit-b16/ft/ece (pooled)": {
+  "value": "0.010 [0.005, 0.018]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "ece (pooled)"
+ },
+ "tab1/vit-b16/ft/brier (pooled)": {
+  "value": "0.008 [0.003, 0.014]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "brier (pooled)"
+ },
+ "tab1/vit-b16/ft/log_loss (pooled)": {
+  "value": "0.038 [0.011, 0.078]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "log_loss (pooled)"
+ },
+ "tab1/vit-b16/ft/mendeley_split_c specificity": {
+  "value": "0.775 [0.764, 0.785]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "mendeley_split_c specificity"
+ },
+ "tab1/vit-b16/ft/mendeley_split_d specificity": {
+  "value": "0.809 [0.795, 0.824]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "mendeley_split_d specificity"
+ },
+ "tab1/vit-b16/ft/split_e_harvested recall": {
+  "value": "0.275 [0.241, 0.309]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "split_e_harvested recall"
+ },
+ "tab1/vit-b16/ft/split_e_regulatory recall": {
+  "value": "0.280 [0.234, 0.336]",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "split_e_regulatory recall"
+ },
+ "tab1/vit-b16/ft/train min/run": {
+  "value": "3.9",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "train min/run"
+ },
+ "tab1/vit-b16/ft/params (M)": {
+  "value": "85.799425",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "params (M)"
+ },
+ "tab1/vit-b16/ft/trainable params (M)": {
+  "value": "85.799425",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "trainable params (M)"
+ },
+ "tab1/vit-b16/ft/peak GPU GB (max)": {
+  "value": "3.50",
+  "source": "results/tables/e01_summary.csv",
+  "row": "vit-b16/ft",
+  "column": "peak GPU GB (max)"
+ },
+ "tab2/efficientnetv2-s/default/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "reference"
+ },
+ "tab2/efficientnetv2-s/default/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "images"
+ },
+ "tab2/efficientnetv2-s/default/auroc_diff": {
+  "value": "0.000 [-0.000, 0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "auroc_diff"
+ },
+ "tab2/efficientnetv2-s/default/ece_diff": {
+  "value": "-0.004 [-0.014, 0.004]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "ece_diff"
+ },
+ "tab2/efficientnetv2-s/default/log_loss_diff": {
+  "value": "-0.021 [-0.042, -0.003]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "log_loss_diff"
+ },
+ "tab2/efficientnetv2-s/default/delong_p": {
+  "value": "0.3493",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "delong_p"
+ },
+ "tab2/efficientnetv2-s/default/holm_p": {
+  "value": "1",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "holm_p"
+ },
+ "tab2/efficientnetv2-s/default/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "improves"
+ },
+ "tab2/efficientnetv2-s/default/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "efficientnetv2-s/default",
+  "column": "worse"
+ },
+ "tab2/multibranch/concat/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "reference"
+ },
+ "tab2/multibranch/concat/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "images"
+ },
+ "tab2/multibranch/concat/auroc_diff": {
+  "value": "-0.001 [-0.003, 0.000]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/concat/ece_diff": {
+  "value": "-0.001 [-0.008, 0.009]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/concat/log_loss_diff": {
+  "value": "-0.001 [-0.014, 0.015]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/concat/delong_p": {
+  "value": "0.2819",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/concat/holm_p": {
+  "value": "1",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/concat/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "improves"
+ },
+ "tab2/multibranch/concat/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/concat",
+  "column": "worse"
+ },
+ "tab2/multibranch/hard-routing/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "reference"
+ },
+ "tab2/multibranch/hard-routing/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "images"
+ },
+ "tab2/multibranch/hard-routing/auroc_diff": {
+  "value": "0.000 [0.000, 0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/hard-routing/ece_diff": {
+  "value": "-0.000 [-0.009, 0.008]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/hard-routing/log_loss_diff": {
+  "value": "-0.017 [-0.030, -0.007]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/hard-routing/delong_p": {
+  "value": "0.1171",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/hard-routing/holm_p": {
+  "value": "0.8875",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/hard-routing/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "improves"
+ },
+ "tab2/multibranch/hard-routing/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/hard-routing",
+  "column": "worse"
+ },
+ "tab2/multibranch/no-frequency/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "reference"
+ },
+ "tab2/multibranch/no-frequency/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "images"
+ },
+ "tab2/multibranch/no-frequency/auroc_diff": {
+  "value": "-0.000 [-0.001, 0.000]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/no-frequency/ece_diff": {
+  "value": "0.001 [-0.006, 0.006]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/no-frequency/log_loss_diff": {
+  "value": "-0.011 [-0.021, -0.003]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/no-frequency/delong_p": {
+  "value": "0.6562",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/no-frequency/holm_p": {
+  "value": "1",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/no-frequency/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "improves"
+ },
+ "tab2/multibranch/no-frequency/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-frequency",
+  "column": "worse"
+ },
+ "tab2/multibranch/no-local/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "reference"
+ },
+ "tab2/multibranch/no-local/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "images"
+ },
+ "tab2/multibranch/no-local/auroc_diff": {
+  "value": "-0.003 [-0.008, -0.000]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/no-local/ece_diff": {
+  "value": "-0.003 [-0.007, 0.011]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/no-local/log_loss_diff": {
+  "value": "0.014 [-0.008, 0.038]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/no-local/delong_p": {
+  "value": "0.1109",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/no-local/holm_p": {
+  "value": "0.8875",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/no-local/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "improves"
+ },
+ "tab2/multibranch/no-local/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-local",
+  "column": "worse"
+ },
+ "tab2/multibranch/no-router/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "reference"
+ },
+ "tab2/multibranch/no-router/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "images"
+ },
+ "tab2/multibranch/no-router/auroc_diff": {
+  "value": "0.001 [0.000, 0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/no-router/ece_diff": {
+  "value": "0.003 [-0.005, 0.008]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/no-router/log_loss_diff": {
+  "value": "-0.019 [-0.032, -0.009]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/no-router/delong_p": {
+  "value": "0.1426",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/no-router/holm_p": {
+  "value": "0.8875",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/no-router/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "improves"
+ },
+ "tab2/multibranch/no-router/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/no-router",
+  "column": "worse"
+ },
+ "tab2/multibranch/separate-local/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "reference"
+ },
+ "tab2/multibranch/separate-local/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "images"
+ },
+ "tab2/multibranch/separate-local/auroc_diff": {
+  "value": "-0.001 [-0.004, 0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/separate-local/ece_diff": {
+  "value": "-0.006 [-0.016, -0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/separate-local/log_loss_diff": {
+  "value": "-0.025 [-0.042, -0.008]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/separate-local/delong_p": {
+  "value": "0.4959",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/separate-local/holm_p": {
+  "value": "1",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/separate-local/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "improves"
+ },
+ "tab2/multibranch/separate-local/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/separate-local",
+  "column": "worse"
+ },
+ "tab2/multibranch/tiles4-896/reference": {
+  "value": "multibranch/full",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "reference"
+ },
+ "tab2/multibranch/tiles4-896/images": {
+  "value": "549",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "images"
+ },
+ "tab2/multibranch/tiles4-896/auroc_diff": {
+  "value": "-0.000 [-0.002, 0.001]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "auroc_diff"
+ },
+ "tab2/multibranch/tiles4-896/ece_diff": {
+  "value": "0.014 [0.004, 0.023]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "ece_diff"
+ },
+ "tab2/multibranch/tiles4-896/log_loss_diff": {
+  "value": "0.009 [-0.013, 0.029]",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "log_loss_diff"
+ },
+ "tab2/multibranch/tiles4-896/delong_p": {
+  "value": "0.7151",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "delong_p"
+ },
+ "tab2/multibranch/tiles4-896/holm_p": {
+  "value": "1",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "holm_p"
+ },
+ "tab2/multibranch/tiles4-896/improves": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "improves"
+ },
+ "tab2/multibranch/tiles4-896/worse": {
+  "value": "False",
+  "source": "results/tables/e04_vs_reference.md",
+  "row": "multibranch/tiles4-896",
+  "column": "worse"
+ },
+ "tab3/bare classifier/runs": {
+  "value": "15",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "runs"
+ },
+ "tab3/bare classifier/ID rejected": {
+  "value": "0.000 ± 0.000",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "ID rejected"
+ },
+ "tab3/bare classifier/OOD rejected": {
+  "value": "0.000 ± 0.000",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "OOD rejected"
+ },
+ "tab3/bare classifier/abstained": {
+  "value": "0.000 ± 0.000",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "abstained"
+ },
+ "tab3/bare classifier/issued": {
+  "value": "1.000 ± 0.000",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "issued"
+ },
+ "tab3/bare classifier/error on issued": {
+  "value": "0.829 ± 0.003",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "error on issued"
+ },
+ "tab3/bare classifier/OOD among issued": {
+  "value": "0.826 ± 0.001",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "bare classifier",
+  "column": "OOD among issued"
+ },
+ "tab3/full system (alpha 0.1)/runs": {
+  "value": "15",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "runs"
+ },
+ "tab3/full system (alpha 0.1)/ID rejected": {
+  "value": "0.052 ± 0.051",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "ID rejected"
+ },
+ "tab3/full system (alpha 0.1)/OOD rejected": {
+  "value": "0.766 ± 0.221",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "OOD rejected"
+ },
+ "tab3/full system (alpha 0.1)/abstained": {
+  "value": "0.159 ± 0.184",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "abstained"
+ },
+ "tab3/full system (alpha 0.1)/issued": {
+  "value": "0.199 ± 0.045",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "issued"
+ },
+ "tab3/full system (alpha 0.1)/error on issued": {
+  "value": "0.184 ± 0.139",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "error on issued"
+ },
+ "tab3/full system (alpha 0.1)/OOD among issued": {
+  "value": "0.183 ± 0.139",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.1)",
+  "column": "OOD among issued"
+ },
+ "tab3/full system (alpha 0.05)/runs": {
+  "value": "15",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "runs"
+ },
+ "tab3/full system (alpha 0.05)/ID rejected": {
+  "value": "0.052 ± 0.051",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "ID rejected"
+ },
+ "tab3/full system (alpha 0.05)/OOD rejected": {
+  "value": "0.766 ± 0.221",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "OOD rejected"
+ },
+ "tab3/full system (alpha 0.05)/abstained": {
+  "value": "0.058 ± 0.084",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "abstained"
+ },
+ "tab3/full system (alpha 0.05)/issued": {
+  "value": "0.300 ± 0.180",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "issued"
+ },
+ "tab3/full system (alpha 0.05)/error on issued": {
+  "value": "0.337 ± 0.236",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "error on issued"
+ },
+ "tab3/full system (alpha 0.05)/OOD among issued": {
+  "value": "0.335 ± 0.237",
+  "source": "results/tables/e11_end_to_end.csv",
+  "row": "full system (alpha 0.05)",
+  "column": "OOD among issued"
+ },
+ "tab4/final model (EfficientNetV2-S)/runs": {
+  "value": "15",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "runs"
+ },
+ "tab4/final model (EfficientNetV2-S)/images": {
+  "value": "95",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "images"
+ },
+ "tab4/final model (EfficientNetV2-S)/counterfeit": {
+  "value": "36",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "counterfeit"
+ },
+ "tab4/final model (EfficientNetV2-S)/AUROC (ensemble)": {
+  "value": "0.987 [0.968, 0.999]",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "AUROC (ensemble)"
+ },
+ "tab4/final model (EfficientNetV2-S)/AUPRC (ensemble)": {
+  "value": "0.978 [0.948, 0.999]",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "AUPRC (ensemble)"
+ },
+ "tab4/final model (EfficientNetV2-S)/sens@95%spec (ensemble)": {
+  "value": "0.833",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "sens@95%spec (ensemble)"
+ },
+ "tab4/final model (EfficientNetV2-S)/ECE (ensemble, uncalibrated)": {
+  "value": "0.0529",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "ECE (ensemble, uncalibrated)"
+ },
+ "tab4/final model (EfficientNetV2-S)/AUROC (per run)": {
+  "value": "0.987 ± 0.005",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "AUROC (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/balanced acc (per run, val threshold)": {
+  "value": "0.944 ± 0.031",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "balanced acc (per run, val threshold)"
+ },
+ "tab4/final model (EfficientNetV2-S)/macro-F1 (per run)": {
+  "value": "0.940 ± 0.025",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "macro-F1 (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/sensitivity (per run)": {
+  "value": "0.944 ± 0.069",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "sensitivity (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/specificity (per run)": {
+  "value": "0.944 ± 0.017",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "specificity (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/ECE after T (per run)": {
+  "value": "0.0521 ± 0.0108",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "ECE after T (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/Brier after T (per run)": {
+  "value": "0.0481 ± 0.0099",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "Brier after T (per run)"
+ },
+ "tab4/final model (EfficientNetV2-S)/conformal coverage (per run, alpha 0.10)": {
+  "value": "0.845 ± 0.049",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "conformal coverage (per run, alpha 0.10)"
+ },
+ "tab4/final model (EfficientNetV2-S)/coverage authentic": {
+  "value": "0.852 ± 0.068",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "coverage authentic"
+ },
+ "tab4/final model (EfficientNetV2-S)/coverage counterfeit": {
+  "value": "0.833 ± 0.055",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "coverage counterfeit"
+ },
+ "tab4/final model (EfficientNetV2-S)/mean set size": {
+  "value": "0.867 ± 0.051",
+  "source": "results/tables/final_test.csv",
+  "row": "final model (EfficientNetV2-S)",
+  "column": "mean set size"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/runs": {
+  "value": "15",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "runs"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/images": {
+  "value": "95",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "images"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/counterfeit": {
+  "value": "36",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "counterfeit"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/AUROC (ensemble)": {
+  "value": "0.998 [0.992, 1.000]",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "AUROC (ensemble)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/AUPRC (ensemble)": {
+  "value": "0.996 [0.986, 1.000]",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "AUPRC (ensemble)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/sens@95%spec (ensemble)": {
+  "value": "1.000",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "sens@95%spec (ensemble)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/ECE (ensemble, uncalibrated)": {
+  "value": "0.0225",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "ECE (ensemble, uncalibrated)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/AUROC (per run)": {
+  "value": "0.998 ± 0.003",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "AUROC (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/balanced acc (per run, val threshold)": {
+  "value": "0.961 ± 0.026",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "balanced acc (per run, val threshold)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/macro-F1 (per run)": {
+  "value": "0.962 ± 0.025",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "macro-F1 (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/sensitivity (per run)": {
+  "value": "0.948 ± 0.059",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "sensitivity (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/specificity (per run)": {
+  "value": "0.974 ± 0.038",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "specificity (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/ECE after T (per run)": {
+  "value": "0.0223 ± 0.0122",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "ECE after T (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/Brier after T (per run)": {
+  "value": "0.0190 ± 0.0119",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "Brier after T (per run)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/conformal coverage (per run, alpha 0.10)": {
+  "value": "0.849 ± 0.047",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "conformal coverage (per run, alpha 0.10)"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/coverage authentic": {
+  "value": "0.837 ± 0.068",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "coverage authentic"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/coverage counterfeit": {
+  "value": "0.869 ± 0.070",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "coverage counterfeit"
+ },
+ "tab4/E1 best (ConvNeXt-T, data v2)/mean set size": {
+  "value": "0.852 ± 0.046",
+  "source": "results/tables/final_test.csv",
+  "row": "E1 best (ConvNeXt-T, data v2)",
+  "column": "mean set size"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/runs": {
+  "value": "15",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "runs"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/images": {
+  "value": "95",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "images"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/counterfeit": {
+  "value": "36",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "counterfeit"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/AUROC (ensemble)": {
+  "value": "0.992 [0.977, 1.000]",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "AUROC (ensemble)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/AUPRC (ensemble)": {
+  "value": "0.986 [0.965, 1.000]",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "AUPRC (ensemble)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/sens@95%spec (ensemble)": {
+  "value": "0.861",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "sens@95%spec (ensemble)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/ECE (ensemble, uncalibrated)": {
+  "value": "0.0320",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "ECE (ensemble, uncalibrated)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/AUROC (per run)": {
+  "value": "0.990 ± 0.003",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "AUROC (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/balanced acc (per run, val threshold)": {
+  "value": "0.939 ± 0.015",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "balanced acc (per run, val threshold)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/macro-F1 (per run)": {
+  "value": "0.938 ± 0.011",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "macro-F1 (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/sensitivity (per run)": {
+  "value": "0.930 ± 0.044",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "sensitivity (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/specificity (per run)": {
+  "value": "0.949 ± 0.022",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "specificity (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/ECE after T (per run)": {
+  "value": "0.0509 ± 0.0095",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "ECE after T (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/Brier after T (per run)": {
+  "value": "0.0436 ± 0.0070",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "Brier after T (per run)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/conformal coverage (per run, alpha 0.10)": {
+  "value": "0.872 ± 0.057",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "conformal coverage (per run, alpha 0.10)"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/coverage authentic": {
+  "value": "0.860 ± 0.082",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "coverage authentic"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/coverage counterfeit": {
+  "value": "0.893 ± 0.055",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "coverage counterfeit"
+ },
+ "tab4/E16 student (MobileNetV3-L, KD T=4)/mean set size": {
+  "value": "0.898 ± 0.057",
+  "source": "results/tables/final_test.csv",
+  "row": "E16 student (MobileNetV3-L, KD T=4)",
+  "column": "mean set size"
+ }
+}

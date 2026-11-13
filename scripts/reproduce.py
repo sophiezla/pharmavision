@@ -104,6 +104,7 @@ STEPS: list[list[str]] = [
     ["aggregate.py", "--exp", "e16", "--include", f"e05:{REF}", "--reference", REF],
     ["phase6to8_tables.py", "--exp", "e16"],
     ["make_figures.py", "--exp", "e16"],
+    ["release_assets.py"],
 ]
 LOCAL_STEPS: list[list[str]] = [
     ["make_figures.py", "--exp", "e12"],
