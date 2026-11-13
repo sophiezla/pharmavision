@@ -41,6 +41,7 @@ def _red(n: int = 3, size: int = 16) -> torch.Tensor:
 
 @pytest.mark.parametrize("name", ["fgsm", "pgd"])
 def test_targeted_gradient_attack_lowers_the_counterfeit_logit(name: str) -> None:
+    pytest.importorskip("torchattacks")  # [adversarial] extra; CI installs [dev] only
     wrapped = Normalized(_Linear(), MEAN, STD)
     x = _red()
     eps = 8 / 255
