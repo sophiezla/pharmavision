@@ -1,0 +1,286 @@
+image_id,y_true,prob,model
+00e72ba432c2b4e1,0,0.0004776249,final model (EfficientNetV2-S)
+0872245184ab773e,1,0.9990342,final model (EfficientNetV2-S)
+092b637ef5cec9db,0,0.0001007404,final model (EfficientNetV2-S)
+0bf6a6198fdc0749,0,0.05663018,final model (EfficientNetV2-S)
+0c1be5430ea7b719,0,6.776289e-05,final model (EfficientNetV2-S)
+0f2fbb209aae1b22,1,0.9861634,final model (EfficientNetV2-S)
+11c1292b395ab911,0,5.518046e-05,final model (EfficientNetV2-S)
+1c17db0f34a75fe9,1,0.9883839,final model (EfficientNetV2-S)
+1e31fef127fbfc90,0,0.8086481,final model (EfficientNetV2-S)
+1e6a7131ac588984,0,0.9843329,final model (EfficientNetV2-S)
+1eae243b6abc9b62,0,8.152936e-05,final model (EfficientNetV2-S)
+1f675c5791ee12b9,0,0.0001108321,final model (EfficientNetV2-S)
+20358eeb5c322a09,0,0.004389428,final model (EfficientNetV2-S)
+21cae39b472dd1a5,0,0.002006976,final model (EfficientNetV2-S)
+2201d305d9808906,1,0.8908395,final model (EfficientNetV2-S)
+2910be3d410103a5,1,0.9979123,final model (EfficientNetV2-S)
+2b6b0f124ee7158a,0,8.418802e-05,final model (EfficientNetV2-S)
+2c614ce90c4539a8,1,0.9995009,final model (EfficientNetV2-S)
+2d6afc1e9efd96ea,1,0.9995959,final model (EfficientNetV2-S)
+34a85994a52f7a73,0,0.0003111107,final model (EfficientNetV2-S)
+37a88653045893ef,1,0.9985936,final model (EfficientNetV2-S)
+380d91af3492c319,1,0.9907892,final model (EfficientNetV2-S)
+39dab4d46c582057,0,6.809659e-05,final model (EfficientNetV2-S)
+3abfc25f5182e805,0,5.234617e-05,final model (EfficientNetV2-S)
+3d8294bbc167aaa4,0,0.01762158,final model (EfficientNetV2-S)
+3d9ac8e2047cffe5,0,0.0001252164,final model (EfficientNetV2-S)
+412b047ccc049357,0,4.425628e-05,final model (EfficientNetV2-S)
+416439a697c6e97e,1,0.9995591,final model (EfficientNetV2-S)
+437dfcacc0d6ef9e,0,7.967547e-05,final model (EfficientNetV2-S)
+44e229b191c1ba69,1,0.9998067,final model (EfficientNetV2-S)
+45b0a071da84fe73,0,0.001665588,final model (EfficientNetV2-S)
+479aec62f229d0cc,1,0.9997424,final model (EfficientNetV2-S)
+4ac6d3482c9355e6,1,0.5702474,final model (EfficientNetV2-S)
+4af30edc0ade9945,1,0.914274,final model (EfficientNetV2-S)
+55128959006e793a,0,0.1332483,final model (EfficientNetV2-S)
+5b153a6af53cb7f4,0,0.0009592392,final model (EfficientNetV2-S)
+5de9c1443fc5ca5e,0,0.0004344647,final model (EfficientNetV2-S)
+677cabc87662998c,1,0.9996643,final model (EfficientNetV2-S)
+679713e52d21df73,0,0.09674802,final model (EfficientNetV2-S)
+684a78aaaa20b52c,0,0.0008526272,final model (EfficientNetV2-S)
+69e104986f3938ba,0,0.003286747,final model (EfficientNetV2-S)
+6bc519ae6fdacc6b,1,0.9991888,final model (EfficientNetV2-S)
+6e1548ad04657340,1,0.9991292,final model (EfficientNetV2-S)
+6ea18164bed55234,0,5.525409e-05,final model (EfficientNetV2-S)
+6f5c9c17d6a3598e,1,0.7539849,final model (EfficientNetV2-S)
+710b850c91a6137d,0,0.007200176,final model (EfficientNetV2-S)
+729216ecc7f7bce1,0,6.022792e-05,final model (EfficientNetV2-S)
+74f527d33b374636,0,0.001773738,final model (EfficientNetV2-S)
+78cef03de7f67807,0,0.0002096271,final model (EfficientNetV2-S)
+7e531c9553869d2b,1,0.9988953,final model (EfficientNetV2-S)
+82d01fdd734f4771,0,0.01242247,final model (EfficientNetV2-S)
+8371fdad12398e69,0,0.0001238498,final model (EfficientNetV2-S)
+83e887f6cab2775d,0,0.007171809,final model (EfficientNetV2-S)
+8611e8f62e5fead1,0,7.352071e-05,final model (EfficientNetV2-S)
+880b2158d7da4d10,1,0.9987766,final model (EfficientNetV2-S)
+896c3de897bbd541,0,6.185819e-05,final model (EfficientNetV2-S)
+8f303a5f0ec1c7b9,1,0.9121355,final model (EfficientNetV2-S)
+915f48ddf5cfb6ff,0,0.0002465212,final model (EfficientNetV2-S)
+94dbd87281824588,1,0.9995736,final model (EfficientNetV2-S)
+993da4f85fdfc660,0,0.9617194,final model (EfficientNetV2-S)
+9a1bcae2a342792a,1,0.9984388,final model (EfficientNetV2-S)
+9bbb1dda3580a6ec,1,0.7109019,final model (EfficientNetV2-S)
+9d61c2e4e6a5edd2,1,0.998311,final model (EfficientNetV2-S)
+9f9a873f2393b56c,0,0.007244182,final model (EfficientNetV2-S)
+9fbeecd300299f25,0,6.249203e-05,final model (EfficientNetV2-S)
+a4bdda97ddcc89de,0,0.0003851661,final model (EfficientNetV2-S)
+a6d787238db2bad2,0,0.0007545589,final model (EfficientNetV2-S)
+a7e9a12a9096130d,1,0.9996408,final model (EfficientNetV2-S)
+a83ff85f73a8178a,1,0.9985771,final model (EfficientNetV2-S)
+aae4f1894b6080fe,0,0.03442546,final model (EfficientNetV2-S)
+ace0f20a61139e50,0,0.001623752,final model (EfficientNetV2-S)
+af3b59ab2cdce880,0,0.0004165913,final model (EfficientNetV2-S)
+b03f44d71f0ba6ce,0,1.189552e-05,final model (EfficientNetV2-S)
+b17a520b9117164e,0,0.0001356847,final model (EfficientNetV2-S)
+b89cccceb72614df,0,4.333981e-05,final model (EfficientNetV2-S)
+bb652373ef91a93e,0,0.005634775,final model (EfficientNetV2-S)
+bc00744a50b0e0e8,1,0.9991705,final model (EfficientNetV2-S)
+bf0863a910d63592,1,0.9990892,final model (EfficientNetV2-S)
+c037182127957d03,0,0.0004342206,final model (EfficientNetV2-S)
+cee1d35371e8187b,1,0.9996691,final model (EfficientNetV2-S)
+d35f3e744b2af84a,1,0.9989129,final model (EfficientNetV2-S)
+d3e1dc402de32447,0,0.9941953,final model (EfficientNetV2-S)
+d4175d11c2ca4b1f,1,0.9904912,final model (EfficientNetV2-S)
+e0f2c9bbd4cf7be9,0,0.0001240479,final model (EfficientNetV2-S)
+e0f90b6bf5c46caf,1,0.9936221,final model (EfficientNetV2-S)
+e44749788bf7ecd8,0,0.0004387898,final model (EfficientNetV2-S)
+e818e6c8212ace8f,0,0.06585428,final model (EfficientNetV2-S)
+e875e404392ecb7e,1,0.989041,final model (EfficientNetV2-S)
+f39227cb75f08389,1,0.9984391,final model (EfficientNetV2-S)
+f522ff35f861bc05,1,0.9970419,final model (EfficientNetV2-S)
+f5f889dd41b373e4,0,0.1202925,final model (EfficientNetV2-S)
+f82585b8c902ff7c,0,7.133851e-05,final model (EfficientNetV2-S)
+fc13ac8abf96aec1,0,0.0001335259,final model (EfficientNetV2-S)
+ff06a0668e56dbdd,0,0.0001595553,final model (EfficientNetV2-S)
+ff6376712a299cc6,0,0.0005545153,final model (EfficientNetV2-S)
+00e72ba432c2b4e1,0,0.0001586436,"E1 best (ConvNeXt-T, data v2)"
+0872245184ab773e,1,0.994786,"E1 best (ConvNeXt-T, data v2)"
+092b637ef5cec9db,0,2.154472e-05,"E1 best (ConvNeXt-T, data v2)"
+0bf6a6198fdc0749,0,8.715531e-05,"E1 best (ConvNeXt-T, data v2)"
+0c1be5430ea7b719,0,4.221849e-05,"E1 best (ConvNeXt-T, data v2)"
+0f2fbb209aae1b22,1,0.9920676,"E1 best (ConvNeXt-T, data v2)"
+11c1292b395ab911,0,7.34877e-05,"E1 best (ConvNeXt-T, data v2)"
+1c17db0f34a75fe9,1,0.9973878,"E1 best (ConvNeXt-T, data v2)"
+1e31fef127fbfc90,0,0.2413182,"E1 best (ConvNeXt-T, data v2)"
+1e6a7131ac588984,0,0.9871532,"E1 best (ConvNeXt-T, data v2)"
+1eae243b6abc9b62,0,0.0001046423,"E1 best (ConvNeXt-T, data v2)"
+1f675c5791ee12b9,0,6.294453e-05,"E1 best (ConvNeXt-T, data v2)"
+20358eeb5c322a09,0,0.000182494,"E1 best (ConvNeXt-T, data v2)"
+21cae39b472dd1a5,0,0.0004770722,"E1 best (ConvNeXt-T, data v2)"
+2201d305d9808906,1,0.8280365,"E1 best (ConvNeXt-T, data v2)"
+2910be3d410103a5,1,0.9994789,"E1 best (ConvNeXt-T, data v2)"
+2b6b0f124ee7158a,0,2.085315e-05,"E1 best (ConvNeXt-T, data v2)"
+2c614ce90c4539a8,1,0.9998452,"E1 best (ConvNeXt-T, data v2)"
+2d6afc1e9efd96ea,1,0.9997185,"E1 best (ConvNeXt-T, data v2)"
+34a85994a52f7a73,0,0.001344021,"E1 best (ConvNeXt-T, data v2)"
+37a88653045893ef,1,0.9991227,"E1 best (ConvNeXt-T, data v2)"
+380d91af3492c319,1,0.9977854,"E1 best (ConvNeXt-T, data v2)"
+39dab4d46c582057,0,0.0001381346,"E1 best (ConvNeXt-T, data v2)"
+3abfc25f5182e805,0,3.81054e-05,"E1 best (ConvNeXt-T, data v2)"
+3d8294bbc167aaa4,0,0.0001728643,"E1 best (ConvNeXt-T, data v2)"
+3d9ac8e2047cffe5,0,3.715977e-05,"E1 best (ConvNeXt-T, data v2)"
+412b047ccc049357,0,1.285818e-05,"E1 best (ConvNeXt-T, data v2)"
+416439a697c6e97e,1,0.9999284,"E1 best (ConvNeXt-T, data v2)"
+437dfcacc0d6ef9e,0,6.487683e-05,"E1 best (ConvNeXt-T, data v2)"
+44e229b191c1ba69,1,0.9998283,"E1 best (ConvNeXt-T, data v2)"
+45b0a071da84fe73,0,0.0004862443,"E1 best (ConvNeXt-T, data v2)"
+479aec62f229d0cc,1,0.9995525,"E1 best (ConvNeXt-T, data v2)"
+4ac6d3482c9355e6,1,0.7850865,"E1 best (ConvNeXt-T, data v2)"
+4af30edc0ade9945,1,0.9797738,"E1 best (ConvNeXt-T, data v2)"
+55128959006e793a,0,0.01053245,"E1 best (ConvNeXt-T, data v2)"
+5b153a6af53cb7f4,0,0.05149771,"E1 best (ConvNeXt-T, data v2)"
+5de9c1443fc5ca5e,0,7.167297e-05,"E1 best (ConvNeXt-T, data v2)"
+677cabc87662998c,1,0.9994524,"E1 best (ConvNeXt-T, data v2)"
+679713e52d21df73,0,0.00122159,"E1 best (ConvNeXt-T, data v2)"
+684a78aaaa20b52c,0,0.0002011825,"E1 best (ConvNeXt-T, data v2)"
+69e104986f3938ba,0,0.0001127393,"E1 best (ConvNeXt-T, data v2)"
+6bc519ae6fdacc6b,1,0.9998549,"E1 best (ConvNeXt-T, data v2)"
+6e1548ad04657340,1,0.9988109,"E1 best (ConvNeXt-T, data v2)"
+6ea18164bed55234,0,4.003928e-05,"E1 best (ConvNeXt-T, data v2)"
+6f5c9c17d6a3598e,1,0.8894626,"E1 best (ConvNeXt-T, data v2)"
+710b850c91a6137d,0,0.003516879,"E1 best (ConvNeXt-T, data v2)"
+729216ecc7f7bce1,0,1.146978e-05,"E1 best (ConvNeXt-T, data v2)"
+74f527d33b374636,0,0.001083683,"E1 best (ConvNeXt-T, data v2)"
+78cef03de7f67807,0,0.0003803749,"E1 best (ConvNeXt-T, data v2)"
+7e531c9553869d2b,1,0.9988965,"E1 best (ConvNeXt-T, data v2)"
+82d01fdd734f4771,0,0.00237889,"E1 best (ConvNeXt-T, data v2)"
+8371fdad12398e69,0,0.0001589409,"E1 best (ConvNeXt-T, data v2)"
+83e887f6cab2775d,0,0.003248253,"E1 best (ConvNeXt-T, data v2)"
+8611e8f62e5fead1,0,1.73783e-05,"E1 best (ConvNeXt-T, data v2)"
+880b2158d7da4d10,1,0.9996119,"E1 best (ConvNeXt-T, data v2)"
+896c3de897bbd541,0,2.233469e-05,"E1 best (ConvNeXt-T, data v2)"
+8f303a5f0ec1c7b9,1,0.994759,"E1 best (ConvNeXt-T, data v2)"
+915f48ddf5cfb6ff,0,5.114911e-05,"E1 best (ConvNeXt-T, data v2)"
+94dbd87281824588,1,0.9998423,"E1 best (ConvNeXt-T, data v2)"
+993da4f85fdfc660,0,0.1192851,"E1 best (ConvNeXt-T, data v2)"
+9a1bcae2a342792a,1,0.9992555,"E1 best (ConvNeXt-T, data v2)"
+9bbb1dda3580a6ec,1,0.8858846,"E1 best (ConvNeXt-T, data v2)"
+9d61c2e4e6a5edd2,1,0.9942467,"E1 best (ConvNeXt-T, data v2)"
+9f9a873f2393b56c,0,0.0001470134,"E1 best (ConvNeXt-T, data v2)"
+9fbeecd300299f25,0,4.402409e-05,"E1 best (ConvNeXt-T, data v2)"
+a4bdda97ddcc89de,0,8.158341e-05,"E1 best (ConvNeXt-T, data v2)"
+a6d787238db2bad2,0,9.130812e-05,"E1 best (ConvNeXt-T, data v2)"
+a7e9a12a9096130d,1,0.9995286,"E1 best (ConvNeXt-T, data v2)"
+a83ff85f73a8178a,1,0.9979694,"E1 best (ConvNeXt-T, data v2)"
+aae4f1894b6080fe,0,0.0006350868,"E1 best (ConvNeXt-T, data v2)"
+ace0f20a61139e50,0,0.0005998755,"E1 best (ConvNeXt-T, data v2)"
+af3b59ab2cdce880,0,0.0001047536,"E1 best (ConvNeXt-T, data v2)"
+b03f44d71f0ba6ce,0,6.191387e-05,"E1 best (ConvNeXt-T, data v2)"
+b17a520b9117164e,0,0.0002760669,"E1 best (ConvNeXt-T, data v2)"
+b89cccceb72614df,0,4.14852e-05,"E1 best (ConvNeXt-T, data v2)"
+bb652373ef91a93e,0,0.007070532,"E1 best (ConvNeXt-T, data v2)"
+bc00744a50b0e0e8,1,0.9996557,"E1 best (ConvNeXt-T, data v2)"
+bf0863a910d63592,1,0.9994313,"E1 best (ConvNeXt-T, data v2)"
+c037182127957d03,0,8.835687e-05,"E1 best (ConvNeXt-T, data v2)"
+cee1d35371e8187b,1,0.9997453,"E1 best (ConvNeXt-T, data v2)"
+d35f3e744b2af84a,1,0.9993612,"E1 best (ConvNeXt-T, data v2)"
+d3e1dc402de32447,0,0.2492876,"E1 best (ConvNeXt-T, data v2)"
+d4175d11c2ca4b1f,1,0.9982093,"E1 best (ConvNeXt-T, data v2)"
+e0f2c9bbd4cf7be9,0,5.618299e-05,"E1 best (ConvNeXt-T, data v2)"
+e0f90b6bf5c46caf,1,0.9965869,"E1 best (ConvNeXt-T, data v2)"
+e44749788bf7ecd8,0,0.0002024391,"E1 best (ConvNeXt-T, data v2)"
+e818e6c8212ace8f,0,0.005544319,"E1 best (ConvNeXt-T, data v2)"
+e875e404392ecb7e,1,0.9983312,"E1 best (ConvNeXt-T, data v2)"
+f39227cb75f08389,1,0.9992775,"E1 best (ConvNeXt-T, data v2)"
+f522ff35f861bc05,1,0.9935981,"E1 best (ConvNeXt-T, data v2)"
+f5f889dd41b373e4,0,0.006342597,"E1 best (ConvNeXt-T, data v2)"
+f82585b8c902ff7c,0,9.361131e-05,"E1 best (ConvNeXt-T, data v2)"
+fc13ac8abf96aec1,0,4.656411e-05,"E1 best (ConvNeXt-T, data v2)"
+ff06a0668e56dbdd,0,0.0003983462,"E1 best (ConvNeXt-T, data v2)"
+ff6376712a299cc6,0,0.0002951754,"E1 best (ConvNeXt-T, data v2)"
+00e72ba432c2b4e1,0,0.001024954,"E16 student (MobileNetV3-L, KD T=4)"
+0872245184ab773e,1,0.9629473,"E16 student (MobileNetV3-L, KD T=4)"
+092b637ef5cec9db,0,0.0002887786,"E16 student (MobileNetV3-L, KD T=4)"
+0bf6a6198fdc0749,0,0.0004851719,"E16 student (MobileNetV3-L, KD T=4)"
+0c1be5430ea7b719,0,4.360376e-05,"E16 student (MobileNetV3-L, KD T=4)"
+0f2fbb209aae1b22,1,0.9970503,"E16 student (MobileNetV3-L, KD T=4)"
+11c1292b395ab911,0,5.967851e-05,"E16 student (MobileNetV3-L, KD T=4)"
+1c17db0f34a75fe9,1,0.9871095,"E16 student (MobileNetV3-L, KD T=4)"
+1e31fef127fbfc90,0,0.9494857,"E16 student (MobileNetV3-L, KD T=4)"
+1e6a7131ac588984,0,0.9796572,"E16 student (MobileNetV3-L, KD T=4)"
+1eae243b6abc9b62,0,6.137911e-05,"E16 student (MobileNetV3-L, KD T=4)"
+1f675c5791ee12b9,0,0.0003396349,"E16 student (MobileNetV3-L, KD T=4)"
+20358eeb5c322a09,0,0.00203463,"E16 student (MobileNetV3-L, KD T=4)"
+21cae39b472dd1a5,0,0.005652649,"E16 student (MobileNetV3-L, KD T=4)"
+2201d305d9808906,1,0.290749,"E16 student (MobileNetV3-L, KD T=4)"
+2910be3d410103a5,1,0.9989398,"E16 student (MobileNetV3-L, KD T=4)"
+2b6b0f124ee7158a,0,0.0002255527,"E16 student (MobileNetV3-L, KD T=4)"
+2c614ce90c4539a8,1,0.3674695,"E16 student (MobileNetV3-L, KD T=4)"
+2d6afc1e9efd96ea,1,0.99935,"E16 student (MobileNetV3-L, KD T=4)"
+34a85994a52f7a73,0,0.0005013901,"E16 student (MobileNetV3-L, KD T=4)"
+37a88653045893ef,1,0.99975,"E16 student (MobileNetV3-L, KD T=4)"
+380d91af3492c319,1,0.9965814,"E16 student (MobileNetV3-L, KD T=4)"
+39dab4d46c582057,0,0.0001257356,"E16 student (MobileNetV3-L, KD T=4)"
+3abfc25f5182e805,0,2.73666e-05,"E16 student (MobileNetV3-L, KD T=4)"
+3d8294bbc167aaa4,0,0.001300099,"E16 student (MobileNetV3-L, KD T=4)"
+3d9ac8e2047cffe5,0,0.0001148012,"E16 student (MobileNetV3-L, KD T=4)"
+412b047ccc049357,0,0.0001522613,"E16 student (MobileNetV3-L, KD T=4)"
+416439a697c6e97e,1,0.9993687,"E16 student (MobileNetV3-L, KD T=4)"
+437dfcacc0d6ef9e,0,0.0002895944,"E16 student (MobileNetV3-L, KD T=4)"
+44e229b191c1ba69,1,0.9997699,"E16 student (MobileNetV3-L, KD T=4)"
+45b0a071da84fe73,0,0.0002640609,"E16 student (MobileNetV3-L, KD T=4)"
+479aec62f229d0cc,1,0.9987732,"E16 student (MobileNetV3-L, KD T=4)"
+4ac6d3482c9355e6,1,0.6060804,"E16 student (MobileNetV3-L, KD T=4)"
+4af30edc0ade9945,1,0.9680753,"E16 student (MobileNetV3-L, KD T=4)"
+55128959006e793a,0,0.001155067,"E16 student (MobileNetV3-L, KD T=4)"
+5b153a6af53cb7f4,0,0.0008574526,"E16 student (MobileNetV3-L, KD T=4)"
+5de9c1443fc5ca5e,0,0.0002723294,"E16 student (MobileNetV3-L, KD T=4)"
+677cabc87662998c,1,0.9997005,"E16 student (MobileNetV3-L, KD T=4)"
+679713e52d21df73,0,0.001849871,"E16 student (MobileNetV3-L, KD T=4)"
+684a78aaaa20b52c,0,0.0002645589,"E16 student (MobileNetV3-L, KD T=4)"
+69e104986f3938ba,0,0.002278819,"E16 student (MobileNetV3-L, KD T=4)"
+6bc519ae6fdacc6b,1,0.9994093,"E16 student (MobileNetV3-L, KD T=4)"
+6e1548ad04657340,1,0.9993433,"E16 student (MobileNetV3-L, KD T=4)"
+6ea18164bed55234,0,5.602069e-05,"E16 student (MobileNetV3-L, KD T=4)"
+6f5c9c17d6a3598e,1,0.7032742,"E16 student (MobileNetV3-L, KD T=4)"
+710b850c91a6137d,0,0.04811065,"E16 student (MobileNetV3-L, KD T=4)"
+729216ecc7f7bce1,0,2.20041e-05,"E16 student (MobileNetV3-L, KD T=4)"
+74f527d33b374636,0,0.000941858,"E16 student (MobileNetV3-L, KD T=4)"
+78cef03de7f67807,0,0.0001304399,"E16 student (MobileNetV3-L, KD T=4)"
+7e531c9553869d2b,1,0.9941151,"E16 student (MobileNetV3-L, KD T=4)"
+82d01fdd734f4771,0,0.0008793101,"E16 student (MobileNetV3-L, KD T=4)"
+8371fdad12398e69,0,0.0001603159,"E16 student (MobileNetV3-L, KD T=4)"
+83e887f6cab2775d,0,0.03780222,"E16 student (MobileNetV3-L, KD T=4)"
+8611e8f62e5fead1,0,8.381536e-05,"E16 student (MobileNetV3-L, KD T=4)"
+880b2158d7da4d10,1,0.9919497,"E16 student (MobileNetV3-L, KD T=4)"
+896c3de897bbd541,0,0.000155997,"E16 student (MobileNetV3-L, KD T=4)"
+8f303a5f0ec1c7b9,1,0.9933468,"E16 student (MobileNetV3-L, KD T=4)"
+915f48ddf5cfb6ff,0,2.44755e-05,"E16 student (MobileNetV3-L, KD T=4)"
+94dbd87281824588,1,0.9897583,"E16 student (MobileNetV3-L, KD T=4)"
+993da4f85fdfc660,0,0.716004,"E16 student (MobileNetV3-L, KD T=4)"
+9a1bcae2a342792a,1,0.985981,"E16 student (MobileNetV3-L, KD T=4)"
+9bbb1dda3580a6ec,1,0.7113551,"E16 student (MobileNetV3-L, KD T=4)"
+9d61c2e4e6a5edd2,1,0.9975814,"E16 student (MobileNetV3-L, KD T=4)"
+9f9a873f2393b56c,0,0.002982978,"E16 student (MobileNetV3-L, KD T=4)"
+9fbeecd300299f25,0,5.847962e-05,"E16 student (MobileNetV3-L, KD T=4)"
+a4bdda97ddcc89de,0,0.0002844128,"E16 student (MobileNetV3-L, KD T=4)"
+a6d787238db2bad2,0,0.002194138,"E16 student (MobileNetV3-L, KD T=4)"
+a7e9a12a9096130d,1,0.9988109,"E16 student (MobileNetV3-L, KD T=4)"
+a83ff85f73a8178a,1,0.9988135,"E16 student (MobileNetV3-L, KD T=4)"
+aae4f1894b6080fe,0,0.001606041,"E16 student (MobileNetV3-L, KD T=4)"
+ace0f20a61139e50,0,0.0003615891,"E16 student (MobileNetV3-L, KD T=4)"
+af3b59ab2cdce880,0,0.0001475637,"E16 student (MobileNetV3-L, KD T=4)"
+b03f44d71f0ba6ce,0,1.911048e-05,"E16 student (MobileNetV3-L, KD T=4)"
+b17a520b9117164e,0,0.0001255628,"E16 student (MobileNetV3-L, KD T=4)"
+b89cccceb72614df,0,7.290793e-05,"E16 student (MobileNetV3-L, KD T=4)"
+bb652373ef91a93e,0,0.004966132,"E16 student (MobileNetV3-L, KD T=4)"
+bc00744a50b0e0e8,1,0.9943512,"E16 student (MobileNetV3-L, KD T=4)"
+bf0863a910d63592,1,0.9997123,"E16 student (MobileNetV3-L, KD T=4)"
+c037182127957d03,0,0.0003607429,"E16 student (MobileNetV3-L, KD T=4)"
+cee1d35371e8187b,1,0.9998896,"E16 student (MobileNetV3-L, KD T=4)"
+d35f3e744b2af84a,1,0.9996282,"E16 student (MobileNetV3-L, KD T=4)"
+d3e1dc402de32447,0,0.3413261,"E16 student (MobileNetV3-L, KD T=4)"
+d4175d11c2ca4b1f,1,0.9973895,"E16 student (MobileNetV3-L, KD T=4)"
+e0f2c9bbd4cf7be9,0,6.129386e-05,"E16 student (MobileNetV3-L, KD T=4)"
+e0f90b6bf5c46caf,1,0.9983798,"E16 student (MobileNetV3-L, KD T=4)"
+e44749788bf7ecd8,0,0.001775832,"E16 student (MobileNetV3-L, KD T=4)"
+e818e6c8212ace8f,0,0.01010351,"E16 student (MobileNetV3-L, KD T=4)"
+e875e404392ecb7e,1,0.9962081,"E16 student (MobileNetV3-L, KD T=4)"
+f39227cb75f08389,1,0.99884,"E16 student (MobileNetV3-L, KD T=4)"
+f522ff35f861bc05,1,0.9992932,"E16 student (MobileNetV3-L, KD T=4)"
+f5f889dd41b373e4,0,0.01461674,"E16 student (MobileNetV3-L, KD T=4)"
+f82585b8c902ff7c,0,0.001369484,"E16 student (MobileNetV3-L, KD T=4)"
+fc13ac8abf96aec1,0,0.0005936871,"E16 student (MobileNetV3-L, KD T=4)"
+ff06a0668e56dbdd,0,0.0008703955,"E16 student (MobileNetV3-L, KD T=4)"
+ff6376712a299cc6,0,0.0004321113,"E16 student (MobileNetV3-L, KD T=4)"

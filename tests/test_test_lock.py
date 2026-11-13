@@ -107,5 +107,13 @@ def test_final_eval_check_only_does_not_open_or_lock(tmp_path: Path) -> None:
     assert not (tmp_path / "LOCK").exists()
 
 
-def test_repository_is_not_locked() -> None:
-    assert not (REPO_ROOT / "results" / "LOCK").exists()
+def test_lock_matches_final_results() -> None:
+    # Before PLAN 10.2 the repository had no LOCK; after it, LOCK and the final tables exist
+    # together and a second run is refused.
+    lock = REPO_ROOT / "results" / "LOCK"
+    final = REPO_ROOT / "results" / "tables" / "final_test.md"
+    assert lock.exists() == final.exists()
+    if lock.exists():
+        result = _final_eval("--i-understand-this-is-final")
+        assert result.returncode == 2
+        assert "already evaluated" in result.stderr

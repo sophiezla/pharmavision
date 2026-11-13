@@ -1,0 +1,3 @@
+model,reference,AUROC diff,delong_p,holm_p,better,worse
+"E1 best (ConvNeXt-T, data v2)",final model (EfficientNetV2-S),"0.010 [0.000, 0.028]",0.14027156468914329,0.28054312937828657,False,False
+"E16 student (MobileNetV3-L, KD T=4)",final model (EfficientNetV2-S),"0.004 [-0.005, 0.018]",0.4759683730723564,0.4759683730723564,False,False
