@@ -81,7 +81,8 @@ def test_lora_trains_only_adapters_and_head(name: str) -> None:
     cfg = OmegaConf.merge(_random_weights(name), {"mode": "lora", "lora_rank": 4})
     model = build_model(cfg)
     trainable = [n for n, p in model.named_parameters() if p.requires_grad]
-    assert trainable and all("lora_" in n or n.startswith("head.") for n in trainable)
+    # inside the backbone only adapters train; heads (head, concept_head, label_head) may train
+    assert trainable and all("lora_" in n or not n.startswith("backbone.") for n in trainable)
     assert any("lora_" in n for n in trainable)
     model.train()
     batchnorms = [
