@@ -39,6 +39,25 @@ def _table(name: str, rows: Callable[[pd.DataFrame], pd.Series] | None = None, c
     return f"From `results/tables/{name}.md`:\n\n" + to_markdown(df)
 
 
+def _test_coverage_note() -> str:
+    """One sentence when any frozen model's locked-test coverage is below 1 - alpha."""
+    csv = T / "final_test.csv"
+    if not csv.is_file():
+        return ""
+    df = pd.read_csv(csv)
+    col = next(c for c in df.columns if c.startswith("conformal coverage"))
+    means = df[col].astype(str).str.split(" ").str[0].astype(float)
+    if not (means < 0.90).any():
+        return ""
+    return (
+        "**Conformal coverage on the locked test set.** Per-run coverage at alpha 0.10 is below "
+        "the nominal 0.90 for " + ", ".join(df.loc[means < 0.90, "model"]) + " (column "
+        f"`{col}` in the locked-test table above), and lower than each model's out-of-fold coverage "
+        "during development (`e10_conformal`, `e16_reliability`). The test set has 95 images, so the estimate is noisy; prediction "
+        "sets should not be read as a guaranteed 90% coverage.\n\n"
+    )
+
+
 def _final_test() -> str:
     md = T / "final_test.md"
     if not md.is_file():
@@ -46,7 +65,7 @@ def _final_test() -> str:
             "_Not evaluated yet._ The locked test set (95 images) is opened once by "
             "`scripts/final_eval.py` (PLAN 10.2) after the frozen checkpoints are installed."
         )
-    body = md.read_text(encoding="utf-8").split("\n", 2)[2]
+    body = md.read_text(encoding="utf-8").split("\n", 2)[2].replace("\n## ", "\n### ")
     return "From `results/tables/final_test.md`:\n\n" + body
 
 
@@ -147,7 +166,7 @@ Pooled OOF metrics with 95% bootstrap CIs (2,000 stratified resamples) and per-r
 
 ## Known failure modes
 
-**Other sources (E7, external block).** Trained on one source, the models transfer poorly:
+{_test_coverage_note()}**Other sources (E7, external block).** Trained on one source, the models transfer poorly:
 
 {_table("e07_transfer")}
 

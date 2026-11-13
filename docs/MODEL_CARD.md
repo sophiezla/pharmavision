@@ -139,9 +139,28 @@ From `results/tables/e11_end_to_end.md`:
 
 ## Locked test set
 
-_Not evaluated yet._ The locked test set (95 images) is opened once by `scripts/final_eval.py` (PLAN 10.2) after the frozen checkpoints are installed.
+From `results/tables/final_test.md`:
+
+Generated once by `scripts/final_eval.py` (PLAN 10.2) on the locked test set (95 images); frozen models in ADR-030. Ensemble = mean probability of the 15 fold models with 95% stratified bootstrap CIs (2000 resamples, seed 0); per-run = mean ± sd over the 15 fold models, each with its own val threshold, cal temperature and LAC Mondrian conformal quantiles (alpha 0.10).
+
+| model | runs | images | counterfeit | AUROC (ensemble) | AUPRC (ensemble) | sens@95%spec (ensemble) | ECE (ensemble, uncalibrated) | AUROC (per run) | balanced acc (per run, val threshold) | macro-F1 (per run) | sensitivity (per run) | specificity (per run) | ECE after T (per run) | Brier after T (per run) | conformal coverage (per run, alpha 0.10) | coverage authentic | coverage counterfeit | mean set size |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| final model (EfficientNetV2-S) | 15 | 95 | 36 | 0.987 [0.968, 0.999] | 0.978 [0.948, 0.999] | 0.833 | 0.0529 | 0.987 ± 0.005 | 0.944 ± 0.031 | 0.940 ± 0.025 | 0.944 ± 0.069 | 0.944 ± 0.017 | 0.0521 ± 0.0108 | 0.0481 ± 0.0099 | 0.845 ± 0.049 | 0.852 ± 0.068 | 0.833 ± 0.055 | 0.867 ± 0.051 |
+| E1 best (ConvNeXt-T, data v2) | 15 | 95 | 36 | 0.998 [0.992, 1.000] | 0.996 [0.986, 1.000] | 1.000 | 0.0225 | 0.998 ± 0.003 | 0.961 ± 0.026 | 0.962 ± 0.025 | 0.948 ± 0.059 | 0.974 ± 0.038 | 0.0223 ± 0.0122 | 0.0190 ± 0.0119 | 0.849 ± 0.047 | 0.837 ± 0.068 | 0.869 ± 0.070 | 0.852 ± 0.046 |
+| E16 student (MobileNetV3-L, KD T=4) | 15 | 95 | 36 | 0.992 [0.977, 1.000] | 0.986 [0.965, 1.000] | 0.861 | 0.0320 | 0.990 ± 0.003 | 0.939 ± 0.015 | 0.938 ± 0.011 | 0.930 ± 0.044 | 0.949 ± 0.022 | 0.0509 ± 0.0095 | 0.0436 ± 0.0070 | 0.872 ± 0.057 | 0.860 ± 0.082 | 0.893 ± 0.055 | 0.898 ± 0.057 |
+
+
+### Paired DeLong vs the final model (ensembles, Holm)
+
+| model | reference | AUROC diff | delong_p | holm_p | better | worse |
+|---|---|---|---|---|---|---|
+| E1 best (ConvNeXt-T, data v2) | final model (EfficientNetV2-S) | 0.010 [0.000, 0.028] | 0.1403 | 0.2805 | False | False |
+| E16 student (MobileNetV3-L, KD T=4) | final model (EfficientNetV2-S) | 0.004 [-0.005, 0.018] | 0.476 | 0.476 | False | False |
+
 
 ## Known failure modes
+
+**Conformal coverage on the locked test set.** Per-run coverage at alpha 0.10 is below the nominal 0.90 for final model (EfficientNetV2-S), E1 best (ConvNeXt-T, data v2), E16 student (MobileNetV3-L, KD T=4) (column `conformal coverage (per run, alpha 0.10)` in the locked-test table above), and lower than each model's out-of-fold coverage during development (`e10_conformal`, `e16_reliability`). The test set has 95 images, so the estimate is noisy; prediction sets should not be read as a guaranteed 90% coverage.
 
 **Other sources (E7, external block).** Trained on one source, the models transfer poorly:
 

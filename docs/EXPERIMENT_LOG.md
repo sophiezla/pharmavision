@@ -17,6 +17,31 @@ retyped. Template:
 
 ---
 
+## 2026-11-12 · Phase 10 · Locked-test evaluation (one time)
+- Commit: run at f47bc9e (see `results/LOCK`); tables, LOCK and the post-lock test in 79294c5.
+- Command(s): raw data restored from `Projects.zip` (external drive) into `data/raw/`; every raw file of `manifest_v2.csv` (644) and `manifest_external_v1.csv` (449) matched its SHA-256. Re-normalized with `pharmachecked.data.normalize.normalize_file` into a scratch folder: all 549 development images byte-identical to the installed ones (3 external images differ in PNG encoding only, pixels identical; external images are not used here); the 95 locked-test PNGs installed. `python scripts/final_eval.py --i-understand-this-is-final --check-only` (ready, 45 checkpoints), then `python scripts/final_eval.py --i-understand-this-is-final`; `python scripts/model_card.py`.
+- Hypothesis: none (one-time evaluation of the ADR-030 freeze).
+- Runs: 45 frozen fold models (3 configs × 15), no training.
+- Result (from `results/tables/final_test.md`):
+
+| model | runs | images | counterfeit | AUROC (ensemble) | AUPRC (ensemble) | sens@95%spec (ensemble) | ECE (ensemble, uncalibrated) | AUROC (per run) | balanced acc (per run, val threshold) | macro-F1 (per run) | sensitivity (per run) | specificity (per run) | ECE after T (per run) | Brier after T (per run) | conformal coverage (per run, alpha 0.10) | coverage authentic | coverage counterfeit | mean set size |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| final model (EfficientNetV2-S) | 15 | 95 | 36 | 0.987 [0.968, 0.999] | 0.978 [0.948, 0.999] | 0.833 | 0.0529 | 0.987 ± 0.005 | 0.944 ± 0.031 | 0.940 ± 0.025 | 0.944 ± 0.069 | 0.944 ± 0.017 | 0.0521 ± 0.0108 | 0.0481 ± 0.0099 | 0.845 ± 0.049 | 0.852 ± 0.068 | 0.833 ± 0.055 | 0.867 ± 0.051 |
+| E1 best (ConvNeXt-T, data v2) | 15 | 95 | 36 | 0.998 [0.992, 1.000] | 0.996 [0.986, 1.000] | 1.000 | 0.0225 | 0.998 ± 0.003 | 0.961 ± 0.026 | 0.962 ± 0.025 | 0.948 ± 0.059 | 0.974 ± 0.038 | 0.0223 ± 0.0122 | 0.0190 ± 0.0119 | 0.849 ± 0.047 | 0.837 ± 0.068 | 0.869 ± 0.070 | 0.852 ± 0.046 |
+| E16 student (MobileNetV3-L, KD T=4) | 15 | 95 | 36 | 0.992 [0.977, 1.000] | 0.986 [0.965, 1.000] | 0.861 | 0.0320 | 0.990 ± 0.003 | 0.939 ± 0.015 | 0.938 ± 0.011 | 0.930 ± 0.044 | 0.949 ± 0.022 | 0.0509 ± 0.0095 | 0.0436 ± 0.0070 | 0.872 ± 0.057 | 0.860 ± 0.082 | 0.893 ± 0.055 | 0.898 ± 0.057 |
+
+
+## Paired DeLong vs the final model (ensembles, Holm)
+
+| model | reference | AUROC diff | delong_p | holm_p | better | worse |
+|---|---|---|---|---|---|---|
+| E1 best (ConvNeXt-T, data v2) | final model (EfficientNetV2-S) | 0.010 [0.000, 0.028] | 0.1403 | 0.2805 | False | False |
+| E16 student (MobileNetV3-L, KD T=4) | final model (EfficientNetV2-S) | 0.004 [-0.005, 0.018] | 0.476 | 0.476 | False | False |
+
+- Interpretation: all three frozen models keep a high locked-test AUROC; the paired DeLong tests show no significant difference from the final model after Holm correction, so the ConvNeXt-T and the student are not shown to be better or worse on these 95 images. Per-run conformal coverage at alpha 0.10 is below the nominal 0.90 for all three models and lower than each model's development out-of-fold coverage (LAC Mondrian, alpha 0.10): final model 0.845 ± 0.049 vs 0.916 ± 0.027, ConvNeXt-T 0.849 ± 0.047 vs 0.890 ± 0.047 (`results/tables/e10_conformal.md`), student 0.872 ± 0.057 vs 0.923 ± 0.043 (fp32, `results/tables/e16_reliability.md`).
+- Issues / anomalies: the conformal under-coverage on the locked test set; with 95 images (36 counterfeit) the per-run coverage estimate is noisy, but it is reported as produced. `tests/test_test_lock.py::test_repository_is_not_locked` failed after the run, as designed; it is replaced by a post-lock check (LOCK and `final_test.md` exist together, a rerun is refused).
+- Next: model card (PLAN 10.4), release and paper assets (10.3, 10.5), README (10.6).
+
 ## 2026-11-07 · Phase 10 · Locked-test evaluation attempt stopped: test images absent
 - Commit: c70b089 (tag `v1.0-rc`); fix in the following commit.
 - Command(s): `python scripts/final_eval.py --i-understand-this-is-final` (after Sophie's confirmation)
